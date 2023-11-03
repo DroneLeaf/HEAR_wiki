@@ -33,6 +33,6 @@
 ## HEAR specific
 
 **Always:**
-- For newly created ME set all async input ports as thread-safe.
-- Never leave CLI output used at development phase.
+- For MEs set all async input ports as thread-safe.
+- Never leave CLI output code temporarily written at the development phase.
 - Use Logger class for logging.
