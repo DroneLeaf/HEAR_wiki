@@ -45,35 +45,14 @@ So we have in general three layers:
  1. Review your changes. Make sure you adhered to the [coding guideline](coding_guideline.md).
  2. Document your changes. Add any new dependencies as in the [adding dependency guideline](adding_dependencies.md). 
 
-## Source Tree Structure at Host
-Having the same source tree structure for all developers is quite helpful: it helps avoiding surprises and automating workflows.
-
-Please adhere to the following source tree structure:
-(~: user home directory, it must correspond to $HOME environment variable)
-
-~/HEAR_FC
-
-~/HEAR_MC
-
-~/HEAR_SITL
-
-~/HEAR_configurations
-
-~/Rpi_dep
-
-~/PX4-Autopilot
-
-**Important**: Make sure that all paths within code repos are not specific to your host PC, i.e. relative paths.
-
-**Hint**: Use `getHomeDirectroy()` from `UnixEnvHelperFunc.hpp` within `HEAR_util` to avoid absolute links within the code
-
-> When using VSCode make sure paths in .vscode folder are relative and use portable environment variables.
 
 ## Repositories structuring
+Please see [source management](source_management.md)
 
 
+## Software Developer Roles
+Having develper roles helps segregating responsibilities and smooth code integration.
 
-## Software Developer Types
 
 ### Architecture Developers
 Responsibilities:

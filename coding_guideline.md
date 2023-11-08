@@ -29,7 +29,7 @@
 - Declaration in hpp, implementation in cpp. Even empty functions.
 - Use #ifdef for hardware dependent code in .hpp, exclude .cpp files from Cmake. Never use #define but use ‘Configurations.cmake’ adjacent to the root CmakeLists.txt. _(Temporary provision)_
 - Never use #define outside ‘Configurations.cmake’.
-- Use setters and getters to access class member variables. For example, for a private `bool en_logging` use `void setLogging(bool en_logging)` and `bool getLoggging()` 
+- Use setters and getters to access class member variables. For example, for a private `bool en_logging` use `void setLogging(bool en_logging)` and `bool getLoggging()`. Never make `bool en_logging` public.
 
    
 
@@ -40,9 +40,6 @@
 **Should:**
 - use ‘#pragma once’ as include guard  
     
-**Naming Convention:**
-
-
 ## Naming Conventions
 
 **Variables**
