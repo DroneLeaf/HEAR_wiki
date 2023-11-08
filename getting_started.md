@@ -25,7 +25,9 @@ So we have in general three layers:
        1. **Testing environment**: e.g. your own PC.
        2. **Deployment environment**: e.g. RPi or Jetson, etc.
        3. Or any other environment that would be added in the future. 
-    3. **How to debug**. Documents how to use developer tools for effective debugging, and common troubleshooting tips.
+    3. **Contributing**: how to extend the code functions with `hello world` examples.
+    4. **How to debug**. Documents how to use developer tools for effective debugging, and common troubleshooting tips.
+
 
  3. Comments on the code itself. We use doxygen to support IDE help and auto-generation. Only comment the following:
     1. how to use certain class. For example how to use System.hpp
@@ -41,7 +43,7 @@ So we have in general three layers:
 ## After you code
 
  1. Review your changes. Make sure you adhered to the [coding guideline](coding_guideline.md).
- 2. Document your changes. Add any new dependencies as in the [guideline](adding_dependencies.md). 
+ 2. Document your changes. Add any new dependencies as in the [adding dependency guideline](adding_dependencies.md). 
 
 ## Source Tree Structure at Host
 Having the same source tree structure for all developers is quite helpful: it helps avoiding surprises and automating workflows.
@@ -59,38 +61,56 @@ Please adhere to the following source tree structure:
 
 ~/Rpi_dep
 
-*AA: please add PX4 autopilot*
+~/PX4-Autopilot
 
 **Important**: Make sure that all paths within code repos are not specific to your host PC, i.e. relative paths.
 
-**Hint**: Use `getHomeDirectroy()` from UnixEnvHelperFunc.hpp within HEAR_util to avoid absolute links within the code
+**Hint**: Use `getHomeDirectroy()` from `UnixEnvHelperFunc.hpp` within `HEAR_util` to avoid absolute links within the code
 
-> When using VSCode make sure paths in .vscode folder are relative
+> When using VSCode make sure paths in .vscode folder are relative and use portable environment variables.
 
 ## Repositories structuring
 
 
 
 ## Software Developer Types
+
 ### Architecture Developers
 Responsibilities:
- 1. Develop core architectural elements
- 2. Develop communication interfaces
+ 1. Add/Modify core architectural elements
+ 2. Add/Modify communication interfaces
 
-Clients served:
+Direct clients served:
  1. Algorithms Developers
  2. Application Developers
 
 Current Developers:
-1. Mohamad Chehadeh
-2. Ahmed Hashem
+1. Mohamad Chehadeh. github id: MChehadeh
+2. Ahmed Hashem. github id: ahmed-hashim-pro
 
 ### Algorithms Developers
 
+Responsibilities:
+ 1. Add/Extend blocks, mission elements, utility functions for blocks and mission elements.
+ 2. Add/Extend communication interfaces, and data types.
 
+Direct clients served:
+ 1. Application Developers
+
+Current Developers:
+1. Abdulla Ayyad. github id: abdullaayyad96
+2. Hazem Elrefaei: github id: HazemElrefaei
 
 ### Application Developers
 
+Responsibilities:
+ 1. Add/Extend systems.
+ 2. Test in simulation and real-world.
 
+Direct clients served:
+ 1. End-users
 
+Current developers:
 
+1. Hazem Elrefaei: github id: HazemElrefaei
+2. Muhammad Kamal: github id: Mu99-M

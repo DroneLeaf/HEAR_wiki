@@ -1,4 +1,22 @@
 # Coding Guideline
+**Document Scope**: Writing source code.
+## Design Philosophy​
+
+- User friendliness, mainly developers.​
+
+- Explicit over implicit.​
+
+- Ease of tracing and debugging.​
+
+- The law of least surprise.
+
+- Single responsibility of element, sub-systems, and systems.​
+
+- Reusability.​
+
+- Open for extension, closed for modifications.​
+
+- Service oriented architecture with standardized intra-communication.​
 
 ## Acronyms
 

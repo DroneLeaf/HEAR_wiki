@@ -1,5 +1,5 @@
 # Source management
-The installation instructions 
+**Document Scope**: The git repos used across HEAR and how to handle them.
 
 ## HEAR_blocks
 This repository contains all source files that inherit from the `Block` class, and all the coding infrastructure that supports Blocks coding paradigm like `System` and `Port` classes. This coding infrastructure is under `Blocks_core` folder.
@@ -16,8 +16,21 @@ This repository contains all source files that inherits from the `InterfaceContr
 ## HEAR_FC
 A code repo unifying `HEAR_blocks`, `HEAR_mission` and `HEAR_util` in a way to form a fully functional flight controller.
 
-## HEAR_MC
+## [HEAR_MC](https://github.com/HazemElrefaei/HEAR_MC)
 A code repo unifying `HEAR_blocks`, `HEAR_mission` and `HEAR_util` in a way to form a fully functional mission management software.
+
+## [HEAR_SITL](https://github.com/MChehadeh/HEAR_SITL)
+
+## [HEAR_ROS_bag_reader]()
+
+## [PX4-AutoPilot]()
+This is a re-published (not forked) repo of the original PX4-Autopilot.
+
+## [HEAR_docker]()
+
+## [HEAR_configurations](https://github.com/MChehadeh/HEAR_configurations)
+
+## [DNN_system_ID](https://github.com/abdullaayyad96/DNN_system_ID)
 
 ## Source dependency graph (visualize on GitHub or Mermaid)
 
