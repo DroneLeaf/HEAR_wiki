@@ -5,8 +5,6 @@ To add dependencies please adhere to the following guidelines:
 
 ## Adding to CMake
 
-  
-
 Under `Components` section in `Configurations.cmake` add the dependency as an option. This would allow turning on/off a dependency for a specific build.
 
   
@@ -28,8 +26,6 @@ Now `GUI_Display` can be checked within all source files by using `#ifdef`. See 
   
 
 In the above example, `GUI_Display` is used to show mission pipeline graphs on the screen using GTK library. If you check the code you can find that all GTK usages in `CMakeLists.txt` are guarded by checking if `GUI_Display` option is turned ON, for example:
-
-  
 
 ##### GUI_Display #####
 ```
@@ -60,7 +56,7 @@ Add installation instructions of the new dependency to the following headline *I
 
   
 
-# Installing Dependencies Instructions
+# Installing Dependencies Instructions (Please move to the most suitable repo)
 
   
 

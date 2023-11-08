@@ -1,10 +1,42 @@
 # HEAR Development Getting Started Guide
 
+## How the code is documented?
+
+Documentation is defined here as all meta-information beyond the compiled code. This would include the programming language, e.g. variable names, and how the code is structured. The documentation follows the illustrated hirearchy:
+
+```mermaid
+flowchart TD
+    A[HEAR_wiki] -->B(HEAR_FC documentation)
+    A -->C(HEAR_MC documentation)
+    A -->D(HEAR_mission documentation)
+    A -->E(... etc.)
+    D -->F(MissionPipeline class documentation)
+    D -->G(... etc.)
+```
+So we have in general three layers:
+
+ 1. Entry point: which is `HEAR_wiki`. Anyone who wants to start development for HEAR must be referred to `HEAR_wiki`. 
+
+ 2. Documentation of repositories: This would include three parts:
+    1. **How to setup**. This must include all dependent packges. 
+       1. **Note 1**: If a package is used by the submodule repo then the installation instructions must be inside the submodule. E.g. pcap package is used by HEAR_util, which is a submodule in HEAR_FC and HEAR_MC, then its installation instructions must be inside HEAR_util but neither in HEAR_FC nor HEAR_MC. 
+       2. **Note 2**: if a package is needed by multiple repos then document it in one of them, and reference it in the other repos. DO NOT DOCUMENT TWICE!
+    2. **How to run**. Only applicable to runnable repos like HEAR_FC, HEAR_MC, and PX4-Autopilot. It must document running in:
+       1. **Testing environment**: e.g. your own PC.
+       2. **Deployment environment**: e.g. RPi or Jetson, etc.
+       3. Or any other environment that would be added in the future. 
+    3. **How to debug**. Documents how to use developer tools for effective debugging, and common troubleshooting tips.
+
+ 3. Comments on the code itself. We use doxygen to support IDE help and auto-generation. Only comment the following:
+    1. how to use certain class. For example how to use System.hpp
+    2. Reasons for writing certain system code or complex logic you borrowed from some other source. Simply add urls for all sources used. For example why certain network socket options were used: include url of relevant man-pages or PX4 documentation.
+
 ## Before you code!
 
- 1. Make sure you read all the relevant development guidelines
+ 1. Make sure you read all the relevant development guidelines.
  2. Check existing code base for the functionality you want.
  3. Make sure you have discussed the proposed changes with the respective repo manager.
+ 4. Use [the common developer setup](developer_toolkit.md).
 
 ## After you code
 
@@ -15,7 +47,7 @@
 Having the same source tree structure for all developers is quite helpful: it helps avoiding surprises and automating workflows.
 
 Please adhere to the following source tree structure:
-(~: user home directory)
+(~: user home directory, it must correspond to $HOME environment variable)
 
 ~/HEAR_FC
 

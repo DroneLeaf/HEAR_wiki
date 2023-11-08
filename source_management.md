@@ -1,4 +1,5 @@
 # Source management
+The installation instructions 
 
 ## HEAR_blocks
 This repository contains all source files that inherit from the `Block` class, and all the coding infrastructure that supports Blocks coding paradigm like `System` and `Port` classes. This coding infrastructure is under `Blocks_core` folder.
@@ -33,6 +34,7 @@ flowchart TD
     B -->E
     C -->E
     F -->E
+    G(HEAR_SITL)
 ```
 
 **Note** the source dependency graph provides a general rule on how code must be written and reused. e.g. try to write in `HEAR_util` first and reuse on other dependent modules. If not then move down the graph, i.e. `HEAR_mission` `HEAR_blocks` or `HEAR_interfaces`, and so on.
