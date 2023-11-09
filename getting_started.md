@@ -13,11 +13,11 @@ flowchart TD
     D -->F(MissionPipeline class documentation)
     D -->G(... etc.)
 ```
-So we have in general three layers:
+So we have in general four layers:
 
  1. Entry point: which is `HEAR_wiki`. Anyone who wants to start development for HEAR must be referred to `HEAR_wiki`. 
 
- 2. Documentation of repositories: This would include three parts:
+ 2. Documentation of repositories: This would include **'Overview'** section at the beggining + four parts:
     1. **How to setup**. This must include all dependent packges. 
        1. **Note 1**: If a package is used by the submodule repo then the installation instructions must be inside the submodule. E.g. pcap package is used by HEAR_util, which is a submodule in HEAR_FC and HEAR_MC, then its installation instructions must be inside HEAR_util but neither in HEAR_FC nor HEAR_MC. 
        2. **Note 2**: if a package is needed by multiple repos then document it in one of them, and reference it in the other repos. DO NOT DOCUMENT TWICE!
@@ -32,6 +32,9 @@ So we have in general three layers:
  3. Comments on the code itself. We use doxygen to support IDE help and auto-generation. Only comment the following:
     1. how to use certain class. For example how to use System.hpp
     2. Reasons for writing certain system code or complex logic you borrowed from some other source. Simply add urls for all sources used. For example why certain network socket options were used: include url of relevant man-pages or PX4 documentation.
+ 4. The code it self. It must be self-explanatory and it must adhere to the [coding guideline](coding_guideline.md).
+
+**Important**: Documentation is a liability that we want to minimize. Document using stage 4 above, if not possible, document using stage 3, then stage 2, and last stage 1.
 
 ## Before you code!
 
