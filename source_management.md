@@ -30,6 +30,7 @@ flowchart TD
     C -->E
     F -->E
     G(HEAR_SITL)
+    H(PX4-AutoPilot)
 ```
 
 **Note** the source dependency graph provides a general rule on how code must be written and reused. e.g. write in `HEAR_util` first and reuse on other dependent modules. If not then move down the graph, i.e. `HEAR_mission` `HEAR_blocks` or `HEAR_interfaces`, and so on.
@@ -59,8 +60,8 @@ A code repo unifying `HEAR_blocks`, `HEAR_mission` and `HEAR_util` in a way to f
 
 ### [HEAR_ROS_bag_reader]()
 
-### [PX4-AutoPilot]()
-This is a re-published (not forked) repo of the original PX4-Autopilot.
+### [PX4-AutoPilot](https://github.com/Mu99-M/PX4-Autopilot)
+This repository includes the PX4 Autopilot Software, the main applications located in the `src/modules` directory.
 
 ### [HEAR_docker]()
 
