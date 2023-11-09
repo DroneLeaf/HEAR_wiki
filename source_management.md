@@ -33,11 +33,13 @@ flowchart TD
     H(PX4-AutoPilot)
 ```
 
-**Note** the source dependency graph provides a general rule on how code must be written and reused. e.g. write in `HEAR_util` first and reuse on other dependent modules. If not then move down the graph, i.e. `HEAR_mission` `HEAR_blocks` or `HEAR_interfaces`, and so on.
+**Note** the source dependency graph provides a general rule on how code must be written and reused. e.g. write in `HEAR_util` first and reuse on other dependent modules. If not then move down the graph, i.e. `HEAR_mission`, `HEAR_blocks` or `HEAR_interfaces`, and so on.
 
 **Converse Note** e.g. if you write a code in `HEAR_util` that gets used only in `HEAR_FC` and you do not see that in the future it would be used in any other repo rather than `HEAR_FC`, then that particular code must be removed from `HEAR_util` and be moved to `HEAR_FC`.
 
 ## Repos list
+(Please copy paste 'Overview' section under each repo)
+
 ### HEAR_blocks
 This repository contains all source files that inherit from the `Block` class, and all the coding infrastructure that supports Blocks coding paradigm like `System` and `Port` classes. This coding infrastructure is under `Blocks_core` folder.
 
@@ -61,7 +63,7 @@ A code repo unifying `HEAR_blocks`, `HEAR_mission` and `HEAR_util` in a way to f
 ### [HEAR_ROS_bag_reader]()
 
 ### [PX4-AutoPilot](https://github.com/Mu99-M/PX4-Autopilot)
-This repository includes the PX4 Autopilot Software, the main applications located in the `src/modules` directory.
+This is a re-published (not forked) repo of the original PX4-Autopilot. It also includes the settings file of PX4 for different variants of UAVs, and the relevant setup information. The main applications located in the `src/modules` directory.
 
 ### [HEAR_docker]()
 
