@@ -22,7 +22,7 @@ So we have in general three layers (+ the code itself):
        1. **Note 1**: If a package is used by the submodule repo then the installation instructions must be inside the submodule. E.g. pcap package is used by HEAR_util, which is a submodule in HEAR_FC and HEAR_MC, then its installation instructions must be inside HEAR_util but neither in HEAR_FC nor HEAR_MC. 
        2. **Note 2**: if a package is needed by multiple repos then document it in one of them, and reference it in the other repos. DO NOT DOCUMENT TWICE!
     2. **How to run**. Only applicable to runnable repos like HEAR_FC, HEAR_MC, and PX4-Autopilot. It must document running in:
-       1. **Testing environment**: e.g. your own PC.
+       1. **Development environment**: e.g. your own PC.
        2. **Deployment environment**: e.g. RPi or Jetson, etc.
        3. Or any other environment that would be added in the future. 
     3. **Contributing**: how to extend the code functions with `hello world` examples.

@@ -2,6 +2,28 @@
 # Managing Dependencies
 **Document Scope**: adding external header/static/dynamic library dependencies to the source code.
 
+# Current Targets
+Detailed information about the targets can be found in HEAR_Docker
+## SITL_UBUNTU20 (Development)
+Hardware: amd64 device
+
+OS: Ubuntu20.04
+
+## RPI_UBUNTU20 (Deployment)
+Hardware: Raspberry Pi 4 Model B
+
+OS: Ubuntu20.04 Server, image link: 
+
+Username: pi, Password: raspberry
+
+
+## ORIN_UBUNTU20 (Deployment)
+
+Hardware: Jetson Orin Nano
+
+OS: Ubuntu20.04 Server, image link:
+
+# Adding Dependencies
 To add dependencies please adhere to the following guidelines:
 
 ## Adding to CMake
@@ -76,12 +98,6 @@ The file `Configurations.cmake` can grow messy easily. So it has to be structure
 ## Documenting
 
 Add installation instructions of the new dependency to the following headline *Installing Dependencies Instructions*. Please follow the same format
-
-# Current Targets
-
-## RPI_
-
-
 
 # Installing Dependencies Instructions (TEMPORARY: Please move to the most suitable repo)
 
