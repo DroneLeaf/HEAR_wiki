@@ -1,5 +1,5 @@
 
-# Adding Dependencies
+# Managing Dependencies
 **Document Scope**: adding external header/static/dynamic library dependencies to the source code.
 
 To add dependencies please adhere to the following guidelines:
@@ -77,7 +77,11 @@ The file `Configurations.cmake` can grow messy easily. So it has to be structure
 
 Add installation instructions of the new dependency to the following headline *Installing Dependencies Instructions*. Please follow the same format
 
-  
+# Current Targets
+
+## RPI_
+
+
 
 # Installing Dependencies Instructions (TEMPORARY: Please move to the most suitable repo)
 

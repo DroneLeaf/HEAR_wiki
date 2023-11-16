@@ -8,6 +8,9 @@ The aim of this document is to document the developer tools that are used within
 - We use vscode with Ubuntu.
 - Extensions of vscode:
   - 'Doxygen Documentation Generator'
+  - ROS for debugging support.
+
+
 
 ## Source Tree Structure at Development Host
 Having the same source tree structure for all developers is quite helpful: it helps avoiding surprises and automating workflows.
