@@ -31,7 +31,7 @@ The aim of this document is to document the developer tools that are used within
       2. HEAR_MC running on the operator machine (qualifies as a Development Target).
    9. PX4 firmware and parameters are uploaded to the correct Pixhawk target as instructed in the PX4-Autopilot repo.
 
-## Source Tree Structure at Development Host
+## Source Tree Structure at Development and Deployment Host
 Having the same source tree structure for all developers is quite helpful: it helps avoiding surprises and automating workflows.
 
 Please adhere to the following source tree structure:

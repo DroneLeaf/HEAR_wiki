@@ -14,7 +14,7 @@ Hardware: Raspberry Pi 4 Model B
 
 OS: Ubuntu20.04 Server, image link: 
 
-Username: pi, Password: raspberry
+Username: pi, Password: raspberry, Home Directory: /home/pi/
 
 
 ## ORIN_UBUNTU20 (Deployment)
@@ -81,9 +81,9 @@ The file `Configurations.cmake` can grow messy easily. So it has to be structure
 
 **Definitions:**
 
-- *Hardware Variant*: this refers to a property of the UAV hardware that exists for every UAV. For example, a UAV must have a propulsion configuration. Further to this example, a UAV can only be EXCLUSIVELY a quadrotor OR a hexarotor, it cannot be without a propuslion.
+- *Hardware Variant*: this refers to a property of the UAV hardware that exists for every UAV. For example, a UAV must have a propulsion configuration. Further to this example, a UAV can only be EXCLUSIVELY a quadrotor OR a hexarotor, it cannot be without a propuslion. Another example is the position measurement source, it might be Optitrack or GPS.
 - *Hardware Components*: this refers to an optional additional property of the UAV. For example, a camera for vision.
-- *Operating Modes*: this is TEMPORARY PROVISION. DC-DFBC is an example of such operating mode. However, all operating modes must be controlled, in the future, from the main calling code.
+- *Operating Modes*: this is TEMPORARY PROVISION. DC-DFBC is an example of such operating mode. However, all operating modes must be controlled, in the future, from the main calling code. Note: will be removed from `Configurations.cmake`. Every operating mode will be an executable program.
 - *Target Systems*: this must be the compute setup that would run HEAR. For example, RPI4_UBUNTU_SERVER_20 means the target is Raspberry PI 4 running Ubuntu Server 20.04.
 - *Features*: These are additional OPTIONAL software features that are not necessary for core operation. Examples include HEAR_WEB that enables licensing and settings retreival.
 - *Software Dependency:* this is the minimal direct dependency. For example, if we need GTM library that depends on OpenCV, and all Features, Target Systems, Hardware Components, and Hardware Variant never depend on OpenCV directly then GTM is a Software Dependency for HEAR, and OpenCV is not.
