@@ -54,7 +54,7 @@ Please see [source management](source_management.md)
 
 
 ## Software Developer Roles
-Having develper roles helps segregating responsibilities and smooth code integration.
+Having developer roles helps segregating responsibilities and smooth code integration.
 
 
 ### Architecture Developers
@@ -68,7 +68,7 @@ Direct clients served:
 
 Current Developers:
 1. Mohamad Chehadeh. github id: MChehadeh
-2. Ahmed Hashem. github id: ahmed-hashim-pro
+2. Ahmed Hashim. github id: ahmed-hashim-pro
 
 ### Algorithms Developers
 
