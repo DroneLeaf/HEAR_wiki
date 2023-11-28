@@ -2,7 +2,7 @@
 
 ## How the code is documented?
 
-Documentation is defined here as all meta-information beyond the compiled code. This would include the programming language, e.g. variable names, and how the code is structured. The documentation follows the illustrated hirearchy:
+Documentation is defined here as all meta-information beyond the compiled code. This would include the programming language, e.g. variable names, and how the code is structured. The documentation follows the illustrated three-layers hirearchy:
 
 ```mermaid
 flowchart TD
@@ -13,7 +13,7 @@ flowchart TD
     D -->F(MissionPipeline class documentation)
     D -->G(... etc.)
 ```
-So we have in general four layers:
+So we have in general three layers (+ the code itself):
 
  1. Entry point: which is `HEAR_wiki`. Anyone who wants to start development for HEAR must be referred to `HEAR_wiki`. 
 
@@ -22,11 +22,13 @@ So we have in general four layers:
        1. **Note 1**: If a package is used by the submodule repo then the installation instructions must be inside the submodule. E.g. pcap package is used by HEAR_util, which is a submodule in HEAR_FC and HEAR_MC, then its installation instructions must be inside HEAR_util but neither in HEAR_FC nor HEAR_MC. 
        2. **Note 2**: if a package is needed by multiple repos then document it in one of them, and reference it in the other repos. DO NOT DOCUMENT TWICE!
     2. **How to run**. Only applicable to runnable repos like HEAR_FC, HEAR_MC, and PX4-Autopilot. It must document running in:
-       1. **Testing environment**: e.g. your own PC.
+       1. **Development environment**: e.g. your own PC.
        2. **Deployment environment**: e.g. RPi or Jetson, etc.
        3. Or any other environment that would be added in the future. 
     3. **Contributing**: how to extend the code functions with `hello world` examples.
     4. **How to debug**. Documents how to use developer tools for effective debugging, and common troubleshooting tips.
+
+      *Note:* Place the media files used in the documentation under a folder named `Media`.
 
 
  3. Comments on the code itself. We use doxygen to support IDE help and auto-generation. Only comment the following:
@@ -35,6 +37,10 @@ So we have in general four layers:
  4. The code it self. It must be self-explanatory and it must adhere to the [coding guideline](coding_guideline.md).
 
 **Important**: Documentation is a liability that we want to minimize. Document using stage 4 above, if not possible, document using stage 3, then stage 2, and last stage 1.
+
+**Rule 1**: Documentation must have full coverage: no hidden parameters or manual configurations must go undocumented.
+
+**Rule 2**: Documentation must have zero duplications, including that it must not document the obvious.
 
 ## Before you code!
 
