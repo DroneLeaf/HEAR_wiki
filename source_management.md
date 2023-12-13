@@ -65,7 +65,8 @@ A code repo unifying `HEAR_blocks`, `HEAR_mission` and `HEAR_util` in a way to f
 ### [PX4-AutoPilot](https://github.com/Mu99-M/PX4-Autopilot)
 This is a re-published (not forked) repo of the original PX4-Autopilot. It also includes the settings file of PX4 for different variants of UAVs, and the relevant setup information. The main applications located in the `src/modules` directory.
 
-### [HEAR_docker]()
+### [HEAR_Docker](https://github.com/ahmed-hashim-pro/HEAR_Docker)
+To cross-compile on your local machine and execute generated code on another one using docker Cross Compilation , To make a full installation of all prerequisites and dependencies needs to start your workspace in that target OS . In Other way , this repo will install ros, cmake, vcpkg and other dependencies on the OS itself for fast dev setup
 
 ### [HEAR_configurations](https://github.com/MChehadeh/HEAR_configurations)
 
