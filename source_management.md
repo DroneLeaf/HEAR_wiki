@@ -18,19 +18,22 @@ graph (visualize on GitHub or Mermaid):
 
 ```mermaid
 flowchart TD
-    A[HEAR_util] -->B(HEAR_mission)
-    A -->C(HEAR_blocks)
-    A -->D(HEAR_FC)
-    A -->F(HEAR_interfaces)
-    B -->D
-    C -->D
-    F -->D
-    A -->E(HEAR_MC)
-    B -->E
-    C -->E
-    F -->E
+    A[HEAR_util] --> B(HEAR_mission)
+    A --> C(HEAR_blocks)
+    A --> D(HEAR_FC)
+    A --> F(HEAR_interfaces)
+    B --> D
+    C --> D
+    F --> D
+    A --> E(HEAR_MC)
+    B --> E
+    C --> E
+    F --> E
     G(HEAR_SITL)
-    H(PX4-AutoPilot)
+    PX4(PX4-AutoPilot)
+    MAVLink(MAVLink) --> MAVROS(MAVROS)
+    MAVLink --> offb(offb)
+    MAVROS --> offb
 ```
 
 **Note** the source dependency graph provides a general rule on how code must be written and reused. e.g. write in `HEAR_util` first and reuse on other dependent modules. If not then move down the graph, i.e. `HEAR_mission`, `HEAR_blocks` or `HEAR_interfaces`, and so on.
@@ -64,6 +67,17 @@ A code repo unifying `HEAR_blocks`, `HEAR_mission` and `HEAR_util` in a way to f
 
 ### [PX4-AutoPilot](https://github.com/Mu99-M/PX4-Autopilot)
 This is a re-published (not forked) repo of the original PX4-Autopilot. It also includes the settings file of PX4 for different variants of UAVs, and the relevant setup information. The main applications located in the `src/modules` directory.
+
+### [offboard_testing](https://github.com/Mu99-M/offboard_testing)
+This repository installs MAVLink, MAVROS and offb packages.
+1. MAVLink: A lightweight communication protocol designed for the exchange of information between unmanned systems and their ground control stations.
+
+2. MAVROS: A ROS package that acts as a bridge between MAVLink-based autopilots and ROS.
+
+3. offb: Enables external ROS nodes to send high-level commands to a MAVLink-enabled autopilot, allowing for advanced and customized control within the ROS ecosystem. The offb node has 3 main jobs:
+    1. Switch to offboard mode and checks if it's disconnected to try switching again.
+    2. Arm the vehicle and checks if it's disarmed to try arming again.
+    3. Publishing values to SITL.
 
 ### [HEAR_Docker](https://github.com/ahmed-hashim-pro/HEAR_Docker)
 To cross-compile on your local machine and execute generated code on another one using docker Cross Compilation , To make a full installation of all prerequisites and dependencies needs to start your workspace in that target OS . In Other way , this repo will install ros, cmake, vcpkg and other dependencies on the OS itself for fast dev setup
