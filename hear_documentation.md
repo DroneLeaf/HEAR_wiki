@@ -1,8 +1,11 @@
 # HEAR Documentation
 
+<!-- - COMMENT AA: General comments: I reviewed the first section. Overall it's very good. Please check my comments for your review. The main thing that lacks now is to have one full coherent example that guides the reader to write their own first block, system, executable, and run them. In other words we need full Hellow world example. There are some examples already under HEAR_SYSTEMS you can link them here. -->
+
 ## 1. HEAR_FC Essentials
 
 ### 1.1. Structure of a HEAR Code
+<!-- - COMMENT AA: This is the structure of HEAR_FC only right? HEAR_Mission has different structure using elements and pipelines-->
 <!-- - Brief overview of the block -> system -> optional system of systems -> executable structure. -->
 
 The HEAR code follows a modular structure consisting of blocks, systems, optional system of systems, and executables:
@@ -11,9 +14,10 @@ The HEAR code follows a modular structure consisting of blocks, systems, optiona
 
 2. Systems: Systems connect multiple blocks together to form a coherent functionality. Systems can also be nested to create a system of systems.
 
-3. Executables: Executables are the final runnable components of the HEAR code. They are created using launch files.
+3. Executables: Executables are the final runnable components of the HEAR code. They are created using launch files. <!-- - COMMENT AA: executables are not created using launch file. You cna instead specify that each executable is a ros node that is compiled using catkin, and can be run using a launch file -->
 
 ### 1.2. HEAR Repositories
+<!-- - COMMENT AA: Shall this be first? before th estructure? -->
 <!-- - Description of HEAR_Blocks, HEAR_util, HEAR_Interfaces, and their functions. -->
 <!-- NOTE: This sub-section is taken from source_management.md -->
 
@@ -28,6 +32,7 @@ This repository includes all functionalities that do not fit in the Blocks or Pi
 
 #### HEAR_Interfaces
 This repository contains all source files that inherits from the `InterfaceController` class and extends `InterfaceFactory` class. The role of this repo is to provide framing/deframing infrastructure of specific protocols and make them ready for consumption within Blocks coding paradigm.
+<!-- - COMMENT AA: Mention here the current interfaces that we support (ROS, MAVLINK, System Interface that is hear-specific, etc ...) -->
 
 #### HEAR_FC
 A code repo unifying `HEAR_blocks`, `HEAR_mission` and `HEAR_util` in a way to form a fully functional flight controller.
@@ -54,7 +59,7 @@ This repository installs MAVLink, MAVROS and offb packages.
     3. Publishing values to SITL.
 
 #### [HEAR_Docker](https://github.com/ahmed-hashim-pro/HEAR_Docker)
-To cross-compile on your local machine and execute generated code on another one using docker Cross Compilation , To make a full installation of all prerequisites and dependencies needs to start your workspace in that target OS . In Other way , this repo will install ros, cmake, vcpkg and other dependencies on the OS itself for fast dev setup
+To cross-compile on your local machine and execute generated code on another one using docker Cross Compilation , To make a full installation of all prerequisites and dependencies needed to start your workspace in that target OS . In other words , this repo will install ros, cmake, vcpkg and other dependencies on the OS itself for fast dev setup
 
 #### [HEAR_configurations](https://github.com/MChehadeh/HEAR_configurations)
 
@@ -68,10 +73,20 @@ To cross-compile on your local machine and execute generated code on another one
 - Explanation of different port types and main methods within a block (process, processAsync, init, reset, etc.). -->
 
 In the HEAR framework, blocks are the basic building units that process data. Blocks can have synchronous (sync) ports and asynchronous (async) ports for. This guide will walk you through the process of creating a block with both sync and async ports.
+<!-- - COMMENT AA: explain here the Blocks have two main methods, process and processAsync. Where process is meant to read from input syncronous ports and write to output synchronous ports, similar for process Async -->
+<!-- - COMMENT AA: Also here provide brief explanation on the different subfolder within HEAR_Blocks (HEAR_navigation, HEAR_math, etc ....). Highlight that if a new folder was created, then you would need to add it to cmakefiles -->
+
 
 #### Step 1: Define the Block Class
 
 First, create a new C++ header file for your block (e.g., `MyBlock.hpp`) and define the block class. In the block class, you will define the input and output ports, as well as the methods for processing data.
+<!-- - COMMENT AA: you should highlight some main points here: - should inherit from Block class, all ports should be defined in the header file and should have a corresponding entry in the enums -->
+<!-- - COMMENT AA: where should this header file be located? -->
+
+<!-- - COMMENT AA: Is there anything that we need to highlight regarding the reset() method? -->
+
+
+<!-- - COMMENT AA: What are the supported Input and Output types? If a custom type we need to create, how can it be done? (If this is part of a seperate documentation, then we at least need to mention it) -->
 
 ```cpp
 #pragma once
@@ -130,6 +145,8 @@ void MyBlock::process() {
     MyInputType sync_input_data;
     _sync_input_port->read(sync_input_data);
 
+    // Perform all needed processing here, and store value in output variable
+
     // Write data to output port
     _sync_output_port->write(sync_output_data);
 }
@@ -153,7 +170,12 @@ std::string MyBlock::getTypeDescription() {
 } // namespace HEAR
 ```
 
+
+<!-- - COMMENT AA: Can we provide here a standard example of a block that developers can refer to, for instance, the Multipy block as a reference for sync ports, and another block type for async ports -->
+
 #### Step 3: Use the Block
+
+<!-- - COMMENT AA: Since this is actually something that is done in a System, shall we instead move this to the system section? Here it would suffice to briefly summarize that blocks are connected in a system-->
 
 Once you have created a block, you can use it in your system and connect its ports to other blocks' ports. Here's how you can do it in your system:
 
@@ -188,9 +210,13 @@ This completes the process of using a block and connecting its ports in the HEAR
 
 In the HEAR framework, a system is a collection of connected blocks that work together to achieve a specific functionality. Here's a template for creating a system and connecting multiple blocks through it.
 
+<!-- - COMMENT AA: First explain where are the systems located? and how are they organized in folders? How are these folders linked to the CMakeLists -->
+
 #### Step 1: Define the System Class
 
 First, create a new C++ header file for your system (e.g., `MySystem.hpp`) and define the system class. In the system class, you will define the input and output ports, as well as the blocks that constitute the system.
+
+<!-- - COMMENT AA: do systems have input and output ports? -->
 
 ```cpp
 #pragma once
@@ -266,7 +292,15 @@ void MySystem::processAsync() {
 }
 ```
 
+<!-- - COMMENT AA: I believe it's better to explain here how to connect blocks, since now we can highlight that they should be implemented in the initBlocksLayout method-->
+
+<!-- - COMMENT AA: It's also important here to show an example of using the system interface-->
+
+
+
 #### Creating a system of systems
+
+<!-- - COMMENT AA: First, please explain why would we need a system for systems? for instance, explain that we might need to group different systems together like doing state estimation and control. In such a case, we need to run both systems and interchange information between them-->
 
 In the system class, you will define the subsystems and their initialization.
 
@@ -309,6 +343,8 @@ void MySystem::initBlocksLayout() {
     this->addBlock(subsystem1, "Subsystem1_Name");
 }
 ```
+<!-- - COMMENT AA: Here you should explain how we can interchange information between two systems using the system interface-->
+
 
 ### 1.5. Creating an Executable
 <!-- - Steps to create an executable and a launch file. -->
@@ -320,6 +356,9 @@ Create a directory at `/HEAR_FC/src/HEAR_FC/Flight_controller/HEAR_executables/s
 #### Step 2: Create a CPP File for the system:
 
 Inside the `example` directory, create a `custom_executable.cpp` file with the system code.
+
+<!-- - COMMENT AA: Explain here that this should be a ros node, and provide an example showing the main components of a ros node. Also show here that you actually use the systems -->
+
 
 #### Step 3: Add a CMake File:
 
