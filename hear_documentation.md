@@ -4,89 +4,99 @@
 
 ## 1. HEAR_FC Essentials
 
-### 1.1. Structure of a HEAR Code
-<!-- - COMMENT AA: This is the structure of HEAR_FC only right? HEAR_Mission has different structure using elements and pipelines-->
+### 1.1. Starting with HEAR
+<!-- - Description of HEAR_Blocks, HEAR_util, HEAR_Interfaces, and their functions. -->
+<!-- NOTE: This sub-section is taken from source_management.md -->
+
+Please see [source management](source_management.md) for more information about HEAR Repositories.
+
+Please see how to [Get Started with the Development](https://github.com/HazemElrefaei/HEAR_FC/tree/devel?tab=readme-ov-file#getting-started-with-the-development) from here.
+
+### 1.2. Structure of a HEAR Code
 <!-- - Brief overview of the block -> system -> optional system of systems -> executable structure. -->
 
-The HEAR code follows a modular structure consisting of blocks, systems, optional system of systems, and executables:
+#### HEAR_FC
+
+The HEAR_FC code follows a modular structure consisting of **blocks**, **systems**, optional **system of systems**, and **executables**:
 
 1. Blocks: Blocks are the building unit of HEAR, representing individual components of a system. They can have synchronous (sync) and asynchronous (async) ports for communication.
 
 2. Systems: Systems connect multiple blocks together to form a coherent functionality. Systems can also be nested to create a system of systems.
 
-3. Executables: Executables are the final runnable components of the HEAR code. They are created using launch files. <!-- - COMMENT AA: executables are not created using launch file. You cna instead specify that each executable is a ros node that is compiled using catkin, and can be run using a launch file -->
+3. Executables: Executables in the HEAR framework are the final runnable components of the code. They are typically ROS nodes that are compiled using Catkin and can be launched using ROS launch files. Each executable represents a specific functionality or module of the system.
 
-### 1.2. HEAR Repositories
-<!-- - COMMENT AA: Shall this be first? before th estructure? -->
-<!-- - Description of HEAR_Blocks, HEAR_util, HEAR_Interfaces, and their functions. -->
-<!-- NOTE: This sub-section is taken from source_management.md -->
+ <!-- - COMMENT AA: executables are not created using launch file. You cna instead specify that each executable is a ros node that is compiled using catkin, and can be run using a launch file -->
 
-#### HEAR_blocks
-This repository contains all source files that inherit from the `Block` class, and all the coding infrastructure that supports Blocks coding paradigm like `System` and `Port` classes. This coding infrastructure is under `Blocks_core` folder.
+#### HEAR_Mission
 
-#### HEAR_mission
-This repository contains all source files that inherits from the `MissionElement` class, and all the coding infrastructure that supports the Pipeline coding paradigm like `MissionPipeline` and `MissionScenario` classes. This coding infrastructure is under `Mission_core` folder.
+HEAR_Mission are composed of **mission elements** and **pipelines**:
 
-#### HEAR_util
-This repository includes all functionalities that do not fit in the Blocks or Pipeline coding paradigms. Ideally, a functionality must be implemented here first to be encapsulated later by a Block or a MissionElement. For example, a code to write to a file must be written as a function in `HEAR_util` and then this function gets called within a `Block` or a `MissionElement`.
+1. Mission element: Represents a specific task or action.
 
-#### HEAR_Interfaces
-This repository contains all source files that inherits from the `InterfaceController` class and extends `InterfaceFactory` class. The role of this repo is to provide framing/deframing infrastructure of specific protocols and make them ready for consumption within Blocks coding paradigm.
-<!-- - COMMENT AA: Mention here the current interfaces that we support (ROS, MAVLINK, System Interface that is hear-specific, etc ...) -->
+2. Pipeline: A sequence of mission elements that form a complete mission scenario.
 
-#### HEAR_FC
-A code repo unifying `HEAR_blocks`, `HEAR_mission` and `HEAR_util` in a way to form a fully functional flight controller.
+3. Graph Display (Optional): Display for graphs, created using GraphDisplayDriverG (if GUI_Display is defined).
 
-#### [HEAR_MC](https://github.com/HazemElrefaei/HEAR_MC)
-A code repo unifying `HEAR_blocks`, `HEAR_mission` and `HEAR_util` in a way to form a fully functional mission management software.
-
-#### [HEAR_SITL](https://github.com/MChehadeh/HEAR_SITL)
-
-#### [HEAR_ROS_bag_reader]()
-
-#### [PX4-AutoPilot](https://github.com/Mu99-M/PX4-Autopilot)
-This is a re-published (not forked) repo of the original PX4-Autopilot. It also includes the settings file of PX4 for different variants of UAVs, and the relevant setup information. The main applications located in the `src/modules` directory.
-
-#### [offboard_testing](https://github.com/Mu99-M/offboard_testing)
-This repository installs MAVLink, MAVROS and offb packages.
-1. MAVLink: A lightweight communication protocol designed for the exchange of information between unmanned systems and their ground control stations.
-
-2. MAVROS: A ROS package that acts as a bridge between MAVLink-based autopilots and ROS.
-
-3. offb: Enables external ROS nodes to send high-level commands to a MAVLink-enabled autopilot, allowing for advanced and customized control within the ROS ecosystem. The offb node has 3 main jobs:
-    1. Switch to offboard mode and checks if it's disconnected to try switching again.
-    2. Arm the vehicle and checks if it's disarmed to try arming again.
-    3. Publishing values to SITL.
-
-#### [HEAR_Docker](https://github.com/ahmed-hashim-pro/HEAR_Docker)
-To cross-compile on your local machine and execute generated code on another one using docker Cross Compilation , To make a full installation of all prerequisites and dependencies needed to start your workspace in that target OS . In other words , this repo will install ros, cmake, vcpkg and other dependencies on the OS itself for fast dev setup
-
-#### [HEAR_configurations](https://github.com/MChehadeh/HEAR_configurations)
-
-#### [DNN_system_ID](https://github.com/abdullaayyad96/DNN_system_ID)
-
-
-
+Missions are executed sequentially, with each mission element completing before the next one begins.
 
 ### 1.3. Creating a Block
 <!-- - Walkthrough on creating a block with sync and async ports.
 - Explanation of different port types and main methods within a block (process, processAsync, init, reset, etc.). -->
 
-In the HEAR framework, blocks are the basic building units that process data. Blocks can have synchronous (sync) ports and asynchronous (async) ports for. This guide will walk you through the process of creating a block with both sync and async ports.
+In the HEAR framework, blocks are the basic building units that process data. They can have synchronous (sync) ports for handling synchronous data and asynchronous (async) ports for handling asynchronous data. Blocks have two main methods for processing data: `process` and `processAsync`.
+
+1. `process` Method:
+
+    1. This method is used to process synchronous data.
+    2. It reads data from input synchronous ports and writes data to output synchronous ports.
+    3. Typically, the `process` method is called in a loop to continuously process data from input ports and produce output data.
+
+2. `processAsync` Method:
+
+    1. This method is used to process asynchronous data.
+    2. It reads data from input asynchronous ports and writes data to output asynchronous ports.
+    3. Unlike the `process` method, the `processAsync` method is called only when new asynchronous data is available.
+
 <!-- - COMMENT AA: explain here the Blocks have two main methods, process and processAsync. Where process is meant to read from input syncronous ports and write to output synchronous ports, similar for process Async -->
 <!-- - COMMENT AA: Also here provide brief explanation on the different subfolder within HEAR_Blocks (HEAR_navigation, HEAR_math, etc ....). Highlight that if a new folder was created, then you would need to add it to cmakefiles -->
 
+If you create a new folder for your blocks, you will need to add it to the `CMakeLists.txt` file in `Flight_controller/HEAR_Blocks` directory. This ensures that the build system includes your new folder and its contents in the build process. You can do this by modifying the `file(GLOB ...)` command to include the new folder. For example, if you create a new folder named `src/HEAR_new_folder`, you would add it to the `file(GLOB ...)` command like this:
+
+```cmake
+file(GLOB ${PROJECT_NAME}_SRCs 
+    # List of other folders here
+    src/HEAR_new_folder/*.cpp  # Add your new folder here
+)
+```
+
+> Note: No need to add any new added blocks, just the new folders.
+>
+> Note: The blocks are organized together depending on thier functionalities.
+
+Here's a guide on creating a block:
 
 #### Step 1: Define the Block Class
 
-First, create a new C++ header file for your block (e.g., `MyBlock.hpp`) and define the block class. In the block class, you will define the input and output ports, as well as the methods for processing data.
+Create a new C++ header file for your block (e.g., `MyBlock.hpp`) and define the block class. Main points to apply when writing a header file for a block:
+
+1. **Inherit from Block Class**: Your custom block class should inherit from the Block class provided by the HEAR framework. This ensures that your block behaves correctly within the framework.
+
+2. **Define Ports in Header File**: All input and output ports should be defined in the header file of your block class. This allows other parts of your code to interact with the ports.
+
+3. **Use Enums for Port IDs**: Define enums for input and output port IDs. These enums should be used to identify ports when creating them and when connecting them to other blocks.
+
+4. **Locate the header file in the include path**: `/Flight_controller/HEAR_Blocks/include`
+
 <!-- - COMMENT AA: you should highlight some main points here: - should inherit from Block class, all ports should be defined in the header file and should have a corresponding entry in the enums -->
+
 <!-- - COMMENT AA: where should this header file be located? -->
 
 <!-- - COMMENT AA: Is there anything that we need to highlight regarding the reset() method? -->
 
 
 <!-- - COMMENT AA: What are the supported Input and Output types? If a custom type we need to create, how can it be done? (If this is part of a seperate documentation, then we at least need to mention it) -->
+
+Here is an example code:
 
 ```cpp
 #pragma once
@@ -173,48 +183,26 @@ std::string MyBlock::getTypeDescription() {
 
 <!-- - COMMENT AA: Can we provide here a standard example of a block that developers can refer to, for instance, the Multipy block as a reference for sync ports, and another block type for async ports -->
 
-#### Step 3: Use the Block
-
-<!-- - COMMENT AA: Since this is actually something that is done in a System, shall we instead move this to the system section? Here it would suffice to briefly summarize that blocks are connected in a system-->
-
-Once you have created a block, you can use it in your system and connect its ports to other blocks' ports. Here's how you can do it in your system:
-
-```cpp
-auto my_block = new MyBlock();
-this->addBlock(my_block, "MyBlock_Name");
-```
-
-To connect ports between blocks, use the connect method. For example, to connect the output port of Block1 to the input port of my_block:
-
-```cpp
-this->connect(Block1->getOutputPort<OutputType>(Block1::OP::OUTPUT_PORT_ID), my_block->getInputPort<InputType>(MyBlock::IP::INPUT_PORT_ID));
-```
-
-To connect the output port of my_block to the input port of Block2:
-
-```cpp
-this->connect(my_block->getOutputPort<OutputType>(MyBlock::OP::OUTPUT_PORT_ID), Block2->getInputPort<InputType>(Block2::IP::INPUT_PORT_ID));
-```
-
-Similary, to connect async ports between blocks, use the connectAsync method. For example, to connect the async output port of Block3 to the async input port of my_block:
-
-```cpp
-this->connectAsync(Block3->getAsyncOutputPort<AsyncOutputType>(Block3::OP::ASYNC_OUTPUT_PORT_ID), my_block->getAsyncInputPort<AsyncInputType>(MyBlock::IP::ASYNC_INPUT_PORT_ID));
-```
-
-This completes the process of using a block and connecting its ports in the HEAR framework. You can use similar steps to use other blocks and connect their ports as needed.
-
 ### 1.4. Creating a System
 <!-- - How to connect multiple blocks through a system.
 - Creating a system of systems. -->
 
-In the HEAR framework, a system is a collection of connected blocks that work together to achieve a specific functionality. Here's a template for creating a system and connecting multiple blocks through it.
+In the HEAR framework, a system is a collection of connected blocks that work together to achieve a specific functionality. Systems are located within the `Flight_controller/HEAR_Blocks/src/HEAR_systems` directory. These folders are linked to the `CMakeLists.txt` file in `Flight_controller/HEAR_Blocks` directory using the `file(GLOB ...)` command to. For example, if you create a new folder  named `src/HEAR_systems/HEAR_new_folder/*.cpp`, you would add it to the `file(GLOB ...)` command like this:
+
+```cmake
+file(GLOB ${PROJECT_NAME}_SRCs 
+    # List of other folders here
+    src/HEAR_systems/HEAR_new_folder/*.cpp  # Add your new folder here
+)
+```
 
 <!-- - COMMENT AA: First explain where are the systems located? and how are they organized in folders? How are these folders linked to the CMakeLists -->
 
+Here's a template for creating a system and connecting multiple blocks through it.
+
 #### Step 1: Define the System Class
 
-First, create a new C++ header file for your system (e.g., `MySystem.hpp`) and define the system class. In the system class, you will define the input and output ports, as well as the blocks that constitute the system.
+First, create a new C++ header file for your system (e.g., `MySystem.hpp`) and define the system class.
 
 <!-- - COMMENT AA: do systems have input and output ports? -->
 
@@ -294,15 +282,52 @@ void MySystem::processAsync() {
 
 <!-- - COMMENT AA: I believe it's better to explain here how to connect blocks, since now we can highlight that they should be implemented in the initBlocksLayout method-->
 
+#### Step 3: Defining and Connecting Blocks In A System
+
+<!-- - COMMENT AA: Since this is actually something that is done in a System, shall we instead move this to the system section? Here it would suffice to briefly summarize that blocks are connected in a system-->
+
+Blocks are connected in a system using the `initBlocksLayout()` method. This method is called when the system is initialized and is used to define the layout of blocks within the system and connect their ports.
+
+Here's an example of how you can use `initBlocksLayout()` in your system to connect blocks' ports:
+
+```cpp
+auto my_block = new MyBlock();
+this->addBlock(my_block, "MyBlock_Name");
+```
+
+To connect ports between blocks, use the connect method. For example, to connect the output port of Block1 to the input port of my_block:
+
+```cpp
+this->connect(Block1->getOutputPort<OutputType>(Block1::OP::OUTPUT_PORT_ID), my_block->getInputPort<InputType>(MyBlock::IP::INPUT_PORT_ID));
+```
+
+To connect the output port of my_block to the input port of Block2:
+
+```cpp
+this->connect(my_block->getOutputPort<OutputType>(MyBlock::OP::OUTPUT_PORT_ID), Block2->getInputPort<InputType>(Block2::IP::INPUT_PORT_ID));
+```
+
+Similary, to connect async ports between blocks, use the connectAsync method. For example, to connect the async output port of Block3 to the async input port of my_block:
+
+```cpp
+this->connectAsync(Block3->getAsyncOutputPort<AsyncOutputType>(Block3::OP::ASYNC_OUTPUT_PORT_ID), my_block->getAsyncInputPort<AsyncInputType>(MyBlock::IP::ASYNC_INPUT_PORT_ID));
+```
+
+This completes the process of using a block and connecting its ports in the HEAR framework. You can use similar steps to use other blocks and connect their ports as needed.
+
 <!-- - COMMENT AA: It's also important here to show an example of using the system interface-->
-
-
 
 #### Creating a system of systems
 
 <!-- - COMMENT AA: First, please explain why would we need a system for systems? for instance, explain that we might need to group different systems together like doing state estimation and control. In such a case, we need to run both systems and interchange information between them-->
 
-In the system class, you will define the subsystems and their initialization.
+Creating a system of systems allows us to group different systems together to achieve a more complex functionality. This approach is useful when we need to coordinate the operation of multiple systems, such as in the case of state estimation and control.
+
+For example, consider a drone that needs to navigate autonomously. We can create two separate systems: one for state estimation, which determines the drone's position and orientation based on sensor data, and another for control, which generates commands to steer the drone.
+
+By creating a system of systems, we can run both the state estimation and control systems concurrently and exchange information between them. This allows the control system to adjust its commands based on the estimated state of the drone, enabling more precise and responsive navigation.
+
+In the system class, you will define the subsystems and their initialization to start in creating a system of systems.
 
 ```cpp
 #pragma once
@@ -343,8 +368,15 @@ void MySystem::initBlocksLayout() {
     this->addBlock(subsystem1, "Subsystem1_Name");
 }
 ```
+
 <!-- - COMMENT AA: Here you should explain how we can interchange information between two systems using the system interface-->
 
+To interchange information between two systems, you can connect their ports in the parent system. Here's an example of how you can do it:
+
+```cpp
+// Connect output port of subsystem1 to input port of subsystem2
+this->connect(subsystem1->getOutputPort<float>("output_port_name"), subsystem2->getInputPort<float>("input_port_name"));
+```
 
 ### 1.5. Creating an Executable
 <!-- - Steps to create an executable and a launch file. -->
@@ -422,6 +454,10 @@ Create a launch file at `/HEAR_FC/src/HEAR_FC/Flight_controller/launch` (e.g., `
 
 ## 3. HEAR Configurations / Parameters
 
+<!-- MK: This section still needs details. -->
+
+HEAR configurations include parameters that can alter the drone's performance or behavior without the need to recompile. All parameters are stored in JSON files, organized in a structured manner.
+
 ### 3.1. HEAR Configurations Structure
 <!-- - Overview of UAV_types, instances, Systems, etc. -->
 
@@ -495,8 +531,25 @@ A mission pipeline is a sequence of mission elements that define a complete miss
 
 ## 5. Testing and Debugging
 
+This section provides a guide for testing and debugging regarding: 
+
+- [Testing in Gazebo SITL](#51-testing-in-gazebo-sitl)
+- [Testing in HEAR SITL](#52-testing-in-hear-sitl)
+- [QGroundControl Usage](#53-qgroundcontrol)
+- [Debugging ROS Topics/Services](#54-debugging-ros-topicsservices)
+- [Debugging MAVLink Messages](#55-debugging-mavlink-messages)
+
 ### 5.1. Testing in Gazebo SITL
-- How to run and test the system in Gazebo SITL.
+
+To run and test the system in Gazebo SITL, you can follow these steps:
+
+1. Install PX4-Autopilot by referring to the guidelines in [source management](source_management.md).
+
+2. Launch Gazebo with the PX4 SITL simulation:
+
+    ```bash
+    make px4_sitl gazebo
+    ```
 
 ### 5.2. Testing in HEAR SITL
 <!-- - How to run and test the system in HEAR SITL for both quadrotor and hexarotor. -->
@@ -525,7 +578,7 @@ A mission pipeline is a sequence of mission elements that define a complete miss
 
 2. Update Configuration:
 
-    Change the `"default_uav_instance_name"` parameter in `UAV_instances` in the configurations to a valid hexarotor vehicle.
+    Change the `"default_uav_instance_name"` (e.g. `Sim_Big_Hexa_DCDC`) parameter in `UAV_instances` in the configurations to a valid hexarotor vehicle.
 
 
 #### Testing Process (for both Quadrotor or Hexarotor)
@@ -568,25 +621,66 @@ A mission pipeline is a sequence of mission elements that define a complete miss
     rostopic echo /mavros/vehicle_local_position/vehicle_local_pos
     ```
 
-### 5.3. Debugging ROS Topics/Services
+### 5.3. QGroundControl
+
+1. Installing QGroundControl:
+   - Download and install QGroundControl from the [QGroundControl website](https://qgroundcontrol.com/).
+
+2. Connecting to the Vehicle:
+   - Connect your vehicle to your computer using a USB cable or telemetry radio.
+
+3. Opening QGroundControl:
+   - Launch QGroundControl on your computer.
+
+4. Connecting to the Vehicle:
+   - In QGroundControl, click on the **Connect** button in the top toolbar. Select the appropriate connection option (USB, telemetry radio, etc.) to connect to your vehicle.
+
+5. Monitoring Vehicle Status:
+   - Once connected, monitor the status of your vehicle in the **Mavlink inspector**.
+
+6. Checking Parameters:
+   - View and modify vehicle parameters in QGroundControl. This allows you to tune settings and configure the behavior of your vehicle.
+
+### 5.4. Debugging ROS Topics/Services
 <!-- - How to debug and check ROS topics/services. -->
 
 To debug and check ROS topics/services, you can use the `TRACE_SYNC_OUT` macro. This macro is used to trace the output of a ROS topic subscriber.
 
-```cpp
-// Assuming `sub_topic` is your subscriber and `MsgType` is the message type
-auto output_port = sub_topic->getOutputPort<MsgType>(ROSUnit_Subscriber<MsgType>::OP::OUTPUT);
+1. Usage of `TRACE_SYNC_OUT` Macro:
 
-TRACE_SYNC_OUT(output_port, MsgType, itfc_factory, "trace_name")
-```
+    ```cpp
+    // Assuming `sub_topic` is your subscriber and `MsgType` is the message type
+    auto output_port = sub_topic->getOutputPort<MsgType>(ROSUnit_Subscriber<MsgType>::OP::OUTPUT);
 
-Replace `sub_topic` with your actual subscriber pointer, `MsgType` with your message type, `itfc_factory` with your interface factory, and `"trace_name"` with a descriptive name for the trace. This macro will help you monitor the output of your ROS topic subscriber for debugging purposes using this command:
+    TRACE_SYNC_OUT(output_port, MsgType, itfc_factory, "trace_name")
+    ```
 
-```bash
-rostopic echo trace_name
-```
+    - Replace `sub_topic` with your actual subscriber pointer.
+    - Replace `MsgType` with your message type (e.g., `Vector3D<float>`).
+    - Replace `itfc_factory` with your interface factory.
+    - Replace `"trace_name"` with a descriptive name for the trace.
 
-### 5.4. Debugging MAVLink Messages
+2. Example Usage:
+
+    Let's say you have a subscriber for a `Vector3D<float>` message type, you can use the `TRACE_SYNC_OUT` macro like this::
+
+    ```cpp
+    auto output_port = sub_angle_u->getOutputPort<Vector3D<float>>(ROSUnit_Subscriber<Vector3D<float>>::OP::OUTPUT);
+    
+    TRACE_SYNC_OUT(output_port, Vector3D<float>, itfc_fact_ros, "actuation_sys/sub_angle_u");
+    ```
+
+3. Monitoring the Trace:
+
+    After adding the trace, you can monitor the output using the following command:
+
+    ```bash
+    rostopic echo actuation_sys/sub_angle_u
+    ```
+
+    This command will display the data being published to the `actuation_sys/sub_angle_u` topic, allowing you to debug and check the output of your ROS topic subscriber.
+
+### 5.5. Debugging MAVLink Messages
 <!-- - How to debug and check MAVLink messages using Wireshark. -->
 #### Step 1: Generate MAVLink Messages using mavgen
 
