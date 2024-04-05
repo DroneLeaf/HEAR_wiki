@@ -457,13 +457,16 @@ Create a launch file at `/HEAR_FC/src/HEAR_FC/Flight_controller/launch` (e.g., `
 <!-- MK: This section still needs details. -->
 
 HEAR configurations include parameters that can alter the drone's performance or behavior without the need to recompile. All parameters are stored in JSON files, organized in a structured manner.
+<!-- Comment AA: Add here a brief description on the purpose of the parameters in HEAR Configurations, they are meant to include all parameters that can alter the drone's performance or behaviour without the need to recompile  -->
 
+<!-- Comment AA: You also need to describe here that all parameters are stored in Json files, and that the files are organized in a structured manner   -->
 ### 3.1. HEAR Configurations Structure
 <!-- - Overview of UAV_types, instances, Systems, etc. -->
 
 HEAR configurations are structured around defining various aspects of the UAV setup, including UAV_types, instances, systems, etc. This structured approach helps in organizing and managing UAV systems efficiently.
 
 - UAV_types: Defines the different types of UAVs in the system, such as quadcopters, hexacopters, etc.
+  <!-- Comment AA: Highlight the structure of UAV_instances (each instant has it's own folder, and in that folder is a general.json file that containt the parameters of that instance ....    -->
 
     - Examples: Big_Hexa_DCDC, Quad, Octa
 
@@ -472,14 +475,21 @@ HEAR configurations are structured around defining various aspects of the UAV se
     - Example: UAV1, Sim_Big_Hexa_DCDC
 
 - Systems: Used to specify PX4 control and communication settings.
+<!-- Comment AA: Add more example on the systems here. Mainly parameters related to optitrack, Simulator, Propulsions, etc ...  -->
+
 
 
 ### 3.2. Reading Parameters
 <!-- - How to read a parameter from HEAR Configurations. -->
+<!-- Comment AA: This needs much more details, explain that HEAR contains a parameters interface that is tasked with reading parameters from the Configurations directory and providing them whenever needed. Highlight that we usually use this parameter interface in the system level  -->
 You can read parameters from configurations, such as system settings, instances, types, etc. 
 
 <!-- - Example of reading a parameter from Systems, instances, types, etc. -->
 Here's an example of how to read a parameter from HEAR Configurations:
+
+<!-- Comment AA: Where is this code usually placed?? this need to be highlighted -->
+
+<!-- Comment AA: the code below assumes the user knows what `config_ctrl` is? where is it declared and what is it? -->
 
 ```cpp
 UAVConfigController* config_ctrl = dynamic_cast<UAVConfigController*>(intfc_fact_config->getController());
@@ -496,12 +506,15 @@ auto use_mavros = config_ctrl->getValueFromFile<bool>(config_ctrl->getSystemsSet
 
 In this example, we use `UAVConfigController` to read a boolean parameter `px4_over_mavros` from the system settings file. Based on the value read, the code initializes the MAVROS interface if `px4_over_mavros` is set to true.
 
-<!-- - Supported variable types. -->
+<!-- Comment AA:You can refer the user to a coupel of systems here where reading from parameters is used, such that they can refer back into it. -->
 
+<!-- - Supported variable types. -->
+<!-- Comment AA: Where are the supported variable types?. -->
 
 ### 3.3. Adding a New Parameter File
 - Adding a new parameter file related to a new system.
 - Reading from a new file.
+<!-- Comment AA: Where is this? -->
 
 ## 4. HEAR Missions <!-- TODO: MK: this section still needs more work on it -->
 
@@ -554,16 +567,18 @@ To run and test the system in Gazebo SITL, you can follow these steps:
 ### 5.2. Testing in HEAR SITL
 <!-- - How to run and test the system in HEAR SITL for both quadrotor and hexarotor. -->
 <!-- - Parameters that should be changed. -->
+<!--Comment AA: First explain what is HEAR SITL, and how is it different from gazebo -->
 
 #### Setting Up Quadrotor
 
 1. Build px4 in sitl (repo: PX4-AutoPilot, dev branch):
 
+<!--Comment AA: is the hear_quad updates pushed to github? -->
     ```bash
     cd ~/PX4-Autopilot
     make px4_sitl_default hear_quad
     ```
-2. Update Configuration:
+1. Update Configuration:
 
     Change the `"default_uav_instance_name"` parameter in `UAV_instances` in the configurations to a valid quadrotor vehicle.
 
@@ -583,6 +598,7 @@ To run and test the system in Gazebo SITL, you can follow these steps:
 
 #### Testing Process (for both Quadrotor or Hexarotor)
 
+<!--Comment AA: This is optional, only if running through mavros. We can also run it through mavlink. In our next call I can show you how to run through mavlink-->
 1. Launch `px4.launch` node (repo: offboard_testing)
 
     ```bash
@@ -689,14 +705,15 @@ To debug and check ROS topics/services, you can use the `TRACE_SYNC_OUT` macro. 
     - Use [mavgen](https://mavlink.io/en/getting_started/generate_libraries.html) to generate the Lua script for your custom MAVLink messages from the XML description of your messages (found at `/PX4-Autopilot/src/modules/mavlink/mavlink/message_definitions/v1.0/common.xml`).
 
 2. Install Wireshark:
+    <!--Comment AA: Can you add pictures for this process? -->
     
     - Download and install [Wireshark](https://www.wireshark.org/).
 
-3. Locate the Wireshark plugins directory:
+4. Locate the Wireshark plugins directory:
 
     - The plugins directory can be found at `/usr/lib/x86_64-linux-gnu/wireshark/plugins` for linux users. Please note that this path could be different for different devices.
 
-4. Place your Lua script in the Wireshark plugins directory.
+5. Place your Lua script in the Wireshark plugins directory.
 
     - Copy or move the Lua script generated by mavgen into the new directory.
 
