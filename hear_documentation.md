@@ -1,4 +1,4 @@
-# HEAR Documentation
+# HEAR Archeticture Documentation
 
 <!-- - COMMENT AA: General comments: I reviewed the first section. Overall it's very good. Please check my comments for your review. The main thing that lacks now is to have one full coherent example that guides the reader to write their own first block, system, executable, and run them. In other words we need full Hellow world example. There are some examples already under HEAR_SYSTEMS you can link them here. -->
 
