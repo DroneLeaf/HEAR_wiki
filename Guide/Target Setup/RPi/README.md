@@ -51,7 +51,7 @@ sudo ./rpiboot
 
 > Then wait untl flashing is completed successfully. ☕🍪
 
-
+9- After flashing is complete, Set raspberry pi to normal mode if you use emmc version.
 
 ### Full System Installation
 
