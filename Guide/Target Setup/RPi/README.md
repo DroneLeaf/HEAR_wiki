@@ -58,6 +58,9 @@ sudo ./rpiboot
 > this step depends on `HEAR_CLI` https://github.com/ahmed-hashim-pro/HEAR_CLI
 
 1-Clone HEAR_CLI
+```
+git clone https://github.com/ahmed-hashim-pro/HEAR_CLI
+```
 
 2- Follow hear-cli installation instructions in HEAR_CLI repo  https://github.com/ahmed-hashim-pro/HEAR_CLI?tab=readme-ov-file#install-hear-cli
 
