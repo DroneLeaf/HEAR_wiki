@@ -71,6 +71,11 @@ git clone https://github.com/ahmed-hashim-pro/HEAR_CLI
 
 5- Add New instance and fleet with propper configurations in `~/HEAR_Configurations` folder, so we can use the new fleet with hear-cli  
 
+> Fleets Directory in  `~/HEAR_Configurations` : `/Missions/Fleets`
+
+> UAV_instances irectory `~/HEAR_Configurations` :  `/UAV_instances`
+
+
 6- Clone HEAR_Docker on target via `hear-cli`
 
 ```bash
