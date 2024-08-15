@@ -142,3 +142,25 @@ hear-cli fleet copy_run_program
 ```
 
 Choose the program `set_static_ip`, enter your fleet name thet you created before ,wait until the program is finish executing.
+
+
+2- Set ROS IP on .bashrc file on target
+
+
+```bash
+hear-cli fleet copy_run_program
+```
+
+Choose the program `ros_ip_changer`, enter your fleet name thet you created before ,wait until the program is finish executing.
+
+
+### Operation Steps
+
+1- Set ROS MASTER URI on .bashrc file on target
+
+
+```bash
+hear-cli fleet copy_run_program
+```
+
+Choose the program `ros_master_uri_changer`, enter your fleet name thet you created before ,wait until the program is finish executing.
