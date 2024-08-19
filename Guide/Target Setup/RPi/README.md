@@ -145,6 +145,17 @@ hear-cli fleet copy_run_program
 Choose the program `ros_ip_changer`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
 
+3- Update TimeZone on target
+
+
+```bash
+hear-cli fleet copy_run_program
+```
+
+Choose the program `activate_network_timezone`, enter your fleet name thet you created before ,wait until the program is finish executing.
+
+
+
 ### Operation Steps
 
 1- Set ROS MASTER URI on .bashrc file on target
