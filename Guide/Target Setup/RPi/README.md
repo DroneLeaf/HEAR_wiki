@@ -104,24 +104,15 @@ hear-cli fleet copy_run_program
 
 Choose the program `clone_hear_configurations`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
-
-2- Copy `~/HEAR_FC/src/HEAR_FC/Flight_controller/launch` to target via `hear-cli` command
-
-```bash
-hear-cli fleet copy --local-dir="~/HEAR_FC/src/HEAR_FC/Flight_controller/launch" --remote-dir="HEAR_FC/src/HEAR_FC/Flight_controller/launch"
-```
-> HINT: `--remote-dir` is start from home directory in target machine.
-
-
-3- Copy `~/HEAR_FC/devel` to target via `hear-cli` command
+2- Clone `HEAR_FC clone and make catkin clean on target` via `hear-cli` program
 
 ```bash
-hear-cli fleet copy --local-dir="~/HEAR_FC/devel" --remote-dir="HEAR_FC/devel"
+hear-cli fleet copy_run_program
 ```
-> HINT: `--remote-dir` is start from home directory in target machine.
 
+Choose the program `hear_fc_clone_catkin_clean`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
-4- Clean target from unnecessary files
+3- Clean target from unnecessary files
 
 ```bash
 hear-cli fleet copy_run_program
@@ -132,7 +123,7 @@ Choose the program `clean_target_for_deployment`, enter your fleet name thet you
 
 
 
-### Deployment Steps
+### Deployment Steps (After restore image on rpi)
 
 1- Set Static ip on target
 
