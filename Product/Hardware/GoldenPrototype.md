@@ -1,9 +1,3 @@
-# Development Drone
-# Golden Critical
-## Triple redundant FC
-
-- Embention
-- MicroPilot
 # Golden
 
 ## Operation
