@@ -1,8 +1,8 @@
 # Manual Transition Flight Design Sketch
 
 ### Taxonomy
-We refer to RC inputs as CH[x] with x being the channel number. 
-Parameters HEAR-[A][x], HEAR-[B][x], etc. are tunable parameters in HEAR FC with x being optional parameter index, A and B are arbitrary captions to organize parameters set.
+We refer to RC inputs as CH[\x] with x being the channel number. 
+Parameters HEAR-[\A][\x], HEAR-[\B][\x], etc. are tunable parameters in HEAR FC with x being optional parameter index, A and B are arbitrary captions to organize parameters set.
 
 Parameters PX4-[A][x] are tunable parameters in PX4 with x being optional parameter index, and A is arbitrary caption to organize parameters set.
 
@@ -18,14 +18,42 @@ Safety: CH11 is kill switch
 Minimum M1 command must prevent ESC stall.
 Speed is obtained from pitot tube and GPS.
 
+### HEAR Tunable parameters
+
+#### FWD_RANGE_ANGLE_RAD_EXTREMUM:
+
+corresponding variable in code snippet : extremum_angle
+
+    if (vtol_mode==0){ // Multirotor
+        _commands[0]=_commands[0] /cos(_u[4]*extremum_angle); // This assumes map_for_fwd range is -1 <-> 1
+    }
+
+#### PITCH_CANARD_RANGE_MAX:
+
+    auto gain_pitch_canard_range_max=new Gain<float>();
+    gain_pitch_canard_range_max->setGain(pitch_canard_range_max);
+
+    // Pitch
+    this->connect(demux_ori_des->getOutputPort<float>(Demux3::OP::Y), gain_pitch_canard_range_max->getInputPort<float>());
+    this->connect(gain_pitch_canard_range_max->getOutputPort<float>(), mux_angle_u->getInputPort<float>(Mux3::IP::Y));
+
+#### YAW_CANARD_DIFF_RANGE_MAX:
+
+    auto gain_yaw_canard_diff_range_max=new Gain<float>();
+    gain_yaw_canard_diff_range_max->setGain(yaw_canard_diff_range_max);
+
+    // Yaw
+    this->connect(demux_ori_rate_des->getOutputPort<float>(Demux3::OP::Z), gain_yaw_canard_diff_range_max->getInputPort<float>());
+    this->connect(gain_yaw_canard_diff_range_max->getOutputPort<float>(), mux_angle_u->getInputPort<float>(Mux3::IP::Z));
+
 ### Physical Asset assignment
 | **Reference** | **Function**  | **Pixhawk Pin** | **Signal Source**  |
 |---------------|---------------|-----------------|--------------------|
 | **M1**        | Front Motor   | AUX 1           | OFFBOARD MAVLink 1 |
 | **M2**        | Rear Motor R  | AUX 2           | OFFBOARD MAVLink 2 |
 | **M3**        | Rear Motor L  | AUX 3           | OFFBOARD MAVLink 3 |
-| **S4**        | Canard R      | AUX 4           | OFFBOARD MAVLink 4 |
-| **S5**        | Canard L      | AUX 5           | OFFBOARD MAVLink 5 |
+| **S4**        | Canard L      | AUX 4           | OFFBOARD MAVLink 4 |
+| **S5**        | Canard R      | AUX 5           | OFFBOARD MAVLink 5 |
 | **S6**        | Vane R        | AUX 6           | OFFBOARD MAVLink 6 |
 | **S7**        | Vane L        | AUX 7           | OFFBOARD MAVLink 7 |
 | **S8**        | M1 Tilt Servo | AUX 8           | OFFBOARD MAVLink 8 |
@@ -34,16 +62,24 @@ Speed is obtained from pitot tube and GPS.
 | **S11**       | Aileron R     | MAIN 2          | RC ROLL            |
 | **S12**       | Aileron L     | MAIN 2          | RC ROLL            |
 | **S13**       | Elevator R    | MAIN 3          | RC PITCH           |
-| **S14**       | Elevator L    | MAIN 3          | RC PITCH           |
-| **S15**       | Steering      | MAIN 4          | RC AUX 1           |
-| **S16**       | Door RF       | MAIN 5          | RC AUX 2           |
-| **S17**       | Door RR       | MAIN 5          | RC AUX 2           |
-| **S18**       | Door LF       | MAIN 5          | RC AUX 2           |
-| **S19**       | Door LR       | MAIN 5          | RC AUX 2           |
+| **S14**       | Elevator L    | MAIN 4          | RC PITCH           |
+| **S15**       | Steering      | MAIN 5          | RC AUX 1           |
+| **S16**       | Door RF       | MAIN 6          | RC AUX 2           |
+| **S17**       | Door RR       | MAIN 6          | RC AUX 2           |
+| **S18**       | Door LF       | MAIN 6          | RC AUX 2           |
+| **S19**       | Door LR       | MAIN 6          | RC AUX 2           |
 
 
 ### Actuation PX4 settings
 Maximum/Minimum limits for each actuator are set in the QGC. See QGC screenshots below.
+
+![alt text](pwm_aux.png)
+
+![alt text](pwm_main.png)
+
+### RC PX4 settings
+
+![alt text](image.png)
 
 ### RC Channel assignment
 See "Systems/RC/general.json" for updated HEAR configuration.
