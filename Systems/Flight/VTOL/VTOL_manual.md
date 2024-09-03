@@ -1,16 +1,16 @@
 # Manual Transition Flight Design Sketch
 
 ### Taxonomy
-We refer to RC inputs as CH[\x] with x being the channel number. 
-Parameters HEAR-[\A][\x], HEAR-[\B][\x], etc. are tunable parameters in HEAR FC with x being optional parameter index, A and B are arbitrary captions to organize parameters set.
+FB: Feedback action. Output of `OrientaionController` system.
 
-Parameters PX4-[A][x] are tunable parameters in PX4 with x being optional parameter index, and A is arbitrary caption to organize parameters set.
+FF: Feedforward action (i.e. open-loop). Output of `VTOLFeedForward` system, and the direct connection from `PX4RCtoOrientationThrust` to `ActuatVTOLPX4MAVLinkSystem` of lateral forward command.
 
-FB: Feedback action
+RC-D: commanded directly through RC. Configured in PX4.
 
-FF: Feedforward action (i.e. open-loop)
+We refer to RC inputs as CH|x| with x being the channel number. 
+Parameters HEAR-|A||x|, HEAR-|B||x|, etc. are tunable parameters in HEAR FC with x being optional parameter index, A and B are arbitrary captions to organize parameters set.
 
-RC-D: commanded directly through RC.
+Parameters PX4-|A||x| are tunable parameters in PX4 with x being optional parameter index, and A is arbitrary caption to organize parameters set.
 
 ### General
 Let CH8 be the mode selection switch, pos 1 (low): VTOL mode; pos 2 (mid or high): plane mode. 
@@ -19,8 +19,12 @@ Minimum M1 command must prevent ESC stall.
 Speed is obtained from pitot tube and GPS.
 
 ### HEAR Tunable parameters
+HEAR tunable parameters specific to VTOL setup are available in the directory:
+
+`~/HEAR_Configurations/Systems/VTOL`
 
 #### FWD_RANGE_ANGLE_RAD_EXTREMUM:
+**Location**: `/RC_OrientationThrustControlSystemVTOL/ActuatVTOLPX4MAVLinkSystem/ActuationAllocatorVTOL`
 
 corresponding variable in code snippet : extremum_angle
 
@@ -28,7 +32,22 @@ corresponding variable in code snippet : extremum_angle
         _commands[0]=_commands[0] /cos(_u[4]*extremum_angle); // This assumes map_for_fwd range is -1 <-> 1
     }
 
+
+#### COMPENSATION_FACTOR_REAR:
+**Location**: `/RC_OrientationThrustControlSystemVTOL/ActuatVTOLPX4MAVLinkSystem/ActuationAllocatorVTOL`
+
+corresponding variable in code snippet : extremum_angle
+
+    if (vtol_mode==0){ // Multirotor
+            _commands[1]=_commands[1] /cos(_u[4]*compensation_factor_rear); // This assumes map_for_fwd range is -1 <-> 1
+            _commands[2]=_commands[2] /cos(_u[4]*compensation_factor_rear); // This assumes map_for_fwd range is -1 <-> 1
+    }
+
+
+
+
 #### PITCH_CANARD_RANGE_MAX:
+**Location**: `/RC_OrientationThrustControlSystemVTOL/VTOLFeedForward/gain_pitch_canard_range_max`
 
     auto gain_pitch_canard_range_max=new Gain<float>();
     gain_pitch_canard_range_max->setGain(pitch_canard_range_max);
@@ -38,6 +57,7 @@ corresponding variable in code snippet : extremum_angle
     this->connect(gain_pitch_canard_range_max->getOutputPort<float>(), mux_angle_u->getInputPort<float>(Mux3::IP::Y));
 
 #### YAW_CANARD_DIFF_RANGE_MAX:
+**Location**: `/RC_OrientationThrustControlSystemVTOL/VTOLFeedForward/gain_yaw_canard_diff_range_max`
 
     auto gain_yaw_canard_diff_range_max=new Gain<float>();
     gain_yaw_canard_diff_range_max->setGain(yaw_canard_diff_range_max);
@@ -45,6 +65,24 @@ corresponding variable in code snippet : extremum_angle
     // Yaw
     this->connect(demux_ori_rate_des->getOutputPort<float>(Demux3::OP::Z), gain_yaw_canard_diff_range_max->getInputPort<float>());
     this->connect(gain_yaw_canard_diff_range_max->getOutputPort<float>(), mux_angle_u->getInputPort<float>(Mux3::IP::Z));
+
+
+#### YAW_FB_ANGLE_U_LIMIT:
+**Location**: `/RC_OrientationThrustControlSystemVTOL/yaw_fb_angle_u_limit`
+
+    auto yaw_fb_angle_u_limit=new Saturation3();
+    auto yaw_fb_angle_u_limit_val=config_ctrl->getValueFromFile<float>(config_ctrl->getSystemSettingsFilePath("VTOL"),"YAW_FB_ANGLE_U_LIMIT");
+    yaw_fb_angle_u_limit->setClipValueMaxThird(yaw_fb_angle_u_limit_val);
+    yaw_fb_angle_u_limit->setClipValueMinThird(-yaw_fb_angle_u_limit_val);
+    this->addBlock(yaw_fb_angle_u_limit,"yaw_fb_angle_u_limit");
+
+
+#### PLANE_FRT_SERVO_TILT AND PLANE_VANES_CLOSED_TILT
+**Location**: `/RC_OrientationThrustControlSystemVTOL/ActuatVTOLPX4MAVLinkSystem/ActuationAllocatorVTOL`
+
+    _commands[5]=plane_vanes_closed_tilt;
+    _commands[6]=plane_vanes_closed_tilt;
+    _commands[7]=plane_frt_servo_tilt;
 
 ### Physical Asset assignment
 | **Reference** | **Function**  | **Pixhawk Pin** | **Signal Source**  |
@@ -132,4 +170,22 @@ CH2: Yaw commanding rudder together (FF) (RC-D).
 
 CH3: Roll commanding ailerons differentially (FF) (RC-D). 
 
-CH4: Pitch commanding elevators together (FF) (RC-D), and canard together (FF) (HEAR-PITCH_CANARD_RANGE_MAX). Both elevators and canards are differential (PX4 settings). 
+CH4: Pitch commanding elevators together (FF) (RC-D), and canard together (FF) (HEAR-PITCH_CANARD_RANGE_MAX). Both elevators and canards are differential (PX4 settings).
+
+
+## Known Issues
+### RC inputs and servo outputs are not in SI units.
+
+**Proposed solution:** prepare a calibration and trimming procedure based on manual angle measurements. Manually obtained angle measurements + angle specifications are input into `HEAR_Configurations`. A special subsystem in `RC_OrientationThrustControlSystemVTOL` picks up angle specifications and updates all `RC_OrientationThrustControlSystemVTOL` parameters accordingly.
+
+
+
+## Notes
+
+### Engage rudder with FB action of yaw
+
+### Prioritize vanes: yaw over forward
+
+### Canard only pitch control
+
+### Canard only pitch control
