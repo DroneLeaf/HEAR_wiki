@@ -36,16 +36,29 @@ Stage1:
 
 Stage2:
     - Loss function: $L = \sqrt{(y_c^2 + z_c^2)} + \lambda \sqrt{((d_{w_x}-d_{d_x})^2 + (d_{w_y}-d_{d_y})^2 + (d_{w_z}-d_{d_z})^2)} $. $\bm{d_w}$ is the direction axis of the window and $\bm{d_d}$ is the direction axis of the UAV. $\lambda$ is a hyperparameter.
-
+    - 
 
 
 ## Uncertainties
+Uncertainties accounted for are mainly for the model parameters.
+
+Three parameters would be randomized for now:
+    1) $T_p$ propulsion time constant: covering the range of motor identification results, i.e. min to max.
+    2) $\tau_p$ propulsion time delay: -10% to 80% of the nominal value.
+    3) $k_p$ propulsion gain: -10% to 10% of the nominal value.
+
+The cost with respect to these uncertainties is believed to be monotonic. Therefore the extremum of the ranges would be used to train the RL model.
 
 ## Deployment
 1) Inference models deployed on AWS lambda.
-2) 
+2) Actor parametric actions are coded into HEAR_FC. 
+3) Switching happens from normal flight mode -> skill execution mode -> back to normal flight mode. Beginning of skill execution mode is triggered by the user.
 
 ## Testing
+testing stages:
+
 1) SITL
 2) HITL
-3) 
+   1) based on window model
+   2) based on real captured window data
+3) Full testing
