@@ -23,7 +23,7 @@ This would save time for everyone.
 
 It is the consultant responsibility to make sure all requirements are clear.
 
-### Step 2: The conultant proposes a sloution direction with different possible alternatives and the pros and cons of each
+### Step 2: The consultant proposes a solution direction with different possible alternatives and the pros and cons of each
 
 DroneLeaf would assess the proposed solutions and if found suitable, pricing and time-frame assessment takes place.
 
