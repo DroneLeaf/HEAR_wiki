@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+ <tabbed_widget parent="main_window" name="Main Window">
+  <Tab containers="1" tab_name="Velocity">
+   <Container>
+    <DockSplitter orientation="-" sizes="0.25;0.25;0.25;0.25" count="4">
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="-7.435655" top="4.831412" right="61.917172"/>
+       <limitY/>
+       <curve color="#d62728" name="vehicle_local_position/vx"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="-3.148357" top="7.110571" right="61.917172"/>
+       <limitY/>
+       <curve color="#1ac938" name="vehicle_local_position/vy"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="-1.376555" top="9.025592" right="61.917172"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="vehicle_local_position/vz"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="-0.222992" top="10.250928" right="61.917172"/>
+       <limitY/>
+       <curve color="#f14cc1" name="speed"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="RC inputs (Thr,Yaw,Pitch,Roll,Fwd)">
+   <Container>
+    <DockSplitter orientation="-" sizes="0.200228;0.200228;0.19909;0.200228;0.200228" count="5">
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="1082.800000" top="1553.200000" right="61.917172"/>
+       <limitY/>
+       <curve color="#9467bd" name="input_rc/values.02"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="1307.675000" top="1825.325000" right="61.917172"/>
+       <limitY/>
+       <curve color="#17becf" name="input_rc/values.03"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="1432.325000" top="1838.675000" right="61.917172"/>
+       <limitY/>
+       <curve color="#bcbd22" name="input_rc/values.01"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="1111.500000" top="1552.500000" right="61.917172"/>
+       <limitY/>
+       <curve color="#1f77b4" name="input_rc/values.00"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="1140.900000" top="1523.100000" right="61.917172"/>
+       <limitY/>
+       <curve color="#f14cc1" name="input_rc/values.05"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Motor Commands">
+   <Container>
+    <DockSplitter orientation="-" sizes="0.5;0.5" count="2">
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="0.190494" top="0.589743" right="61.917172"/>
+       <limitY/>
+       <curve color="#d62728" name="actuator_motors/control.00"/>
+      </plot>
+     </DockArea>
+     <DockSplitter orientation="|" sizes="0.500352;0.499648" count="2">
+      <DockArea name="...">
+       <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" bottom="0.180000" top="1.020000" right="61.917172"/>
+        <limitY/>
+        <curve color="#f14cc1" name="actuator_motors/control.02"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" bottom="0.185161" top="0.808397" right="61.917172"/>
+        <limitY/>
+        <curve color="#ff7f0e" name="actuator_motors/control.01"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Canard Servos">
+   <Container>
+    <DockSplitter orientation="-" sizes="0.5;0.5" count="2">
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="0.380075" top="1.015120" right="61.917172"/>
+       <limitY/>
+       <curve color="#9467bd" name="actuator_motors/control.03"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="0.380075" top="1.015120" right="61.917172"/>
+       <limitY/>
+       <curve color="#17becf" name="actuator_motors/control.04"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Vanes+Front Tilt Servos">
+   <Container>
+    <DockSplitter orientation="-" sizes="0.5;0.5" count="2">
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="-0.012000" top="0.492000" right="61.917172"/>
+       <limitY/>
+       <curve color="#9467bd" name="actuator_motors/control.07"/>
+      </plot>
+     </DockArea>
+     <DockSplitter orientation="|" sizes="0.500352;0.499648" count="2">
+      <DockArea name="...">
+       <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" bottom="0.472174" top="0.800854" right="61.917172"/>
+        <limitY/>
+        <curve color="#bcbd22" name="actuator_motors/control.06"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" bottom="0.443125" top="0.731875" right="61.917172"/>
+        <limitY/>
+        <curve color="#17becf" name="actuator_motors/control.05"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Euler Angles">
+   <Container>
+    <DockSplitter orientation="-" sizes="0.333712;0.332577;0.333712" count="3">
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="-62.217691" top="18.944344" right="61.917172"/>
+       <limitY/>
+       <curve color="#9467bd" name="Eulerroll"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="-23.970031" top="43.122279" right="61.917172"/>
+       <limitY/>
+       <curve color="#17becf" name="Eulerpitch"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="-74.598781" top="186.189400" right="61.917172"/>
+       <limitY/>
+       <curve color="#bcbd22" name="Euleryaw"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Accelerations">
+   <Container>
+    <DockSplitter orientation="-" sizes="0.333712;0.332577;0.333712" count="3">
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="-94.963644" top="12.468679" right="61.917172"/>
+       <limitY/>
+       <curve color="#1f77b4" name="vehicle_acceleration/xyz.00"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="-41.986720" top="12.128223" right="61.917172"/>
+       <limitY/>
+       <curve color="#d62728" name="vehicle_acceleration/xyz.01"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot style="Lines" flip_x="false" flip_y="false" mode="TimeSeries">
+       <range left="0.000000" bottom="-80.984478" top="12.218874" right="61.917172"/>
+       <limitY/>
+       <curve color="#1ac938" name="vehicle_acceleration/xyz.02"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <currentTabIndex index="4"/>
+ </tabbed_widget>
+ <use_relative_time_offset enabled="1"/>
+ <!-- - - - - - - - - - - - - - - -->
+ <!-- - - - - - - - - - - - - - - -->
+ <Plugins>
+  <plugin ID="DataLoad CSV">
+   <parameters time_axis="" delimiter="0"/>
+  </plugin>
+  <plugin ID="DataLoad MCAP"/>
+  <plugin ID="DataLoad ROS bags">
+   <use_header_stamp value="false"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+   <selected_topics value="/KU_TriCopter_vanes_w_fwd_01/actuation_cmd;/KU_TriCopter_vanes_w_fwd_01/estimator/acc;/KU_TriCopter_vanes_w_fwd_01/mrft/inner;/debug/PX4RCtoOrientationThrust_forward_des;/debug/PX4RCtoOrientationThrust_ori_des;/debug/PX4RCtoOrientationThrust_ori_rate_des;/debug/PX4RCtoOrientationThrust_thrust_des;/debug/dbg_ActuatPX4MAVLinkSystem_motor_cmd;/debug/dbg_OrientationController_pub_angle_u;/debug/dbg_OrientationErrorCalculator_pub_result;/debug/refactor/estimator/ori;/debug/refactor/estimator/ori_rate;/rosout;/rosout_agg"/>
+  </plugin>
+  <plugin ID="DataLoad ULog"/>
+  <plugin ID="ROS Topic Subscriber">
+   <use_header_stamp value="false"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+   <selected_topics value=""/>
+  </plugin>
+  <plugin ID="UDP Server"/>
+  <plugin ID="WebSocket Server"/>
+  <plugin ID="ZMQ Subscriber"/>
+  <plugin ID="Fast Fourier Transform"/>
+  <plugin ID="Quaternion to RPY"/>
+  <plugin ID="Reactive Script Editor">
+   <library code="--[[ Helper function to create a series from arrays&#xa;&#xa; new_series: a series previously created with ScatterXY.new(name)&#xa; prefix:     prefix of the timeseries, before the index of the array&#xa; suffix_X:   suffix to complete the name of the series containing the X value. If [nil], use the index of the array.&#xa; suffix_Y:   suffix to complete the name of the series containing the Y value&#xa; timestamp:   usually the tracker_time variable&#xa;              &#xa; Example:&#xa; &#xa; Assuming we have multiple series in the form:&#xa; &#xa;   /trajectory/node.{X}/position/x&#xa;   /trajectory/node.{X}/position/y&#xa;   &#xa; where {N} is the index of the array (integer). We can create a reactive series from the array with:&#xa; &#xa;   new_series = ScatterXY.new(&quot;my_trajectory&quot;) &#xa;   CreateSeriesFromArray( new_series, &quot;/trajectory/node&quot;, &quot;position/x&quot;, &quot;position/y&quot;, tracker_time );&#xa;--]]&#xa;&#xa;function CreateSeriesFromArray( new_series, prefix, suffix_X, suffix_Y, timestamp )&#xa;  &#xa;  --- clear previous values&#xa;  new_series:clear()&#xa;  &#xa;  --- Append points to new_series&#xa;  index = 0&#xa;  while(true) do&#xa;&#xa;    x = index;&#xa;    -- if not nil, get the X coordinate from a series&#xa;    if suffix_X ~= nil then &#xa;      series_x = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_X) )&#xa;      if series_x == nil then break end&#xa;      x = series_x:atTime(timestamp)&#x9; &#xa;    end&#xa;    &#xa;    series_y = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_Y) )&#xa;    if series_y == nil then break end &#xa;    y = series_y:atTime(timestamp)&#xa;    &#xa;    new_series:push_back(x,y)&#xa;    index = index+1&#xa;  end&#xa;end&#xa;&#xa;--[[ Similar to the built-in function GetSeriesNames(), but select only the names with a give prefix. --]]&#xa;&#xa;function GetSeriesNamesByPrefix(prefix)&#xa;  -- GetSeriesNames(9 is a built-in function&#xa;  all_names = GetSeriesNames()&#xa;  filtered_names = {}&#xa;  for i, name in ipairs(all_names)  do&#xa;    -- check the prefix&#xa;    if name:find(prefix, 1, #prefix) then&#xa;      table.insert(filtered_names, name);&#xa;    end&#xa;  end&#xa;  return filtered_names&#xa;end&#xa;&#xa;--[[ Modify an existing series, applying offsets to all their X and Y values&#xa;&#xa; series: an existing timeseries, obtained with TimeseriesView.find(name)&#xa; delta_x: offset to apply to each x value&#xa; delta_y: offset to apply to each y value &#xa;  &#xa;--]]&#xa;&#xa;function ApplyOffsetInPlace(series, delta_x, delta_y)&#xa;  -- use C++ indeces, not Lua indeces&#xa;  for index=0, series:size()-1 do&#xa;    x,y = series:at(index)&#xa;    series:set(index, x + delta_x, y + delta_y)&#xa;  end&#xa;end&#xa;"/>
+   <scripts/>
+  </plugin>
+  <plugin ID="CSV Exporter"/>
+  <plugin ID="ROS /rosout Visualization"/>
+  <plugin ID="ROS Topic Re-Publisher"/>
+ </Plugins>
+ <!-- - - - - - - - - - - - - - - -->
+ <previouslyLoaded_Datafiles>
+  <fileInfo prefix="" filename="../../../../../../../media/droneleaf/AA7E-7A82/log/2024-09-09/16_21_29.ulg">
+   <plugin ID="DataLoad ULog"/>
+  </fileInfo>
+  <fileInfo prefix="" filename="../../../../../../../media/droneleaf/AA7E-7A82/log/2024-09-09/16_10_30.ulg">
+   <plugin ID="DataLoad ULog"/>
+  </fileInfo>
+  <fileInfo prefix="" filename="../../../../../../../media/droneleaf/AA7E-7A82/log/2024-09-09/14_28_17.ulg">
+   <plugin ID="DataLoad ULog"/>
+  </fileInfo>
+  <fileInfo prefix="" filename="../../../../../../../media/droneleaf/AA7E-7A82/log/2024-09-09/14_17_02.ulg">
+   <plugin ID="DataLoad ULog"/>
+  </fileInfo>
+  <fileInfo prefix="" filename="9-9-2024/14_28_17.ulg">
+   <plugin ID="DataLoad ULog"/>
+  </fileInfo>
+  <fileInfo prefix="" filename="9-9-2024/16_10_30.ulg">
+   <plugin ID="DataLoad ULog"/>
+  </fileInfo>
+  <fileInfo prefix="" filename="9-9-2024/16_21_29.ulg">
+   <plugin ID="DataLoad ULog"/>
+  </fileInfo>
+ </previouslyLoaded_Datafiles>
+ <!-- - - - - - - - - - - - - - - -->
+ <customMathEquations>
+  <snippet name="speed">
+   <global></global>
+   <function>return (value^2+v1^2+v2^2)^0.5</function>
+   <linked_source>vehicle_local_position/vx</linked_source>
+   <additional_sources>
+    <v1>vehicle_local_position/vy</v1>
+    <v2>vehicle_local_position/vz</v2>
+   </additional_sources>
+  </snippet>
+ </customMathEquations>
+ <snippets/>
+ <!-- - - - - - - - - - - - - - - -->
+</root>
+

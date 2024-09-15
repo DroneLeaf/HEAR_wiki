@@ -20,7 +20,7 @@ UAV
     - Initial velocity and acceleration of UAV: 0.
     - Velocity across x-axis is specified by the user. Range 1.2-2.0 m/s.
     - UAV used is the development UAV of DroneLeaf. The model will be provided based on real-world identification.
-    - 
+    
 ## Action space
 Stage1:
     - Two sets of PD parameters one for y-axis and one for z-axis.
@@ -36,7 +36,6 @@ Stage1:
 
 Stage2:
     - Loss function: $L = \sqrt{(y_c^2 + z_c^2)} + \lambda \sqrt{((d_{w_x}-d_{d_x})^2 + (d_{w_y}-d_{d_y})^2 + (d_{w_z}-d_{d_z})^2)} $. $\bm{d_w}$ is the direction axis of the window and $\bm{d_d}$ is the direction axis of the UAV. $\lambda$ is a hyperparameter.
-    - 
 
 
 ## Uncertainties

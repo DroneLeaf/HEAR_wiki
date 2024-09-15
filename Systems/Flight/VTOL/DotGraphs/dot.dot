@@ -1,0 +1,54 @@
+digraph G {
+
+  // Node for the image
+  node [shape=none, label="", width=0, height=0];
+  // Image node
+  imageNode [image="Media/as_built_rotated.png", width=1.0, height=1.0, fixedsize=true];
+  // Invisible subgraph to help with positioning
+  subgraph cluster0 {
+      label = "";
+      style = invis; // Makes this subgraph invisible
+      // Invisible node to help position the image node
+      invisNode [shape=point, width=0, height=0, label=""];
+      // Text node
+      textNode [label="Date: 2024-09-12", shape=plaintext, fontsize=10];
+      // Positioning nodes
+      invisNode -> imageNode [style=invis]; // Makes the edge invisible
+      imageNode -> textNode [style=invis]; // Connects image node to text node with invisible edge
+  }
+  // Ensure everything is aligned nicely
+  {rank=source;invisNode;}
+
+label="vtol_ff"
+labelloc="t"
+;fontsize=40;
+rankdir="LR"
+graph[center=true, margin=0.2, nodesep=0.3, ranksep=0.15]
+node[ shape=box,fontsize=10]
+edge[weight=1.2,arrowsize=0.6, arrowhead=vee,fontsize=9]
+  1 -> 3 [label="X->INPUT[float]",style="solid"];
+  3 -> 2 [label="OUTPUT->X[float]",style="solid"];
+  1 -> 4 [label="Y->INPUT[float]",style="solid"];
+  4 -> 2 [label="OUTPUT->Y[float]",style="solid"];
+  0 -> 5 [label="Z->INPUT[float]",style="solid"];
+  5 -> 2 [label="OUTPUT->Z[float]",style="solid"];
+  2 -> 6 [label="OUTPUT->INPUT[Vector3D<float>]",style="solid"];
+  7 -> 1 [label="INPUT->[Vector3D<float>]",style="solid"];
+  8 -> 0 [label="INPUT->[Vector3D<float>]",style="solid"];
+  2 -> 9 [label="->OUTPUT[Vector3D<float>]",style="solid"];
+  0[label="Demux3\ndemux_ori_rate_des\nSyn:3, Asyn: 6", shape=box];
+  1[label="Demux3\ndemux_ori_des\nSyn:0, Asyn: 5", shape=box];
+  2[label="Mux3\nmux_angle_u\nSyn:5, Asyn: 4", shape=box];
+  3[label="Gain\ngain_roll_ff\nSyn:2, Asyn: 3", shape=box];
+  4[label="Gain\ngain_pitch_ff\nSyn:1, Asyn: 2", shape=box];
+  5[label="Gain\ngain_yaw_ff\nSyn:4, Asyn: 1", shape=box];
+  6[label="ROSUnit_Publisher\nangle_u_ff_pub\nSyn:6, Asyn: 0", shape=larrow];
+  7[style=filled,fillcolor=red,label="Vector3D<float>\nINPUT", shape=ellipse];
+  8[style=filled,fillcolor=red,label="Vector3D<float>\nINPUT", shape=ellipse];
+  9[style=filled,fillcolor=green,label="Vector3D<float>\nOUTPUT", shape=ellipse];
+
+
+
+
+
+}

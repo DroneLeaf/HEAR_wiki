@@ -1,5 +1,15 @@
 # HEAR Development Getting Started Guide
 
+## How to setup your development environment
+
+Clone `HEAR_CLI`, `HEAR_Configurations` and `HEAR_Docker` directly to your home directory.
+
+Install `HEAR_CLI` based on the instructions provided in it.
+
+using `hear-cli local_machine run_program` command, run the programs:
+1) `hear_docker_sitl_full_system_install`
+2) 
+
 ## How the code is documented?
 
 Documentation is defined here as all meta-information beyond the compiled code. This would include the programming language, e.g. variable names, and how the code is structured. The documentation follows the illustrated three-layers hirearchy:
