@@ -20,6 +20,15 @@ The workshop will go as follows:
 3. Attendees shall use the online portal to obtain a product key that will be essential to use the flight control software.
 4. Attendees will then go to the testing area and test fly their drones.
 
+## Safety:
+Following the safety guidelines during this workshop is paramount for a successful experience. 
+When assembling the drone please use caution when handling the motors as the propeller tips are sharp. Handle the batteries carefully as dropping them could damage them and cause them to become hazardous, additionally when connecting the battery beware of touching any metal parts for fear of electric shock. 
+
+During the flight test please wear goggles at all times to ensure adequate eye protection in the unforeseen event of an in flight failure. 
+Although the software used in the workshop has been thoroughly tested it is still in alpha stage, and thus if any failure happens please **Do Not** enter the testing area, a DroneLeaf Officer will retrieve the drone safely for you. 
+
+Finally once the workshop experience is complete please ensure all items are returned to their proper place to prevent loss of misplaced inventory.
+
 #### Disclaimer:
 The software and procedures outlined in this guide are currently in alpha testing and may contain errors or bugs that could affect performance. Users are advised to proceed with caution and to thoroughly test all functionalities in a controlled environment before deployment.
 By attending this workshop, you acknowledge that DroneLeaf LLC does not assume any responsibility for any damages, losses, or injuries that may occur as a result. This includes, but is not limited to, property damage, personal injury, or any other consequences arising from operational failures or unexpected behavior of the drone.
