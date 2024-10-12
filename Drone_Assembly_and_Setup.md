@@ -35,16 +35,13 @@ Welcome to the Drone Assembly and Setup guide for **DroneLeaf's** workshop at IR
 5.**Attach the Battery**: Connect the battery to your drone via the clipping mechanism.
 ![Battery Attachment](https://github.com/user-attachments/assets/3147da73-95a3-4189-8f1e-322830f0c90f)
 
-(Better to upgrade to GIF)
-
 6.  **Check Center of Mass**: Use the Center of Mass (CoM) station to ensure that the center of mass is reasonably in the middle of the drone frame. You can do this by checking if all four scales show around the same weight. Adjust the battery position as necessary.
 
 ## Setup Instructions:
 
 1.  **Place The Drone In the Testing Area**: Place the drone in the middle of the testing area (on the X) and connect the battery.
 2. **Wait**: Allow the drone one minute to initialize properly.
-3.  **Find The Machine ID**: Connect to the drone using ssh pi@10.0.0.## (where ## is the drone IP address. This can be found on a sticker placed on the drone). Run the bash script ./find_Machine_ID.sh to find the machine ID. It should look something like this (insert screenshot of machine ID).
-
+3.  **Find The Machine ID**: Open a new terminal, run "hear-cli fleet copy_run_program", scroll down to Get Machine ID and press enter. Press enter three more times. New termainals should open automatically and after the code finishes running you should find the machine ID displayed as seen below.
 
 ![Machine_ID_cropped](https://github.com/user-attachments/assets/747a2a3a-8e85-4ab6-8f66-ed671394a2bb)
 
