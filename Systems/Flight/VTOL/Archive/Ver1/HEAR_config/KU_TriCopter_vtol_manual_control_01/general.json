@@ -1,0 +1,13 @@
+{
+    "ip": "192.168.144.6",
+    "uav_type": "TriCopterKU_vtol_manual_control",
+    "actuation_testing": false,
+    "use_ctbr":false,
+    "forward_optitrack_to_px4": false,
+    "en_window_crossing_detection": false,
+    "en_max_tilt_angle": false,
+    "optitrack_rigidbody_id": 1,
+    "machine_username":"pi",
+    "machine_password":"raspberry",
+    "Description": "ip: must refer to the current host ip, uav_type: used to lookup type settings from UAV_types folder, actuation_testing: use true for direct feed through of actuation commands"
+    }

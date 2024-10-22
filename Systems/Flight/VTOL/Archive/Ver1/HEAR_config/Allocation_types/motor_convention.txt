@@ -1,0 +1,143 @@
+// HEAR Conventions:
+
+// hear_hexa
+// Using ENU Reference Frame
+// GEOMETRY
+//      CW(3) (5)CCW                x
+//          \ /                     ↑
+// CCW(2) -- X -- (1)CW             |
+//          / \              y <----+ 
+//      CW(6) (4)CCW               z up
+
+// hear_quad
+// For Positive Pitch, all motors with negative X should be increased
+// For Negative Roll, all motors with negative Y should be increased
+// For Positive Yaw, all motors with CW should be increased
+// Mx = [x, y, direction, thottle]
+// POSITIVE PITCH result in moving in the direction of POSITIVE X
+// NEGATIVE ROLL result in moving in the direction of POSITIVE Y
+// Using YPR rotation sequence in the construction of the Rotation Matrix
+
+// GEOMETRY
+//      CW(1) (3)CCW                x
+//          \ /                     ↑
+//           X                      |
+//          / \              y <----+ 
+//     CCW(4) (2)CW               z up
+//
+// For Positive Pitch, all motors with negative X should be increased
+// For Negative Roll, all motors with negative Y should be increased
+// For Positive Yaw, all motors with CW should be increased
+// Mx = [x, y, direction, thottle]
+// POSITIVE PITCH result in moving in the direction of POSITIVE X
+// NEGATIVE ROLL result in moving in the direction of POSITIVE Y
+
+
+// px4_hexa
+// Using ENU Reference Frame
+// GEOMETRY
+//      CW(3) (5)CCW                x
+//          \ /                     ↑
+// CCW(2) -- X -- (1)CW             |
+//          / \              y <----+ 
+//      CW(6) (4)CCW               z up
+//
+// For Positive Pitch, all motors with negative X should be increased
+// For Negative Roll, all motors with negative Y should be increased
+// For Positive Yaw, all motors with CW should be increased
+// Mx = [x, y, direction, thottle]
+// POSITIVE PITCH result in moving in the direction of POSITIVE X
+// NEGATIVE ROLL result in moving in the direction of POSITIVE Y
+// Using YPR rotation sequence in the construction of the Rotation Matrix
+
+// px4_octa_coax_holybro_kopis
+// // Using ENU Reference Frame
+// // GEOMETRY
+// //    CW(4) + CW(8)        (2)CCW + (6)CCW               
+// //                  \       /                          x
+// //                   \     /                           ↑
+// //                    \   /                            |
+// //                      X                       y <----+
+// //                    /   \                          z up
+// //                   /     \                    
+// //                  /       \     
+// //    CCW(3) + CCW(7)        (1)CW + CW(5)              
+// //
+// // For Positive Pitch, all motors with negative X should be increased
+// // For Negative Roll, all motors with negative Y should be increased
+// // For Positive Yaw, all motors with CW should be increased
+// // Mx = [x, y, direction, thottle]
+// // POSITIVE PITCH result in moving in the direction of POSITIVE X
+// // NEGATIVE ROLL result in moving in the direction of POSITIVE Y
+// // Using YPR rotation sequence in the construction of the Rotation Matrix
+
+// px4_octa_coax_DFL_Stroke
+// // Using ENU Reference Frame
+// // GEOMETRY
+// //    CW(2) + CCW(5)        (1)CCW + (6)CW               
+// //                  \       /                          x
+// //                   \     /                           ↑
+// //                    \   /                            |
+// //                      X                       y <----+
+// //                    /   \                          z up
+// //                   /     \                    
+// //                  /       \     
+// //    CCW(3) + CW(8)        (4)CW + CCW(7)             
+// //
+// // For Positive Pitch, all motors with negative X should be increased
+// // For Negative Roll, all motors with negative Y should be increased
+// // For Positive Yaw, all motors with CW should be increased
+// // Mx = [x, y, direction, thottle]
+// // POSITIVE PITCH result in moving in the direction of POSITIVE X
+// // NEGATIVE ROLL result in moving in the direction of POSITIVE Y
+// // Using YPR rotation sequence in the construction of the Rotation Matrix
+
+// px4_ctbr
+// // This block converts the CTBR commands from FLU to FRD
+
+// px4_quad
+// // GEOMETRY
+// //      CW(3) (1)CCW                x
+// //          \ /                     ↑
+// //           X                      |
+// //          / \              y <----+ 
+// //     CCW(2) (4)CW               z up
+// //
+// // For Positive Pitch, all motors with negative X should be increased
+// // For Negative Roll, all motors with negative Y should be increased
+// // For Positive Yaw, all motors with CW should be increased
+// // Mx = [x, y, direction, thottle]
+// // POSITIVE PITCH result in moving in the direction of POSITIVE X
+// // NEGATIVE ROLL result in moving in the direction of POSITIVE 
+
+// px4_quad_3in_kopis
+// // GEOMETRY
+// //      CW(4) (2)CCW                x
+// //          \ /                     ↑
+// //           X                      |
+// //          / \              y <----+ 
+// //     CCW(3) (1)CW               z up
+// //
+// // For Positive Pitch, all motors with negative X should be increased
+// // For Negative Roll, all motors with negative Y should be increased
+// // For Positive Yaw, all motors with CW should be increased
+// // Mx = [x, y, direction, thottle]
+// // POSITIVE PITCH result in moving in the direction of POSITIVE X
+// // NEGATIVE ROLL result in moving in the direction of POSITIVE Y
+
+
+
+// tri_front_tilt
+// // GEOMETRY
+// //           (1)CCW + (4) TILT servo     x
+// //              |                        ↑
+// //   (3)CW ---- X ---- (2)CW             |
+// //                                y <----+ 
+// //                                     z up
+// //
+// // For Positive Pitch, all motors with positive x should be decreases
+// // For Negative Roll, all motors with negative Y should be increased
+// // For Positive Yaw, tilt servo should be decreased
+// // Mx = [x, y, direction, thottle]
+// // POSITIVE PITCH result in moving in the direction of POSITIVE X
+// // NEGATIVE ROLL result in moving in the direction of POSITIVE 

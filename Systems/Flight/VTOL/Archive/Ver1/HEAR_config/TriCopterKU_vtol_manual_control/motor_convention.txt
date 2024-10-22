@@ -1,0 +1,13 @@
+// // GEOMETRY
+// //           (1)CCW + (4) TILT servo     x
+// //              |                        ↑
+// //   (3)CW ---- X ---- (2)CW             |
+// //                                y <----+ 
+// //                                     z up
+// //
+// // For Positive Pitch, all motors with positive x should be decreases
+// // For Negative Roll, all motors with negative Y should be increased
+// // For Positive Yaw, tilt servo should be decreased
+// // Mx = [x, y, direction, thottle]
+// // POSITIVE PITCH result in moving in the direction of POSITIVE X
+// // NEGATIVE ROLL result in moving in the direction of POSITIVE 

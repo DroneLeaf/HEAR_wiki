@@ -1,0 +1,54 @@
+%% All angles are in degrees!
+clear all
+%% S6 settings - VTOL mode
+% Physical settings
+right_vane_servo_s6_min_pwm=1100;
+right_vane_servo_s6_min_pwm_vtol=1400;
+right_vane_servo_s6_max_pwm=1800;
+right_vane_servo_s6_center_pwm=1650;
+right_vane_servo_s6_pwm_range=right_vane_servo_s6_max_pwm-right_vane_servo_s6_min_pwm;
+right_vane_servo_s6_pwm_range_vtol=right_vane_servo_s6_max_pwm-right_vane_servo_s6_min_pwm_vtol;
+% Set IO range
+minimum_io_range_s6=(right_vane_servo_s6_min_pwm_vtol-right_vane_servo_s6_min_pwm)/right_vane_servo_s6_pwm_range
+
+right_vane_servo_s6_angle_at_min_pwm_vtol=-30;
+right_vane_servo_s6_angle_at_max_pwm=30;
+% Assuming s6 center angle is zero
+
+% HEAR_Configurations
+minimum_actuator_cmds_s6=-1.0;
+maximum_actuator_cmds_s6=1.0;
+allocation_range_s6=maximum_actuator_cmds_s6-minimum_actuator_cmds_s6;
+
+servo_s6_post_allocation_bias_a0=(right_vane_servo_s6_center_pwm-right_vane_servo_s6_min_pwm_vtol)/right_vane_servo_s6_pwm_range_vtol;
+servo_s6_post_allocation_bias=(servo_s6_post_allocation_bias_a0*allocation_range_s6)+minimum_actuator_cmds_s6
+
+forward_to_servo_s6_alloc_pos_gain=allocation_range_s6*((right_vane_servo_s6_max_pwm-right_vane_servo_s6_center_pwm)/right_vane_servo_s6_pwm_range_vtol)
+forward_to_servo_s6_alloc_neg_gain=allocation_range_s6*((right_vane_servo_s6_center_pwm-right_vane_servo_s6_min_pwm_vtol)/right_vane_servo_s6_pwm_range_vtol)
+
+%% S6 settings - VTOL mode
+% Physical settings
+right_vane_servo_s7_min_pwm=1100;
+right_vane_servo_s7_min_pwm_vtol=1400;
+right_vane_servo_s7_max_pwm=1800;
+right_vane_servo_s7_center_pwm=1650;
+right_vane_servo_s7_pwm_range=right_vane_servo_s7_max_pwm-right_vane_servo_s7_min_pwm;
+right_vane_servo_s7_pwm_range_vtol=right_vane_servo_s7_max_pwm-right_vane_servo_s7_min_pwm_vtol;
+% Set IO range
+minimum_io_range_s7=(right_vane_servo_s7_min_pwm_vtol-right_vane_servo_s7_min_pwm)/right_vane_servo_s7_pwm_range
+
+right_vane_servo_s7_angle_at_min_pwm_vtol=-30;
+right_vane_servo_s7_angle_at_max_pwm=30;
+% Assuming s7 center angle is zero
+
+% HEAR_Configurations
+minimum_actuator_cmds_s7=-1.0;
+maximum_actuator_cmds_s7=1.0;
+allocation_range_s7=maximum_actuator_cmds_s7-minimum_actuator_cmds_s7;
+
+servo_s7_post_allocation_bias_a0=(right_vane_servo_s7_center_pwm-right_vane_servo_s7_min_pwm_vtol)/right_vane_servo_s7_pwm_range_vtol;
+servo_s7_post_allocation_bias=(servo_s7_post_allocation_bias_a0*allocation_range_s7)+minimum_actuator_cmds_s7
+
+forward_to_servo_s7_alloc_pos_gain=allocation_range_s7*((right_vane_servo_s7_max_pwm-right_vane_servo_s7_center_pwm)/right_vane_servo_s7_pwm_range_vtol)
+forward_to_servo_s7_alloc_neg_gain=allocation_range_s7*((right_vane_servo_s7_center_pwm-right_vane_servo_s7_min_pwm_vtol)/right_vane_servo_s7_pwm_range_vtol)
+

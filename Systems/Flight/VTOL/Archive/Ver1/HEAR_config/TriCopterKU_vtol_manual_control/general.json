@@ -1,0 +1,46 @@
+{
+    "gravity": 9.81,
+    "scale_gravity": 0.101936799,
+    "inv_thrustToWeight": 0.5,
+    "inv_thrustToWeight_Gravity": 0.050852192,
+
+    "yaw_saturation": [
+        0.87,
+        -0.87,
+        0.0
+    ],
+
+    "x_saturation": [
+        0.87,
+        -0.87,
+        0.0
+    ],
+
+    "y_saturation": [
+        0.87,
+        -0.87,
+        0.0
+    ],
+    "z_saturation": [
+        22.0,
+        3.0,
+        0.0
+    ],
+    "act_allocation": "TriCopterKU_vtol_manual_control",
+    "simulator_dt_s":0.001,
+    "minimum_esc_cmd":0.01,
+    "maximum_esc_cmd":1.0,
+    "idling_esc_cmd":0.1,
+    "minimum_actuator_cmds":[0.01,0.01,0.01,-1.0,-1.0,-1.0,-1.0, 0.0,-1.0],
+    "maximum_actuator_cmds":[1.0 ,1.0 ,1.0 ,1.0 ,1.0 , 1.0, 1.0, 1.0, 1.0],
+    "minimum_actuator_cmds_plane":[0.01,0.01,0.01,-1.0,-1.0,-1.0,-1.0,-0.1,-1.0],
+    "maximum_actuator_cmds_plane":[1.0 ,1.0 ,1.0 ,1.0 ,1.0 ,0.6 ,0.6 ,1.0 ,1.0 ],
+    "idle_actuator_cmds":[0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0],
+    "minimum_io_range":[0.0,0.0,0.0,0.0,0.0,0.45,0.48,0.0,0.0],
+    "maximum_io_range":[1.0,1.0,1.0,1.0,1.0,1.0 ,1.0 ,1.0,1.0],
+    "minimum_io_range_plane":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],
+    "maximum_io_range_plane":[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0],
+    "enable_prioritized_roll_pitch_allocation_algo":false,
+    "running_target":"RPI_UBUNTU20",
+    "Description":"TriCopter for KU project"
+}

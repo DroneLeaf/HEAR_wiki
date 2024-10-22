@@ -4,22 +4,12 @@ The general system archeticture is given as follows:
 ![alt text](Media/system_arch.drawio.png)
 
 
-# Taxonomy
-FB: Feedback action. Output of the feedback control system from within DroneLeaf FC. 
 
-FF: Feedforward action (i.e. open-loop). Output of the feedforward system from within DroneLeaf FC.
-
-RC-D: commanded directly through RC. Configured in PX4 and NOT passed to DroneLeaf FC.
-
-We refer to RC inputs as CH|x| with x being the channel number. 
-Parameters HEAR-|A||x|, HEAR-|B||x|, etc. are tunable parameters in HEAR FC with x being optional parameter index, A and B are arbitrary captions to organize parameters set.
-
-Parameters PX4-|A||x| are tunable parameters in PX4 with x being optional parameter index, and A is arbitrary caption to organize parameters set.
 
 # Convention
 This convention is what to expect when moving knobs in QGroundControl after performing all PX4 settings mentioned below.
 
-![alt text](Media/image-7.png)
+![alt text](Media/)
 
 
 # PX4 Settings
@@ -34,32 +24,27 @@ This convention is what to expect when moving knobs in QGroundControl after perf
 | **S6**        | Vane R        | AUX 6           | OFFBOARD MAVLink 6 |
 | **S7**        | Vane L        | AUX 7           | OFFBOARD MAVLink 7 |
 | **S8**        | M1 Tilt Servo | AUX 8           | OFFBOARD MAVLink 8 |
-| **S9**        | Rudder R      | MAIN 1          | OFFBOARD MAVLink 9             |
-| **S10**       | Rudder L      | MAIN 1          | OFFBOARD MAVLink 9             |
+| **S9**        | Rudder R      | MAIN 1          | RC Yaw             |
+| **S10**       | Rudder L      | MAIN 1          | RC Yaw             |
 | **S11**       | Aileron R     | MAIN 2          | RC ROLL            |
-| **S12**       | Aileron L     | MAIN 2          | RC ROLL            |
-| **S13**       | Elevator R    | MAIN 3          | RC PITCH           |
-| **S14**       | Elevator L    | MAIN 4          | RC PITCH           |
-| **S15**       | Steering      | MAIN 5          | RC AUX 1           |
-| **S16**       | Door RF       | MAIN 6          | RC AUX 2           |
-| **S17**       | Door RR       | MAIN 6          | RC AUX 2           |
-| **S18**       | Door LF       | MAIN 6          | RC AUX 2           |
-| **S19**       | Door LR       | MAIN 6          | RC AUX 2           |
+| **S12**       | Aileron L     | MAIN 3          | RC ROLL            |
+| **S13**       | Elevator R    | MAIN 4          | OFFBOARD MAVLink 9 |
+| **S14**       | Elevator L    | MAIN 5          | OFFBOARD MAVLink 10|
+| **S15**       | Steering      | RC Direct       | RC AUX 1           |
+| **S16**       | Door R/R      | MAIN 6          | OFFBOARD MAVLink 11|
+| **S17**       | Door R/L      | MAIN 8          | OFFBOARD MAVLink 12|
+| **S18**       | Door L/R      | MAIN 8          | OFFBOARD MAVLink 12|
+| **S19**       | Door L/L      | MAIN 7          | OFFBOARD MAVLink 11|
 
 
 ## Actuation PX4 settings
 Maximum/Minimum limits for each actuator are set in the QGC. See QGC screenshots below.
+![alt text](image.png)
+![alt text](image-1.png)
 
-![alt text](Media/image-5.png)
-
-![alt text](Media/image-6.png)
-
-## RC PX4 settings
-
-![alt text](Media/image.png)
-
+![alt text](image-2.png)
 # RC Settings
-Used Controller is Futaba T14SG.
+Used Controller is Futaba T14SG. ID: T14SG-01.
 ## RC Channel assignment
 See `Systems/RC/general.json` for updated HEAR configuration.
 
@@ -78,35 +63,25 @@ See `Systems/RC/general.json` for updated HEAR configuration.
 | **CH11**       | Kill switch        |                     | SF                          |
 | **CH12**       |                    |                     |                             |
 
-## RC Settings
+## RC Switches Settings
+| RC Switch/Knob 	| Max Val 	| Min Val 	| Max Val Pos 	| Min Val Pos 	|
+|----------------	|---------	|---------	|-------------	|-------------	|
+| CH1            	| +100    	| -100    	| West        	| East        	|
+| CH2            	| +100    	| -100    	| North       	| South       	|
+| CH3            	| +100    	| -100    	| North       	| South       	|
+| CH4            	| +100    	| -100    	| West        	| East        	|
+| CH6            	| +100    	| -100    	| South       	| North       	|
+| CH8            	| +140    	| 0       	| South       	| Middle      	|
+| CH10           	| +100    	| -100    	| East        	| West        	|
+| CH11           	| +100    	| -100    	| South       	| North       	|
 
+* Top of the RC points north
+## RC PX4 settings
 
+![alt text](Media/image.png)
 
-
-# Known Issues
-## Issue #1: RC inputs and servo outputs are not in SI units.
-
-**Proposed solution:** prepare a calibration and trimming procedure based on manual angle measurements. Manually obtained angle measurements + angle specifications are input into `HEAR_Configurations`. A special subsystem in `RC_OrientationThrustControlSystemVTOL` picks up angle specifications and updates all `RC_OrientationThrustControlSystemVTOL` parameters accordingly.
-
-
-## Notes for next iteration
-
-- In VTOL mode: prioritize pitch control over yaw for the canard.
-- In VTOL mode: compensate for thrust loss due to:
-    - M1: tilt and canard motion.
-    - M2,M3: vanes movement.
-- Forward control: use asymetric gain for tilt motion
-- Split the servos of the rudders and ailerons
-- Elevators down at VTOL.
-- RC loss failsafe
-- Direct connection with PX4 through WiFi/Wireless Link for easy settings of PX4.
-- Observer design for dimensionless to physical quantities conversion. *Requires fixing the final design, refer to the Issue #1 above.*
-- Measuring wind speed through a pitot-tube.
-- Minimum M1,M2,M3 commands must prevent ESC stall.
-- Ground speed is obtained from the GPS.
-
-## Surfaces and Servos calibration
-### Calibration values
+# Surfaces and Servos calibration
+## Calibration values
 
 | Actuator 	| Positive Set Angle Limit 	| Negative Set Angle Limit 	| Positive Mechanical Limit 	| Negative Mechanical Limit 	| PWM at the Positive Set Angle 	| PWM at the Negative Set Angle 	| PWM at the Positive Mechanical Limit 	| PWM at the Negative Mechanical Limit 	| Zero Angle Reference wrt datum 	|
 |----------	|--------------------------	|--------------------------	|---------------------------	|---------------------------	|-------------------------------	|-------------------------------	|--------------------------------------	|--------------------------------------	|--------------------------------	|
@@ -120,7 +95,7 @@ See `Systems/RC/general.json` for updated HEAR configuration.
 * For PWM limits corresponding to the physical angle limits, refer to the PX4 actuator settings panes above.
 * All angles are in degrees.
 
-### Datum reference
+## Datum reference
 
 | Datum reference 	| Image 	| Comments 	|
 |-----------------	|-------	|----------	|
@@ -128,101 +103,35 @@ See `Systems/RC/general.json` for updated HEAR configuration.
 | Rear Wing       	|       	|          	|
 
 
-# HEAR Tunable parameters
-HEAR tunable parameters specific to VTOL setup are available in the following directories:
+# Commissioning Checks
+## DroneLeaf RC Subsystem
+fwd_cmd: -1 to 1
+ori_des: [-0.5,-0.5,0.0] to [0.5,0.5,0.0]
+ori_rate_des: -1.0 to 1.0
+thrust: 0 to 1
 
-`~/HEAR_Configurations/Systems/VTOL`
+# Components
+## Airspeed sensor
 
-#### FWD_RANGE_ANGLE_RAD_EXTREMUM:
-**Location**: `/RC_OrientationThrustControlSystemVTOL/ActuatVTOLPX4MAVLinkSystem/ActuationAllocatorVTOL`
+airspeed_selector start
+ms4525do start -X
+SENS_EN_MS4525DO 1
+SYS_HAS_NUM_ASPD 1
 
-corresponding variable in code snippet : extremum_angle
+calibration:
+ASPD_SCALE_1
+FW_ARSP_SCALE_EN
+CAL_AIR_TUBED_MM
+CAL_AIR_TUBELEN
+SENS_DPRES_ANSC
+SENS_DPRES_OFF
 
-    if (vtol_mode==0){ // Multirotor
-        _commands[0]=_commands[0] /cos(_u[4]*extremum_angle); // This assumes map_for_fwd range is -1 <-> 1
-    }
+![alt text](Media/airspeed.png)
 
+![alt text](Media/airspeed2.png)
 
-#### COMPENSATION_FACTOR_REAR:
-**Location**: `/RC_OrientationThrustControlSystemVTOL/ActuatVTOLPX4MAVLinkSystem/ActuationAllocatorVTOL`
+# Known Limitations
+## #1: RC inputs and servo outputs are not in SI units.
 
-corresponding variable in code snippet : compensation_factor_rear
+**Proposed solution:** prepare a calibration and trimming procedure based on manual angle measurements. Manually obtained angle measurements + angle specifications are input into `HEAR_Configurations`. A special subsystem in `RC_OrientationThrustControlSystemVTOL` picks up angle specifications and updates all `RC_OrientationThrustControlSystemVTOL` parameters accordingly.
 
-    if (vtol_mode==0){ // Multirotor
-            _commands[1]=_commands[1] /cos(_u[4]*compensation_factor_rear); // This assumes map_for_fwd range is -1 <-> 1
-            _commands[2]=_commands[2] /cos(_u[4]*compensation_factor_rear); // This assumes map_for_fwd range is -1 <-> 1
-    }
-
-
-
-
-#### PITCH_CANARD_RANGE_MAX:
-**Location**: `/RC_OrientationThrustControlSystemVTOL/VTOLFeedForward/gain_pitch_canard_range_max`
-
-    auto gain_pitch_canard_range_max=new Gain<float>();
-    gain_pitch_canard_range_max->setGain(pitch_canard_range_max);
-
-    // Pitch
-    this->connect(demux_ori_des->getOutputPort<float>(Demux3::OP::Y), gain_pitch_canard_range_max->getInputPort<float>());
-    this->connect(gain_pitch_canard_range_max->getOutputPort<float>(), mux_angle_u->getInputPort<float>(Mux3::IP::Y));
-
-#### YAW_CANARD_DIFF_RANGE_MAX:
-**Location**: `/RC_OrientationThrustControlSystemVTOL/VTOLFeedForward/gain_yaw_canard_diff_range_max`
-
-    auto gain_yaw_canard_diff_range_max=new Gain<float>();
-    gain_yaw_canard_diff_range_max->setGain(yaw_canard_diff_range_max);
-
-    // Yaw
-    this->connect(demux_ori_rate_des->getOutputPort<float>(Demux3::OP::Z), gain_yaw_canard_diff_range_max->getInputPort<float>());
-    this->connect(gain_yaw_canard_diff_range_max->getOutputPort<float>(), mux_angle_u->getInputPort<float>(Mux3::IP::Z));
-
-
-#### YAW_FB_ANGLE_U_LIMIT:
-**Location**: `/RC_OrientationThrustControlSystemVTOL/yaw_fb_angle_u_limit`
-
-    auto yaw_fb_angle_u_limit=new Saturation3();
-    auto yaw_fb_angle_u_limit_val=config_ctrl->getValueFromFile<float>(config_ctrl->getSystemSettingsFilePath("VTOL"),"YAW_FB_ANGLE_U_LIMIT");
-    yaw_fb_angle_u_limit->setClipValueMaxThird(yaw_fb_angle_u_limit_val);
-    yaw_fb_angle_u_limit->setClipValueMinThird(-yaw_fb_angle_u_limit_val);
-    this->addBlock(yaw_fb_angle_u_limit,"yaw_fb_angle_u_limit");
-
-
-#### PLANE_FRT_SERVO_TILT AND PLANE_VANES_CLOSED_TILT
-**Location**: `/RC_OrientationThrustControlSystemVTOL/ActuatVTOLPX4MAVLinkSystem/ActuationAllocatorVTOL`
-
-    _commands[5]=plane_vanes_closed_tilt;
-    _commands[6]=plane_vanes_closed_tilt;
-    _commands[7]=plane_frt_servo_tilt;
-
-
-# Flight Behaviour
-## VTOL Mode
-CH1: Throttle commanding M1, M2, M3 (FF). M1 is the frontal motor.
-
-CH2: Yaw commanding the vanes differentially (FB) (HEAR-YAW_VANES_RANGE_MAX), and canard differentials (FF) (HEAR-YAW_CANARD_DIFF_RANGE_MAX); rudder together (FF) (RC-D).
-
-CH3: Roll commanding M2 and M3 in a differentially (FB), AND ailerons differentially (FF) (RC-D). 
-
-CH4: Pitch commanding M1 and (M2+M3) differentially (FB), elevators together (FF) (RC-D), canard together (FF) (HEAR-PITCH_CANARD_RANGE_MAX). Both elevators and canards are differential (PX4 settings).
-
-CH6: Forward lateral commanding vanes (FF) (range HEAR-FWD_RANGE_MIN - HEAR-FWD_RANGE_MAX | parametrized angles HEAR-FWD_RANGE_ANGLE_RAD_EXTREMUM), frontal servo (FF) (range HEAR-FWD_RANGE_MIN - HEAR-FWD_RANGE_MAX), and canard (canard phase leads frontal servo phase by a factor of HEAR-CANARD_FWD_SCALE >= 1) in the same direction . Frontal servo angle theta modifies M1 thrust by M1=M1*/cos(theta).
-
-## Plane mode
-
-### At the event of transition
-The frontal servo drives M1 to HEAR-PLANE_FRT_SERVO_TILT. The canard is also trimmed to HEAR-PLANE_FRT_SERVO_TILT.
-
-M2 and M3 are switched off.
-
-Doors of M2 and M3 closed (RC-D).
-
-Vanes closed HEAR-PLANE_VANES_CLOSED_TILT
-
-### Post-transition control
-CH1: Throttle directly commanding M1. No front servo angle compensation.
-
-CH2: Yaw commanding rudder together (FF) (RC-D). 
-
-CH3: Roll commanding ailerons differentially (FF) (RC-D). 
-
-CH4: Pitch commanding elevators together (FF) (RC-D), and canard together (FF) (HEAR-PITCH_CANARD_RANGE_MAX). Both elevators and canards are differential (PX4 settings).

@@ -1,5 +1,8 @@
 # Golden
 
+## Aim
+- To have a good flying multirotor that we can always show to clients and complete certain standard client requirements with.
+
 ## Operation
 - Payload Support (1kg)
 - Night LEDs with front set
@@ -17,7 +20,7 @@
 - Optic flow
 - Altimeter
 - Battery SOC
-- Closed RPM ESC
+- Closed RPM ESC (Needs review)
 - Pixhawk v6x
 - Eth Switch
 - Gimbal with HD, SD card,
@@ -51,5 +54,5 @@
 - Yaw trajectory
 - Home position
 - GPS waypoint support
-- Gimbal trajectory
+- Gimbal control
 - QGC control

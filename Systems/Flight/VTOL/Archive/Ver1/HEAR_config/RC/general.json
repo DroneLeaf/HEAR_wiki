@@ -1,0 +1,19 @@
+{
+    "map_for_roll":[1150,1850,-0.5,0.5],
+    "map_for_pitch":[1150,1850,-0.5,0.5],
+    "map_for_yaw":[1150,1850,0.0,0.0],
+    "map_for_roll_rate":[1150,1850,0.0,0.0],
+    "map_for_pitch_rate":[1150,1850,0.0,0.0],
+    "map_for_yaw_rate":[1150,1850,-1.1,1.1],
+    "map_for_thrust":[1150,1850,0.0,1.0],
+    "map_for_fwd":[1150,1850,-1.0,1.0],
+    "map_for_vtol_mode":[1600,1800,-1.0,1.0],
+    "CH_number_for_roll": 1,
+    "CH_number_for_pitch": 2,
+    "CH_number_for_yaw": 4,
+    "CH_number_for_throttle": 3,
+    "CH_number_for_forward_motion": 6,
+    "CH_number_for_switch_vtol_mode":8,
+    "simulate_state_estimator": false,
+    "IMPORTANT note": "map_for_fwd must have limits of -1 to 1"
+}

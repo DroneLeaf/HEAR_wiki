@@ -1,0 +1,308 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.16">
+  <diagram name="Page-1" id="izCItK5VorsNNd59iz4u">
+    <mxGraphModel dx="1602" dy="935" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-1" value="Is it a standard multirotor morphology?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="25" width="180" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-2" value="Client Requirements Received" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-3" value="Custom Morphology Design" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-4" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-1" target="Sihe68HLiFX0lgeWzyt1-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="450" as="sourcePoint" />
+            <mxPoint x="450" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-5" value="&lt;div&gt;No&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="60" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-2" target="Sihe68HLiFX0lgeWzyt1-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="450" as="sourcePoint" />
+            <mxPoint x="450" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="450" as="sourcePoint" />
+            <mxPoint x="90" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="360" y="150" />
+              <mxPoint x="90" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-10" value="Yes" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="130" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-11" value="Create Drone Type and Instance Profiles" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-12" value="Is the Hardware Design Complete? (i.e. Flyable)" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="180" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-13" value="Custom Hardware Design Project" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="230" as="sourcePoint" />
+            <mxPoint x="300" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-15" value="&lt;div&gt;No&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="210" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-12" target="Sihe68HLiFX0lgeWzyt1-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="90" as="sourcePoint" />
+            <mxPoint x="630" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-17" value="Yes" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="49" y="296" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-18" value="Perform Motor Thrust Test, Linearize Thrust Response, and Update Type Parameters" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="440" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-20" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-13" target="Sihe68HLiFX0lgeWzyt1-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="90" as="sourcePoint" />
+            <mxPoint x="280" y="90" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="360" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-11" target="Sihe68HLiFX0lgeWzyt1-18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="90" as="sourcePoint" />
+            <mxPoint x="280" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-22" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="Sihe68HLiFX0lgeWzyt1-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="89.5" y="530" as="sourcePoint" />
+            <mxPoint x="90" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-23" value="Perform FSAC Pre-checks. FSACv1 Certified" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="570" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-25" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="99.5" y="540" as="sourcePoint" />
+            <mxPoint x="90" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-26" value="Does FSAC Application Risk Exceeds Nominal Safety Margin?" style="rhombus;whiteSpace=wrap;html=1;spacing=18;" vertex="1" parent="1">
+          <mxGeometry y="670" width="180" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-28" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="740" as="sourcePoint" />
+            <mxPoint x="350" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-29" value="&lt;div&gt;No&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="720" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-30" value="Apply FSAC. Get Initial Tuning" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="700" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-31" value="Yes" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="49" y="820" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-32" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="Sihe68HLiFX0lgeWzyt1-33">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="89.71000000000001" y="810" as="sourcePoint" />
+            <mxPoint x="89.71000000000001" y="840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-33" value="Get Initial Tuning of Roll, Pitch, and Yaw Rate by RC flying assistance." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="860" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-34" value="* e.g. Large Drone" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="90" y="790" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-35" value="List of Evolving Tuning Service Features" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1130" width="300" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-36" value="Yaw Tuning" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-35">
+          <mxGeometry y="30" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-83" value="MRFT h determination based on CTW and coefficient of angular momentum to angular inertia" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-35">
+          <mxGeometry y="60" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-37" value="Simulation Verification of FSAC Pre-flight" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-35">
+          <mxGeometry y="90" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-38" value="&lt;div&gt;Post-FSAC Simulation Matching&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-35">
+          <mxGeometry y="120" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-62" value="Nonlinear flight behavior verification in Simulation" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-35">
+          <mxGeometry y="150" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-66" value="Visual Simulator" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-35">
+          <mxGeometry y="180" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-89" value="Dynamic Thrust Testing" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-35">
+          <mxGeometry y="210" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-39" value="Get Initial Tuning of Altitude Rate. Use RC flying." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="960" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-41" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="90" y="920" as="sourcePoint" />
+            <mxPoint x="90" y="960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-42" value="Fly by RC. Auto-tune Roll, Pitch, then Altitude." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="860" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-43" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-39" target="Sihe68HLiFX0lgeWzyt1-47">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="750" as="sourcePoint" />
+            <mxPoint x="360" y="750" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="90" y="1055" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-45" value="Fine-tune yaw." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="860" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-46" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-42" target="Sihe68HLiFX0lgeWzyt1-45">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="99.71000000000001" y="920" as="sourcePoint" />
+            <mxPoint x="100" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-47" value="RC now commands Roll, Pitch, Yaw rate, and Altitude rate." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="1020" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-48" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-47" target="Sihe68HLiFX0lgeWzyt1-42">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="99.71000000000001" y="920" as="sourcePoint" />
+            <mxPoint x="100" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-49" value="RC still commands Roll, Pitch, Yaw rate, and Altitude rate." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="1020" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-50" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-45" target="Sihe68HLiFX0lgeWzyt1-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="1030" as="sourcePoint" />
+            <mxPoint x="280" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-51" value="Fly by RC. Auto-tune Lateral Loops." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="1020" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-52" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-49" target="Sihe68HLiFX0lgeWzyt1-51">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="905" as="sourcePoint" />
+            <mxPoint x="460" y="905" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-53" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-51" target="Sihe68HLiFX0lgeWzyt1-54">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="719.4100000000001" y="1010" as="sourcePoint" />
+            <mxPoint x="719.4100000000001" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-54" value="Carefully check new tuning" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="860" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-55" value="Fine Tune with Independent Control Loops" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="700" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-56" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-30" target="Sihe68HLiFX0lgeWzyt1-55">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="905" as="sourcePoint" />
+            <mxPoint x="460" y="905" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-57" value="FSAC and Tuning Requirements (FSACv1 Certified)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="1130" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-58" value="Balanced Mechanically" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-57">
+          <mxGeometry y="30" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-59" value="&lt;div&gt;Batteries are full for open-loop ESCs&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-57">
+          <mxGeometry y="60" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-82" value="CTW Knowledge and coefficient of angular momentum to angular inertia" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-57">
+          <mxGeometry y="90" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-88" value="State estimator is well-tuned" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-57">
+          <mxGeometry y="120" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-63" value="Document And Conclude" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
+          <mxGeometry x="660" y="710" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-64" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-55" target="Sihe68HLiFX0lgeWzyt1-63">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="750" as="sourcePoint" />
+            <mxPoint x="460" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-65" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Sihe68HLiFX0lgeWzyt1-54" target="Sihe68HLiFX0lgeWzyt1-63">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="750" as="sourcePoint" />
+            <mxPoint x="670" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-67" value="KPI (End of 2024)&lt;br&gt;&lt;div&gt;Cond1(Yes)-&amp;gt;Cond2(Yes)-&amp;gt;Cond3(No)&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1420" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-68" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1 Day to complete&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-67">
+          <mxGeometry y="40" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-70" value="One failiure per 100 consecutive applications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-67">
+          <mxGeometry y="70" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-73" value="Cond1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="40" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-74" value="Cond2" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="190" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-75" value="&lt;div&gt;Cond3&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="690" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-76" value="Standard List of Documents" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="1370" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-77" value="Motor Tests Report" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-76">
+          <mxGeometry y="30" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-78" value="Motor Allocation Design Report" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-76">
+          <mxGeometry y="60" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-90" value="Flight Controls Design and Implementation &lt;br&gt;Report" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-76">
+          <mxGeometry y="90" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-84" value="KPI (End of 2024)&lt;div&gt;Cond1(Yes)-&amp;gt;Cond2(Yes)-&amp;gt;Cond3(Yes)&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1560" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-85" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2 Days to complete&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-84">
+          <mxGeometry y="40" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-86" value="One failiure per 100 consecutive application" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-84">
+          <mxGeometry y="70" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Sihe68HLiFX0lgeWzyt1-87" value="One pilot visit" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Sihe68HLiFX0lgeWzyt1-84">
+          <mxGeometry y="100" width="300" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
