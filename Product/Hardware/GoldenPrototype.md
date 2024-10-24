@@ -1,4 +1,4 @@
-# Golden
+# Golden Prototype
 
 ## Aim
 - To have a good flying multirotor that we can always show to clients and complete certain standard client requirements with.

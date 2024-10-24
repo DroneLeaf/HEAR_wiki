@@ -1,0 +1,19 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="i8CLXz8A1qQdQE_2GNxV">
+    <mxGraphModel dx="993" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KqRWTi9fIWIWQMUX4TRU-2" value="QGC" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="760" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="KqRWTi9fIWIWQMUX4TRU-3" value="DroneLeaf Logo&lt;div&gt;Popup menu:&lt;br&gt;- Show licensing status (This would show machine ID and licensing status queried from the FC)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Unlicensed: show in red with clear marking&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="KqRWTi9fIWIWQMUX4TRU-2">
+          <mxGeometry x="630" y="30" width="120" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="KqRWTi9fIWIWQMUX4TRU-4" value="DroneLeaf Logo&lt;div&gt;Popup menu:&lt;br&gt;- Show licensing status (This would show machine ID and licensing status queried from the FC)&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="KqRWTi9fIWIWQMUX4TRU-2">
+          <mxGeometry x="10" y="30" width="120" height="130" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

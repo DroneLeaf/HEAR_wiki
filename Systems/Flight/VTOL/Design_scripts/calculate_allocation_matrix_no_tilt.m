@@ -19,7 +19,7 @@ close all
 % thrust and moments, the allocation matrix, and a normalized version of
 % the allocation matrix
 
-design_name = 'VTOL_design_D_5_Oct_2024';
+design_name = 'VTOL_design_D_23_Oct_2024';
 
 %%
 % Motor Convention:
