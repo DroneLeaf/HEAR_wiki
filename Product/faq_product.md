@@ -5,7 +5,7 @@
     - [What does a flight controller do?](#what-does-a-flight-controller-do)
     - [What does DroneLeaf flight controller do?](#what-does-droneleaf-flight-controller-do)
   - [Integration](#integration)
-    - [What is DroneLeaf archeticture in a glance?](#what-is-droneleaf-archeticture-in-a-glance)
+    - [What is DroneLeaf archeticture in a glance?](#what-is-droneleaf-architecture-in-a-glance)
     - [What is DroneLeaf API?](#what-is-droneleaf-api)
     - [What is DroneLeaf recommended hardware setup?](#what-is-droneleaf-recommended-hardware-setup)
   - [Mission](#mission)
@@ -19,7 +19,7 @@
 
 ## General
 ### Who is DroneLeaf for?
-DroneLeaf flight controller is tailored to serve autonomous unmanned aerial vehicles (UAV) developers. There is a significant effort involved until the first flight of the custom platform is acheived. Those efforts distacts UAV developers focus on delivering unique value. DroneLeaf reliefs developers by providing an eco-system for automating UAV development and commissioning.
+DroneLeaf flight controller is tailored to serve autonomous unmanned aerial vehicles (UAV) developers. There is a significant effort involved until the first flight of the custom platform is achieved. Those efforts distracts UAV developers focus on delivering unique value. DroneLeaf reliefs developers by providing an eco-system for automating UAV development and commissioning.
 
 ### What does a flight controller do?
 The UAV flight requires a tight coordination between guidance, navigation, and control (GNC) modules. The GNC functionalities are provided by the flight control system which typically runs onboard. A short description of each of the GNC modules is presented here for convinience:
@@ -37,19 +37,22 @@ Guidance, or trajectory generation, is currently available for multirotor UAVs o
 
 ## Integration
 ![Image](images/integration_arch.png)
-### What is DroneLeaf archeticture in a glance?
-DroneLeaf supports the archeticture shown in the figure below. Running DroneLeaf on embedded Linux environement is a major decision that allows complex integration for future-proof flight control capabilities.
+Figure 1: Integration of major software and computing hardware. (editable source: https://droneleaf.sharepoint.com/:p:/s/technical/Ebb-JwTNLixPhTGHK_esDHgBs5jUdyDp9YxbECXkeO0AMA?e=5B3NmQ)
+### What is DroneLeaf architecture in a glance?
+DroneLeaf supports the architecture shown in the Figure 1. Running DroneLeaf on embedded Linux environment is a major decision that allows complex integration for future-proof flight control capabilities.
 
 ### What is DroneLeaf API?
-DroneLeaf API is a set of ROS topics and services, and configuration files that are necessary for interfacing with high-level user defined mission.
+DroneLeaf API is a set of ROS/ROS2/MAVLinks topics and services, and configuration files that are necessary for interfacing with high-level user defined missions.
 
 ### What is DroneLeaf recommended hardware setup?
-DroneLeaf can work on plenty of hardware that adheres to the general archeticture. Yet the recommended compact hardware is Pixhawk RPi CM4 Baseboard from Holybro.
+DroneLeaf can work on plenty of hardware that adheres to the general architecture. Yet the recommended compact hardware is Pixhawk v6x with CM4 or Nvidia Jetson Orin as companion computer.
 
 ## Mission
 
-### What is the 'Mission Program' software?
-There are two mission programs that the client needs to write (refer to DroneLeaf archeticture figure): One running onboard the UAV and the other one running on the ground station. These programs are essential to tell the UAV what to do and they represent the high-level mission that the UAV needs to perform.
+### What is the 'Mission Control' software?
+There are two types of mission programs that runs on DroneLeaf flight stack: QGroundControl (QGC) and mission control programs written with DroneLeaf code.
+
+There are two mission control programs that the client needs to write (refer to DroneLeaf architecture figure): One running onboard the UAV and the other one running on the ground station. These programs are essential to tell the UAV what to do and they represent the high-level mission that the UAV needs to perform.
 
 The onboard mission program runs synchronous and asyncronous low-latency task, e.g. guidance or fault recovery. 
 
