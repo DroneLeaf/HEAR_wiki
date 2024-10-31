@@ -44,5 +44,3 @@ Some items are worth stressing to be in consultant scope:
 ## Compensation
 
 Upon the full completion of deliverables, the consultant will be paid 100% of the agreed amount.
-
-Agreed amount: 5,000 USD.
