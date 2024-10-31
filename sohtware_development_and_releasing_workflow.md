@@ -1,4 +1,4 @@
-@ Software Development and Releasing Workflow
+# Software Development and Releasing Workflow
 
 ## Introduction
 
