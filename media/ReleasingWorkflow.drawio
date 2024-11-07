@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0" version="24.7.14">
+  <diagram name="Page-1" id="ut1cn94nUtEsRzkFrYhp">
+    <mxGraphModel dx="2438" dy="1980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8nKgUa8L03hYHDr8mXFE-1" target="8nKgUa8L03hYHDr8mXFE-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-1" value="Clone Repo&lt;br&gt;software-stack" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="-100" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8nKgUa8L03hYHDr8mXFE-6" target="8nKgUa8L03hYHDr8mXFE-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8nKgUa8L03hYHDr8mXFE-6" target="8nKgUa8L03hYHDr8mXFE-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-6" value="Create branch&lt;br&gt;vX.Y.Z" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="30" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8nKgUa8L03hYHDr8mXFE-10" target="8nKgUa8L03hYHDr8mXFE-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-10" value="Update each submodule to the target commit" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="160" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-11" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="50" y="300" width="320" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-2" value="Write RELEASE.md&lt;br&gt;release notes" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="8nKgUa8L03hYHDr8mXFE-11">
+          <mxGeometry width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-34" value="Push Branch&lt;br&gt;to remote" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="8nKgUa8L03hYHDr8mXFE-11">
+          <mxGeometry x="205" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="8nKgUa8L03hYHDr8mXFE-11" source="8nKgUa8L03hYHDr8mXFE-2" target="8nKgUa8L03hYHDr8mXFE-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-15" value="X.Y.Z&lt;br&gt;X: Major Release&lt;br&gt;Y: Patches&lt;br&gt;Z: Internal Releases" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-170" y="2.5" width="180" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.468;entryY=-0.019;entryDx=0;entryDy=0;exitX=0.473;exitY=0.994;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="8nKgUa8L03hYHDr8mXFE-18" target="8nKgUa8L03hYHDr8mXFE-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-18" value="&lt;div&gt;hear-cli local_machine run_program&lt;br&gt;&lt;br&gt;&lt;/div&gt;-&amp;gt; generate_hear_mc_deb_from_software_stack" style="whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=2;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="1" y="470" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.475;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="8nKgUa8L03hYHDr8mXFE-2" target="8nKgUa8L03hYHDr8mXFE-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8nKgUa8L03hYHDr8mXFE-27" target="8nKgUa8L03hYHDr8mXFE-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-27" value="&lt;div&gt;hear-cli fleet copy_run_program&lt;br&gt;&lt;br&gt;&lt;/div&gt;-&amp;gt; generate_hear_fc_deb_at_server&lt;br&gt;-&amp;gt; generate_hear_msgs_deb_at_server" style="whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=2;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="2" y="560" width="269" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-67" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8nKgUa8L03hYHDr8mXFE-61" target="8nKgUa8L03hYHDr8mXFE-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-61" value="Copy .deb .ddeb packages from server to &quot;dist&quot;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="550" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-64" value="&lt;div&gt;~/DroneLeaf_debians&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="240" y="530" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="8nKgUa8L03hYHDr8mXFE-66" target="8nKgUa8L03hYHDr8mXFE-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-66" value="Compress HEAR_Configurations:&lt;br&gt;&lt;br&gt;&lt;pre&gt;zip -r1 HEAR_Configurations.zip  HEAR_Configurations&lt;br&gt;mv -f HEAR_Configurations.zip dist/&lt;/pre&gt;" style="whiteSpace=wrap;html=1;align=left;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="640" y="545" width="350" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="8nKgUa8L03hYHDr8mXFE-68" target="8nKgUa8L03hYHDr8mXFE-71">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-68" value="Build PX4-Autopilot:&lt;br&gt;&lt;pre&gt;cd PX4-Autopilot&lt;br&gt;make px4_fmu-v6x&lt;br&gt;mv -f build/px4_fmu-v6x_default.px4 ../dist&lt;br&gt;&lt;/pre&gt;" style="whiteSpace=wrap;html=1;align=left;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="640" y="350" width="350" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-70" value="Setup PX4 building env per documentations" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="310" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-71" value="Create a new release:&lt;br&gt;&lt;pre&gt;gh release create &lt;code&gt;-d -F RELEASE.md &lt;/code&gt;&lt;span class=&quot;pl-k&quot;&gt;vX.Y.Z&lt;/span&gt; dist/&lt;span class=&quot;pl-k&quot;&gt;*&lt;/span&gt;&lt;/pre&gt;" style="whiteSpace=wrap;html=1;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="625" y="160" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="8nKgUa8L03hYHDr8mXFE-72" value="Install github cli" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="100" width="120" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

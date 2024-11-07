@@ -18,3 +18,9 @@ Below is a diagram that explains the process in detail.
 
 ## Releasing Workflow
 
+The releasing workflow consists of steps that are followed to release a new version of the software.
+
+Below is a diagram that explains the process in detail.
+
+![Releasing Workflow](media/ReleasingWorkflow.drawio.svg)
+
