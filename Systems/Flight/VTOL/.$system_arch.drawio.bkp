@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
   <diagram name="Page-1" id="sIQOChHxDy1Jt6XBbkkj">
-    <mxGraphModel dx="1478" dy="872" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="685" dy="438" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -14,7 +14,7 @@
           <mxGeometry x="500" y="665" width="40" height="110" as="geometry" />
         </mxCell>
         <mxCell id="BjdPIeY4YxCnDbGahezC-1" value="RC Receiver" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FF9933;" parent="1" vertex="1">
-          <mxGeometry x="450" y="840" width="100" height="40" as="geometry" />
+          <mxGeometry x="450" y="830" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="BjdPIeY4YxCnDbGahezC-2" value="&lt;font color=&quot;#333333&quot;&gt;Pixhawk v6x&lt;/font&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#E6E6E6;" parent="1" vertex="1">
           <mxGeometry x="570" y="660" width="160" height="120" as="geometry" />
@@ -174,18 +174,6 @@
         </mxCell>
         <mxCell id="RbKv4UcCaGxTW6cpC13_-33" value="" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=default;labelBorderColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="540" y="200.75" width="26.36" height="72.5" as="geometry" />
-        </mxCell>
-        <mxCell id="VG_rABxS01zBny5tgy7W-1" value="Operator" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="20" y="184" width="60" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="VG_rABxS01zBny5tgy7W-2" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;" vertex="1" parent="1">
-          <mxGeometry x="500" y="808.75" width="25" height="31.25" as="geometry" />
-        </mxCell>
-        <mxCell id="VG_rABxS01zBny5tgy7W-3" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;" vertex="1" parent="1">
-          <mxGeometry x="110" y="207" width="40" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="VG_rABxS01zBny5tgy7W-4" value="RC Transmitter" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FF9933;" vertex="1" parent="1">
-          <mxGeometry x="90" y="257" width="80" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
