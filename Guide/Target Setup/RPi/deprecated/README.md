@@ -104,7 +104,27 @@ hear-cli fleet copy_run_program
 
 Choose the program `clone_hear_configurations`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
-2- Clone `HEAR_FC clone and make catkin clean on target` via `hear-cli` program
+
+2- Clone `HEAR_Msgs on target` via `hear-cli` program
+
+```bash
+hear-cli fleet copy_run_program
+```
+
+Choose the program `hear_msgs_clone`, enter your fleet name thet you created before ,wait until the program is finish executing.
+
+
+3- Build `HEAR_Msgs on target` via `hear-cli` program
+
+```bash
+hear-cli fleet copy_run_program
+```
+
+Choose the program `hear_msgs_build`, enter your fleet name thet you created before ,wait until the program is finish executing.
+
+
+
+4- Clone `HEAR_FC clone and make catkin clean on target` via `hear-cli` program
 
 ```bash
 hear-cli fleet copy_run_program
@@ -112,7 +132,7 @@ hear-cli fleet copy_run_program
 
 Choose the program `hear_fc_clone_catkin_clean`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
-3- Clean target from unnecessary files
+5- Clean target from unnecessary files
 
 ```bash
 hear-cli fleet copy_run_program
