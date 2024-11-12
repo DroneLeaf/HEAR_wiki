@@ -19,15 +19,15 @@ This convention is what to expect when moving knobs in QGroundControl after perf
 | **M1**        | Front Motor   | AUX 1           | OFFBOARD MAVLink 1 |
 | **M2**        | Rear Motor R  | AUX 2           | OFFBOARD MAVLink 2 |
 | **M3**        | Rear Motor L  | AUX 3           | OFFBOARD MAVLink 3 |
-| **S4**        | Canard        | AUX 4           | OFFBOARD MAVLink 4 |
-| **S5**        | --------      | AUX 5           | OFFBOARD MAVLink 5 |
+| **S4**        | Canard R      | AUX 4           | OFFBOARD MAVLink 4 |
+| **S5**        | Canard L      | AUX 5           | OFFBOARD MAVLink 5 |
 | **S6**        | Vane R        | AUX 6           | OFFBOARD MAVLink 6 |
 | **S7**        | Vane L        | AUX 7           | OFFBOARD MAVLink 7 |
 | **S8**        | M1 Tilt Servo | AUX 8           | OFFBOARD MAVLink 8 |
-| **S9**        | Rudder        | MAIN 1          | RC Yaw             |
-| **S10**       | --------      | MAIN 1          | RC Yaw             |
-| **S11**       | --------      | MAIN 2          | RC ROLL            |
-| **S12**       | --------      | MAIN 3          | RC ROLL            |
+| **S9**        | Rudder R      | MAIN 1          | RC Yaw             |
+| **S10**       | Rudder L      | MAIN 1          | RC Yaw             |
+| **S11**       | Aileron R     | MAIN 2          | RC ROLL            |
+| **S12**       | Aileron L     | MAIN 3          | RC ROLL            |
 | **S13**       | Elevator R    | MAIN 4          | OFFBOARD MAVLink 9 |
 | **S14**       | Elevator L    | MAIN 5          | OFFBOARD MAVLink 10|
 | **S15**       | Steering      | RC Direct       | RC AUX 1           |
@@ -88,7 +88,6 @@ See `Systems/RC/general.json` for updated HEAR configuration.
 | S6       	| 30                       	| 30                       	|                           	|                           	|                               	|                               	|                                      	|                                      	|                                	|
 | S7       	| 30                       	| 30                       	|                           	|                           	|                               	|                               	|                                      	|                                      	|                                	|
 | S8       	| 7                        	| 33                       	|                           	| 11                        	|                               	|                               	|                                      	|                                      	|                                	|
-| S9       	| 30                        	| 30                       	|                           	| 11                        	|                               	|                               	|                                      	|                                      	|                                	|
 | S11      	| 22                       	| 22                       	|                           	|                           	|                               	|                               	|                                      	|                                      	|                                	|
 | S12      	| 22                       	| 22                       	|                           	|                           	|                               	|                               	|                                      	|                                      	|                                	|
 | S13      	| 18                       	| 18                       	|                           	|                           	|                               	|                               	|                                      	|                                      	|                                	|
