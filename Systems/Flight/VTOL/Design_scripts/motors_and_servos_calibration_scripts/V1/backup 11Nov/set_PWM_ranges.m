@@ -4,9 +4,9 @@ clear all
 %M1, M2, M3
 
 %S4
-s4_min_pwm=1300;
-s4_max_pwm=1675;
-s4_idle_pwm=1480;
+s4_min_pwm=1390;
+s4_max_pwm=1690;
+s4_idle_pwm=1540;
 s4_angle_at_min_pwm=-15;
 s4_angle_at_max_pwm=15;
 s4_pwm_range=s4_max_pwm-s4_min_pwm;
@@ -35,31 +35,31 @@ s4_pwm_range_plane=s4_max_pwm_plane-s4_min_pwm_plane;
 % s5_pwm_range_plane=s5_max_pwm_plane-s5_min_pwm_plane;
 
 %S6
-s6_idle_pwm=1200;
-s6_min_pwm=900;
+s6_idle_pwm=1480;
+s6_min_pwm=1220;
 s6_max_pwm=2100;
-s6_max_pwm_vtol=1600;
+s6_max_pwm_vtol=1745;
 s6_pwm_range=s6_max_pwm-s6_min_pwm;
 s6_pwm_range_vtol=s6_max_pwm_vtol-s6_min_pwm;
 
-s6_angle_at_min_pwm=-19;
-s6_angle_at_max_pwm=30;
+s6_angle_at_min_pwm=-30;
+s6_angle_at_max_s4_pwm_rangepwm=30;
 
 %S7
-s7_idle_pwm=1760;
-s7_min_pwm=1050;
-s7_max_pwm=2300;
-s7_min_pwm_vtol=1450;
+s7_idle_pwm=1570;
+s7_min_pwm=1000;
+s7_max_pwm=1870;
+s7_min_pwm_vtol=1295;
 s7_pwm_range=s7_max_pwm-s7_min_pwm;
 s7_pwm_range_vtol=s7_max_pwm-s7_min_pwm_vtol;
 
 s7_angle_at_min_pwm=-30;
-s7_angle_at_max_pwm=19;
+s7_angle_at_max_pwm=30;
 
 %S8
-s8_idle_pwm_rev=1740;
-s8_min_pwm_rev=1205;
-s8_max_pwm_rev=1820;
+s8_idle_pwm_rev=1700;
+s8_min_pwm_rev=1080;
+s8_max_pwm_rev=1770;
 s8_pwm_range_high_rev=s8_max_pwm_rev-s8_idle_pwm_rev;
 
 s8_idle_pwm=s8_pwm_range_high_rev+s8_min_pwm_rev;
@@ -67,8 +67,8 @@ s8_min_pwm=s8_min_pwm_rev;
 s8_max_pwm=s8_max_pwm_rev;
 s8_pwm_range=s8_max_pwm-s8_min_pwm;
 s8_angle_at_min_pwm=-10;
-s8_angle_at_max_pwm=60;
-s8_angle_at_max_pwm_vtol=60; 
+s8_angle_at_max_pwm=80;
+s8_angle_at_max_pwm_vtol=80; 
 s8_max_pwm_vtol=s8_idle_pwm+(s8_max_pwm-s8_idle_pwm)*(s8_angle_at_max_pwm_vtol/s8_angle_at_max_pwm);% Linearity assumed
 s8_pwm_range_vtol=s8_max_pwm_vtol-s8_min_pwm;
 
@@ -81,20 +81,20 @@ s9_pwm_range=s9_max_pwm-s9_min_pwm;
 s9_min_range_perc=(s9_idle_pwm-s9_min_pwm)/s9_pwm_range;
 s9_max_range_perc=(s9_max_pwm-s9_idle_pwm)/s9_pwm_range;
 
-% %S10
-% s10_idle_pwm=1500;
-% s10_min_pwm=1220;
-% s10_max_pwm=1780;
-% s10_pwm_range=s10_max_pwm-s10_min_pwm;
-% s10_min_range_perc=(s10_idle_pwm-s10_min_pwm)/s10_pwm_range;
-% s10_max_range_perc=(s10_max_pwm-s10_idle_pwm)/s10_pwm_range;
+%S10
+s10_idle_pwm=1500;
+s10_min_pwm=1220;
+s10_max_pwm=1780;
+s10_pwm_range=s10_max_pwm-s10_min_pwm;
+s10_min_range_perc=(s10_idle_pwm-s10_min_pwm)/s10_pwm_range;
+s10_max_range_perc=(s10_max_pwm-s10_idle_pwm)/s10_pwm_range;
 
 %S11 AND S12 by RC
 
 %S13
-s13_idle_pwm_rev=1380;
-s13_min_pwm_rev=1080;
-s13_max_pwm_rev=1720;
+s13_idle_pwm_rev=1520;
+s13_min_pwm_rev=1240;
+s13_max_pwm_rev=1900;
 s13_pwm_range_rev=s13_max_pwm_rev-s13_min_pwm_rev;
 s13_pwm_range_high_rev=s13_max_pwm_rev-s13_idle_pwm_rev;
 
@@ -102,16 +102,16 @@ s13_idle_pwm=s13_pwm_range_high_rev+s13_min_pwm_rev;
 s13_min_pwm=s13_min_pwm_rev;
 s13_max_pwm=s13_max_pwm_rev;
 s13_pwm_range=s13_max_pwm-s13_min_pwm;
-s13_angle_at_min_pwm_vtol=-30;
-s13_angle_at_max_pwm_vtol=30;
+s13_angle_at_min_pwm_vtol=-40;
+s13_angle_at_max_pwm_vtol=40;
 
 %S14
-s14_idle_pwm=1560;
-s14_min_pwm=1250;
-s14_max_pwm=1880;
+s14_idle_pwm=1480;
+s14_min_pwm=1100;
+s14_max_pwm=1800;
 s14_pwm_range=s14_max_pwm-s14_min_pwm;
-s14_angle_at_min_pwm_vtol=-30;
-s14_angle_at_max_pwm_vtol=30;
+s14_angle_at_min_pwm_vtol=-40;
+s14_angle_at_max_pwm_vtol=40;
 
 %S15
 
