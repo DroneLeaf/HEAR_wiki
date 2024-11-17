@@ -59,3 +59,8 @@ hear-cli target copy_run_program --p sync_local_to_cloud_dynamodb
 hear-cli target copy_run_program --p delete_aws_profiles
 ```
 
+Dynamodb manager access at :
+http://localhost:8080
+
+Api access at :
+http://localhost:3000
