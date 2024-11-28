@@ -26,11 +26,25 @@ All steps will done using `hear-cli`
 hear-cli target copy_run_program --p docker_install
 ```
 
+- Node.js Install (`Run Once on target`)
+
+```bash
+hear-cli target copy_run_program --p node_install
+```
+
 - Data lifecycle prepare
 
 ```bash
 hear-cli target copy_run_program --p data_lifecycle_prepare
 ```
+
+- Controller Dashboard prepare
+
+```bash
+hear-cli target copy_run_program --p controller_dashboard_prepare
+```
+
+
 
 - Init Sync Profile
 
@@ -59,7 +73,10 @@ hear-cli target copy_run_program --p sync_local_to_cloud_dynamodb
 hear-cli target copy_run_program --p delete_aws_profiles
 ```
 
-Dynamodb manager access at :
+Controller Dashboard access at :
+http://localhost
+
+Dynamodb Manager access at :
 http://localhost:8080
 
 Api access at :
