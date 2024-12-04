@@ -1,0 +1,2 @@
+- Rudder connect with FB
+- Make front motor compensation linear
