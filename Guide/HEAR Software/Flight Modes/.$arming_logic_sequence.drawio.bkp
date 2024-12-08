@@ -190,13 +190,13 @@
           <mxGeometry x="145" y="1430" width="105" height="30" as="geometry" />
         </mxCell>
         <mxCell id="C8QWBK_skDaOO5yCy-M_-56" value="PX4" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
-          <mxGeometry x="85" y="1850" width="100" height="240" as="geometry" />
+          <mxGeometry x="85" y="1850" width="100" height="320" as="geometry" />
         </mxCell>
         <mxCell id="C8QWBK_skDaOO5yCy-M_-57" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="C8QWBK_skDaOO5yCy-M_-56" vertex="1">
-          <mxGeometry x="45" y="90" width="10" height="130" as="geometry" />
+          <mxGeometry x="45" y="90" width="10" height="220" as="geometry" />
         </mxCell>
         <mxCell id="C8QWBK_skDaOO5yCy-M_-58" value="RC" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" parent="1" vertex="1">
-          <mxGeometry x="635" y="1850" width="100" height="240" as="geometry" />
+          <mxGeometry x="635" y="1850" width="100" height="320" as="geometry" />
         </mxCell>
         <mxCell id="C8QWBK_skDaOO5yCy-M_-59" value="Kill-switch engaged (RC Kill Switch in Kill position)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" target="C8QWBK_skDaOO5yCy-M_-61" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -207,24 +207,48 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="C8QWBK_skDaOO5yCy-M_-61" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
-          <mxGeometry x="135" y="1970" width="10" height="10" as="geometry" />
+          <mxGeometry x="135" y="1970" width="10" height="50" as="geometry" />
         </mxCell>
         <mxCell id="C8QWBK_skDaOO5yCy-M_-62" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
-          <mxGeometry x="680" y="1940" width="10" height="130" as="geometry" />
+          <mxGeometry x="680" y="1940" width="10" height="220" as="geometry" />
         </mxCell>
         <mxCell id="C8QWBK_skDaOO5yCy-M_-64" value="Kill-switch disengaged (RC Kill Switch NOT in Kill position)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" target="C8QWBK_skDaOO5yCy-M_-65" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="680" y="2030" as="sourcePoint" />
+            <mxPoint x="680" y="2060" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="235" y="2030" />
+              <mxPoint x="235" y="2060" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="C8QWBK_skDaOO5yCy-M_-65" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
-          <mxGeometry x="135" y="2030" width="10" height="10" as="geometry" />
+          <mxGeometry x="135" y="2060" width="10" height="55" as="geometry" />
         </mxCell>
         <mxCell id="C8QWBK_skDaOO5yCy-M_-66" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;RC Related Logic&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="135" y="1780" width="495" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Qw8avynCgim54BjMUdIR-1" value="QGC" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" vertex="1" parent="1">
+          <mxGeometry x="780" y="1850" width="100" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Qw8avynCgim54BjMUdIR-2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="Qw8avynCgim54BjMUdIR-1">
+          <mxGeometry x="45" y="90" width="10" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="Qw8avynCgim54BjMUdIR-3" value="Notfify &quot;Kill mode&quot;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" target="Qw8avynCgim54BjMUdIR-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="2020" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="225" y="2020" />
+            </Array>
+            <mxPoint x="145" y="2020" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Qw8avynCgim54BjMUdIR-4" value="Notfify current mode" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825" y="2115" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="225" y="2115" />
+            </Array>
+            <mxPoint x="145" y="2115" as="sourcePoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>

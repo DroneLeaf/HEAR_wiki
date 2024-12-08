@@ -17,11 +17,9 @@ angle_pwm_calibrations_s13_s14;
 
 %% Calculate motors allocation
 % Note: run this segment from the 'V1'
-design_name = 'VTOL_design_F_05_Dec_2024';
+design_name = 'VTOL_design_F_26_Nov_2024';
 calculate_allocation_matrix_no_tilt;
 
 %% Generate configurations files
-Allocation_variant_vtol='VTOL_FixedCanardElevatorNoFwdStick';
-Allocation_variant_plane='Plane_FixedCanardElevatorNoFwdStick';
-
+Allocation_variant='FixedCanardElevatorNoFwdStick';
 generate_hear_configurations_parameters;

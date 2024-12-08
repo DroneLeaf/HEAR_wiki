@@ -2,27 +2,27 @@
 minimum_actuator_cmds=[0.0,0.0,0.0,s4_alloc_min,0.0,s6_alloc_min,s7_alloc_min,s8_alloc_min,s13_alloc_min,s14_alloc_min];
 maximum_actuator_cmds=[1.0,1.0,1.0,s4_alloc_max,0.0,s6_alloc_max,s7_alloc_max,s8_alloc_max,s13_alloc_max,s14_alloc_max];
 
-minimum_actuator_cmds_plane=[0.0,0.0,0.0,s4_alloc_min_plane,0.0,s6_alloc_min_plane,s7_alloc_min_plane,s8_alloc_min_plane,s13_alloc_min,s14_alloc_min];
-maximum_actuator_cmds_plane=[1.0,0.0,0.0,s4_alloc_max_plane,0.0,s6_alloc_max_plane,s7_alloc_max_plane,s8_alloc_max_plane,s13_alloc_max,s14_alloc_max];
+minimum_actuator_cmds_plane=[0.0,0.0,0.0,s4_alloc_min_plane,0.0,s6_alloc_min_plane,s7_alloc_min_plane,s8_alloc_min,s13_alloc_min,s14_alloc_min];
+maximum_actuator_cmds_plane=[0.0,0.0,0.0,s4_alloc_max_plane,0.0,s6_alloc_max_plane,s7_alloc_max_plane,s8_alloc_max,s13_alloc_max,s14_alloc_max];
 
 idle_io_cmds=[0.0,m2_io_idle,m3_io_idle,s4_io_idle ,s4_io_idle   ,s6_io_idle ,s7_io_idle,s8_idle_io,s13_idle_io   ,s14_idle_io   ,0.0   ,0.0];
 
 disarmed_io_cmds=[0.0,0.0,0.0,s4_io_idle   ,s4_io_idle  ,s6_io_idle ,s7_io_idle,s8_idle_io,s13_idle_io   ,s14_idle_io,0.0   ,0.0];
 
-minimum_io_range=[0.0,m2_io_range_min,m3_io_range_min,0.0,0.0,0.0            ,s7_io_range_min ,s8_io_range_min,0.0,0.0,0.0,0.0];
-maximum_io_range=[1.0,m2_io_range_max,m3_io_range_max,1.0,0.0,s6_io_range_max,1.0             ,s8_io_range_max_vtol,1.0,1.0,0.0,0.0];
+minimum_io_range=[0.0,m2_io_range_min,m3_io_range_min,0.0,0.0,0.0   ,s7_io_range_min , 0.0   ,0.0,0.0,0.0,0.0];
+maximum_io_range=[1.0,m2_io_range_max,m3_io_range_max,1.0,0.0,s6_io_range_max,1.0   , 1.0   ,1.0,1.0,0.0,0.0];
 
-minimum_io_range_plane=[0.0,0.0,0.0,0.0,0.0,1.0   ,0.0   ,s8_io_range_min_plane,s13_io_range_min,s14_io_range_min,0.0,0.0];
-maximum_io_range_plane=[1.0,0.0,0.0,1.0,0.0,1.0   ,0.0   ,s8_io_range_max_plane,s13_io_range_max,s14_io_range_max,0.0,0.0];
+minimum_io_range_plane=[0.0,0.0,0.0,0.0,0.0,0.0   ,0.0   ,0.0    ,0.0,0.0,0.0,0.0];
+maximum_io_range_plane=[1.0,0.0,0.0,1.0,0.0,1.0   ,1.0   , 1.0   ,1.0,0.0,0.0,1.0];
 
 minimum_angle_deg_vtol=[0.0,0.0,0.0,s4_angle_at_min_pwm,s4_angle_at_min_pwm,s6_angle_at_min_pwm,s7_angle_at_min_pwm,s8_angle_at_min_pwm     ,0.0,0.0,0.0,0.0];
 maximum_angle_deg_vtol=[0.0,0.0,0.0,s4_angle_at_max_pwm,s4_angle_at_max_pwm,s6_angle_at_max_pwm,s7_angle_at_max_pwm,s8_angle_at_max_pwm_vtol,0.0,0.0,0.0,0.0];
 
 %% Allocation Matrix Construction
-eval(Allocation_variant_vtol);
+eval(Allocation_variant);
 % Plane:
-eval(Allocation_variant_plane);
-
+TriCopterKU_vtol_manual_control_plane_gain_positive=TriCopterKU_vtol_manual_control_gain_positive;
+TriCopterKU_vtol_manual_control_plane_gain_negative=TriCopterKU_vtol_manual_control_gain_negative;
 %% Post Allocation Motor Bias json file
 % TriCopterKU_vtol_manual_control=[ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  -s13_alloc_gain_neg,-s14_alloc_gain_neg];
 % TriCopterKU_vtol_manual_control_plane=[ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0,0.0];
@@ -47,11 +47,11 @@ write_value_to_JSON_file("ToConfigurations/general.json","minimum_angle_deg_vtol
 write_value_to_JSON_file("ToConfigurations/general.json","maximum_angle_deg_vtol",maximum_angle_deg_vtol);
 
 % Plane related - needs revision
-write_value_to_JSON_file("ToConfigurations/general.json","minimum_actuator_cmds_plane",minimum_actuator_cmds_plane);
-write_value_to_JSON_file("ToConfigurations/general.json","maximum_actuator_cmds_plane",maximum_actuator_cmds_plane);
+write_value_to_JSON_file("ToConfigurations/general.json","minimum_actuator_cmds_plane",minimum_actuator_cmds);
+write_value_to_JSON_file("ToConfigurations/general.json","maximum_actuator_cmds_plane",maximum_actuator_cmds);
 
-write_value_to_JSON_file("ToConfigurations/general.json","minimum_io_range_plane",minimum_io_range_plane);
-write_value_to_JSON_file("ToConfigurations/general.json","maximum_io_range_plane",maximum_io_range_plane);
+write_value_to_JSON_file("ToConfigurations/general.json","minimum_io_range_plane",minimum_io_range);
+write_value_to_JSON_file("ToConfigurations/general.json","maximum_io_range_plane",maximum_io_range);
 
 % Pre-defined
 write_value_to_JSON_file("ToConfigurations/general.json","yaw_saturation",[6.00,-6.00,0.0]);
