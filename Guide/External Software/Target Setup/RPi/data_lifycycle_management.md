@@ -32,6 +32,12 @@ hear-cli target copy_run_program --p docker_install
 hear-cli target copy_run_program --p node_install
 ```
 
+- Init Ecr Pull Profile
+
+```bash
+hear-cli target copy_run_program --p init_ecr_pull_profile
+```
+
 - Data lifecycle prepare
 
 ```bash
@@ -44,6 +50,11 @@ hear-cli target copy_run_program --p data_lifecycle_prepare
 hear-cli target copy_run_program --p controller_dashboard_prepare
 ```
 
+- Delete aws profiles (After finishing sync process)
+
+```bash
+hear-cli target copy_run_program --p delete_aws_profiles
+```
 
 
 - Init Sync Profile
@@ -52,6 +63,21 @@ hear-cli target copy_run_program --p controller_dashboard_prepare
 hear-cli target copy_run_program --p init_sync_profile
 ```
 
+
+
+
+Controller Dashboard access at :
+http://localhost
+
+Dynamodb Manager access at :
+http://localhost:8080
+
+Api access at :
+http://localhost:3000
+
+
+
+## For Service Team
 - Sync cloud to local dynamodb
 
 ```bash
@@ -65,19 +91,3 @@ hear-cli target copy_run_program --p sync_cloud_to_local_dynamoDB
 hear-cli target copy_run_program --p sync_local_to_cloud_dynamodb
 ```
 
-
-
-- Delete aws profiles (After finishing sync process)
-
-```bash
-hear-cli target copy_run_program --p delete_aws_profiles
-```
-
-Controller Dashboard access at :
-http://localhost
-
-Dynamodb Manager access at :
-http://localhost:8080
-
-Api access at :
-http://localhost:3000
