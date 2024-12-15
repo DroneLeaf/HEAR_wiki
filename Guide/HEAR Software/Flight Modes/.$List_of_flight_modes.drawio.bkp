@@ -210,7 +210,7 @@
         <mxCell id="guVshhbutOSgESKfzRJR-3" value="RC Position,&amp;nbsp;Mission,&amp;nbsp;Learning Outer -&amp;gt;&amp;nbsp;RC Stabilized" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="guVshhbutOSgESKfzRJR-1" vertex="1">
           <mxGeometry y="26" width="300" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="hrQywTDulMkKXzahHLpu-1" value="List" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="hrQywTDulMkKXzahHLpu-1" value="Checks: Not Ready -&amp;gt; Ready To Fly&amp;nbsp;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="540" y="1060" width="290" height="180" as="geometry" />
         </mxCell>
         <mxCell id="hrQywTDulMkKXzahHLpu-2" value="PX4 connection" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="hrQywTDulMkKXzahHLpu-1">

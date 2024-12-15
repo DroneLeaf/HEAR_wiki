@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
   <diagram name="Page-1" id="6as3FUhw41MRpe2Z9Gl4">
-    <mxGraphModel dx="828" dy="529" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="993" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -71,22 +71,22 @@
           <mxGeometry x="680" y="310" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-22" value="Learning" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="680" y="430" width="110" height="100" as="geometry" />
+          <mxGeometry x="680" y="550" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-23" value="Flying" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="680" y="560" width="110" height="100" as="geometry" />
+          <mxGeometry x="680" y="680" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-24" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="660" y="170" as="sourcePoint" />
-            <mxPoint x="660" y="700" as="targetPoint" />
+            <mxPoint x="660" y="860" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-25" value="time" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="660" y="700" width="60" height="30" as="geometry" />
+          <mxGeometry x="660" y="860" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-29" value="(Disarm to repeat)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="670" y="670" width="130" height="30" as="geometry" />
+          <mxGeometry x="670" y="790" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-30" value="Learning Modes (Outer, and Full):" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
           <mxGeometry x="980" y="70" width="250" height="30" as="geometry" />
@@ -98,28 +98,28 @@
           <mxGeometry x="1000" y="310" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-33" value="Learning" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1000" y="430" width="110" height="100" as="geometry" />
+          <mxGeometry x="1000" y="550" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-34" value="Flying" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1000" y="560" width="110" height="100" as="geometry" />
+          <mxGeometry x="1000" y="680" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-35" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="980" y="170" as="sourcePoint" />
-            <mxPoint x="980" y="900" as="targetPoint" />
+            <mxPoint x="980" y="1010" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-36" value="time" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="980" y="896" width="60" height="30" as="geometry" />
+          <mxGeometry x="980" y="1016" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-37" value="Landing" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1000" y="690" width="110" height="60" as="geometry" />
+          <mxGeometry x="1000" y="810" width="110" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-39" value="Landed" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1000" y="780" width="110" height="60" as="geometry" />
+          <mxGeometry x="1000" y="900" width="110" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-40" value="(Disarm to repeat)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="990" y="850" width="130" height="30" as="geometry" />
+          <mxGeometry x="990" y="970" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-42" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Flight Status Nominal Progression Across Different Flight Modes&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="30" y="10" width="900" height="50" as="geometry" />
@@ -142,14 +142,20 @@
         <mxCell id="1NoHcW3fg8vAXFvvcilR-47" value="Not Ready" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="50" y="120" width="1060" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="HHdZxwyFAaw1n9JJNgzH-1" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="HHdZxwyFAaw1n9JJNgzH-1" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1090" y="160" as="sourcePoint" />
             <mxPoint x="1300" y="160" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HHdZxwyFAaw1n9JJNgzH-10" value="Transition Condition" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="HHdZxwyFAaw1n9JJNgzH-10" value="Transition Condition" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1160" y="130" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qBLi_PJk50myp2y5TS7F-1" value="Taking off" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="430" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="qBLi_PJk50myp2y5TS7F-2" value="Taking off" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="430" width="110" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
