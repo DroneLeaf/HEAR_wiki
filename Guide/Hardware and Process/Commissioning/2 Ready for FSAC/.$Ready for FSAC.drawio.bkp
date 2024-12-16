@@ -76,7 +76,7 @@
         <mxCell id="s676H4-dqHFNzXqADuOr-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="s676H4-dqHFNzXqADuOr-26" target="s676H4-dqHFNzXqADuOr-24">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="s676H4-dqHFNzXqADuOr-26" value="Perform a propeller-free flight check" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="s676H4-dqHFNzXqADuOr-26" value="Perform a propeller-free flight check to ensure conventions and avionics are working fine" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="630" y="360" width="120" height="100" as="geometry" />
         </mxCell>
       </root>
