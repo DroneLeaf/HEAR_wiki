@@ -105,31 +105,32 @@ Remove the target disk from your local machine and connect it to the target mach
 
 - Add instance data to HEAR_Configurations with current target connection data.
 
-- Clone HEAR_Configurations
+- **deprecated** Clone HEAR_Configurations 
 ```bash
 hear-cli instance copy_run_program --p clone_hear_configurations
 ```
 
-- HEAR_Msgs clone
+- **deprecated** HEAR_Msgs clone
 
 ```bash
 hear-cli instance copy_run_program --p hear_msgs_clone
 ```
-- HEAR_Msgs build
+- **deprecated** HEAR_Msgs build
 
 ```bash
 hear-cli instance copy_run_program --p hear_msgs_build
 ```
-- HEAR_FC clone and catkin_clean
+- **deprecated** HEAR_FC clone and catkin_clean
 
 ```bash
 hear-cli instance copy_run_program --p hear_fc_clone_catkin_clean
 ```
-- Ros IP Changer
+- **deprecated** Ros IP Changer
 
 ```bash
 hear-cli instance copy_run_program --p ros_ip_changer
 ```
+
 - Change Network TimeZone
 
 ```bash
@@ -139,4 +140,36 @@ hear-cli instance copy_run_program --p activate_network_timezone
 
 ```bash
 hear-cli instance copy_run_program --p clean_target_for_deployment
+```
+
+```bash
+hear-cli instance copy_run_program --p systemd_unattended_upgrades_disable
+```
+
+
+```bash
+hear-cli instance copy_run_program --p systemd_networkd_wait_online_disable
+```
+
+
+```bash
+hear-cli instance copy_run_program --p system_resize2fs
+```
+
+```bash
+hear-cli instance copy_run_program --p hear_cli_install
+```
+
+
+
+```bash
+hear-cli instance copy_run_program --p install_system_dependencies
+```
+
+```bash
+hear-cli instance copy_run_program --p configure_software_setup_autostart_rpi
+```
+
+```bash
+hear-cli instance copy_run_program --p download_and_install_software_stack
 ```
