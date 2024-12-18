@@ -35,7 +35,7 @@ You should see something similar to this:
 
 ![QGroundControl](media/QGroundControl-NotReady.png)
 
-**Note:** If you see the message "Ready To Fly" notlike the scrrenshot then you are good to go.
+**Note:** If you see the message "Ready To Fly" not like the scrrenshot then you are good to go.
 
 To fix "Not Ready" status in the QGroundControl, go to the terminal that you ran the px4_sitl command and run the following command:
 

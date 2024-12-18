@@ -1,0 +1,85 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
+  <diagram name="Page-1" id="AXCxmvyL3wquDKCp_qeb">
+    <mxGraphModel dx="946" dy="605" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s676H4-dqHFNzXqADuOr-1" value="Start&lt;br&gt;Ready for FSAC Process" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="s676H4-dqHFNzXqADuOr-1" target="s676H4-dqHFNzXqADuOr-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="310" as="sourcePoint" />
+            <mxPoint x="270" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-3" value="Install &quot;Ready to Integrate&quot; FC on the drone" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-4" value="Update the FC UAV type and instance" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="s676H4-dqHFNzXqADuOr-3" target="s676H4-dqHFNzXqADuOr-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="250" as="sourcePoint" />
+            <mxPoint x="390" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="s676H4-dqHFNzXqADuOr-6" target="s676H4-dqHFNzXqADuOr-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-6" value="Perform thrust test experiment and log thrust results. Linearize in PX4 and confirm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="380" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="s676H4-dqHFNzXqADuOr-4" target="s676H4-dqHFNzXqADuOr-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="380" as="sourcePoint" />
+            <mxPoint x="450" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-8" value="* TODO: make detailed process" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="450" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="s676H4-dqHFNzXqADuOr-9" target="s676H4-dqHFNzXqADuOr-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-9" value="Perform battery discharge curve" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="540" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-14" value="* Optional" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="610" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="s676H4-dqHFNzXqADuOr-15" target="s676H4-dqHFNzXqADuOr-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-15" value="Calculate estimated CTW" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="720" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="s676H4-dqHFNzXqADuOr-19" target="s676H4-dqHFNzXqADuOr-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-19" value="Ensure the drone is mechanically balanced. Ensure generated thrust is balanced. Remove the payload if necessary" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="30" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-21" value="* TODO: make detailed process" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="760" y="270" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="s676H4-dqHFNzXqADuOr-22" target="s676H4-dqHFNzXqADuOr-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-22" value="Perform &#39;Flyable&#39; preflight checks" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="200" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-24" value="Finish&lt;br&gt;Ready for FSAC Process" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="s676H4-dqHFNzXqADuOr-26" target="s676H4-dqHFNzXqADuOr-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-26" value="Perform a propeller-free flight check to ensure conventions and avionics are working fine" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="360" width="120" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
