@@ -79,19 +79,15 @@ git clone https://github.com/ahmed-hashim-pro/HEAR_CLI
 6- Clone HEAR_Docker on target via `hear-cli`
 
 ```bash
-hear-cli fleet copy_run_program
+hear-cli target copy_run_program --p hear_docker_clone
 ```
-Choose the proper program EX:`hear_docker_clone` , enter your fleet name thet you created before ,wait until the program is finish executing.
 
 
 7- Start full system installation process from hear-cli
 
 ```bash
-hear-cli fleet copy_run_program
+hear-cli target copy_run_program --p hear_docker_rpi_full_system_install
 ```
-
-Choose the proper program EX:`hear_docker_rpi_full_system_install` , enter your fleet name thet you created before ,wait until full system installation is finished.
-
 
 
 ### Other Preparations
@@ -99,46 +95,35 @@ Choose the proper program EX:`hear_docker_rpi_full_system_install` , enter your 
 1- Clone `HEAR_Configurations on target` via `hear-cli` program
 
 ```bash
-hear-cli fleet copy_run_program
+hear-cli target copy_run_program --p clone_hear_configurations
 ```
 
-Choose the program `clone_hear_configurations`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
-
-2- Clone `HEAR_Msgs on target` via `hear-cli` program
+2- **deprecated** Clone `HEAR_Msgs on target` via `hear-cli` program
 
 ```bash
-hear-cli fleet copy_run_program
+ hear-cli fleet copy_run_program --p hear_msgs_clone
 ```
 
-Choose the program `hear_msgs_clone`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
-
-3- Build `HEAR_Msgs on target` via `hear-cli` program
+3- **deprecated** Build `HEAR_Msgs on target` via `hear-cli` program
 
 ```bash
-hear-cli fleet copy_run_program
+hear-cli fleet copy_run_program --p hear_msgs_build
 ```
 
-Choose the program `hear_msgs_build`, enter your fleet name thet you created before ,wait until the program is finish executing.
-
-
-
-4- Clone `HEAR_FC clone and make catkin clean on target` via `hear-cli` program
+4- **deprecated** Clone `HEAR_FC clone and make catkin clean on target` via `hear-cli` program
 
 ```bash
-hear-cli fleet copy_run_program
+hear-cli fleet copy_run_program --p hear_fc_clone_catkin_clean
 ```
-
-Choose the program `hear_fc_clone_catkin_clean`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
 5- Clean target from unnecessary files
 
 ```bash
-hear-cli fleet copy_run_program
+hear-cli fleet copy_run_program --p clean_target_for_deployment
 ```
 
-Choose the program `clean_target_for_deployment`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
 
 
@@ -149,40 +134,38 @@ Choose the program `clean_target_for_deployment`, enter your fleet name thet you
 
 
 ```bash
-hear-cli fleet copy_run_program
+hear-cli fleet copy_run_program --p set_static_ip
 ```
 
-Choose the program `set_static_ip`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
-
-2- Set ROS IP on .bashrc file on target
+2- **deprecated** Set ROS IP on .bashrc file on target
 
 
 ```bash
-hear-cli fleet copy_run_program
+hear-cli fleet copy_run_program --p ros_ip_changer
 ```
-
-Choose the program `ros_ip_changer`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
 
 3- Update TimeZone on target
 
 
 ```bash
-hear-cli fleet copy_run_program
+hear-cli fleet copy_run_program --p activate_network_timezone
 ```
-
-Choose the program `activate_network_timezone`, enter your fleet name thet you created before ,wait until the program is finish executing.
 
 
 
 ### Operation Steps
 
-1- Set ROS MASTER URI on .bashrc file on target
+1- **deprecated** Set ROS MASTER URI on .bashrc file on target
 
 
 ```bash
-hear-cli fleet copy_run_program
+hear-cli fleet copy_run_program --p ros_master_uri_changer
 ```
 
-Choose the program `ros_master_uri_changer`, enter your fleet name thet you created before ,wait until the program is finish executing.
+
+
+
+## Hints 
+- Clean .bashrc file unnecessary export 

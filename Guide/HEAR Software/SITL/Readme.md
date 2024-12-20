@@ -9,7 +9,22 @@ This document describes how the SITL is run with PX4 gazebo environment.
 
 As you have your machine ready for development and testing, let's run the SITL setup to play around the software stack.
 
-#### 1 - PX4-Autopilot
+#### 1 - Mavlink Router
+First of all, before launching Leaf QGC, we need to run the following command.
+```bash
+mavlink-routerd 0.0.0.0:14550
+```
+After successful execution, please make sure your settings are the same as the output below.
+```
+Opened UDP Server [4]server: 0.0.0.0:10000
+Opened UDP Client [5]client: 127.0.0.1:11000
+Opened UDP Server [7]CLI: 0.0.0.0:14550
+Opened TCP Server [8] [::]:5760
+```
+If everything is correct, you can continue to the next step.
+
+
+#### 2 - PX4-Autopilot
 
 ```bash
 cd PX4-Autopilot
@@ -23,41 +38,46 @@ If you want to launch a specific drone instance (e.g. DFL), you can specify it b
 make px4_sitl gazebo-classic_dfl
 ```
 
-#### 2 - QGroundControl
-
-Run the QGroundControl and connect to the PX4 SITL instance.
-
-```bash
-cd ~/Downloads # where you downloaded the QGroundControl AppImage
-./QGroundControl.AppImage
-```
-You should see something similar to this:
-
-![QGroundControl](media/QGroundControl-NotReady.png)
-
-**Note:** If you see the message "Ready To Fly" not like the scrrenshot then you are good to go.
-
-To fix "Not Ready" status in the QGroundControl, go to the terminal that you ran the px4_sitl command and run the following command:
-
+If you do not see the green colored "Ready for takeoff!" message in the terminal, you can use the following command.
 ```bash
 pxh> ekf2 start
 ```
-Then you should see the status "Ready To Fly" in QGroundControl.
 
-#### 3 - HEAR_Configurations
+#### 3 - Leaf QGroundControl
+
+Run the QGroundControl and connect to the PX4 SITL instance via MAVLink.
+
+```bash
+cd ~/Downloads # where you downloaded the QGroundControl AppImage
+./LeafMC.AppImage
+```
+You should see something similar to this:
+
+![QGroundControl](media/LeafMCQGC_PX4SITL.png)
+
+If you see the message "FC Disconnected" like the screenshot then you can move on and launch the FC. Otherwise, if you see the message "Disconnected", you need to create a comm link from QGC settings to be able to communicate through MAVLink.
+
+Click on the QGC symbol on the top left corner of the window and open up the application settings.
+![QGroundControl](media/QGC_setting.png)
+
+Go to Comm Links tab on the top left menu and click on "Add". Then, fill the settings as follows and create the comm link. You can put anything you want in the place of "COMMLINK-NAME".
+![QGroundControl](media/commlink.png)
+
+After that, you can connect to the comm link instance you have created, in this case the comm link name is set to "SITL".
+![QGroundControl](media/connect_commlink.png)
+
+#### 4 - HEAR_Configurations
 As you have the PX4 SITL running and connected to QGroundControl, you need to setup the configurations before runing the HEAR_FC. There are a couple of settings you have to make sure that setup correctly.
 
 - Systems/Pixhawk
 - UAV_instances
-- Missions/Scenarios
-- Missions/Fleets
 
 Head to ~/HEAR_Configurations/Systems/Pixhawk/ and edit the general.json file to match the following:
 
 ```json
 {
     "pixhawk_ip": "127.0.0.1",
-    "pixhawk_udp_port": 14580,
+    "pixhawk_udp_port": 10000,
     "local_ethernet_interface_ip": "127.0.0.1",
     "local_udp_port": 14540,
     "serial_port_addr":"/dev/ttyS0",
@@ -75,31 +95,7 @@ After setting up the Pixhawk configuration, you need to check the general.json f
 }
 ```
 
-Similarly, you should navigate to ~/HEAR_Configurations/Missions/Scenarios and check the configuration of the mission scenario that you aim to run in HEAR_MC. For example, if you want to run demo_fsac.launch in HEAR_MC, you should check the general.json file under FSACdemo/ and see the fleet name.
-
-```json
-{
-    "Fleet":"FSACdemo",
-    "EnumerateFleet":false,
-    "fsac_predefined_time_s": 8.0,
-    "post_fsac_traj_start_position": [0,0,1.5],
-    "post_fsac_traj": "circle_Cinewhoop_Fast",
-    "window_target_offset": [0.2, 0, 0]
-}
-```
-
-Since we know that "demo_fsac" uses "FSACdemo" fleet, we need to configure the general.json file in ~/HEAR_Configurations/Missions/Fleets/FSACdemo and make sure that the "default_uav_instance_name" is in the "UAV_instances" as well.
-
-
-```json
-{
-    "UAV_instances":["DFL_Stork_01"]
-}
-```
-
-Once you go over the each step carefully and configure the settings properly, you are ready to run the HEAR_FC and HEAR_MC.
-
-#### 4 - HEAR_FC
+#### 5 - HEAR_FC
 As you have the PX4 SITL running and connected to QGroundControl, you can now run the HEAR_FC to simulate the drone's flight controller.
 
 - Run
@@ -108,17 +104,4 @@ As you have the PX4 SITL running and connected to QGroundControl, you can now ru
     source devel/setup.bash
     roslaunch flight_controller px4_flight_mavlink_opti.launch
     ```
-
-#### 5 - HEAR_MC
-Now, HEAR_MC provides the CLI interface to perform messions and tasks on the drone. You can run the following command to start the HEAR_MC:
-
-```bash
-cd ~/HEAR_MC
-source devel/setup.bash
-roslaunch mission_control demo_fsac.launch
-```
-You should see something similar to this:
-
-![HEAR_MC](media/HEAR_MC-ExampleLaunch.png)
-
-Yeah!!! Your Good to go, have fun developing and testing with the HEAR software stack.
+Finally, you should see "PX4 Ready to Fly" message on the QGC and you are good to go!
