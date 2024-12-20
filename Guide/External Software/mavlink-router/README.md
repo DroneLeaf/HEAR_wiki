@@ -27,6 +27,7 @@ Clone the mavlink-router repository from the GitHub repository using the followi
 ```bash
 git clone git@github.com:DroneLeaf/mavlink-router.git
 cd mavlink-router
+git submodule update --init --recursive
 meson setup build .
 ninja -C build
 sudo ninja -C build install
