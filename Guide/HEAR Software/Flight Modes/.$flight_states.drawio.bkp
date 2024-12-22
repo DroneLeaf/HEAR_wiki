@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
   <diagram name="Page-1" id="6as3FUhw41MRpe2Z9Gl4">
-    <mxGraphModel dx="1528" dy="977" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1362" dy="843" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -58,9 +58,6 @@
         <mxCell id="1NoHcW3fg8vAXFvvcilR-21" value="Armed Idle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="680" y="230" width="110" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-22" value="Learning" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="680" y="470" width="110" height="100" as="geometry" />
-        </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-23" value="Flying" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="680" y="600" width="110" height="100" as="geometry" />
         </mxCell>
@@ -81,9 +78,6 @@
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-32" value="Armed Idle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="1000" y="230" width="110" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-33" value="Learning" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1000" y="470" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-34" value="Flying" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="1000" y="600" width="110" height="100" as="geometry" />
@@ -110,21 +104,18 @@
           <mxGeometry x="30" y="10" width="900" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-43" value="List of Allowed Mode Changes based on status - Dotted Arrows And the following (if any):" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
-          <mxGeometry x="40" y="1020" width="510" height="60" as="geometry" />
+          <mxGeometry x="40" y="850" width="510" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-47" value="Not Ready" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="50" y="120" width="1060" height="30" as="geometry" />
         </mxCell>
         <mxCell id="qBLi_PJk50myp2y5TS7F-1" value="Taking off" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="680" y="350" width="110" height="100" as="geometry" />
+          <mxGeometry x="680" y="350" width="60" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="qBLi_PJk50myp2y5TS7F-2" value="Taking off" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1000" y="350" width="110" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="iuxJGta7QJsGL0OLkIdn-1" value="Ready To Fly" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="iuxJGta7QJsGL0OLkIdn-1" value="Ready To Fly" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="50" y="170" width="1060" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="iuxJGta7QJsGL0OLkIdn-2" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=1 2;exitPerimeter=0;" edge="1" parent="1" source="iuxJGta7QJsGL0OLkIdn-3" target="iuxJGta7QJsGL0OLkIdn-6">
+        <mxCell id="iuxJGta7QJsGL0OLkIdn-2" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=1 2;exitPerimeter=0;" parent="1" source="iuxJGta7QJsGL0OLkIdn-3" target="iuxJGta7QJsGL0OLkIdn-6" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="640" y="480" as="sourcePoint" />
             <mxPoint x="690" y="430" as="targetPoint" />
@@ -134,10 +125,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="iuxJGta7QJsGL0OLkIdn-3" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="iuxJGta7QJsGL0OLkIdn-3" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="170" y="350" width="20" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="iuxJGta7QJsGL0OLkIdn-4" value="" style="curved=1;endArrow=classic;html=1;rounded=0;dashed=1;dashPattern=1 2;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="iuxJGta7QJsGL0OLkIdn-5" target="iuxJGta7QJsGL0OLkIdn-6">
+        <mxCell id="iuxJGta7QJsGL0OLkIdn-4" value="" style="curved=1;endArrow=classic;html=1;rounded=0;dashed=1;dashPattern=1 2;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="iuxJGta7QJsGL0OLkIdn-5" target="iuxJGta7QJsGL0OLkIdn-6" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="930" y="500" as="sourcePoint" />
             <mxPoint x="500" y="410" as="targetPoint" />
@@ -147,11 +138,20 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="iuxJGta7QJsGL0OLkIdn-5" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="iuxJGta7QJsGL0OLkIdn-5" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="950" y="350" width="20" height="440" as="geometry" />
         </mxCell>
-        <mxCell id="iuxJGta7QJsGL0OLkIdn-6" value="Armed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="iuxJGta7QJsGL0OLkIdn-6" value="Armed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="400" y="350" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7scZPJ2cMPDFxetB9PGE-3" value="Learning" style="shape=corner;whiteSpace=wrap;html=1;direction=west;dx=30;dy=90;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="680" y="350" width="110" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="7scZPJ2cMPDFxetB9PGE-4" value="Learning" style="shape=corner;whiteSpace=wrap;html=1;direction=west;dx=30;dy=90;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="360" width="110" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="7scZPJ2cMPDFxetB9PGE-5" value="Taking off" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="360" width="60" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
