@@ -10,6 +10,32 @@ This document describes how the SITL is run with PX4 gazebo environment.
 As you have your machine ready for development and testing, let's run the SITL setup to play around the software stack.
 
 #### 1 - Mavlink Router
+
+
+```bash
+sudo mkdir -p /etc/mavlink-router/
+```
+
+```bash
+sudo touch /etc/mavlink-router/main.conf
+printf ' \n
+## UART setup \n
+#[UartEndpoint pixhawk] \n
+#Device = /dev/ttyS0 \n
+#Baud = 52000  \n
+\n
+[UdpEndpoint client] \n
+Mode = Normal \n
+Address = 0.0.0.0 \n
+Port = 11000 \n
+\n
+[UdpEndpoint server] \n
+Mode = Server \n
+Address = 0.0.0.0 \n
+Port = 10000
+' | sudo tee /etc/mavlink-router/main.conf
+```
+
 First of all, before launching Leaf QGC, we need to run the following command.
 ```bash
 mavlink-routerd 0.0.0.0:14550
@@ -44,6 +70,10 @@ pxh> ekf2 start
 ```
 
 #### 3 - Leaf QGroundControl
+
+Download QGC
+https://droneleafworkspace.slack.com/files/U080N4HR8HG/F086D7BCQQ7/leafmc.appimage
+
 
 Run the QGroundControl and connect to the PX4 SITL instance via MAVLink.
 
@@ -90,7 +120,7 @@ After setting up the Pixhawk configuration, you need to check the general.json f
 
 ```json
 {
-    "default_uav_instance_name": "DFL_Stork_01",
+    "default_uav_instance_name": "X500_TF40d_Test",
     "Description": "Define default_uav_instance_name to enforce uav instance name on the current machine"
 }
 ```
