@@ -84,12 +84,7 @@ Remove the target disk from your local machine and connect it to the target mach
 - Set static IP.
 
 
-   - for wifi interface
-     ```bash
-     hear-cli target copy_run_program --p set_static_ip_wifi_specific_interface
-     ```
-
-   - for ethernet interface
+   - for ethernet interface (192.168.144.5)
      ```bash
      hear-cli target copy_run_program --p set_static_eth0_ip_specific_interface
      ```
