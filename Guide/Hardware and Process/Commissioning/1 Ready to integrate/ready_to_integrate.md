@@ -1,17 +1,10 @@
-# Target Praeparation For `Ready_To_Integrate` Process
+# Target Preparation For `Ready_To_Integrate` Process
 
 ## Burn image to target
 Find images in: https://droneleaf.sharepoint.com/:f:/s/technical/Eg2LOo9V0ANArVuQ_eN8DWIBshhVyvY0ty1XDy2FspXfbg?e=CflYt8
+Check release notes in relevant version file found above.
 
-ORIN.img `V1.0.0`
-
-RPI.img `V1.0.0`
-> HEAR_CLI image commit id is  `352f389` and sha is `352f389c41bca99788fa8fb7708b530d9d907e2d`
-
-> HEAR_Docker image commit id is  `b08e8d5` and sha is `b08e8d51897b1db6c432c4009dcd5f029a498a24`
-
-
-download the latest version of desired target
+### Download the latest version of desired target
 
 the image folder will contain `*.zip` file and `md5sum.txt` file.
 
@@ -22,7 +15,7 @@ after uncompress the *.zip file , make sure to Run
 md5sum *.img
 ```
 file signature will be extracted and then you have to compare with the value in the `md5sum.txt` file.
-
+### Use Balena Etcher For Burning the Image
 Use Balena Etcher to burn the proper target image inside the new target (`ORIN`,`RPI`, etc)
 
 download latest version from here : https://github.com/balena-io/etcher/releases/
@@ -173,3 +166,4 @@ hear-cli instance copy_run_program --p configure_software_setup_autostart_rpi
 ```bash
 hear-cli instance copy_run_program --p download_and_install_software_stack
 ```
+
