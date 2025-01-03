@@ -1,4 +1,4 @@
-# Target Preparation For `Ready_To_Integrate` Process
+# Target Praeparation For `Ready_To_Integrate` Process
 
 ## Burn image to target
 Find images in: https://droneleaf.sharepoint.com/:f:/s/technical/Eg2LOo9V0ANArVuQ_eN8DWIBshhVyvY0ty1XDy2FspXfbg?e=CflYt8
@@ -80,7 +80,6 @@ Remove the target disk from your local machine and connect it to the target mach
 > If you use `emmc` version RPi, turn-off boot switch (if you are using Pixhawkv6x carrier board with CM4 then toggle the switch to RPI position). 
 
 ## Post image burning installations and configurations
-
 - Connect the target to LAN through the device ethernet port.
 - Set static IP.
 
@@ -95,75 +94,10 @@ Remove the target disk from your local machine and connect it to the target mach
      hear-cli target copy_run_program --p set_static_eth0_ip_specific_interface
      ```
 
-
-- Add instance data to HEAR_Configurations with current target connection data.
-
-- **deprecated** Clone HEAR_Configurations 
-```bash
-hear-cli instance copy_run_program --p clone_hear_configurations
-```
-
-- **deprecated** HEAR_Msgs clone
-
-```bash
-hear-cli instance copy_run_program --p hear_msgs_clone
-```
-- **deprecated** HEAR_Msgs build
-
-```bash
-hear-cli instance copy_run_program --p hear_msgs_build
-```
-- **deprecated** HEAR_FC clone and catkin_clean
-
-```bash
-hear-cli instance copy_run_program --p hear_fc_clone_catkin_clean
-```
-- **deprecated** Ros IP Changer
-
-```bash
-hear-cli instance copy_run_program --p ros_ip_changer
-```
-
 - Change Network TimeZone
 
 ```bash
 hear-cli instance copy_run_program --p activate_network_timezone
 ```
-- Clean Target For Deployment
-
-```bash
-hear-cli instance copy_run_program --p clean_target_for_deployment
-```
-
-```bash
-hear-cli instance copy_run_program --p systemd_unattended_upgrades_disable
-```
-
-
-```bash
-hear-cli instance copy_run_program --p systemd_networkd_wait_online_disable
-```
-
-
-```bash
-hear-cli instance copy_run_program --p system_resize2fs
-```
-
-```bash
-hear-cli instance copy_run_program --p hear_cli_install
-```
-
-
-
-```bash
-hear-cli instance copy_run_program --p install_system_dependencies
-```
-
-```bash
-hear-cli instance copy_run_program --p configure_software_setup_autostart_rpi
-```
-
-```bash
-hear-cli instance copy_run_program --p download_and_install_software_stack
-```
+*Note: Please refer to the release patches found in the release notes document.
 
