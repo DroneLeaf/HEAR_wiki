@@ -3,7 +3,7 @@ Flight logic management is a very delicate task within flight system design. It 
 
 ## Components of Logic
 In LeafFC, we initiate at the executable level these entities:
-1. Flight Systems (FS): Flight systems host trajectory, control, state-estimation, and actuation algorithms. The FSs are stateful but they should not hold the Single Source of Truth (SSoT). i.e. a FS cannot report that it is Armed/Disarmed though it should be one of these.
+1. Flight Systems (FS): Flight systems host trajectory, control, state-estimation, and actuation algorithms. The FSs are stateful but they should not hold the Single Source of Truth (SSoT). i.e. a FS cannot report that it is Armed/Disarmed though it should be in one of these states.
 2. Flight Logic Systems (FLS): This is the concern of this document. Within FLS we have two types of entities:
     1. Logic Managers (LM): These are Blocks that hold the status of a specific component of the system. For example, ArmManager holds the status of Arm/Disarm of the flight controller. This is the SSoT of logic.
     2. Logic Pipelines (LP): LPs hold mission elements that interact with other LMs and other pipelines. LP were made to organize sequential and sequential-conditional logic in a clear manner. LP allow reusability of sequential logic.
