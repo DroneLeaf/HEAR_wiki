@@ -76,7 +76,7 @@ By including `--tags`, the command will try to find the most recent tag (whether
 ### Summary:
 
 - **`--always`** ensures a description is always returned, even if no tags are present, by falling back to the commit hash.
-- **`--tags`** allows Git to use both annotated and lightweight tags, expanding the scope for finding the most recent tag.
+- **`--tags`** allows Git to use both an notated and lightweight tags, expanding the scope for finding the most recent tag.
 - **When there are tags**, it will return the most recent tag with the number of commits since that tag, followed by the abbreviated commit hash.
 - **When there are no tags**, it will output the commit hash.
 

@@ -18,5 +18,8 @@ uORB topics are used in the internal PX4 communications and are captured in PX4 
 
 It is easy to trace which PX4 streamed mavlink messages correspond to which uORB messages by tracing the files in the directory `src/modules/mavlink/streams`. For example, the `SCALED_IMU3` stream has a corresponding `SCALED_IMU3.hpp` file in the `src/modules/mavlink/streams` directory. From `SCALED_IMU3` it can be seen that the message is constructed using three uORB topics: `vehicle_imu`, `vehicle_imu_status`, and `sensor_mag` enclosed by the `ORB_ID` macro. 
 
+Use the website: https://docs.px4.io/main/en/middleware/uorb_graph.html to know who publishes and subscribes a particular ORB message.
+
+
 ### From MAVLink -> To ORB
 To check how the MAVLink messages received by PX4 are used internally check the function `MavlinkReceiver::handle_message(mavlink_message_t *msg)` in `src/modules/mavlink/mavlink_receiver.cpp`
