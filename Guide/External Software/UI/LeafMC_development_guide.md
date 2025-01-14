@@ -41,7 +41,7 @@ Now, to Add a new action button to Fly View toolstrip for example we have to fol
     - myButtonTitle: where to define?
     - actionMyButton: where to define?
     - "/res/myButtonTitle.svg": how to add the icon?
-3. Add MyButton.qml to the FightDisplay CMakelists.txt
+3. Add MyButton.qml to the FightDisplay `CMakelists.txt`
 
     ```cmake
     add_custom_target(FligthDisplayQml
@@ -50,7 +50,7 @@ Now, to Add a new action button to Fly View toolstrip for example we have to fol
         MyButton.qml
     )
     ```
-4. Add MyButton.qml to the qgroundcontrol.qrc
+4. Add `MyButton.qml` to the `/qgroundcontrol.qrc`
 
     ```xml
     <qresource prefix="/qml">
@@ -58,9 +58,9 @@ Now, to Add a new action button to Fly View toolstrip for example we have to fol
         <file alias="QGroundControl/FlightDisplay/MyButton.qml">src/FlightDisplay/MyButton.qml</file>
     </qresource>
     ```
-5. Add MyButton.qml to the action list toolstrip
+5. Add `MyButton.qml` to the action list toolstrip
 
-    Go to src/FlightDisplay/FlyViewToolStripActionList.qml and add the following
+    Go to `src/FlightDisplay/FlyViewToolStripActionList.qml` and add the following
 
     ```qml
     
@@ -80,29 +80,44 @@ Now, to Add a new action button to Fly View toolstrip for example we have to fol
         ]
     }
     ```
-6. Define myButtonTitle and actionMyButton in GuidedActionsController.qml
+6. Define myButtonTitle and actionMyButton in `GuidedActionsController.qml`
 
-    Go to src/FlightDisplay/GuidedActionsController.qml and add the following
+    Go to `src/FlightDisplay/GuidedActionsController.qml` and add the following
 
     ```qml
+    Item {
     ...
     property string myButtonTitle: qsTr("My Button")
 
     ...
+    
     readonly property int actionInspectSlaps:               39
     readonly property int actionPausePipeline:              40
     readonly property int actionResumePipeline:             41
     readonly property int actionMyButton:                   42 // new actionID
-    
+    }
     ```
     Note:
-    - in confirmAction function, add a new case for the new actionID
-    - In executeAction function, add a new case for the new actionID and put the logic to be executed when the button is clicked.
-    - use _activeVehicle to call functions from the Vehicle C++ class, ex _activeVehicle.sayMyButton()
+    - in `confirmAction` function, add a new case for the new `actionID`. Example:
+    ```
+    case actionMyButton:
+        return
+        break
+    ```
+        
+    You can look at other casesif you want an example of showing the confirm action slide bar when the button is clicked. 
+    - In `executeAction` function, add a new case for the new `actionID` and put the logic to be executed when the button is clicked. Example:
+    ```
+    case actionMyButton:
+        _activeVehicle.sayMyButton()
+        break
+    ```
+
+    use `_activeVehicle` to call functions from the Vehicle C++ class declared in `src/Vehicle/Vehicle.h`, ex `_activeVehicle.sayMyButton()`. The upcoming Step 8 shows how to do that. 
 7. Add the icon to the resources
     
     - Go to resources folder and paste the icon file (myButtonTitle.svg) there.
-    - Add the icon to the qgcresources.qrc file
+    - Add the icon to the `/qgcresources.qrc` file
     ```xml
     <qresource prefix="/res">
         ...
@@ -123,7 +138,7 @@ Now, to Add a new action button to Fly View toolstrip for example we have to fol
     }
     ```
 
-After compiling and running the project, you should see the new button in the Fly View toolstrip and if you click it you will hear a voice syaing "My Button Clicked".
+After compiling and running the project in Qt Creator (Ctrl+R), you should see the new button in the Fly View toolstrip and if you click it you will hear a voice syaing "My Button Clicked".
 
 ## 2. C++ variables and its binding to QML
 Inside the C++ code, we can define variables and functions that can be accessed from QML files. To do so, we have to use the Q_PROPERTY macro to define the variable and the Q_INVOKABLE macro to define the function.
