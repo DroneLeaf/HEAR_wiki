@@ -2,7 +2,7 @@
 The goal of this guide is to show you how to send and receive MAVLink messages using the generated MAVLink definitions in python to make the testing and debugging process easier for core developers.
 
 ## 1. Generate the MAVLink Definitions for Python
-Navigate to the mavlink folder in your repo (LeafMC, LeafFC) and run the following command to generate the MAVLink definitions for python:
+Navigate to the mavlink repo root folder in your repo (LeafMC, LeafFC) and run the following command to generate the MAVLink definitions for python:
 ```bash
 python3 -m mavgenerate
 ```
@@ -25,8 +25,6 @@ python3 -m mavgenerate
 
     # Create the connection
     master = mavutil.mavlink_connection('tcp:0.0.0.0:5760', source_system=0)
-    # Wait a heartbeat before sending commands
-    master.wait_heartbeat()
 
     # Choose a mode
     mode = MAV.LEAF_MODE_LEARNING_FULL
@@ -53,4 +51,16 @@ python3 -m mavgenerate
         except Exception as error:
             print(error)
     ```
-Run this script and then it should populate mavlink messages on the network so your FC or MC can capture them and you will be able to test and debug the behavior of your code.
+Run this script with 
+```bash
+python3 -m mavgenerate
+```
+
+and mavlink-routerd:
+```
+mavlink-routerd -e 127.0.0.1:14650  0.0.0.0:14550 # PX4 SITL example
+```
+
+ and then it should populate mavlink messages on the network so your FC or MC can capture them and you will be able to test and debug the behavior of your code.
+
+ See the guide on Wireshark
