@@ -5,8 +5,9 @@ This guide will walk you through the steps to add/edit a button to LeafMC (QGC),
 ## Prerequisites
 - Basic knowledge of C++ and QML
 - LeafMC source code
-- Qt 5.15.2 installed (use hear-cli)
-- Qt Create (sudo apt-get install qtcreate)
+- Qt 5.15.2 installed (use `hear-cli local_machine run_program` program `install_qt`) - use `qmake --version` to check currently installed version
+- Qt Create (`sudo apt-get install qtcreator`)
+- Execute 
 
 ## 1. Where to add UI elements
 In general, all UI elements are added and implemented in .qml files.
@@ -16,7 +17,9 @@ Keep in mind, qml files are mainly UI description files, but it can contains log
 
 Now, to Add a new action button to Fly View toolstrip for example we have to follow the below steps:
 
-1. Open the project in Qt Creator (select the CMakelists.txt file in LeafMC)
+1. Open the project in Qt Creator (select the CMakelists.txt file in LeafMC) and click Configure.
+**Note:** if Configure emits errors, check the Qt Version in the Project Kits is 5.15.2
+**Advice:** familiarize yourself with Qt Creator UI.
 2. Create MyButton.qml
 
     Go to src/FlightDisplay and create a new file MyButton.qml (or duplicate an existing qml and rename it)
