@@ -139,6 +139,7 @@ Now, to Add a new action button to Fly View toolstrip for example we have to fol
     ```
 
 After compiling and running the project in Qt Creator (Ctrl+R), you should see the new button in the Fly View toolstrip and if you click it you will hear a voice syaing "My Button Clicked".
+**Note:** you need to run in SITL environment for the button to show up.
 
 ## 2. C++ variables and its binding to QML
 Inside the C++ code, we can define variables and functions that can be accessed from QML files. To do so, we have to use the Q_PROPERTY macro to define the variable and the Q_INVOKABLE macro to define the function.
