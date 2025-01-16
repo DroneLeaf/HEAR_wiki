@@ -101,6 +101,7 @@ Now, to Add a new action button to Fly View toolstrip for example we have to fol
     - in `confirmAction` function, add a new case for the new `actionID`. Example:
     ```
     case actionMyButton:
+        executeAction(actionCode, _actionData, 1, false)
         return
         break
     ```
@@ -140,6 +141,8 @@ Now, to Add a new action button to Fly View toolstrip for example we have to fol
 
 After compiling and running the project in Qt Creator (Ctrl+R), you should see the new button in the Fly View toolstrip and if you click it you will hear a voice syaing "My Button Clicked".
 **Note:** you need to run in SITL environment for the button to show up.
+
+**Note:** you can print to the "3. Application Output" by calling `qCInfo(VehicleLog) <<"sayCHEHADEHBUTTON!";` inside `Vehicle.cc` or in general `qDebug() << "sayCHEHADEHBUTTON!";`
 
 ## 2. C++ variables and its binding to QML
 Inside the C++ code, we can define variables and functions that can be accessed from QML files. To do so, we have to use the Q_PROPERTY macro to define the variable and the Q_INVOKABLE macro to define the function.
@@ -254,3 +257,7 @@ To add or edit the status list check the Vehicle::Vehicle(..) constructor where 
 
 ## Conclusion
 This guide should give you a good starting point to add/edit UI elements in LeafMC and handle MAVLink messages. For more information, you can refer to the QGroundControl documentation and the LeafMC source code.
+
+### Other Noteworthy Points
+
+#### Signals and Slots in Qt
