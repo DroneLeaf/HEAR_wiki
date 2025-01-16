@@ -131,7 +131,7 @@ Now, to Add a new action button to Fly View toolstrip for example we have to fol
     ```cpp
     Q_INVOKABLE void sayMyButton();
     ```
-    Go to src/Vehicle/Vehicle.cpp and add the following
+    Go to src/Vehicle/Vehicle.cc and add the following
     ```cpp
     void Vehicle::sayMyButton()
     {
@@ -158,7 +158,7 @@ For example, to define a variable in the Vehicle class that can be accessed from
         QString myVariable() const;
         void setMyVariable(const QString &myVariable);
         ```
-    3. Define the variable in the Vehicle.cpp file
+    3. Define the variable in the Vehicle.cc file
         ```cpp
         QString Vehicle::myVariable() const
         {
@@ -174,7 +174,7 @@ For example, to define a variable in the Vehicle class that can be accessed from
             emit myVariableChanged(_myVariable);
         }
         ```
-    4. Add the variable to the Vehicle class constructor in the Vehicle.cpp file
+    4. Add the variable to the Vehicle class constructor in the Vehicle.cc file
         ```cpp
         _myVariable = "Hello World";
         ```
@@ -189,13 +189,13 @@ Now in the qml file, we can access the variable using the following code:
         ...
     ```
 
-For function it's much simpler, just define the function in the Vehicle.h file using the Q_INVOKABLE macro and implement it in the Vehicle.cpp file.
+For function it's much simpler, just define the function in the Vehicle.h file using the Q_INVOKABLE macro and implement it in the Vehicle.cc file.
 
     1. Define the function in the Vehicle.h file
         ```cpp
         Q_INVOKABLE void sayHello();
         ```
-    2. Implement the function in the Vehicle.cpp file
+    2. Implement the function in the Vehicle.cc file
         ```cpp
         void Vehicle::sayHello()
         {
@@ -237,8 +237,14 @@ To send MAVLink messages, we can use the sendMessageOnLinkThreadSafe function, j
     ```cpp
         void Vehicle::sendMyMessage()
         {
+            SharedLinkInterfacePtr sharedLink = vehicleLinkManager()->primaryLink().lock();
+
             mavlink_message_t msg;
-            mavlink_msg_my_message_pack(_systemId, _componentId, &msg, _myVariable);
+            mavlink_msg_leaf_test_pack(
+                _mavlink->getSystemId(),
+                _mavlink->getComponentId(), 
+                &msg,
+                "test");
             sendMessageOnLinkThreadSafe(sharedLink.get(), msg);
         }
     ```
