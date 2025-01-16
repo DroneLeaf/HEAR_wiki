@@ -40,8 +40,8 @@ status = MAV.LEAF_STATUS_READY_TO_FLY
 master.mav.param_request_list_send(
     master.target_system, master.target_component
 )
-
-client_msg = MAV.MAVLink_leaf_client_tagname_message(b"ENEC")
+# change {{MAVLink_leaf_client_tagname_message}} to your new message dunction from MAV.py
+client_msg = MAV.${{MAVLink_leaf_client_tagname_message}}(b"ENEC")
 master.mav.send(client_msg)
 while True:
     time.sleep(0.1)
