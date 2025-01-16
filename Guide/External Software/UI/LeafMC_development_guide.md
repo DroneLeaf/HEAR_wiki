@@ -152,17 +152,13 @@ For example, to define a variable in the Vehicle class that can be accessed from
         ```
     2. Define the getter and setter functions in the Vehicle.h file
         ```cpp
-        QString myVariable() const;
-        void setMyVariable(const QString &myVariable);
+        QString myVariable() const { return _myVariable; }
+        void setMyVariable(QString myVariable);
         ```
     3. Define the variable in the Vehicle.cc file
         ```cpp
-        QString Vehicle::myVariable() const
-        {
-            return _myVariable;
-        }
 
-        void Vehicle::setMyVariable(const QString &myVariable)
+        void Vehicle::setMyVariable( QString myVariable)
         {
             if (_myVariable == myVariable)
                 return;
@@ -171,13 +167,13 @@ For example, to define a variable in the Vehicle class that can be accessed from
             emit myVariableChanged(_myVariable);
         }
         ```
-    4. Add the variable to the Vehicle class constructor in the Vehicle.cc file
+    4. Add the variable to the Vehicle class constructor in the Vehcle.h file
         ```cpp
-        _myVariable = "Hello World";
+        QString _myVariable = "Hello World";
         ```
     5. Define the signal in the Vehicle.h file
         ```cpp
-        void myVariableChanged(const QString &myVariable);
+        void myVariableChanged(QString &myVariable);
         ```
 Now in the qml file, we can access the variable using the following code:
     ```qml
@@ -258,5 +254,12 @@ Same as the modes, the status list is defined in the Vehicle::Vehicle(..) constr
 
 To add or edit the status list check the Vehicle::Vehicle(..) constructor where the list of status.
 
+## 6. Build, Generate AppImage
+```bash
+cd LeafMC
+chmod +x build-qgc-appimage.sh
+./build-qgc-appimage.sh
+
+```
 ## Conclusion
 This guide should give you a good starting point to add/edit UI elements in LeafMC and handle MAVLink messages. For more information, you can refer to the QGroundControl documentation and the LeafMC source code.
