@@ -145,8 +145,11 @@ After compiling and running the project in Qt Creator (Ctrl+R), you should see t
 **Note:** you can print to the "3. Application Output" by calling `qCInfo(VehicleLog) <<"sayCHEHADEHBUTTON!";` inside `Vehicle.cc` or in general `qDebug() << "sayCHEHADEHBUTTON!";`
 
 ## 2. C++ variables and its binding to QML
-Inside the C++ code, we can define variables and functions that can be accessed from QML files. To do so, we have to use the Q_PROPERTY macro to define the variable and the Q_INVOKABLE macro to define the function.
+Inside the C++ code, we can define variables and functions that can be accessed from QML files. To do so, we have to use: 
+1. the Q_PROPERTY macro to define the variable and,
+2. the Q_INVOKABLE macro to define the function.
 
+### Q_PROPERTY
 For example, to define a variable in the Vehicle class that can be accessed from QML, we have to do the following:
 
     1. Define the variable in the Vehicle.h file
@@ -189,6 +192,18 @@ Now in the qml file, we can access the variable using the following code:
         ...
     ```
 
+
+
+The anatomy of Q_PROPERTY(QString myVariable READ myVariable WRITE setMyVariable NOTIFY myVariableChanged) is:
+
+1. The Q_PROPERTY myVariable can be accessed in qml, it is of type QString. It is memory is in the c++ getter/setter variable.
+2. READ myVariable: define `myVariable()` as getter function.
+3. WRITE setMyVariable: defines `setMyVariable()` as setter function.
+4. NOTIFY myVariableChanged: defines the `signal` function `myVariableChanged(const QString &myVariable);`
+
+**Note:** for a working example see `Q_PROPERTY(QString                 leafMode                         READ leafMode         WRITE setLeafMode       NOTIFY leafModeChanged)` in `Vehicle.h`
+
+### Q_INVOKABLE
 For function it's much simpler, just define the function in the Vehicle.h file using the Q_INVOKABLE macro and implement it in the Vehicle.cc file.
 
     1. Define the function in the Vehicle.h file
@@ -210,7 +225,7 @@ Now in the qml file, we can call the function using the following code:
     ```
 
 ## 3. Handling Mavlink Messages
-To handle MAVLink messages, the main logic that capture the messeges or send them is located in the Vhicel class. The Vehicle class is the main class that handles the communication with the vehicle and the MAVLink messages.
+To handle MAVLink messages, the main logic that capture the messages or send them is located in the Vehicle class. The Vehicle class is the main class that handles the communication with the vehicle and the MAVLink messages.
 
 ### 3.1 Recieve
 In Vehicle::_mavlinkMessageReceived function, we can capture the incoming MAVLink messages and handle them accordingly. The function takes a mavlink_message_t struct as a parameter, which contains the message data.
@@ -248,6 +263,8 @@ To send MAVLink messages, we can use the sendMessageOnLinkThreadSafe function, j
             sendMessageOnLinkThreadSafe(sharedLink.get(), msg);
         }
     ```
+**Note:** For a working example look-up in `Vehicle.h` the function `mavlink_msg_leaf_do_queue_traj_from_buffer_by_id_pack_chan`
+
 ## 4. Leaf Modes
 LeafMC has different modes that the vehicle can be in, each mode has its own set of actions and behaviors.
 
@@ -265,5 +282,11 @@ To add or edit the status list check the Vehicle::Vehicle(..) constructor where 
 This guide should give you a good starting point to add/edit UI elements in LeafMC and handle MAVLink messages. For more information, you can refer to the QGroundControl documentation and the LeafMC source code.
 
 ### Other Noteworthy Points
+
+#### Where to add custom code?
+Group additions with existing added code and use `leaf` prefix for easy tracking of what we have added. Avoid polluting the source files with loosely added code.
+
+#### MAVLink submodule
+The directory of the MAVLink submodule is `libs/mavlink/include/mavlink/v2.0` and the name of the repo is `v2.0`
 
 #### Signals and Slots in Qt
