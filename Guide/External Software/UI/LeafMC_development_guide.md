@@ -146,8 +146,8 @@ After compiling and running the project in Qt Creator (Ctrl+R), you should see t
 
 ## 2. C++ variables and its binding to QML
 Inside the C++ code, we can define variables and functions that can be accessed from QML files. To do so, we have to use: 
-1. the Q_PROPERTY macro to define the variable and,
-2. the Q_INVOKABLE macro to define the function.
+1. the Q_PROPERTY macro to define the variable. Useful for QML<-->C++ communication.
+2. the Q_INVOKABLE macro to define the function. Useful for QML-->C++ communication.
 
 ### Q_PROPERTY
 For example, to define a variable in the Vehicle class that can be accessed from QML, we have to do the following:
@@ -281,6 +281,8 @@ chmod +x build-qgc-appimage.sh
 ./build-qgc-appimage.sh
 
 ```
+Now the AppImage would be generated in the same repo directory
+
 ## Conclusion
 This guide should give you a good starting point to add/edit UI elements in LeafMC and handle MAVLink messages. For more information, you can refer to the QGroundControl documentation and the LeafMC source code.
 
