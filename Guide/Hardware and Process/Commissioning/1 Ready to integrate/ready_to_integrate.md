@@ -167,3 +167,15 @@ hear-cli instance copy_run_program --p configure_software_setup_autostart_rpi
 hear-cli instance copy_run_program --p download_and_install_software_stack
 ```
 
+
+
+```bash
+hear-cli target copy_run_program --p save_image_version_number
+```
+
+```bash
+hear-cli target copy_run_program --p save_image_patch_number
+```
+
+
+
