@@ -18,3 +18,10 @@ Check this mavlink message: https://mavlink.io/en/messages/common.html#OPTICAL_F
 
 Check if the field ground_distance value is positive
 
+## GPS Fix (RTK)
+From: https://mavlink.io/en/messages/common.html#GPS_RAW_INT
+
+field `fix_type` of type: 
+https://mavlink.io/en/messages/common.html#GPS_FIX_TYPE
+
+check for GPS_FIX_TYPE_RTK_FIXED

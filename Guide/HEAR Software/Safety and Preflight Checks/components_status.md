@@ -36,10 +36,3 @@ int main() {
 
 ```
 
-## GPS Fix (RTK)
-From: https://mavlink.io/en/messages/common.html#GPS_RAW_INT
-
-field `fix_type` of type: 
-https://mavlink.io/en/messages/common.html#GPS_FIX_TYPE
-
-check for GPS_FIX_TYPE_RTK_FIXED
