@@ -43,6 +43,12 @@ hear-cli local_machine run_program --p data_lifecycle_prepare
 hear-cli local_machine run_program --p controller_dashboard_prepare
 ```
 
+- Set FC Configs
+
+```bash
+hear-cli local_machine run_program --p set_fc_configs
+```
+
 
 
 - open the `controller dashboard`: http://localhost in browser
