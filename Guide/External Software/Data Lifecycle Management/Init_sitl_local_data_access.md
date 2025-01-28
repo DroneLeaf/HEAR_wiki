@@ -49,6 +49,17 @@ hear-cli local_machine run_program --p controller_dashboard_prepare
 hear-cli local_machine run_program --p set_fc_configs
 ```
 
+```bash
+hear-cli local_machine run_program --p install_system_dependencies_sitl
+```
+
+
+```bash
+hear-cli local_machine run_program --p configure_software_setup_autostart_sitl
+```
+
+
+
 ## How to run
 
 - open the `controller dashboard`: http://localhost in browser
