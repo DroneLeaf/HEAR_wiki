@@ -1,10 +1,8 @@
-DynamoDB integration steps 
+# Prepare Data Life Cycle Management for SITL environment
 
+## Pre-requisites Installation
 
-
-- ## Prepare target machine for local data store and access
-
-- Pull the latest `HEAR_CLI` 
+**Pull the latest `HEAR_CLI`**
 
 All steps will be done using `hear-cli`
 - Docker Install (`Run Once on target`)
@@ -18,6 +16,8 @@ hear-cli local_machine run_program --p docker_install
 ```bash
 hear-cli local_machine run_program --p node_install
 ```
+ **Logout and login**.
+
 
 - Init Ecr Pull Profile
 
@@ -49,17 +49,25 @@ hear-cli local_machine run_program --p controller_dashboard_prepare
 hear-cli local_machine run_program --p set_fc_configs
 ```
 
-
+## How to run
 
 - open the `controller dashboard`: http://localhost in browser
 - copy the `Machine ID` from `Device Information` section
 
 
-- open `client app` types page : https://fly.droneleaf.io/client/drone-types
-- Press `Add Drone Type` Button and complete the process
+- open `client app` types page: https://fly.droneleaf.io/client/drone-types
+- *Only if Required:* Press `Add Drone Type` Button and complete the process
 
 - open `client app` drones page : https://fly.droneleaf.io/client/drones
-- Press `Add Drone` Button, paste the machineId you copied from the controller dashboard , select the type you created before then complete the process.
 
+- Press `Add Drone` Button, paste the `Machine ID` you copied from the controller dashboard, select the type you created before then complete the process.
 
-- 
+- Go to the drone instance you added, navigate to the License tab, and use promo code `devop` to license the drone.
+
+- Go to the License tab again and generate the API key. Copy the key and paste it in the controller dashboard under the `Access and Secret Keys` section.
+
+## Notes:
+
+Online configs filter search is limited in number of results
+
+Add hear-cli command to install mavlink-router and roscore services for SITL
