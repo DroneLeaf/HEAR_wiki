@@ -1,3 +1,4 @@
+# Review
 ## MAVLink Messages for Mission Management
 
 ### Mission Details
@@ -11,7 +12,7 @@ The following MAVLink messages are used to define mission details between QGroun
 
 ### Mission Control
 
-To control the mission execution, the Maverick message COMMAND_LONG (76) is used. This message is sent by QGC to the autopilot to start, pause, or stop the mission.
+To control the mission execution, the MAVLink message COMMAND_LONG (76) is used. This message is sent by QGC to the autopilot to start, pause, or stop the mission.
 
 Based on our analysis, the MAVLink messages for mission management are used to define mission details and control the mission execution. The mission details are defined using the MISSION_COUNT and MISSION_ITEM messages, while the mission execution is controlled using the COMMAND_LONG message or by SET_MODE message.
 
@@ -43,6 +44,8 @@ To pause the mission, QGC sends the COMMAND_LONG message with below payload:
 
 ### Reference WP details (px4 trajectory system output)
 
+**Note:** this message is sent even when the mission is paused.
+
 The PX4 trajectory system output is a reference waypoint to be actuated. The reference waypoint is defined using the MAVLink message POSITION_TARGET_LOCAL_NED (84) with the following payload:
 
     POSITION_TARGET_LOCAL_NED (85)
@@ -65,6 +68,7 @@ The PX4 trajectory system output is a reference waypoint to be actuated. The ref
 ### Mode Changes Tracking
 
 The mode changes are tracked using the MAVLink message HEARTBEAT (0). This message is sent by the autopilot to QGC to provide information about the system state, including the current mode with the following payload:
+**Note:** this message corresponds to Mission mode that is active.
 
     HEARTBEAT (0)
         type (MAV_TYPE): MAV_TYPE_HEXAROTOR (13)
@@ -79,7 +83,7 @@ The mode changes are tracked using the MAVLink message HEARTBEAT (0). This messa
 
 The takeoff and landing status are tracked using the MAVLink message EXTENDED_SYS_STATE (245) with the following payload:
 
-    XTENDED_SYS_STATE (245)
+    EXTENDED_SYS_STATE (245)
         vtol_state (MAV_VTOL_STATE): MAV_VTOL_STATE_UNDEFINED (0)
         landed_state (MAV_LANDED_STATE): MAV_LANDED_STATE_ON_GROUND (1)
 
