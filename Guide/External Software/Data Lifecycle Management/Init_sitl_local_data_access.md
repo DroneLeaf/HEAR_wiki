@@ -6,7 +6,7 @@ DynamoDB integration steps
 
 - Pull the latest `HEAR_CLI` 
 
-All steps will done using `hear-cli`
+All steps will be done using `hear-cli`
 - Docker Install (`Run Once on target`)
 
 ```bash
