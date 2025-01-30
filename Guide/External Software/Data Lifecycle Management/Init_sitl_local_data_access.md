@@ -73,9 +73,17 @@ hear-cli local_machine run_program --p configure_software_setup_autostart_sitl
 
 - Press `Add Drone` Button, paste the `Machine ID` you copied from the controller dashboard, select the type you created before then complete the process.
 
-- Go to the drone instance you added, navigate to the License tab, and use promo code `devop` to license the drone.
+- Go to the drone instance you added.
 
-- Go to the License tab again and generate the API key. Copy the key and paste it in the controller dashboard under the `Access and Secret Keys` section.
+- Navigate to the `License` tab, and use promo code `devop` to license the drone.
+
+- Navigate to `Settings` Tab and enter the right settings for your drone.
+
+- Navigate to the `License` tab again and generate the API key. Copy the key and paste it in the controller dashboard under the `Access and Secret Keys` section.
+
+- Go to the `Syncing` page in the `controller dashboard` and press `Start` button under the `Cloud To Local Sync` card, wait until finishing the process.
+
+- Now you are ready to use dynamodb in hear-fc
 
 ## Notes:
 
