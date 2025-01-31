@@ -126,11 +126,7 @@ You can now run the LeafFC
 
 #### 7 - Leaf MC
 
-Download QGC
-https://droneleafworkspace.slack.com/files/U080N4HR8HG/F086D7BCQQ7/leafmc.appimage
-
-
-Run the app image to open the Leaf MC (QGC).
+Compile the latest LeafMC from the software-stack repo and run.
 
 ```bash
 cd ~/Downloads # where you downloaded the QGroundControl AppImage
