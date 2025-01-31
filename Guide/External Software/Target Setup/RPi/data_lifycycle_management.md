@@ -35,7 +35,7 @@ hear-cli target copy_run_program --p node_install
 - Init Ecr Pull Profile
 
 ```bash
-hear-cli target run_program --p init_ecr_pull_profile
+hear-cli target copy_run_program --p init_ecr_pull_profile
 ```
 
 - Data lifecycle prepare
