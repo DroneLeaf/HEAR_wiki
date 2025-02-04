@@ -31,10 +31,10 @@ This convention is what to expect when moving knobs in QGroundControl after perf
 | **S13**       | Elevator R    | MAIN 4          | OFFBOARD MAVLink 9 |
 | **S14**       | Elevator L    | MAIN 5          | OFFBOARD MAVLink 10|
 | **S15**       | Steering      | RC Direct       | RC AUX 1           |
-| **S16**       | Door R/R      | MAIN 8          | OFFBOARD MAVLink 12|
-| **S17**       | Door R/L      | MAIN 6          | OFFBOARD MAVLink 11|
-| **S18**       | Door L/R      | MAIN 7          | OFFBOARD MAVLink 11|
-| **S19**       | Door L/L      | MAIN 8          | OFFBOARD MAVLink 12|
+| **S16**       | Door R/R      | MAIN 6          | OFFBOARD MAVLink 11|
+| **S17**       | Door R/L      | MAIN 8          | OFFBOARD MAVLink 12|
+| **S18**       | Door L/R      | MAIN 8          | OFFBOARD MAVLink 12|
+| **S19**       | Door L/L      | MAIN 7          | OFFBOARD MAVLink 11|
 
 
 ## Actuation PX4 settings
