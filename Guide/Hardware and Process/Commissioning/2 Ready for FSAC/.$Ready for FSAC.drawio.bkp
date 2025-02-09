@@ -6,16 +6,23 @@
         <mxCell id="1" parent="0" />
         <mxCell id="s676H4-dqHFNzXqADuOr-1" value="Start&lt;br&gt;Ready for FSAC Process" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="30" width="120" height="60" as="geometry" />
+          <mxGeometry x="40" y="30" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="s676H4-dqHFNzXqADuOr-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s676H4-dqHFNzXqADuOr-1" target="s676H4-dqHFNzXqADuOr-3" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="310" as="sourcePoint" />
+            <mxPoint x="100" y="180" as="targetPoint" />
             <mxPoint x="420" y="310" as="sourcePoint" />
             <mxPoint x="100" y="180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="s676H4-dqHFNzXqADuOr-3" value="Perform thrust test experiment and log thrust results . Linearize in PX4 and confirm + Produce Report&amp;nbsp;&lt;div&gt;(General/Motor Test)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="30" y="120" width="140" height="100" as="geometry" />
+        <mxCell id="s676H4-dqHFNzXqADuOr-3" value="Perform thrust test experiment and log thrust results . Linearize in PX4 and confirm + Produce Report&amp;nbsp;&lt;div&gt;(General/Motor Test)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="120" width="140" height="100" as="geometry" />
         </mxCell>
+        <mxCell id="s676H4-dqHFNzXqADuOr-4" value="Perform battery discharge test curve + Produce Report (General/Battery Discharge)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="250" width="120" height="90" as="geometry" />
         <mxCell id="s676H4-dqHFNzXqADuOr-4" value="Perform battery discharge test curve + Produce Report (General/Battery Discharge)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="250" width="120" height="90" as="geometry" />
         </mxCell>
@@ -23,19 +30,27 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="220" y="250" as="sourcePoint" />
             <mxPoint x="220" y="330" as="targetPoint" />
+            <mxPoint x="220" y="250" as="sourcePoint" />
+            <mxPoint x="220" y="330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="s676H4-dqHFNzXqADuOr-6" value="Install &quot;Ready to Integrate&quot; Flight Controller on the drone" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="514" width="120" height="70" as="geometry" />
+          <mxGeometry x="40" y="514" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="s676H4-dqHFNzXqADuOr-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="s676H4-dqHFNzXqADuOr-4" edge="1">
+        <mxCell id="s676H4-dqHFNzXqADuOr-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="s676H4-dqHFNzXqADuOr-4" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="380" as="sourcePoint" />
+            <mxPoint x="100" y="370" as="targetPoint" />
             <mxPoint x="280" y="380" as="sourcePoint" />
             <mxPoint x="100" y="370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="s676H4-dqHFNzXqADuOr-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="s676H4-dqHFNzXqADuOr-9" target="s676H4-dqHFNzXqADuOr-15" edge="1">
+        <mxCell id="s676H4-dqHFNzXqADuOr-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="s676H4-dqHFNzXqADuOr-9" target="s676H4-dqHFNzXqADuOr-15" edge="1">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="559.97" as="sourcePoint" />
             <mxPoint x="470" y="559.97" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
@@ -48,9 +63,11 @@
         <mxCell id="s676H4-dqHFNzXqADuOr-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s676H4-dqHFNzXqADuOr-19" target="CFYVWYqj9RieKaHjNyov-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="730" y="170" as="targetPoint" />
+            <mxPoint x="730" y="170" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="s676H4-dqHFNzXqADuOr-19" value="Update the variables inside the UAV Instance file depending on the drone use-case. (Indoor vs outdoor, RC or no RC, etc...)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="40" width="170" height="70" as="geometry" />
           <mxGeometry x="600" y="40" width="170" height="70" as="geometry" />
         </mxCell>
         <mxCell id="s676H4-dqHFNzXqADuOr-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s676H4-dqHFNzXqADuOr-22" target="CFYVWYqj9RieKaHjNyov-1" edge="1">
@@ -59,6 +76,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="s676H4-dqHFNzXqADuOr-22" value="Ensure the drone is mechanically balanced. Ensure generated thrust is normal to gravity. Remove the payload if necessary" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="345" width="170" height="100" as="geometry" />
           <mxGeometry x="600" y="345" width="170" height="100" as="geometry" />
         </mxCell>
         <mxCell id="s676H4-dqHFNzXqADuOr-24" value="Finish&lt;br&gt;Ready for FSAC Process" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -243,6 +261,14 @@
         </mxCell>
         <mxCell id="EcLBbHaZ_qRPjrliSMu8-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="EcLBbHaZ_qRPjrliSMu8-8" target="FivQwbhl4dxiQbtHl8lg-11" edge="1">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="700" as="sourcePoint" />
+            <mxPoint x="120" y="790" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="100" y="700" />
+              <mxPoint x="220" y="700" />
+              <mxPoint x="220" y="10" />
+              <mxPoint x="400" y="10" />
+            </Array>
             <mxPoint x="160" y="700" as="sourcePoint" />
             <mxPoint x="120" y="790" as="targetPoint" />
             <Array as="points">

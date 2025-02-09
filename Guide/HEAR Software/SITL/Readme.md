@@ -43,7 +43,7 @@ mavlink-routerd 0.0.0.0:14550
 After successful execution, please make sure your settings are the same as the output below.
 ```
 Opened UDP Server [4]server: 0.0.0.0:10000
-Opened UDP Client [5]client: 127.0.0.1:11000
+Opened UDP Client [5]client: 0.0.0.0:11000
 Opened UDP Server [7]CLI: 0.0.0.0:14550
 Opened TCP Server [8] [::]:5760
 ```
@@ -93,7 +93,7 @@ Click on the QGC symbol on the top left corner of the window and open up the app
 Go to Comm Links tab on the top left menu and click on "Add". Then, fill the settings as follows and create the comm link. You can put anything you want in the place of "COMMLINK-NAME".
 ![QGroundControl](media/commlink.png)
 
-After that, you can connect to the comm link instance you have created, in this case the comm link name is set to "SITL".
+After that, you can connect to the comm link instance you have created (TCP://:5760), in this case the comm link name is set to "SITL".
 ![QGroundControl](media/connect_commlink.png)
 
 #### 4 - HEAR_Configurations

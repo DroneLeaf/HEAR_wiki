@@ -1,4 +1,18 @@
-# Base Trajectory System
+# Overview
+
+## Concept of Trajectories
+1. Primitive: We have multiple types of primitives, e.g. Polynomial, Circle, etc. These are extendable.
+2. Transformation: transformation applies to the primitive.
+
+## Transformation convention
+Sequence of transformation:
+1. Sample the primitive
+2. Apply spatial offset
+3. Apply time scale
+4. Apply spatial scale
+5. Apply rotation
+
+## Extending the Trajectory System
 
 - Transformation
   - Contains: Position Translation
@@ -14,10 +28,4 @@
 
 ## Folder Structure
 
-Systems/TrajectoryExecuter/[primitive_type]/[primitive_instance]
-
-# Goto Point Trajectory Generation
-
-# GPS/Local coordinate frame bi-translator
-
-# 
+Systems/Trajectory/[primitive_type]/[primitive_instance]
