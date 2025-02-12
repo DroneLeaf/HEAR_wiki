@@ -16,7 +16,7 @@ hear-cli local_machine run_program --p docker_install
 ```bash
 hear-cli local_machine run_program --p node_install
 ```
- **Logout and login**.
+ **Reboot your system**.
 
 
 - Init Ecr Pull Profile

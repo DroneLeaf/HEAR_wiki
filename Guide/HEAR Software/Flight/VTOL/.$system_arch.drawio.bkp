@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
   <diagram name="Page-1" id="sIQOChHxDy1Jt6XBbkkj">
-    <mxGraphModel dx="685" dy="438" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="828" dy="529" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -14,9 +14,9 @@
           <mxGeometry x="500" y="665" width="40" height="110" as="geometry" />
         </mxCell>
         <mxCell id="BjdPIeY4YxCnDbGahezC-1" value="RC Receiver" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FF9933;" parent="1" vertex="1">
-          <mxGeometry x="450" y="830" width="100" height="60" as="geometry" />
+          <mxGeometry x="450" y="840" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="BjdPIeY4YxCnDbGahezC-2" value="&lt;font color=&quot;#333333&quot;&gt;Pixhawk v6x&lt;/font&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#E6E6E6;" parent="1" vertex="1">
+        <mxCell id="BjdPIeY4YxCnDbGahezC-2" value="&lt;font color=&quot;#333333&quot;&gt;Pixhawk v6x (192.168.144.4)&lt;/font&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#E6E6E6;" parent="1" vertex="1">
           <mxGeometry x="570" y="660" width="160" height="120" as="geometry" />
         </mxCell>
         <mxCell id="BjdPIeY4YxCnDbGahezC-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="BjdPIeY4YxCnDbGahezC-1" target="BjdPIeY4YxCnDbGahezC-2" edge="1">
@@ -29,7 +29,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="BjdPIeY4YxCnDbGahezC-4" value="PX4&lt;br&gt;(DroneLeaf Version)" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontColor=#FFFFFF;fillColor=#333333;" parent="1" vertex="1">
-          <mxGeometry x="610" y="690" width="80" height="60" as="geometry" />
+          <mxGeometry x="610" y="704" width="80" height="60" as="geometry" />
         </mxCell>
         <mxCell id="BjdPIeY4YxCnDbGahezC-5" value="SBUS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="550" y="860" width="60" height="30" as="geometry" />
@@ -43,7 +43,7 @@
         <mxCell id="BjdPIeY4YxCnDbGahezC-8" value="PWM (1-2 ms)&lt;br&gt;Motors" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="740" y="680" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="BjdPIeY4YxCnDbGahezC-10" value="RPi CM4" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#8AE234;" parent="1" vertex="1">
+        <mxCell id="BjdPIeY4YxCnDbGahezC-10" value="RPi CM4 (192.168.144.5)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#8AE234;" parent="1" vertex="1">
           <mxGeometry x="40" y="660" width="200" height="120" as="geometry" />
         </mxCell>
         <mxCell id="BjdPIeY4YxCnDbGahezC-11" value="DroneLeaf FC" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#4e9a06;fontStyle=1;fontColor=#ffffff;" parent="1" vertex="1">
@@ -174,6 +174,18 @@
         </mxCell>
         <mxCell id="RbKv4UcCaGxTW6cpC13_-33" value="" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=default;labelBorderColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="540" y="200.75" width="26.36" height="72.5" as="geometry" />
+        </mxCell>
+        <mxCell id="VG_rABxS01zBny5tgy7W-1" value="Operator" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="184" width="60" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="VG_rABxS01zBny5tgy7W-2" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;" parent="1" vertex="1">
+          <mxGeometry x="500" y="808.75" width="25" height="31.25" as="geometry" />
+        </mxCell>
+        <mxCell id="VG_rABxS01zBny5tgy7W-3" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;" parent="1" vertex="1">
+          <mxGeometry x="110" y="207" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VG_rABxS01zBny5tgy7W-4" value="RC Transmitter" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FF9933;" parent="1" vertex="1">
+          <mxGeometry x="90" y="257" width="80" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

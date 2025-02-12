@@ -281,7 +281,9 @@ chmod +x build-qgc-appimage.sh
 ./build-qgc-appimage.sh
 
 ```
-Now the AppImage would be generated in the same repo directory
+Now the AppImage would be generated in the same repo directory.
+
+**Known Limitation** Add the execution permission to the AppImage and run from the file explorer. Running from terminal does not work.
 
 ## Conclusion
 This guide should give you a good starting point to add/edit UI elements in LeafMC and handle MAVLink messages. For more information, you can refer to the QGroundControl documentation and the LeafMC source code.
