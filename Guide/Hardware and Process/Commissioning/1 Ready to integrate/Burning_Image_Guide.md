@@ -79,20 +79,6 @@ Now You are done.
 Remove the target disk from your local machine and connect it to the target machine
 > If you use `emmc` version RPi, turn-off boot switch (if you are using Pixhawkv6x carrier board with CM4 then toggle the switch to RPI position). 
 
-## Post image burning installations and configurations
-- Connect the target to LAN through the device ethernet port.
-- Set static IP.
 
-
-   - for ethernet interface (192.168.144.5)
-     ```bash
-     hear-cli target copy_run_program --p set_static_eth0_ip_specific_interface
-     ```
-
-- Change Network TimeZone
-
-```bash
-hear-cli instance copy_run_program --p activate_network_timezone
-```
-*Note: Please refer to the release patches found in the release notes document.
-
+## Apply Patches to the current image version
+Check the latest image and its patches from: https://droneleaf.sharepoint.com/:f:/s/technical/Eg2LOo9V0ANArVuQ_eN8DWIBshhVyvY0ty1XDy2FspXfbg?e=aQl3tm 
