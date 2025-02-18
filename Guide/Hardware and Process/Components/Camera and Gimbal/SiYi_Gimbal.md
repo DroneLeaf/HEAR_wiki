@@ -33,7 +33,7 @@ This guide will help you set up a SiYi gimbal camera through MAVLink with a PX4 
 12. D0 the same for `MNT_OUTPUT_MODE` and set it to `MAVLink v2`.
 13. restart
 14. In the parameters setup, you should find a tab for Component 154 (Which means gibmal is now visible to px4).
-15. Inside this tab, Set `set_attr` to `1` to enable the gimbal.
+15. **Not Needed**: Inside this tab, Set `set_attr` to `1` to enable the gimbal control through mavlink. Keep it `0` for now since we are using SIYI SDK.
 
 ### 3. Recieve Camera Feed
 

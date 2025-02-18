@@ -17,7 +17,7 @@ angle_pwm_calibrations_s13_s14;
 
 %% Calculate motors allocation
 % Note: run this segment from the 'V1'
-design_name = 'VTOL_design_F_05_Dec_2024';
+design_name = 'VTOL_design_F_07_Feb_2025';
 calculate_allocation_matrix_no_tilt;
 
 %% Generate configurations files
