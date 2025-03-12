@@ -1,0 +1,103 @@
+digraph G {
+// Node for the image
+node [shape=none, label="", width=0, height=0];
+// Image node
+imageNode [image="Media/as_built_rotated.png", width=1.0, height=1.0, fixedsize=true];
+// Invisible subgraph to help with positioning
+subgraph cluster0 {
+label = "";
+style = invis; // Makes this subgraph invisible
+// Invisible node to help position the image node
+invisNode [shape=point, width=0, height=0, label=""];
+// Text node
+textNode [label="2024-10-09 10:21:22", shape=plaintext, fontsize=10];
+// Positioning nodes
+invisNode -> imageNode [style=invis]; // Makes the edge invisible
+imageNode -> textNode [style=invis]; // Connects image node to text node with invisible edge
+}
+{rank=source;invisNode;}
+label="PX4StateEst_sys, Sync Graph"
+labelloc="t"
+;fontsize=40;
+rankdir="LR"
+graph[center=true, margin=0.2, nodesep=1.5, ranksep=0.15]
+node[ shape=box,fontsize=10]
+edge[weight=1.2,arrowsize=0.6, arrowhead=vee,fontsize=9]
+  1 -> 2 [label="OUTPUT->MAVLINK_POS[mavlink_vehicle_local_position_t]",style="solid"];
+  2 -> 0 [label="POS->INPUT_POS[Vector3D<float>]",style="solid"];
+  2 -> 0 [label="VEL->INPUT_VEL[Vector3D<float>]",style="solid"];
+  2 -> 0 [label="ACC->INPUT_ACC[Vector3D<float>]",style="solid"];
+  3 -> 4 [label="OUTPUT->MAVLINK_ANGULAR_VEL[mavlink_vehicle_angular_velocity_t]",style="solid"];
+  3 -> 0 [label="OUTPUT->INPUT_ANG_VEL[Vector3D<float>]",style="solid"];
+  5 -> 6 [label="OUTPUT->MAVLINK_ATT[mavlink_vehicle_attitude_t]",style="solid"];
+  6 -> 0 [label="ATT->INPUT_ATT[tf2::Quaternion]",style="solid"];
+  7 -> 8 [label="OUTPUT->MAVLINK_HIGHRES_IMU[mavlink_highres_imu_t]",style="solid"];
+  8 -> 9 [label="ABS_PRESSURE->INPUT[float]",style="solid"];
+  8 -> 10 [label="DIFF_PRESSURE->INPUT[float]",style="solid"];
+  11 -> 12 [label="OUTPUT->MAVLINK_VFR_HUD[mavlink_vfr_hud_t]",style="solid"];
+  12 -> 13 [label="AIR_SPEED->INPUT[float]",style="solid"];
+  12 -> 14 [label="GROUND_SPEED->INPUT[float]",style="solid"];
+  12 -> 15 [label="HEADING->INPUT[float]",style="solid"];
+  16 -> 17 [label="OUTPUT->MAVLINK_BAT_STATUS[mavlink_battery_status_t]",style="solid"];
+  17 -> 18 [label="VOLTAGE_V->INPUT[float]",style="solid"];
+  17 -> 19 [label="CURRENT_A->INPUT[float]",style="solid"];
+  17 -> 20 [label="CONSUMED_CURR_Ah->INPUT[float]",style="solid"];
+  17 -> 21 [label="BAT_REMAIN_PERCENT->INPUT[float]",style="solid"];
+  22 -> 23 [label="OUTPUT->MAVLINK_GPS_INPUT[mavlink_gps_input_t]",style="solid"];
+  23 -> 24 [label="VEL_EAST->INPUT[float]",style="solid"];
+  23 -> 25 [label="VEL_NORTH->INPUT[float]",style="solid"];
+  23 -> 26 [label="VEL_DOWN->INPUT[float]",style="solid"];
+  23 -> 27 [label="ALT_MSL->INPUT[float]",style="solid"];
+  0 -> 28 [label="OUTPUT_ATT->QUAT_ANGLES[tf2::Quaternion]",style="solid"];
+  28 -> 29 [label="ROT_MAT->EUL_ANGLES[tf2::Matrix3x3]",style="solid"];
+  0 -> 30 [label="OUTPUT_POS->INPUT[Vector3D<float>]",style="solid"];
+  0 -> 31 [label="OUTPUT_VEL->INPUT[Vector3D<float>]",style="solid"];
+  0 -> 32 [label="OUTPUT_ACC->INPUT[Vector3D<float>]",style="solid"];
+  29 -> 33 [label="ROT_MAT->INPUT[Vector3D<float>]",style="solid"];
+  0 -> 34 [label="OUTPUT_ANG_VEL->INPUT[Vector3D<float>]",style="solid"];
+  0 -> 35 [label="->OUTPUT_POS[Vector3D<float>]",style="solid"];
+  0 -> 36 [label="->OUTPUT_VEL[Vector3D<float>]",style="solid"];
+  0 -> 37 [label="->OUTPUT_ACC[Vector3D<float>]",style="solid"];
+  29 -> 38 [label="->ROT_MAT[Vector3D<float>]",style="solid"];
+  0 -> 39 [label="->OUTPUT_ANG_VEL[Vector3D<float>]",style="solid"];
+  0[label="PX4toHEAR\npx4_2_hear\nSyn:27, Asyn: 34", shape=box];
+  1[label="MAVLink_Subscriber\nMAVLINK_PX4_Sub_estimator/pos\nSyn:25, Asyn: 33", shape=rarrow];
+  2[label="DeStructurePX4LocalPositionMsg\npx4_position_block\nSyn:26, Asyn: 32", shape=box];
+  3[label="MAVLink_Subscriber\nMAVLINK_PX4_Sub_estimator/ang_vel\nSyn:23, Asyn: 31", shape=rarrow];
+  4[label="DeStructurePX4AngularVelMsg\npx4_ang_vel_block\nSyn:24, Asyn: 30", shape=box];
+  5[label="MAVLink_Subscriber\nMAVLINK_PX4_Sub_estimator/quat\nSyn:21, Asyn: 29", shape=rarrow];
+  6[label="DeStructurePX4AttitudeMsg\npx4_att_block\nSyn:22, Asyn: 28", shape=box];
+  7[label="MAVLink_Subscriber\nmavlink_sub_hgihres_imu\nSyn:17, Asyn: 27", shape=rarrow];
+  8[label="DeStructurePX4HighResIMUMsg\npx4_highres_imu_block\nSyn:18, Asyn: 26", shape=box];
+  9[label="ROSUnit_Publisher\nestimator_abs_pressure\nSyn:20, Asyn: 25", shape=larrow];
+  10[label="ROSUnit_Publisher\nestimator_diff_pressure\nSyn:19, Asyn: 24", shape=larrow];
+  11[label="MAVLink_Subscriber\nmavlink_sub_vfr_hud\nSyn:12, Asyn: 23", shape=rarrow];
+  12[label="DeStructurePX4VFRHUDMsg\npx4_vfr_hud_destruct_block\nSyn:13, Asyn: 22", shape=box];
+  13[label="ROSUnit_Publisher\nestimator_air_speed\nSyn:16, Asyn: 21", shape=larrow];
+  14[label="ROSUnit_Publisher\nestimator_ground_speed\nSyn:15, Asyn: 20", shape=larrow];
+  15[label="ROSUnit_Publisher\nestimator_heading\nSyn:14, Asyn: 19", shape=larrow];
+  16[label="MAVLink_Subscriber\nmavlink_sub_battery_status\nSyn:6, Asyn: 18", shape=rarrow];
+  17[label="DeStructurePX4BatteryStatusMsg\npx4_bat_status_destruct_block\nSyn:7, Asyn: 17", shape=box];
+  18[label="ROSUnit_Publisher\nestimator_bat_voltage_V\nSyn:11, Asyn: 16", shape=larrow];
+  19[label="ROSUnit_Publisher\nestimator_bat_current_A\nSyn:10, Asyn: 15", shape=larrow];
+  20[label="ROSUnit_Publisher\nestimator_consumed_current_Ah\nSyn:9, Asyn: 14", shape=larrow];
+  21[label="ROSUnit_Publisher\nestimator_bat_remaining_percent\nSyn:8, Asyn: 13", shape=larrow];
+  22[label="MAVLink_Subscriber\nmavlink_sub_gps_input\nSyn:0, Asyn: 12", shape=rarrow];
+  23[label="DeStructurePX4GPSInputMsg\npx4_gps_input_destruct_block\nSyn:1, Asyn: 11", shape=box];
+  24[label="ROSUnit_Publisher\nros_gps_vel_east_pub\nSyn:5, Asyn: 10", shape=larrow];
+  25[label="ROSUnit_Publisher\nros_gps_vel_north_pub\nSyn:4, Asyn: 9", shape=larrow];
+  26[label="ROSUnit_Publisher\nros_gps_vel_down_pub\nSyn:3, Asyn: 8", shape=larrow];
+  27[label="ROSUnit_Publisher\nros_gps_alt_msl_pub\nSyn:2, Asyn: 7", shape=larrow];
+  28[label="Quat2Rot\nquat_2_rot\nSyn:32, Asyn: 6", shape=box];
+  29[label="Rot2Eul\nrot_2_eul\nSyn:33, Asyn: 5", shape=box];
+  30[label="ROSUnit_Publisher\nPub_estimator/pos\nSyn:31, Asyn: 4", shape=larrow];
+  31[label="ROSUnit_Publisher\nPub_estimator/vel\nSyn:30, Asyn: 3", shape=larrow];
+  32[label="ROSUnit_Publisher\nPub_estimator/acc\nSyn:29, Asyn: 2", shape=larrow];
+  33[label="ROSUnit_Publisher\nPub_estimator/ori\nSyn:34, Asyn: 1", shape=larrow];
+  34[label="ROSUnit_Publisher\nPub_estimator/ori_rate\nSyn:28, Asyn: 0", shape=larrow];
+  35[style=filled,fillcolor=green,label="Vector3D<float>\nOUTPUT_POS", shape=ellipse];
+  36[style=filled,fillcolor=green,label="Vector3D<float>\nOUTPUT_VEL", shape=ellipse];
+  37[style=filled,fillcolor=green,label="Vector3D<float>\nOUTPUT_ACC", shape=ellipse];
+  38[style=filled,fillcolor=green,label="Vector3D<float>\nROT_MAT", shape=ellipse];
+  39[style=filled,fillcolor=green,label="Vector3D<float>\nOUTPUT_ANG_VEL", shape=ellipse];
+}

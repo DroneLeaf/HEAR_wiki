@@ -1,5 +1,46 @@
 # System Overview
 
+@import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false}
+
+<!-- code_chunk_output -->
+
+- [System Overview](#system-overview)
+  - [Architecture](#architecture)
+  - [Convention](#convention)
+  - [PX4 Settings](#px4-settings)
+    - [Custom PX4 Firmware and Parameters](#custom-px4-firmware-and-parameters)
+    - [Physical Asset assignment](#physical-asset-assignment)
+    - [Actuation PX4 settings](#actuation-px4-settings)
+  - [RC Settings](#rc-settings)
+    - [RC Channel assignment](#rc-channel-assignment)
+    - [RC Switches Settings](#rc-switches-settings)
+  - [Surfaces and Servos calibration](#surfaces-and-servos-calibration)
+    - [Calibration values](#calibration-values)
+  - [Other Components](#other-components)
+    - [Airspeed sensor](#airspeed-sensor)
+- [LeafFC](#leaffc)
+  - [DOT Graphs](#dot-graphs)
+  - [Topics Inspection](#topics-inspection)
+  - [Configuration files](#configuration-files)
+  - [MATLAB based auto-configuration](#matlab-based-auto-configuration)
+  - [Major Subsystems' Settings](#major-subsystems-settings)
+    - [PX4 RC to Orientation and Throttle mapping](#px4-rc-to-orientation-and-throttle-mapping)
+    - [State Estimator](#state-estimator)
+    - [Control System](#control-system)
+    - [VTOL Actuation System](#vtol-actuation-system)
+      - [Allocation logic](#allocation-logic)
+      - [Prioritized allocation](#prioritized-allocation)
+      - [Doors Control](#doors-control)
+      - [Compensation Factors](#compensation-factors)
+        - [Front tilt servo compensation](#front-tilt-servo-compensation)
+      - [Post Allocation Bias](#post-allocation-bias)
+      - [Trimming the input independent of RC](#trimming-the-input-independent-of-rc)
+      - [Motor mapping from LeafFC to PX4](#motor-mapping-from-leaffc-to-px4)
+    - [Angles Observer](#angles-observer)
+
+<!-- /code_chunk_output -->
+
+
 ## Architecture
 
 The general system archeticture is given as follows:
@@ -45,8 +86,8 @@ Request the latest PX4 firmware from DroneLeaf. Once uploaded through QGC, you n
 
 ### Actuation PX4 settings
 Maximum/Minimum limits for each actuator are set in the QGC. See QGC screenshots below.
-![alt text](Media/act_aux.jpeg)
-![alt text](Media/act_main.jpeg)
+![alt text](Media/act_aux.png)
+![alt text](Media/act_main.png)
 
 ## RC Settings
 Used Controller is Futaba T18SG. ID: T18SG-01.

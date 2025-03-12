@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+ <tabbed_widget parent="main_window" name="Main Window">
+  <Tab containers="1" tab_name="motors">
+   <Container>
+    <DockSplitter sizes="0.500269;0.499731" count="2" orientation="-">
+     <DockSplitter sizes="0.5;0.5" count="2" orientation="|">
+      <DockArea name="...">
+       <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+        <range top="1.025000" right="379.924590" bottom="-0.025000" left="374.605673"/>
+        <limitY/>
+        <curve color="#f14cc1" name="/dynamo_db/actu_sys/arm_commander/io_cmds_to_px4/data[2]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+        <range top="1.021663" right="379.924590" bottom="0.111798" left="374.605673"/>
+        <limitY/>
+        <curve color="#1ac938" name="/dynamo_db/actu_sys/arm_commander/io_cmds_to_px4/data[0]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.5;0.5" count="2" orientation="|">
+      <DockArea name="...">
+       <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+        <range top="1.025000" right="379.924590" bottom="-0.025000" left="374.605673"/>
+        <limitY/>
+        <curve color="#ff7f0e" name="/dynamo_db/actu_sys/arm_commander/io_cmds_to_px4/data[1]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+        <range top="1.025000" right="379.924590" bottom="-0.025000" left="374.605673"/>
+        <limitY/>
+        <curve color="#9467bd" name="/dynamo_db/actu_sys/arm_commander/io_cmds_to_px4/data[3]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="angle_u">
+   <Container>
+    <DockSplitter sizes="0.333153;0.333694;0.333153" count="3" orientation="-">
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="1.644194" right="379.924590" bottom="-1.247226" left="374.605673"/>
+       <limitY/>
+       <curve color="#bcbd22" name="/dynamo_db/ctrl_sys/ori/angle_u/x"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="0.312624" right="379.924590" bottom="-0.255474" left="374.605673"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/dynamo_db/ctrl_sys/ori/angle_u/y"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="0.157500" right="379.924590" bottom="-0.157500" left="374.605673"/>
+       <limitY/>
+       <curve color="#d62728" name="/dynamo_db/ctrl_sys/ori/angle_u/z"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="ori">
+   <Container>
+    <DockSplitter sizes="0.333154;0.333692;0.333154" count="3" orientation="-">
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="3.264264" right="379.924590" bottom="-3.267175" left="374.605673"/>
+       <limitY/>
+       <curve color="#9467bd" name="/dynamo_db/angle_err/x"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="0.323527" right="379.924590" bottom="-0.372316" left="374.605673"/>
+       <limitY/>
+       <curve color="#17becf" name="/dynamo_db/angle_err/y"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="0.496838" right="379.924590" bottom="-0.354397" left="374.605673"/>
+       <limitY/>
+       <curve color="#bcbd22" name="/dynamo_db/angle_err/z"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="ori_rate">
+   <Container>
+    <DockSplitter sizes="0.333154;0.333692;0.333154" count="3" orientation="-">
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="4.086244" right="379.924590" bottom="-16.132214" left="374.605673"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="/dynamo_db/estimator/ori_rate/x"/>
+       <curve color="#17becf" name="/dynamo_db/ctrl_sys/ori_ctrl_sw_ori_rate/x"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="2.987849" right="379.924590" bottom="-2.375498" left="374.605673"/>
+       <limitY/>
+       <curve color="#f14cc1" name="/dynamo_db/estimator/ori_rate/y"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="1.182328" right="379.924590" bottom="-2.631560" left="374.605673"/>
+       <limitY/>
+       <curve color="#9467bd" name="/dynamo_db/estimator/ori_rate/z"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="pos">
+   <Container>
+    <DockSplitter sizes="0.333154;0.333692;0.333154" count="3" orientation="-">
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="10.917554" right="379.924590" bottom="7.032712" left="374.605673"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/dynamo_db/estimator/pos/x"/>
+       <curve color="#bcbd22" name="/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_pos/x"/>
+       <curve color="#1ac938" name="pos_x_sp"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="6.632788" right="379.924590" bottom="1.190194" left="374.605673"/>
+       <limitY/>
+       <curve color="#d62728" name="/dynamo_db/estimator/pos/y"/>
+       <curve color="#1f77b4" name="/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_pos/y"/>
+       <curve color="#ff7f0e" name="pos_y_sp"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="0.244198" right="379.924590" bottom="-3.305103" left="374.605673"/>
+       <limitY/>
+       <curve color="#1ac938" name="/dynamo_db/estimator/pos/z"/>
+       <curve color="#d62728" name="/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_pos/z"/>
+       <curve color="#f14cc1" name="pos_z_sp"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="vel">
+   <Container>
+    <DockSplitter sizes="0.333154;0.333692;0.333154" count="3" orientation="-">
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="0.256979" right="379.924590" bottom="-2.848073" left="374.605673"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_vel/x"/>
+       <curve color="#d62728" name="vel_x_sp"/>
+       <curve color="#f14cc1" name="/dynamo_db/estimator/vel/x"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="0.375334" right="379.924590" bottom="-3.404696" left="374.605673"/>
+       <limitY/>
+       <curve color="#1ac938" name="vel_y_sp"/>
+       <curve color="#9467bd" name="/dynamo_db/estimator/vel/y"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="0.868755" right="379.924590" bottom="-3.793093" left="374.605673"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="vel_z_sp"/>
+       <curve color="#17becf" name="/dynamo_db/estimator/vel/z"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="acc">
+   <Container>
+    <DockSplitter sizes="0.333154;0.333692;0.333154" count="3" orientation="-">
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="0.343307" right="379.924590" bottom="-14.075572" left="374.605673"/>
+       <limitY/>
+       <curve color="#bcbd22" name="/dynamo_db/TrajectorySystem/acc/x"/>
+       <curve color="#1ac938" name="/dynamo_db/ctrl_sys/ah_des/x"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="29.498103" right="379.924590" bottom="-0.719466" left="374.605673"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/dynamo_db/TrajectorySystem/acc/y"/>
+       <curve color="#ff7f0e" name="/dynamo_db/ctrl_sys/ah_des/y"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="158.096707" right="379.924590" bottom="-3.876406" left="374.605673"/>
+       <limitY/>
+       <curve color="#d62728" name="/dynamo_db/TrajectorySystem/acc/z"/>
+       <curve color="#f14cc1" name="/dynamo_db/ctrl_sys/ah_des/z"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="thrust">
+   <Container>
+    <DockSplitter sizes="1" count="1" orientation="-">
+     <DockArea name="...">
+      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
+       <range top="20.090002" right="379.924590" bottom="-0.490000" left="374.605673"/>
+       <limitY/>
+       <curve color="#9467bd" name="/dynamo_db/thrust_cmd/data"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <currentTabIndex index="7"/>
+ </tabbed_widget>
+ <use_relative_time_offset enabled="1"/>
+ <!-- - - - - - - - - - - - - - - -->
+ <!-- - - - - - - - - - - - - - - -->
+ <Plugins>
+  <plugin ID="DataLoad CSV">
+   <parameters time_axis="" delimiter="0"/>
+  </plugin>
+  <plugin ID="DataLoad MCAP"/>
+  <plugin ID="DataLoad ROS bags">
+   <use_header_stamp value="false"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+   <selected_topics value="/dynamo_db/actu_sys/actuation_allocator/allocation_cmds;/dynamo_db/actu_sys/arm_commander/io_cmds_to_px4;/dynamo_db/angle_err;/dynamo_db/ctrl_sys/ah_des;/dynamo_db/ctrl_sys/ai_yaw_corrected;/dynamo_db/ctrl_sys/ori_ctrl_sw_ori;/dynamo_db/ctrl_sys/ori_ctrl_sw_ori_rate;/dynamo_db/ctrl_sys/ori/angle_u;/dynamo_db/ctrl_sys/ori/yaw/yaw_rate_setpoint;/dynamo_db/ctrl_sys/pitch_sp;/dynamo_db/ctrl_sys/pos_err_h;/dynamo_db/ctrl_sys/roll_sp;/dynamo_db/ctrl_sys/throttle_cmd;/dynamo_db/ctrl_sys/throttle_ctrl_sw_ori;/dynamo_db/ctrl_sys/vel_err_h;/dynamo_db/ctrl_sys/yaw_discrete;/dynamo_db/ctrl_sys/yaw_rate_sp;/dynamo_db/ctrl_sys/z/kd_val;/dynamo_db/ctrl_sys/z/kp_val;/dynamo_db/estimator/abs_pressure;/dynamo_db/estimator/acc;/dynamo_db/estimator/air_speed;/dynamo_db/estimator/bat_current_A;/dynamo_db/estimator/bat_remaining_percent;/dynamo_db/estimator/bat_voltage_V;/dynamo_db/estimator/consumed_current_Ah;/dynamo_db/estimator/diff_pressure;/dynamo_db/estimator/gps/alt_msl;/dynamo_db/estimator/gps/vel_down;/dynamo_db/estimator/gps/vel_east;/dynamo_db/estimator/gps/vel_north;/dynamo_db/estimator/ground_speed;/dynamo_db/estimator/heading;/dynamo_db/estimator/ori;/dynamo_db/estimator/ori_rate;/dynamo_db/estimator/pos;/dynamo_db/estimator/vel;/dynamo_db/mrft_initiation_commander/switch_mrft_pitch;/dynamo_db/mrft_initiation_commander/switch_mrft_roll;/dynamo_db/mrft_initiation_commander/switch_mrft_x;/dynamo_db/mrft_initiation_commander/switch_mrft_y;/dynamo_db/mrft_initiation_commander/switch_mrft_z;/dynamo_db/mrft/inner;/dynamo_db/mrft/outer;/dynamo_db/px4_rc_to_ori_thrust/fwd_cmd;/dynamo_db/px4_rc_to_ori_thrust/ori_des;/dynamo_db/px4_rc_to_ori_thrust/ori_rate_des;/dynamo_db/px4_rc_to_ori_thrust/rc_raw;/dynamo_db/px4_rc_to_ori_thrust/thrust;/dynamo_db/px4_rc_to_ori_thrust/vtol_mode_des;/dynamo_db/qgc_rc_to_ori_thrust/pitch_des;/dynamo_db/qgc_rc_to_ori_thrust/roll_des;/dynamo_db/qgc_rc_to_ori_thrust/throttle_des;/dynamo_db/qgc_rc_to_ori_thrust/yaw_des;/dynamo_db/qgc_rc_to_ori_thrust/yaw_rate_des;/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_pos;/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_vel;/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_yaw;/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_yaw_rate;/dynamo_db/rot_des;/dynamo_db/switch_rc_ref_setpoint_pos;/dynamo_db/switch_rc_ref_setpoint_vel;/dynamo_db/switch_rc_ref_setpoint_yaw;/dynamo_db/switch_rc_source_px4_qgc_pitch;/dynamo_db/switch_rc_source_px4_qgc_roll;/dynamo_db/switch_rc_source_px4_qgc_thr;/dynamo_db/switch_rc_source_px4_qgc_yaw;/dynamo_db/thrust_cmd;/dynamo_db/TrajectorySystem/acc;/dynamo_db/TrajectorySystem/crackle;/dynamo_db/TrajectorySystem/jerk;/dynamo_db/TrajectorySystem/ori;/dynamo_db/TrajectorySystem/pos;/dynamo_db/TrajectorySystem/snap;/dynamo_db/TrajectorySystem/vel;/rosout;/rosout_agg"/>
+  </plugin>
+  <plugin ID="DataLoad ULog"/>
+  <plugin ID="ROS Topic Subscriber">
+   <use_header_stamp value="false"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+   <selected_topics value="/dynamo_db/actu_sys/motor_cmds;/dynamo_db/actuation_cmd;/dynamo_db/angle_err;/dynamo_db/ctrl_sys/ori/angle_u;/dynamo_db/ctrl_sys/ori/yaw/yaw_rate_setpoint;/dynamo_db/ctrl_sys/z/kd_val;/dynamo_db/ctrl_sys/z/kp_val;/dynamo_db/estimator/abs_pressure;/dynamo_db/estimator/acc;/dynamo_db/estimator/air_speed;/dynamo_db/estimator/bat_current_A;/dynamo_db/estimator/bat_remaining_percent;/dynamo_db/estimator/bat_voltage_V;/dynamo_db/estimator/consumed_current_Ah;/dynamo_db/estimator/diff_pressure;/dynamo_db/estimator/gps/alt_msl;/dynamo_db/estimator/gps/vel_down;/dynamo_db/estimator/gps/vel_east;/dynamo_db/estimator/gps/vel_north;/dynamo_db/estimator/ground_speed;/dynamo_db/estimator/heading;/dynamo_db/estimator/ori;/dynamo_db/estimator/ori_rate;/dynamo_db/estimator/pos;/dynamo_db/estimator/vel;/dynamo_db/mrft/inner;/dynamo_db/mrft/outer;/dynamo_db/px4_rc_to_ori_thrust/fwd_cmd;/dynamo_db/px4_rc_to_ori_thrust/ori_des;/dynamo_db/px4_rc_to_ori_thrust/ori_rate_des;/dynamo_db/px4_rc_to_ori_thrust/rc_raw;/dynamo_db/px4_rc_to_ori_thrust/thrust;/dynamo_db/px4_rc_to_ori_thrust/vtol_mode_des;/dynamo_db/qgc_rc_to_ori_thrust/pitch_des;/dynamo_db/qgc_rc_to_ori_thrust/roll_des;/dynamo_db/qgc_rc_to_ori_thrust/throttle_des;/dynamo_db/qgc_rc_to_ori_thrust/yaw_des;/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_pos;/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_vel;/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_yaw;/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_yaw_rate;/dynamo_db/rot_des;/dynamo_db/thrust_cmd;/dynamo_db/TrajectorySystem/acc;/dynamo_db/TrajectorySystem/crackle;/dynamo_db/TrajectorySystem/jerk;/dynamo_db/TrajectorySystem/ori;/dynamo_db/TrajectorySystem/pos;/dynamo_db/TrajectorySystem/snap;/dynamo_db/TrajectorySystem/vel;/rosout;/rosout_agg"/>
+  </plugin>
+  <plugin ID="UDP Server"/>
+  <plugin ID="WebSocket Server"/>
+  <plugin ID="ZMQ Subscriber"/>
+  <plugin ID="Fast Fourier Transform"/>
+  <plugin ID="Quaternion to RPY"/>
+  <plugin ID="Reactive Script Editor">
+   <library code="--[[ Helper function to create a series from arrays&#xa;&#xa; new_series: a series previously created with ScatterXY.new(name)&#xa; prefix:     prefix of the timeseries, before the index of the array&#xa; suffix_X:   suffix to complete the name of the series containing the X value. If [nil], use the index of the array.&#xa; suffix_Y:   suffix to complete the name of the series containing the Y value&#xa; timestamp:   usually the tracker_time variable&#xa;              &#xa; Example:&#xa; &#xa; Assuming we have multiple series in the form:&#xa; &#xa;   /trajectory/node.{X}/position/x&#xa;   /trajectory/node.{X}/position/y&#xa;   &#xa; where {N} is the index of the array (integer). We can create a reactive series from the array with:&#xa; &#xa;   new_series = ScatterXY.new(&quot;my_trajectory&quot;) &#xa;   CreateSeriesFromArray( new_series, &quot;/trajectory/node&quot;, &quot;position/x&quot;, &quot;position/y&quot;, tracker_time );&#xa;--]]&#xa;&#xa;function CreateSeriesFromArray( new_series, prefix, suffix_X, suffix_Y, timestamp )&#xa;  &#xa;  --- clear previous values&#xa;  new_series:clear()&#xa;  &#xa;  --- Append points to new_series&#xa;  index = 0&#xa;  while(true) do&#xa;&#xa;    x = index;&#xa;    -- if not nil, get the X coordinate from a series&#xa;    if suffix_X ~= nil then &#xa;      series_x = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_X) )&#xa;      if series_x == nil then break end&#xa;      x = series_x:atTime(timestamp)&#x9; &#xa;    end&#xa;    &#xa;    series_y = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_Y) )&#xa;    if series_y == nil then break end &#xa;    y = series_y:atTime(timestamp)&#xa;    &#xa;    new_series:push_back(x,y)&#xa;    index = index+1&#xa;  end&#xa;end&#xa;&#xa;--[[ Similar to the built-in function GetSeriesNames(), but select only the names with a give prefix. --]]&#xa;&#xa;function GetSeriesNamesByPrefix(prefix)&#xa;  -- GetSeriesNames(9 is a built-in function&#xa;  all_names = GetSeriesNames()&#xa;  filtered_names = {}&#xa;  for i, name in ipairs(all_names)  do&#xa;    -- check the prefix&#xa;    if name:find(prefix, 1, #prefix) then&#xa;      table.insert(filtered_names, name);&#xa;    end&#xa;  end&#xa;  return filtered_names&#xa;end&#xa;&#xa;--[[ Modify an existing series, applying offsets to all their X and Y values&#xa;&#xa; series: an existing timeseries, obtained with TimeseriesView.find(name)&#xa; delta_x: offset to apply to each x value&#xa; delta_y: offset to apply to each y value &#xa;  &#xa;--]]&#xa;&#xa;function ApplyOffsetInPlace(series, delta_x, delta_y)&#xa;  -- use C++ indeces, not Lua indeces&#xa;  for index=0, series:size()-1 do&#xa;    x,y = series:at(index)&#xa;    series:set(index, x + delta_x, y + delta_y)&#xa;  end&#xa;end&#xa;"/>
+   <scripts/>
+  </plugin>
+  <plugin ID="CSV Exporter"/>
+  <plugin ID="ROS /rosout Visualization"/>
+  <plugin ID="ROS Topic Re-Publisher"/>
+ </Plugins>
+ <!-- - - - - - - - - - - - - - - -->
+ <!-- - - - - - - - - - - - - - - -->
+ <customMathEquations>
+  <snippet name="vel_z_sp">
+   <global></global>
+   <function>return value+v1</function>
+   <linked_source>/dynamo_db/TrajectorySystem/vel/z</linked_source>
+   <additional_sources>
+    <v1>/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_vel/z</v1>
+   </additional_sources>
+  </snippet>
+  <snippet name="vel_x_sp">
+   <global></global>
+   <function>return value+v1</function>
+   <linked_source>/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_vel/x</linked_source>
+   <additional_sources>
+    <v1>/dynamo_db/TrajectorySystem/vel/x</v1>
+   </additional_sources>
+  </snippet>
+  <snippet name="vel_y_sp">
+   <global></global>
+   <function>return value+v1</function>
+   <linked_source>/dynamo_db/TrajectorySystem/vel/y</linked_source>
+   <additional_sources>
+    <v1>/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_vel/y</v1>
+   </additional_sources>
+  </snippet>
+  <snippet name="pos_z_sp">
+   <global></global>
+   <function>return value+v1</function>
+   <linked_source>/dynamo_db/TrajectorySystem/pos/z</linked_source>
+   <additional_sources>
+    <v1>/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_pos/z</v1>
+   </additional_sources>
+  </snippet>
+  <snippet name="pos_y_sp">
+   <global></global>
+   <function>return value+v1</function>
+   <linked_source>/dynamo_db/TrajectorySystem/pos/y</linked_source>
+   <additional_sources>
+    <v1>/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_pos/y</v1>
+   </additional_sources>
+  </snippet>
+  <snippet name="pos_x_sp">
+   <global></global>
+   <function>return value+v1</function>
+   <linked_source>/dynamo_db/TrajectorySystem/pos/x</linked_source>
+   <additional_sources>
+    <v1>/dynamo_db/rc_to_pos_vel_yaw_set_points/waypoint_ref_pos/x</v1>
+   </additional_sources>
+  </snippet>
+ </customMathEquations>
+ <snippets/>
+ <!-- - - - - - - - - - - - - - - -->
+</root>
+
