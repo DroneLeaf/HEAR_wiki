@@ -5,8 +5,7 @@ Here is a possible workflow for checking major issues and flags from problematic
 * We first use the `estimator_selector_status/primary_instance` topic for identifying EKF2 instance number that was running at the time of analysis
 
     ![EKF2 instance](./images/EKF2_instance.png)
-
-    We can see that EKF2 instance 2 was selected during the flight
+    *We can see that EKF2 instance 2 was selected during the flight*
 
 * Next, it is generally useful to investigate some of the position and velocity sensor signals and compare them with their estimates. We focus on the optical flow and GPS sensors here.
     * Useful sensor flags:
