@@ -32,3 +32,9 @@ You may modify the sampling period (in ms) to any of the included topics by modi
 ```cpp
 add_topic("airspeed", 1000);
 ```
+
+If you would like to sample at the maximum possible freuqnecy simply omit the sampling period
+
+```cpp
+add_topic("airspeed");
+```
