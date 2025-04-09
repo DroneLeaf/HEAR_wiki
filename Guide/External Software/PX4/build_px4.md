@@ -1,18 +1,11 @@
 # Building PX4
 
-1. Update the file:
-
-    Follow the instructions in [link](./modifying_mavlink_streams_and_understand_uORB_bindings.md#From-ORb-->-Ulog) for details on adding new topics.
-
-    ```
-    src/modules/logger/logged_topics.cpp
-    ```
-2. Run the dependency script:
-    ```
+1. Run the dependency script:
+    ```bash
     bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
     ```
 
-3. Build the firmware:
-    ```
+2. Build the firmware:
+    ```bash
     make px4_fmu-v6x_default
     ```
