@@ -128,3 +128,6 @@ unset replay; unset replay_mode
 
 > [!NOTE]  
 > A message that has a timestamp of 0 will be considered invalid and not be replayed.
+
+> [!Caution]  
+> Currently the EKF2 replay feature shows discrepancies against the original log file. The core team is still investigating.
