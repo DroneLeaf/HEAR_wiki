@@ -1,0 +1,94 @@
+digraph G {
+// Node for the image
+node [shape=none, label="", width=0, height=0];
+// Image node
+imageNode [image="Media/as_built_rotated.png", width=1.0, height=1.0, fixedsize=true];
+// Invisible subgraph to help with positioning
+subgraph cluster0 {
+label = "";
+style = invis; // Makes this subgraph invisible
+// Invisible node to help position the image node
+invisNode [shape=point, width=0, height=0, label=""];
+// Text node
+textNode [label="2025-01-30 12:27:44", shape=plaintext, fontsize=10];
+// Positioning nodes
+invisNode -> imageNode [style=invis]; // Makes the edge invisible
+imageNode -> textNode [style=invis]; // Connects image node to text node with invisible edge
+}
+{rank=source;invisNode;}
+label="actu_sys, Sync Graph"
+labelloc="t"
+;fontsize=40;
+rankdir="LR"
+graph[center=true, margin=0.2, nodesep=1.5, ranksep=0.15]
+node[ shape=box,fontsize=10]
+edge[weight=1.2,arrowsize=0.6, arrowhead=vee,fontsize=9]
+  4 -> 6 [label="DOORS_OUTTER_CMD->INPUT[float]",style="solid"];
+  4 -> 7 [label="DOORS_INNER_CMD->INPUT[float]",style="solid"];
+  6 -> 8 [label="OUTPUT->X1[float]",style="solid"];
+  7 -> 8 [label="OUTPUT->X2[float]",style="solid"];
+  0 -> 5 [label="MOTOR_CMD->INPUT_1[std::vector<float>]",style="solid"];
+  8 -> 5 [label="OUTPUT->INPUT_2[std::vector<float>]",style="solid"];
+  5 -> 1 [label="OUTPUT->ALLOC_INP[std::vector<float>]",style="solid"];
+  1 -> 2 [label="MOTOR_CMD->MOTOR_IN_CMD[std::vector<float>]",style="solid"];
+  2 -> 9 [label="MOTOR_CMD->INP_MOTORS[std::vector<float>]",style="solid"];
+  9 -> 10 [label="OUT_MOTORS->INPUT[mavlink_actuator_motors_t]",style="solid"];
+  2 -> 11 [label="MOTOR_CMD->IO_CMDS[std::vector<float>]",style="solid"];
+  11 -> 0 [label="CANARD_R_RAD->CANARD_R_RAD[float]",style="solid"];
+  11 -> 0 [label="CANARD_L_RAD->CANARD_L_RAD[float]",style="solid"];
+  11 -> 0 [label="VANE_R_RAD->VANE_R_RAD[float]",style="solid"];
+  11 -> 0 [label="VANE_L_RAD->VANE_L_RAD[float]",style="solid"];
+  11 -> 12 [label="FRT_TILT_RAD->INPUT[float]",style="solid"];
+  12 -> 13 [label="OUTPUT->INPUT[float]",style="solid"];
+  13 -> 0 [label="OUTPUT->FRT_TILT_RAD[float]",style="solid"];
+  18 -> 20 [label="OUTPUT->INP_HEARTBEAT[mavlink_heartbeat_t]",style="solid"];
+  19 -> 20 [label="OUTPUT->INP_STATUS[mavlink_vehicle_status_t]",style="solid"];
+  20 -> 21 [label="OUT_ARM->INP_CURRENT_PX4_ARM_STATUS[bool]",style="solid"];
+  0 -> 22 [label="MOTOR_CMD->INPUT[std::vector<float>]",style="solid"];
+  1 -> 23 [label="MOTOR_CMD->INPUT[std::vector<float>]",style="solid"];
+  2 -> 24 [label="MOTOR_CMD->INPUT[std::vector<float>]",style="solid"];
+  11 -> 25 [label="CANARD_R_RAD->INPUT[float]",style="solid"];
+  11 -> 26 [label="CANARD_L_RAD->INPUT[float]",style="solid"];
+  11 -> 27 [label="VANE_R_RAD->INPUT[float]",style="solid"];
+  11 -> 28 [label="VANE_L_RAD->INPUT[float]",style="solid"];
+  11 -> 29 [label="FRT_TILT_RAD->INPUT[float]",style="solid"];
+  30 -> 0 [label="THRUST_CMD->[float]",style="solid"];
+  31 -> 0 [label="BODY_RATE_CMD->[Vector3D<float>]",style="solid"];
+  32 -> 0 [label="FORWARD_CMD->[float]",style="solid"];
+  33 -> 0 [label="BODY_RATE_FF_CMD->[Vector3D<float>]",style="solid"];
+  30 -> 2 [label="THR_CMD->[float]",style="solid"];
+  0[label="ActuationAllocatorVTOL\nactuation_allocator\nSyn:13, Asyn: 29", shape=box];
+  1[label="MapAllocationToIOVTOL\nalloc_to_io_scaling\nSyn:16, Asyn: 28", shape=box];
+  2[label="ArmCommander\narm_commander\nSyn:18, Asyn: 27", shape=box];
+  3[label="ROSUnit_Server\nros_service_arm\nSyn:12, Asyn: 23", shape=rarrow];
+  4[label="DoorsSeqOpenClose\nvtol_doors_open_close_seq\nSyn:8, Asyn: 22", shape=box];
+  5[label="AggregateVectors\nagr_act_alloc_with_doors\nSyn:15, Asyn: 21", shape=box];
+  6[label="SlewRate\nslew_rate_outter_doors\nSyn:10, Asyn: 20", shape=box];
+  7[label="SlewRate\nslew_rate_inner_doors\nSyn:9, Asyn: 19", shape=box];
+  8[label="MuxToVecL2\nmux_door_outputs\nSyn:11, Asyn: 18", shape=box];
+  9[label="StructurePX4MotorsMsg_Block\npx4_motors_block\nSyn:28, Asyn: 17", shape=box];
+  10[label="MAVLink_Publisher\nMAVLINK_Pub/motors\nSyn:29, Asyn: 16", shape=larrow];
+  11[label="ControlSurfacesObserver\ncontrol_surface_angle_observer\nSyn:20, Asyn: 15", shape=box];
+  12[label="DeadBand\nfrt_tilt_servo_deadband\nSyn:26, Asyn: 14", shape=box];
+  13[label="Gain\nfrt_tilt_servo_gain\nSyn:27, Asyn: 13", shape=box];
+  14[label="Constant\noffboard_command_constant\nSyn:7, Asyn: 11", shape=box];
+  15[label="MAVLink_Client\nMAVLINK_cmd/offboard\nSyn:6, Asyn: 12", shape=larrow];
+  16[label="StructurePX4ArmCmd_Block\npx4_arm_block\nSyn:5, Asyn: 25", shape=box];
+  17[label="MAVLink_Client\nMAVLINK_cmd/arm\nSyn:4, Asyn: 26", shape=larrow];
+  18[label="MAVLink_Subscriber\nmavlink_sub_heartbeat\nSyn:1, Asyn: 10", shape=rarrow];
+  19[label="MAVLink_Subscriber\nmavlink_sub_status\nSyn:0, Asyn: 9", shape=rarrow];
+  20[label="MonitorPX4Status_Block\npx4_get_arm_block\nSyn:2, Asyn: 8", shape=box];
+  21[label="EnforcePX4ArmCmd_Block\npx4_enforce_arm_block\nSyn:3, Asyn: 24\nDown samp: 200", shape=box];
+  22[label="ROSUnit_Publisher\nros_pub_actuation_cmds\nSyn:14, Asyn: 7", shape=larrow];
+  23[label="ROSUnit_Publisher\nros_pub_io_cmds\nSyn:17, Asyn: 6", shape=larrow];
+  24[label="ROSUnit_Publisher\nros_pub_to_px4_cmds\nSyn:19, Asyn: 5", shape=larrow];
+  25[label="ROSUnit_Publisher\nros_pub_observer_canard_r\nSyn:25, Asyn: 4", shape=larrow];
+  26[label="ROSUnit_Publisher\nros_pub_observer_canard_l\nSyn:24, Asyn: 3", shape=larrow];
+  27[label="ROSUnit_Publisher\nros_pub_observer_vane_r\nSyn:23, Asyn: 2", shape=larrow];
+  28[label="ROSUnit_Publisher\nros_pub_observer_vane_l\nSyn:22, Asyn: 1", shape=larrow];
+  29[label="ROSUnit_Publisher\nros_pub_observer_front_tilt\nSyn:21, Asyn: 0", shape=larrow];
+  30[style=filled,fillcolor=red,label="float\nTHRUST_CMD", shape=ellipse];
+  31[style=filled,fillcolor=red,label="Vector3D<float>\nBODY_RATE_CMD", shape=ellipse];
+  32[style=filled,fillcolor=red,label="float\nFORWARD_CMD", shape=ellipse];
+  33[style=filled,fillcolor=red,label="Vector3D<float>\nBODY_RATE_FF_CMD", shape=ellipse];
+}

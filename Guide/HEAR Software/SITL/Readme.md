@@ -9,45 +9,18 @@ This document describes how the SITL is run with PX4 gazebo environment.
 
 As you have your machine ready for development and testing, let's run the SITL setup to play around the software stack.
 
+**One-time setup:** run the `hear-cli` program `configure_software_setup_autostart_sitl`. Logout/login after executing the command.
+
+**One-time setup:** run the `hear-cli` program `data_lifecycle_prepare` to install the local dynamoDB and data server.
+
+
 #### 1 - Mavlink Router
 
 
+Verify the Mavlink router is running:
 ```bash
-sudo mkdir -p /etc/mavlink-router/
+sudo systemctl status mavlink-router.service
 ```
-
-```bash
-sudo touch /etc/mavlink-router/main.conf
-printf ' \n
-## UART setup \n
-#[UartEndpoint pixhawk] \n
-#Device = /dev/ttyS0 \n
-#Baud = 52000  \n
-\n
-[UdpEndpoint client] \n
-Mode = Normal \n
-Address = 0.0.0.0 \n
-Port = 11000 \n
-\n
-[UdpEndpoint server] \n
-Mode = Server \n
-Address = 0.0.0.0 \n
-Port = 10000
-' | sudo tee /etc/mavlink-router/main.conf
-```
-
-First of all, before launching Leaf QGC, we need to run the following command.
-```bash
-mavlink-routerd 0.0.0.0:14550
-```
-After successful execution, please make sure your settings are the same as the output below.
-```
-Opened UDP Server [4]server: 0.0.0.0:10000
-Opened UDP Client [5]client: 0.0.0.0:11000
-Opened UDP Server [7]CLI: 0.0.0.0:14550
-Opened TCP Server [8] [::]:5760
-```
-If everything is correct, you can continue to the next step.
 
 
 #### 2 - PX4-Autopilot
@@ -96,34 +69,12 @@ Go to Comm Links tab on the top left menu and click on "Add". Then, fill the set
 After that, you can connect to the comm link instance you have created (TCP://:5760), in this case the comm link name is set to "SITL".
 ![QGroundControl](media/connect_commlink.png)
 
-#### 4 - HEAR_Configurations
-As you have the PX4 SITL running and connected to QGroundControl, you need to setup the configurations before runing the HEAR_FC. There are a couple of settings you have to make sure that setup correctly.
+#### 4 - Make sure drone data is synced locally correctly
+Make sure you are registered in `fly.droneleaf.io` and you already bound your drone with a license.
 
-- Systems/Pixhawk
-- UAV_instances
+Make sure you have synced all data from the cloud locally.
 
-Head to ~/HEAR_Configurations/Systems/Pixhawk/ and edit the general.json file to match the following:
-
-```json
-{
-    "pixhawk_ip": "127.0.0.1",
-    "pixhawk_udp_port": 10000,
-    "local_ethernet_interface_ip": "127.0.0.1",
-    "local_udp_port": 14540,
-    "serial_port_addr":"/dev/ttyS0",
-    "serial_baud_rate":921600
-}
-```
-You need to set the "pixhawk_ip" and "local_ethernet_interface_ip" to your local IP.
-
-After setting up the Pixhawk configuration, you need to check the general.json file in ~/HEAR_Configurations/UAV_instances/ and edit the "default_uav_instance_name" according to the drone instance that you want to simulate.
-
-```json
-{
-    "default_uav_instance_name": "X500_TF40d_Test",
-    "Description": "Define default_uav_instance_name to enforce uav instance name on the current machine"
-}
-```
+*Note:* this part is not documented yet, unfortunately. Please contact one of the core team members to fix.
 
 #### 5 - HEAR_FC
 As you have the PX4 SITL running and connected to QGroundControl, you can now run the HEAR_FC to simulate the drone's flight controller.

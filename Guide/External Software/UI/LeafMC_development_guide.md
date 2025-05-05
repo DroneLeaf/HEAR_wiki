@@ -297,3 +297,15 @@ Group additions with existing added code and use `leaf` prefix for easy tracking
 The directory of the MAVLink submodule is `libs/mavlink/include/mavlink/v2.0` and the name of the repo is `v2.0`
 
 #### Signals and Slots in Qt
+
+# Additional Considerations
+## Connectivity check and logic
+The connection with LeafFC logic is in `VehicleLinkManager.cc` and handled by checking the `MAVLINK_MSG_ID_LEAF_MODE`.
+
+## Status indication
+The status of the vehicle reported in QGC is controlled by the code in `MainStatusIndicator.qml`
+
+## LeafProfile
+The current profile information is shown in QGC main toolbar. This is located in `MainToolBar.qml` file.
+
+## Joystick options
