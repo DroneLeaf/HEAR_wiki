@@ -33,9 +33,7 @@ Here is a possible workflow for checking major issues and flags from problematic
 
 * Sensor fusion topics: These topics are useful for diagnosing issues with sensor fusion and which signals where rejected by the EKF2 instance. We mostly look at innovation test ratios which are a normalised innovation given as:
 
-    $$
-    \mathrm{innovation}_\mathrm{ratio} \propto \dfrac{\mathrm{innovation}^2}{\mathrm{variance_\mathrm{observation}}^2}
-    $$
+    $$\mathrm{innovation\_ratio} \propto \frac{\mathrm{innovation}^2}{\mathrm{variance\_observation}^2}$$
 
 	A test ratio > 1 indicates that the estimator rejects the sensor readings due to high observation variance.
 	* GPS position test ratios**:
