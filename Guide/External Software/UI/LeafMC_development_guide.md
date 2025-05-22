@@ -285,20 +285,27 @@ Now the AppImage would be generated in the same repo directory.
 
 **Known Limitation** Add the execution permission to the AppImage and run from the file explorer. Running from terminal does not work.
 
+## 7. Debugging QGC
+You need to follow these steps to debug QGC:
+1. Make sure you install Qt 5.15.2 through Qt developer portal: https://www.qt.io/download-qt-installer-oss | Do not install through apt or other sources
+2. Open Qt Creator. In the left pane select `Projects` choose Qt 5.15.2 with GCC 64.
+3. Under the `Run` tab. Go to Command line arguments.
+4. Paste `-qmljsdebugger=port:3768,block`.
+5. Add breakpoints wherever wanted in QML or C/Cpp files.
+6. Under debug menu select choose `Start Debugging of Startup Project` or hit `F5`.
+
 ## Conclusion
 This guide should give you a good starting point to add/edit UI elements in LeafMC and handle MAVLink messages. For more information, you can refer to the QGroundControl documentation and the LeafMC source code.
 
-### Other Noteworthy Points
-
-#### Where to add custom code?
+# Additional Considerations
+## Where to add custom code?
 Group additions with existing added code and use `leaf` prefix for easy tracking of what we have added. Avoid polluting the source files with loosely added code.
 
-#### MAVLink submodule
+## MAVLink submodule
 The directory of the MAVLink submodule is `libs/mavlink/include/mavlink/v2.0` and the name of the repo is `v2.0`
 
-#### Signals and Slots in Qt
+## Signals and Slots in Qt
 
-# Additional Considerations
 ## Connectivity check and logic
 The connection with LeafFC logic is in `VehicleLinkManager.cc` and handled by checking the `MAVLINK_MSG_ID_LEAF_MODE`.
 

@@ -15,6 +15,13 @@ Defined by LeafScript:
 
 ### Post-condition
 
+### Non-functional Specifications
+#### Must-have
+QGC Support
+
+#### Nice-to-have
+.plan file support for QGC missions
+
 ### Comments
 - Design is hard-coded (no UI).
 
