@@ -18,12 +18,12 @@ For example, add:
 and then at the repo root folder generate for C:
 
 ```bash
-python3 -m pymavlink.tools.mavgen --lang=C --wire-protocol=2.0 --output=. message_definitions/droneleaf_mav_msgs.xml
+python3 -m pymavlink.tools.mavgen --lang=C --wire-protocol=2.0 --output=. message_definitions/all.xml
 ```
 
 and for Python (usefult for prototyping and debugging, refer to the mavlink debugging guide):
 ```bash
-python3 -m pymavlink.tools.mavgen --lang=Python --wire-protocol=2.0 --output=pymavlink message_definitions/droneleaf_mav_msgs.xml
+python3 -m pymavlink.tools.mavgen --lang=Python --wire-protocol=2.0 --output=pymavlink message_definitions/all.xml
 ```
 
 you might wish to update Wireshark plugins for message dissection support, see Wireshark folder for that.
