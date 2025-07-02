@@ -1,0 +1,88 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram name="Page-1" id="sIQOChHxDy1Jt6XBbkkj">
+    <mxGraphModel dx="1044" dy="701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ceCtRfsO2z26qDeig0_i-8" value="&lt;font color=&quot;#333333&quot;&gt;Pixhawk v6x (192.168.144.4)&lt;/font&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="555" y="580" width="270" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-1" value="Companion Computer (192.168.144.5)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#8AE234;" vertex="1" parent="1">
+          <mxGeometry x="25" y="580" width="400" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="ceCtRfsO2z26qDeig0_i-2" target="ceCtRfsO2z26qDeig0_i-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-5" value="14561" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ceCtRfsO2z26qDeig0_i-4">
+          <mxGeometry x="-0.4013" y="1" relative="1" as="geometry">
+            <mxPoint x="-26" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-6" value="14550" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ceCtRfsO2z26qDeig0_i-4">
+          <mxGeometry x="0.6568" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ceCtRfsO2z26qDeig0_i-2" target="ceCtRfsO2z26qDeig0_i-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="595" y="633" />
+              <mxPoint x="595" y="655" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-11" value="14541" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ceCtRfsO2z26qDeig0_i-10">
+          <mxGeometry x="0.844" y="1" relative="1" as="geometry">
+            <mxPoint x="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-12" value="14560&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; background-color: rgb(236, 236, 236);&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22MAVLink%20Instance%202%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3BfontStyle%3D1%3BfontColor%3D%23FFFFFF%3BfillColor%3D%23333333%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22640%22%20y%3D%221135%22%20width%3D%2280%22%20height%3D%2260%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E0&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ceCtRfsO2z26qDeig0_i-10">
+          <mxGeometry x="-0.9389" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-19" value="Over Ethernet" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ceCtRfsO2z26qDeig0_i-10">
+          <mxGeometry x="0.1676" relative="1" as="geometry">
+            <mxPoint x="21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-2" value="DroneLeaf FC&lt;br&gt;MAV SYS ID: 1&lt;div&gt;MAV COMP ID: 101&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#4e9a06;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="75" y="610" width="110" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ceCtRfsO2z26qDeig0_i-3" target="ceCtRfsO2z26qDeig0_i-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-15" value="14540" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ceCtRfsO2z26qDeig0_i-14">
+          <mxGeometry x="-0.8605" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-16" value="14540" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ceCtRfsO2z26qDeig0_i-14">
+          <mxGeometry x="0.7579" y="-2" relative="1" as="geometry">
+            <mxPoint x="7" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-20" value="Over Ethernet" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ceCtRfsO2z26qDeig0_i-14">
+          <mxGeometry x="-0.2553" y="4" relative="1" as="geometry">
+            <mxPoint x="21" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-3" value="MAVLink Router" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="265" y="700" width="76" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-9" value="MAVLink Instance 2&lt;div&gt;MAV SYS ID: 1&lt;div&gt;MAV COMP ID: 1&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontColor=#FFFFFF;fillColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="645" y="625" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-13" value="MAVLink Instance 0&lt;div&gt;MAV SYS ID: 1&lt;div&gt;MAV COMP ID: 1&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontColor=#FFFFFF;fillColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="645" y="730" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-23" value="Bench/Flight Profiles:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="25" y="520" width="205" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ceCtRfsO2z26qDeig0_i-24" value="SITL Profile:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="25" y="20" width="205" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

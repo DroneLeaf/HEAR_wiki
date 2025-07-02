@@ -42,10 +42,15 @@ If you do not see the green colored "Ready for takeoff!" message in the terminal
 pxh> ekf2 start
 ```
 
+**Note**: Sometimes you want to run the SITL environment without the UI. For that use:
+```bash
+HEADLESS=1 make px4_sitl gazebo-classic
+```
+
+
 #### 3 - Leaf QGroundControl
 
-Download QGC
-https://droneleafworkspace.slack.com/files/U080N4HR8HG/F086D7BCQQ7/leafmc.appimage
+Download QGC from the software-stack repo release page.
 
 
 Run the QGroundControl and connect to the PX4 SITL instance via MAVLink.
