@@ -2,6 +2,14 @@
 
 This guide walks you through setting up the necessary repositories and development environment for working with the Petal App Manager.
 
+## How to Run
+
+### Development
+Launch from VS code debugger. Make sure you have had run `pdm install`.
+
+### Deployment
+Automatically added to `systemd` by `hear-cli local_machine run_program --p petal_app_manager_prepare_arm`
+
 ## Initial Setup
 
 To set up the required repositories, run:
@@ -19,6 +27,12 @@ petal-app-dev/
 ├── petal-app-manager/
 ├── petal-flight-log/
 └── petal-hello-world/
+```
+**Note** Currently there is an issue with pyaudio. To get around it execute:
+```bash
+sudo apt-get update
+sudo apt-get install -y portaudio19-dev libasound2-dev libportaudiocpp0
+sudo apt-get install -y ffmpeg        # installs ffmpeg, ffprobe, ffplay
 ```
 
 ## Dependencies Management
