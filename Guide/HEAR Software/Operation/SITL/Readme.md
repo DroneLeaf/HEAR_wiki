@@ -23,7 +23,8 @@ hear-cli local_machine run_program --p init_ecr_pull_profile
 hear-cli local_machine run_program --p init_sync_profile
 hear-cli local_machine run_program --p data_lifecycle_prepare
 hear-cli local_machine run_program --p controller_dashboard_prepare
-hear-cli local_machine run_program --p software_stack_clone
+hear-cli local_machine run_program --p software_stack_clone 
+#Note: Choose the sitl-dev branch if you want to install a development environment, otherwise choose main branch.
 hear-cli local_machine run_program --p set_fc_configs
 hear-cli local_machine run_program --p petal_app_manager_prepare_sitl
 ```
@@ -42,8 +43,17 @@ sudo systemctl status mavlink-router.service
 
 #### 2 - PX4-Autopilot
 
+Before running PX4-Autopilot download the following dependencies: 
 ```bash
-cd PX4-Autopilot
+pip3 install kconfiglib
+pip3 install --user jsonschema
+pip3 install --user pyros-genmsg
+pip3 install --user jinja2
+```
+Following:
+
+```bash
+cd cd ~/software-stack/PX4-Autopilot
 make px4_sitl gazebo-classic
 ```
 This will launch a gazeboo world that contains a drone instance, along with the px4 firmware running in SITL setup for this drone.
