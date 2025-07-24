@@ -116,6 +116,7 @@ After completing registration:
 1. Navigate to `~/software-stack/HEAR_Msgs` and compile:
 
    ```bash
+   cd ~/software-stack/HEAR_Msgs
    catkin_make
    source devel/setup.bash
    ```
@@ -123,6 +124,7 @@ After completing registration:
 2. Navigate to `~/software-stack/HEAR_FC` and compile the FC with SITL target:
 
    ```bash
+   cd ~/software-stack/HEAR_FC
    catkin_make -DHEAR_TARGET=SITL
    source devel/setup.bash
    ```
