@@ -53,7 +53,7 @@ pip3 install --user jinja2
 Following:
 
 ```bash
-cd cd ~/software-stack/PX4-Autopilot
+cd ~/software-stack/PX4-Autopilot
 make px4_sitl gazebo-classic
 ```
 This will launch a gazeboo world that contains a drone instance, along with the px4 firmware running in SITL setup for this drone.
