@@ -1,13 +1,13 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
   <diagram name="Page-1" id="sIQOChHxDy1Jt6XBbkkj">
-    <mxGraphModel dx="1090" dy="732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1042" dy="701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="B1MZwWyuIDTIYmFclaJw-41" value="Operator Computer (192.168.144.6)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="25" y="950" width="425" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="B1MZwWyuIDTIYmFclaJw-38" value="Flight Computer (192.168.144.5)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#8AE234;" parent="1" vertex="1">
+        <mxCell id="B1MZwWyuIDTIYmFclaJw-38" value="Flight Computer (192.168.144.5), e.g. RPi" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#8AE234;" parent="1" vertex="1">
           <mxGeometry x="25" y="1740" width="425" height="310" as="geometry" />
         </mxCell>
         <mxCell id="ceCtRfsO2z26qDeig0_i-8" value="&lt;font color=&quot;#333333&quot;&gt;Pixhawk v6x (192.168.144.4)&lt;/font&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#E6E6E6;" parent="1" vertex="1">
@@ -124,8 +124,8 @@
         <mxCell id="Gz9lhPib7CacI1eqw-oE-8" value="MAVLink Router" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="349" y="210" width="76" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="Gz9lhPib7CacI1eqw-oE-10" value="&lt;div&gt;PX4 SITL&lt;/div&gt;MAVLink Instance (Custom profile)&lt;div&gt;MAV SYS ID: 1&lt;div&gt;MAV COMP ID: 1&lt;br&gt;Hint: spawned MAVLink instances are shown at SITL start&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontColor=#FFFFFF;fillColor=#333333;" parent="1" vertex="1">
-          <mxGeometry x="540" y="250" width="210" height="110" as="geometry" />
+        <mxCell id="Gz9lhPib7CacI1eqw-oE-10" value="&lt;div&gt;PX4 SITL&lt;/div&gt;MAVLink Instance - 14580 (Custom profile)&lt;div&gt;MAVLink Instance - 18570 (Normal profile)&lt;/div&gt;&lt;div&gt;MAV SYS ID: 1&lt;div&gt;MAV COMP ID: 1&lt;br&gt;Hint: spawned MAVLink instances are shown at SITL start&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontColor=#FFFFFF;fillColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="500" y="250" width="250" height="110" as="geometry" />
         </mxCell>
         <mxCell id="B1MZwWyuIDTIYmFclaJw-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="B1MZwWyuIDTIYmFclaJw-1" target="ceCtRfsO2z26qDeig0_i-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -173,7 +173,7 @@
         <mxCell id="B1MZwWyuIDTIYmFclaJw-16" value="&lt;font color=&quot;#333333&quot;&gt;Pixhawk v6x (192.168.144.4)&lt;/font&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#E6E6E6;" parent="1" vertex="1">
           <mxGeometry x="555" y="1490" width="270" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="B1MZwWyuIDTIYmFclaJw-17" value="AI Computer (192.168.144.7)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#8AE234;" parent="1" vertex="1">
+        <mxCell id="B1MZwWyuIDTIYmFclaJw-17" value="AI Computer (192.168.144.7), e.g. Jetson Orin" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;verticalAlign=top;fillColor=#8AE234;" parent="1" vertex="1">
           <mxGeometry x="25" y="1380" width="425" height="310" as="geometry" />
         </mxCell>
         <mxCell id="B1MZwWyuIDTIYmFclaJw-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="B1MZwWyuIDTIYmFclaJw-39" target="B1MZwWyuIDTIYmFclaJw-30" edge="1">
