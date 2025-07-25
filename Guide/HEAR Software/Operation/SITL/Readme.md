@@ -2,18 +2,36 @@
 
 This document describes how the SITL is run with PX4 gazebo environment.
 
-
 ## DroneLeaf developers
 
 ### Your first SITL run!
 
 As you have your machine ready for development and testing, let's run the SITL setup to play around the software stack.
 
-**One-time setup:** run the `hear-cli` program `configure_software_setup_autostart_sitl`. Logout/login after executing the command.
+#### One-time setup
 
-**One-time setup:** run the `hear-cli` program `data_lifecycle_prepare` to install the local dynamoDB and data server.
+Run the following `hear-cli` commands **in order** on your local machine:
 
+```bash
+hear-cli local_machine run_program --p hear_docker_clone
+hear-cli local_machine run_program --p hear_docker_sitl_full_system_install
+hear-cli local_machine run_program --p install_system_dependencies_sitl
+hear-cli local_machine run_program --p docker_install
+hear-cli local_machine run_program --p node_install
+hear-cli local_machine run_program --p configure_software_setup_autostart_arm
+hear-cli local_machine run_program --p init_ecr_pull_profile
+hear-cli local_machine run_program --p init_sync_profile
+hear-cli local_machine run_program --p data_lifecycle_prepare
+hear-cli local_machine run_program --p controller_dashboard_prepare
+hear-cli local_machine run_program --p software_stack_clone 
+#Note: Choose the sitl-dev branch if you want to install a development environment, otherwise choose main branch.
+hear-cli local_machine run_program --p set_fc_configs
+hear-cli local_machine run_program --p petal_app_manager_prepare_sitl
+```
 
+Logout and log back in after completing the setup to ensure all autostart settings are applied.
+
+---
 #### 1 - Mavlink Router
 
 
@@ -25,8 +43,17 @@ sudo systemctl status mavlink-router.service
 
 #### 2 - PX4-Autopilot
 
+Before running PX4-Autopilot download the following dependencies: 
 ```bash
-cd PX4-Autopilot
+pip3 install kconfiglib
+pip3 install --user jsonschema
+pip3 install --user pyros-genmsg
+pip3 install --user jinja2
+```
+Following:
+
+```bash
+cd ~/software-stack/PX4-Autopilot
 make px4_sitl gazebo-classic
 ```
 This will launch a gazeboo world that contains a drone instance, along with the px4 firmware running in SITL setup for this drone.
@@ -75,19 +102,43 @@ After that, you can connect to the comm link instance you have created (TCP://:5
 ![QGroundControl](media/connect_commlink.png)
 
 #### 4 - Make sure drone data is synced locally correctly
-Make sure you are registered in `fly.droneleaf.io` and you already bound your drone with a license.
 
-Make sure you have synced all data from the cloud locally.
+Make sure you are registered in `fly.droneleaf.io` and that your drone is bound to a license.
 
-*Note:* this part is not documented yet, unfortunately. Please contact one of the core team members to fix.
+**To do this:**
+Follow the steps in the flowchart located in the HEAR Wiki:
+`Guide > Hardware and Process > Commissioning > 2 Ready for FSAC > Ready for FSAC Updated.draw.io`
 
-#### 5 - HEAR_FC
-As you have the PX4 SITL running and connected to QGroundControl, you can now run the HEAR_FC to simulate the drone's flight controller.
+The registration and licensing steps are located toward the **end** of the flowchart.
 
-- Run
-    ```bash
-    cd ~/HEAR_FC
-    source devel/setup.bash
-    roslaunch flight_controller px4_flight_mavlink_opti.launch
-    ```
-Finally, you should see "PX4 Ready to Fly" message on the QGC and you are good to go!
+After completing registration:
+
+1. Navigate to `~/software-stack/HEAR_Msgs` and compile:
+
+   ```bash
+   cd ~/software-stack/HEAR_Msgs
+   catkin_make
+   source devel/setup.bash
+   ```
+
+2. Navigate to `~/software-stack/HEAR_FC` and compile the FC with SITL target:
+
+   ```bash
+   cd ~/software-stack/HEAR_FC
+   catkin_make -DHEAR_TARGET=SITL
+   source devel/setup.bash
+   ```
+
+3. Launch the Flight Controller:
+
+   ```bash
+   roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
+   ```
+
+You should see a **green bar** and the message: **PX4 Ready To Fly**
+
+---
+
+### The SITL simulation is initialized and ready to fly. 🚀
+
+---
