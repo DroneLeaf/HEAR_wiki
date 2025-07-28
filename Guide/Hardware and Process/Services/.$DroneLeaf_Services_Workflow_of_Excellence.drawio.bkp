@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
   <diagram name="Page-1" id="izCItK5VorsNNd59iz4u">
-    <mxGraphModel dx="946" dy="605" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1233" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -505,7 +505,7 @@
         <mxCell id="DKOdvGpKEaqnOgcf_qUs-14" value="Refine MRFT amplitude to minimize oscillations amplitude" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="410" y="2520" width="180" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="vbNMBOHUC8T5AAjVXsVV-2" target="qLH_3udzeJ4THHRIJrJ6-8">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="vbNMBOHUC8T5AAjVXsVV-2" target="qLH_3udzeJ4THHRIJrJ6-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vbNMBOHUC8T5AAjVXsVV-1" value="Document And Conclude" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
@@ -517,58 +517,58 @@
         <mxCell id="vbNMBOHUC8T5AAjVXsVV-2" value="&quot;Ready for Normal Flight&quot; process" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="660" y="700" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Scope&lt;/h1&gt;&lt;p&gt;This document:&lt;br&gt;&lt;b&gt;Covers:&lt;/b&gt; processes related to the one-time tuning process of new UAVs. Pilot experience and interactions. Safety specific to the tuning process. Documents delivered to the client.&lt;br&gt;&lt;br&gt;&lt;b&gt;Does not cover:&lt;/b&gt;&amp;nbsp;repetitive processes related to normal flights. Does not cover flight modes.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Scope&lt;/h1&gt;&lt;p&gt;This document:&lt;br&gt;&lt;b&gt;Covers:&lt;/b&gt; processes related to the one-time tuning process of new UAVs. Pilot experience and interactions. Safety specific to the tuning process. Documents delivered to the client.&lt;br&gt;&lt;br&gt;&lt;b&gt;Does not cover:&lt;/b&gt;&amp;nbsp;repetitive processes related to normal flights. Does not cover flight modes.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="500" y="176" width="330" height="184" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-2" value="Documents Generated" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-2" value="Documents Generated" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="430" width="270" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-3" value="Motor Static Thrust Test Report&lt;br&gt;Full battery, half-full battery, post compensation" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="qLH_3udzeJ4THHRIJrJ6-2">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-3" value="Motor Static Thrust Test Report&lt;br&gt;Full battery, half-full battery, post compensation" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="qLH_3udzeJ4THHRIJrJ6-2" vertex="1">
           <mxGeometry y="30" width="270" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-4" value="Battery Discharge Test Report" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="qLH_3udzeJ4THHRIJrJ6-2">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-4" value="Battery Discharge Test Report" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="qLH_3udzeJ4THHRIJrJ6-2" vertex="1">
           <mxGeometry y="70" width="270" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-5" value="Motors Allocation Report" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="qLH_3udzeJ4THHRIJrJ6-2">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-5" value="Motors Allocation Report" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="qLH_3udzeJ4THHRIJrJ6-2" vertex="1">
           <mxGeometry y="100" width="270" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-7" value="System Archeticture Report" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="qLH_3udzeJ4THHRIJrJ6-2">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-7" value="System Archeticture Report" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="qLH_3udzeJ4THHRIJrJ6-2" vertex="1">
           <mxGeometry y="130" width="270" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.004;entryY=0.14;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="mrgJpv-Cbxdc2usGM0ly-1" target="qLH_3udzeJ4THHRIJrJ6-2">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.004;entryY=0.14;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="mrgJpv-Cbxdc2usGM0ly-1" target="qLH_3udzeJ4THHRIJrJ6-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-8" value="Documents Generated" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-8" value="Documents Generated" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="880" y="790" width="270" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-9" value="Observations on Design and Performance Report:&lt;br&gt;Frequencey Analysis, System Biases, Observations on Electrical System, Observations on Mechanical System, Observations on Avionics" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="qLH_3udzeJ4THHRIJrJ6-8">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-9" value="Observations on Design and Performance Report:&lt;br&gt;Frequencey Analysis, System Biases, Observations on Electrical System, Observations on Mechanical System, Observations on Avionics" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="qLH_3udzeJ4THHRIJrJ6-8" vertex="1">
           <mxGeometry y="30" width="270" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-14" value="UAV Specifications Report&lt;div&gt;Includes: operational conditions, maximum limits, and main physical characteristics&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="qLH_3udzeJ4THHRIJrJ6-8">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-14" value="UAV Specifications Report&lt;div&gt;Includes: operational conditions, maximum limits, main physical characteristics, photo of the drone&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="qLH_3udzeJ4THHRIJrJ6-8" vertex="1">
           <mxGeometry y="120" width="270" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-15" value="Flight Logs" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-15" value="Flight Logs" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="93" y="3960" width="307" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-16" value="Flight logs must be generated automatically" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="qLH_3udzeJ4THHRIJrJ6-15">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-16" value="Flight logs must be generated automatically" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="qLH_3udzeJ4THHRIJrJ6-15" vertex="1">
           <mxGeometry y="30" width="307" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-17" value="Reports generation must be largely automated from flight logs" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="qLH_3udzeJ4THHRIJrJ6-15">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-17" value="Reports generation must be largely automated from flight logs" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="qLH_3udzeJ4THHRIJrJ6-15" vertex="1">
           <mxGeometry y="60" width="307" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qLH_3udzeJ4THHRIJrJ6-19" target="kK3d28XH1DaZ-TZ7ljom-104">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="qLH_3udzeJ4THHRIJrJ6-19" target="kK3d28XH1DaZ-TZ7ljom-104" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-19" value="Get initial yaw and yaw rate tuning" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-19" value="Get initial yaw and yaw rate tuning" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="410" y="2670" width="180" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-21" value="* Refer to flight modes document" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-21" value="* Refer to flight modes document" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="3010" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-22" value="* Refer to the automatic tuning document" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-22" value="* Refer to the automatic tuning document" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1200" y="2430" width="240" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-23" value="* Refer to the flight modes and flight status" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-23" value="* Refer to the flight modes and flight status" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1200" y="2550" width="240" height="30" as="geometry" />
         </mxCell>
       </root>

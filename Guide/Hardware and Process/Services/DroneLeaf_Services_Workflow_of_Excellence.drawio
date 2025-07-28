@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
   <diagram name="Page-1" id="izCItK5VorsNNd59iz4u">
-    <mxGraphModel dx="1233" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="719" dy="483" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -362,7 +362,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="kK3d28XH1DaZ-TZ7ljom-104" value="Take-off and ensure the drone is within safe flight envelope. &lt;br&gt;- No wind condition is assumed&lt;br&gt;- Pilot roll/pitch/altitude inputs are summed with MRFT output&lt;div&gt;- Pilot inputs must be slow changing and only when necessary&lt;br&gt;- Pilot focus would be to keep the UAV within a safe boundry and to prevent hight translational speeds, not to hover precisly.&lt;br&gt;- Excessive pilot actions would disturb normal workflow.&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="2820" width="180" height="220" as="geometry" />
+          <mxGeometry x="410" y="2820" width="200" height="220" as="geometry" />
         </mxCell>
         <mxCell id="kK3d28XH1DaZ-TZ7ljom-106" value="Wait for the drone to get in-flight automatic tuning of roll/pitch/altitude" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1010" y="2380" width="180" height="80" as="geometry" />
@@ -563,7 +563,7 @@
           <mxGeometry x="410" y="2670" width="180" height="70" as="geometry" />
         </mxCell>
         <mxCell id="qLH_3udzeJ4THHRIJrJ6-21" value="* Refer to flight modes document" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="600" y="3010" width="190" height="30" as="geometry" />
+          <mxGeometry x="610" y="3010" width="190" height="30" as="geometry" />
         </mxCell>
         <mxCell id="qLH_3udzeJ4THHRIJrJ6-22" value="* Refer to the automatic tuning document" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1200" y="2430" width="240" height="30" as="geometry" />
