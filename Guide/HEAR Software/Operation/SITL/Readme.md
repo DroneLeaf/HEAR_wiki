@@ -126,6 +126,8 @@ After completing registration:
    ```bash
    cd ~/software-stack/HEAR_FC
    catkin_make -DHEAR_TARGET=SITL
+   # if you wanna run in debug mode:
+      # catkin_make -DCMAKE_BUILD_TYPE=Debug -DHEAR_TARGET=SITL
    source devel/setup.bash
    ```
 
