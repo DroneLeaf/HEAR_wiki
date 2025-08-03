@@ -1,157 +1,205 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
   <diagram name="Page-1" id="6as3FUhw41MRpe2Z9Gl4">
-    <mxGraphModel dx="1362" dy="843" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1042" dy="701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="1NoHcW3fg8vAXFvvcilR-2" value="Armed Idle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="50" y="230" width="110" height="100" as="geometry" />
+          <mxGeometry x="50" y="292" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-4" value="Taking Off" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="50" y="350" width="110" height="100" as="geometry" />
+          <mxGeometry x="50" y="412" width="110" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-5" value="Autonomous Modes (Mission and RC Pos):" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="30" y="70" width="290" height="30" as="geometry" />
+        <mxCell id="1NoHcW3fg8vAXFvvcilR-5" value="Autonomous Modes:&lt;div&gt;(Mission and RC Pos)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="40" y="70" width="160" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-6" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="30" y="220" as="sourcePoint" />
-            <mxPoint x="30" y="770" as="targetPoint" />
+            <mxPoint x="30" y="282" as="sourcePoint" />
+            <mxPoint x="30" y="832" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-7" value="time" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="30" y="760" width="60" height="30" as="geometry" />
+          <mxGeometry x="30" y="822" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-8" value="Flying" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="50" y="480" width="110" height="60" as="geometry" />
+          <mxGeometry x="50" y="542" width="50" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-9" value="Landing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="50" y="570" width="110" height="60" as="geometry" />
+          <mxGeometry x="50" y="632" width="110" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-10" value="Landed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="50" y="660" width="110" height="60" as="geometry" />
+        <mxCell id="1NoHcW3fg8vAXFvvcilR-10" value="Disarmed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="50" y="722" width="110" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-11" value="Manual Modes (RC Stabilize):" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="380" y="70" width="250" height="30" as="geometry" />
+        <mxCell id="1NoHcW3fg8vAXFvvcilR-11" value="Manual Modes:&lt;div&gt;(RC Stabilize)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="235" y="70" width="160" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-12" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="380" y="220" as="sourcePoint" />
-            <mxPoint x="380" y="520" as="targetPoint" />
+            <mxPoint x="215" y="282" as="sourcePoint" />
+            <mxPoint x="215" y="690" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-13" value="time" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="380" y="515" width="60" height="30" as="geometry" />
+          <mxGeometry x="217" y="680" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-16" value="Armed Idle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="400" y="230" width="110" height="100" as="geometry" />
+          <mxGeometry x="235" y="292" width="110" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-17" value="(Disarm to repeat)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="40" y="730" width="130" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-18" value="(Disarm to repeat)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="390" y="460" width="130" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-19" value="Learning Inner Modes (Learning Inner):" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="660" y="70" width="270" height="30" as="geometry" />
+        <mxCell id="1NoHcW3fg8vAXFvvcilR-19" value="Learning Inner Mode:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="585" y="70" width="160" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-21" value="Armed Idle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="680" y="230" width="110" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-23" value="Flying" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="680" y="600" width="110" height="100" as="geometry" />
+          <mxGeometry x="610" y="292" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-24" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="660" y="220" as="sourcePoint" />
-            <mxPoint x="660" y="780" as="targetPoint" />
+            <mxPoint x="590" y="282" as="sourcePoint" />
+            <mxPoint x="590" y="820" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-25" value="time" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="660" y="780" width="60" height="30" as="geometry" />
+          <mxGeometry x="593" y="810" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-29" value="(Disarm to repeat)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="670" y="710" width="130" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-30" value="Learning Modes (Outer, and Full):" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="980" y="70" width="250" height="30" as="geometry" />
+        <mxCell id="1NoHcW3fg8vAXFvvcilR-30" value="Learning Modes:&lt;div&gt;(Outer, and Full)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="410" y="70" width="160" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-32" value="Armed Idle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1000" y="230" width="110" height="100" as="geometry" />
+          <mxGeometry x="420" y="290" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-34" value="Flying" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1000" y="600" width="110" height="100" as="geometry" />
+          <mxGeometry x="420" y="660" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-35" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="980" y="220" as="sourcePoint" />
-            <mxPoint x="980" y="930" as="targetPoint" />
+            <mxPoint x="400" y="280" as="sourcePoint" />
+            <mxPoint x="400" y="990" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-36" value="time" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="980" y="936" width="60" height="30" as="geometry" />
+          <mxGeometry x="400" y="996" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-37" value="Landing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1000" y="730" width="110" height="60" as="geometry" />
+          <mxGeometry x="420" y="790" width="110" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="1NoHcW3fg8vAXFvvcilR-39" value="Landed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1000" y="820" width="110" height="60" as="geometry" />
+        <mxCell id="1NoHcW3fg8vAXFvvcilR-39" value="Disarmed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="420" y="880" width="110" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-40" value="(Disarm to repeat)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="990" y="890" width="130" height="30" as="geometry" />
+          <mxGeometry x="225" y="647" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-42" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Flight Status Nominal Progression Across Different Flight Modes&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="30" y="10" width="900" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-43" value="List of Allowed Mode Changes based on status - Dotted Arrows And the following (if any):" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
-          <mxGeometry x="40" y="850" width="510" height="60" as="geometry" />
+          <mxGeometry x="30" y="1090" width="510" height="60" as="geometry">
+            <mxRectangle x="50" y="990" width="510" height="30" as="alternateBounds" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="1NoHcW3fg8vAXFvvcilR-47" value="Not Ready" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="50" y="120" width="1060" height="30" as="geometry" />
+          <mxGeometry x="50" y="130" width="1050" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="qBLi_PJk50myp2y5TS7F-1" value="Taking off" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="680" y="350" width="60" height="110" as="geometry" />
+        <mxCell id="qBLi_PJk50myp2y5TS7F-1" value="Armed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="610" y="412" width="110" height="110" as="geometry" />
         </mxCell>
         <mxCell id="iuxJGta7QJsGL0OLkIdn-1" value="Ready To Fly" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="50" y="170" width="1060" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="iuxJGta7QJsGL0OLkIdn-2" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=1 2;exitPerimeter=0;" parent="1" source="iuxJGta7QJsGL0OLkIdn-3" target="iuxJGta7QJsGL0OLkIdn-6" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="640" y="480" as="sourcePoint" />
-            <mxPoint x="690" y="430" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="250" y="480" />
-              <mxPoint x="310" y="410" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="iuxJGta7QJsGL0OLkIdn-3" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" vertex="1">
-          <mxGeometry x="170" y="350" width="20" height="280" as="geometry" />
-        </mxCell>
-        <mxCell id="iuxJGta7QJsGL0OLkIdn-4" value="" style="curved=1;endArrow=classic;html=1;rounded=0;dashed=1;dashPattern=1 2;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="iuxJGta7QJsGL0OLkIdn-5" target="iuxJGta7QJsGL0OLkIdn-6" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="930" y="500" as="sourcePoint" />
-            <mxPoint x="500" y="410" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="620" y="620" />
-              <mxPoint x="590" y="400" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="iuxJGta7QJsGL0OLkIdn-5" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" parent="1" vertex="1">
-          <mxGeometry x="950" y="350" width="20" height="440" as="geometry" />
+          <mxGeometry x="50" y="232" width="1040" height="30" as="geometry" />
         </mxCell>
         <mxCell id="iuxJGta7QJsGL0OLkIdn-6" value="Armed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="400" y="350" width="110" height="100" as="geometry" />
+          <mxGeometry x="235" y="412" width="110" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="7scZPJ2cMPDFxetB9PGE-3" value="Learning" style="shape=corner;whiteSpace=wrap;html=1;direction=west;dx=30;dy=90;verticalAlign=bottom;" vertex="1" parent="1">
-          <mxGeometry x="680" y="350" width="110" height="220" as="geometry" />
+        <mxCell id="7scZPJ2cMPDFxetB9PGE-4" value="Learning" style="shape=corner;whiteSpace=wrap;html=1;direction=west;dx=30;dy=90;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="420" y="420" width="110" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="7scZPJ2cMPDFxetB9PGE-4" value="Learning" style="shape=corner;whiteSpace=wrap;html=1;direction=west;dx=30;dy=90;verticalAlign=bottom;" vertex="1" parent="1">
-          <mxGeometry x="1000" y="360" width="110" height="220" as="geometry" />
+        <mxCell id="7scZPJ2cMPDFxetB9PGE-5" value="Taking off" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="420" y="420" width="60" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="7scZPJ2cMPDFxetB9PGE-5" value="Taking off" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="1000" y="360" width="60" height="110" as="geometry" />
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-3" value="Pre-flight Checks" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="50" y="180" width="1040" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-4" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="135" width="20" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-5" value="Mode Change" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="172.5" width="110" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-6" value="RC" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="110" y="542" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-7" value="RC" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="235" y="540" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-12" value="RC" style="shape=corner;whiteSpace=wrap;html=1;direction=west;dx=30;dy=90;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="610" y="542" width="110" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-13" value="Learning" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="610" y="542" width="60" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-14" value="(Disarm to repeat)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="600" y="782" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-15" value="Armed Idle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="800" y="290" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-16" value="Taking Off" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="800" y="410" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-17" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="780" y="280" as="sourcePoint" />
+            <mxPoint x="780" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-18" value="time" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="780" y="820" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-19" value="Flying" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="800" y="540" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-20" value="Landing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="800" y="630" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-21" value="Disarmed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="800" y="720" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-22" value="RC" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="860" y="540" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-23" value="Refined Tuning Mode:&lt;div&gt;(Offline)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="775" y="70" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-25" value="Manual MRFT&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(Full)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;rotation=90;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="880" y="560" width="120" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="2zYgu9qWN6t5AGC8dvFh-28" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="915" y="532" width="20" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Gj7VyjiUMbottdjqvYxx-1" value="Armed Idle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="980" y="290" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Gj7VyjiUMbottdjqvYxx-2" value="Taking Off" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="980" y="410" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Gj7VyjiUMbottdjqvYxx-3" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="960" y="280" as="sourcePoint" />
+            <mxPoint x="960" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gj7VyjiUMbottdjqvYxx-4" value="time" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="960" y="820" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Gj7VyjiUMbottdjqvYxx-5" value="Flying" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="980" y="540" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gj7VyjiUMbottdjqvYxx-6" value="Landing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="980" y="630" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gj7VyjiUMbottdjqvYxx-7" value="Disarmed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="980" y="720" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gj7VyjiUMbottdjqvYxx-8" value="RC" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="540" width="50" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

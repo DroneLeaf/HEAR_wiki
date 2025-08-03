@@ -125,7 +125,7 @@ After completing registration:
 
    ```bash
    cd ~/software-stack/HEAR_FC
-   catkin_make -DHEAR_TARGET=SITL
+   catkin_make -DCMAKE_BUILD_TYPE=Debug -DHEAR_TARGET=SITL
    source devel/setup.bash
    ```
 
