@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
   <diagram name="Page-1" id="izCItK5VorsNNd59iz4u">
-    <mxGraphModel dx="719" dy="483" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3009" dy="1884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -494,7 +494,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DKOdvGpKEaqnOgcf_qUs-11" value="START" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
-          <mxGeometry x="440" y="2405" width="120" height="30" as="geometry" />
+          <mxGeometry x="450" y="2405" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="DKOdvGpKEaqnOgcf_qUs-13" value="Additional PX4 checks" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="30" y="2710" width="130" height="30" as="geometry" />
@@ -503,7 +503,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DKOdvGpKEaqnOgcf_qUs-14" value="Refine MRFT amplitude to minimize oscillations amplitude" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="2520" width="180" height="70" as="geometry" />
+          <mxGeometry x="420" y="2520" width="180" height="70" as="geometry" />
         </mxCell>
         <mxCell id="qLH_3udzeJ4THHRIJrJ6-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="vbNMBOHUC8T5AAjVXsVV-2" target="qLH_3udzeJ4THHRIJrJ6-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -516,9 +516,6 @@
         </mxCell>
         <mxCell id="vbNMBOHUC8T5AAjVXsVV-2" value="&quot;Ready for Normal Flight&quot; process" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="660" y="700" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="qLH_3udzeJ4THHRIJrJ6-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Scope&lt;/h1&gt;&lt;p&gt;This document:&lt;br&gt;&lt;b&gt;Covers:&lt;/b&gt; processes related to the one-time tuning process of new UAVs. Pilot experience and interactions. Safety specific to the tuning process. Documents delivered to the client.&lt;br&gt;&lt;br&gt;&lt;b&gt;Does not cover:&lt;/b&gt;&amp;nbsp;repetitive processes related to normal flights. Does not cover flight modes.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="500" y="176" width="330" height="184" as="geometry" />
         </mxCell>
         <mxCell id="qLH_3udzeJ4THHRIJrJ6-2" value="Documents Generated" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="430" width="270" height="160" as="geometry" />
@@ -560,7 +557,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qLH_3udzeJ4THHRIJrJ6-19" value="Get initial yaw and yaw rate tuning" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="2670" width="180" height="70" as="geometry" />
+          <mxGeometry x="420" y="2670" width="180" height="70" as="geometry" />
         </mxCell>
         <mxCell id="qLH_3udzeJ4THHRIJrJ6-21" value="* Refer to flight modes document" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="610" y="3010" width="190" height="30" as="geometry" />
@@ -570,6 +567,60 @@
         </mxCell>
         <mxCell id="qLH_3udzeJ4THHRIJrJ6-23" value="* Refer to the flight modes and flight status" style="text;html=1;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1200" y="2550" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-12" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="870" y="230" width="690" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-2" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-12">
+          <mxGeometry y="30" width="690" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-3" value="Ready-to-Integrate" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-12">
+          <mxGeometry x="10" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-4" value="Ready-for-FSAC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-12">
+          <mxGeometry x="150" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-5" value="FSAC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-12">
+          <mxGeometry x="290" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-6" value="Ready-for-Normal-Flight" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-12">
+          <mxGeometry x="430" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-8" value="Commissioning:" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-12">
+          <mxGeometry width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-11" value="Support" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-12">
+          <mxGeometry x="570" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-13" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="870" y="360" width="270" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-1" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-13">
+          <mxGeometry y="30" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-7" value="Flight" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-13">
+          <mxGeometry x="10" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-9" value="Operations:" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-13">
+          <mxGeometry width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-10" value="Support" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-13">
+          <mxGeometry x="150" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qLH_3udzeJ4THHRIJrJ6-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Scope&lt;/h1&gt;&lt;p&gt;This document:&lt;br&gt;&lt;b&gt;Covers:&lt;/b&gt; processes related to the one-time tuning process of new UAVs. Pilot experience and interactions. Safety specific to the tuning process. Documents delivered to the client.&lt;br&gt;&lt;br&gt;&lt;b&gt;Does not cover:&lt;/b&gt;&amp;nbsp;repetitive processes related to normal flights. Does not cover flight modes.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="870" y="36" width="330" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-14" value="Revision History" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="50" width="193" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-15" value="Document Creation - July 30 2025" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-14">
+          <mxGeometry y="30" width="193" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-16" value="Item 2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-14">
+          <mxGeometry y="60" width="193" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pjOauVkuhHYVHdaz1N-0-17" value="Item 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="pjOauVkuhHYVHdaz1N-0-14">
+          <mxGeometry y="90" width="193" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
