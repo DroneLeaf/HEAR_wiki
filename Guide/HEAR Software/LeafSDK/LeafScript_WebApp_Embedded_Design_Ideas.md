@@ -11,6 +11,8 @@ It lays out the **UX requirements**, covers **implementation specifications** (f
 
 It needs to have an embedded IDE where users are able to easily script custom missions using LeafSDK mission planning library.
 
+**BONUS**: Additionally, Copilot agent can be integrated into our IDE so the users can utilize AI agents to build their mission even more easily.
+
 **2. Mission Validation and Loading**
 
 It will have two buttons for validating a planned mission and loading a validated mission. Load mission button will be hidden until the mission is validated.
@@ -131,6 +133,10 @@ Loaded missions will be visualized to the user with a graph diagram. We need a h
 # Minimal Working Example: In-Browser IDE
 
 This code implements a browser-based Python IDE powered by Pyodide and the Monaco editor. When the page loads, it initializes a Pyodide runtime in a Web Worker to keep the UI responsive, preloads scientific packages, and silently installs **LeafSDK** (along with its dependency ``networkx``) in the background. The editor lets users write and execute Python code directly in the browser, with ``stdout``/``stderr`` output streamed live into a console panel. A status bar shows the readiness of both the Python runtime and LeafSDK, while controls are provided to run code, stop/restart the runtime, and clear output. This setup enables interactive Python development—including LeafSDK functionality—completely client-side, without any server.
+
+**INSTRUCTIONS**
+
+Save this code as a html file in your local machine and open it in your browser. Once you save it as html, it should automatically open in your browser when you double click on it. Then, you wait for status to be ready and LeafSDK to be installed. You can keep track of their progress on the status bar at the top. Afterwards, you can start writing and running your code on the browser.
 
 ```html
 <!DOCTYPE html>
