@@ -62,7 +62,7 @@ Following:
 cd ~/software-stack/PX4-Autopilot
 make px4_sitl gazebo-classic
 ```
-This will launch a gazeboo world that contains a drone instance, along with the px4 firmware running in SITL setup for this drone.
+This will launch a gazebo world that contains a drone instance, along with the px4 firmware running in SITL setup for this drone.
 
 If you want to launch a specific drone instance (e.g. DFL), you can specify it by adding the instance postfix after the environment name as follows
 
