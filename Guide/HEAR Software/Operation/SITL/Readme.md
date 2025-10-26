@@ -24,7 +24,7 @@ hear-cli local_machine run_program --p init_sync_profile
 hear-cli local_machine run_program --p data_lifecycle_prepare
 hear-cli local_machine run_program --p controller_dashboard_prepare
 hear-cli local_machine run_program --p software_stack_clone 
-#Note: Choose the sitl-dev branch if you want to install a development environment, otherwise choose main branch.
+#Note: Choose the dev-sitl branch if you want to install a development environment, otherwise choose main branch [as of Oct 2025, main is way behind. Use dev for stable release, or dev-sitl for development].
 hear-cli local_machine run_program --p set_fc_configs
 hear-cli local_machine run_program --p petal_app_manager_prepare_sitl
 ```
