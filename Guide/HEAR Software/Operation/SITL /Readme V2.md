@@ -216,13 +216,14 @@ Important summary:
             - make px4_sitl gazebo-classic_dfl # for DFL
             - HEADLESS=1 make px4_sitl gazebo-classic # for headless build [lower resource usage]
 
-18. Running LeafQGC [AKA: LeafMC]:
+18. Running LeafQGC [AKA: LeafMC, note: leafQGC is a fork of QGroundControl with]:
     - Open a new yakuake tab, rename it to "leafQGC":
     - run following commands:
     ```bash
     cd ~ # navigate to home directory
-    git clone -b dev-sitl https://github.com/DroneLeaf/LeafMC.git # clone LeafMC repo, use dev-sitl branch for latest development version
+    git clone --recurse-submodules -j8 -b dev-sitl git@github.com:DroneLeaf/LeafMC.git # clone LeafMC repo, use dev-sitl branch for latest development version
     cd LeafMC
+
     sudo ./tools/install-dependencies-debian.sh # install LeafMC build dependencies
     ```
     - Make sure Qt 5.15.2 is installed on your system. You can check the installed version by running:
@@ -237,20 +238,32 @@ Important summary:
     ```bash
     sudo apt-get install qtcreator
     ```
-    - Open Qt Creator, open LeafMC/QGroundControl.pro file.
-    - Configure the kits to use Qt 5.15.2. by going to "Projects" in the left pane, selecting Qt 5.15.2 with GCC 64.
+    - Open Qt Creator, open LeafMC/CMakeLists.txt file.
+    - In Qt Version tab, remove all other Qt versions except 5.15.2. 
+    - If 5.15.2 is not listed, add it using "Add" button and navigating to ~/Qt/5.15.2/gcc_64/bin/qmake.
+    - click on apply
+    - update qt in kits to use 5.15.2
+    - click on OK
+    - click on configure project
     - In environment, edit Build Environment so that under "PATH", it starts with:
     ```bash
-    /home/yo/Qt/5.15.2/gcc_64/bin:/usr/bin:/home/yo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+    PATH=$HOME/Qt/5.15.2/gcc_64/bin:/usr/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
     ```
     - You can now build and run LeafQGC from Qt Creator.
+    - if the error message is "License check failed, Giving up.", then:
+    - go to Tools > Options > License
+    - click on "Add" button
+    - select "I have a license key file"
+    - navigate to ~/Qt/Tools/QtCreator/licenses/qt-creator-license.xml
+    - click on OK
+    - restart Qt Creator
+    - now, you should be able to build the project without license errors.
 
-19. Syncing Database from cloud, and registering the current SITL as a drone: [Note: This tutorial is from HEAR_wiki/Guide/HEAR Software/Operation/SITL
-/Readme.md]
+19. Syncing Database from cloud, and registering the current SITL as a drone:
     - Make sure you are registered in `fly.droneleaf.io` and that your drone is bound to a license.
     
     **To do this:**
-    Follow the steps in the flowchart located in the HEAR Wiki:
+    Follow the steps in the flowchart located in the HEAR Wiki(need to be updated):
     `Guide > Hardware and Process > Commissioning > 2 Ready for FSAC > Ready for FSAC Updated.draw.io`
 
     The registration and licensing steps are located toward the **end** of the flowchart.
@@ -314,74 +327,3 @@ Debugging HearFC:
         ]
     }```
 - Click on the green play button to start debugging.
-
-### DynamoDB debugging and correcting incorrect configurations
-  - Copy `robot_instance_id` , `robot_type_id` and `organization_id` from http://0.0.0.0:8080/table/config-robot_instances?tabActive=search
-  - Copy `address` from http://0.0.0.0:8080/table/config-profile?tabActive=search of `"SITL"`
-  - Edit: http://0.0.0.0:8080/table/config-robot_instance_profile_assignment?tabActive=search:
-  - paste copied address as profile_id
-  - paste copied robot_instance_id as robot_instance_id
-  - Edit: http://0.0.0.0:8080/table/config-robot_type_allocation_assignment?tabActive=search
-  - paste copied `robot_type_id` as robot_type_id
-  - paste copied `organization_id` as organization_id
-  - make sure that you have correct array structure in: 'http://0.0.0.0:8080/table/config-control_saturation?tabActive=search'
-      - Check if the table exists, if not: fill:
-      ```json
-      {
-      "ori_x_bias": 0.013594605028629303,
-      "ori_z_bias": 0.13921412825584412,
-      "address": "",
-      "robot_type_id": "",
-      "organization_id": "",
-      "ori_y_bias": 0.022619375959038734,
-      "id": "bcda0a97-50d1-40e2-b94c-1d3b10aa68f8",
-      "robot_instance_id": `robot_instance_id`
-      }
-      ```
-  - save document after edits, and restart the HEAR_FC launch file.
-
-Knowledge base:
-- expected file structure after software-stack clone:
-    ```bash
-    ~/software-stack/
-    ├── PX4-Autopilot
-    ├── LeafMC
-    ├── MAVSDK
-    ├── ...
-    ```
-    - Note: Do not change contents of software-stack directory manually, as it may interfere with hear-cli management of the repositories. For development on any of the repositories, create a separate clone outside of software-stack directory. [home directory is recommended location for development clones
-    - Example:
-    ```bash
-    ~/PX4-Autopilot/
-    ~/LeafMC/
-    ```]
-
-
-# ## leafQGC Deployment steps:
-# note: leafQGC is a fork of QGroundControl with customizations for DroneLeaf's leafFC. It is based on QGroundControl version 4.4.2
-# - clone repo ['leafMC']
-# - install dependencies from /tools/*
-# - install Qt 5.15.2
-# - install Qt Creator 4.13.2
-# - open CMakelists.txt in Qt Creator
-# - customize the kits to use Qt 5.15.2
-#     yo@yo-IdeaPad-Slim-3-15IRH8:~$ qmake --version
-#     QMake version 3.1
-#     Using Qt version 5.15.2 in /home/yo/Qt/5.15.2/gcc_64/lib
-# - then, in Qt Version tab, remove all other Qt versions except 5.15.2. If 5.15.2 is not listed, add it using "Add" button and navigating to /home/yo/Qt/5.15.2/gcc_64/bin/qmake.
-# - click on apply
-# - update qt in kits to use 5.15.2
-# - click on OK
-# - click on configure project
-# - if the error message is "License check failed, Giving up.", then:
-#     - go to Tools > Options > License
-#     - click on "Add" button
-#     - select "I have a license key file"
-#     - navigate to /home/yo/Qt/Tools/QtCreator/licenses/qt-creator-license.xml
-#     - click on OK
-#     - restart Qt Creator
-#     - reopen QGroundControl.pro
-# - now, you should be able to build the project without license errors.
-
-
-# - build and run
