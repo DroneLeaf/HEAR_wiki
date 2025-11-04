@@ -80,7 +80,7 @@ Important summary:
     - Sign in to your github account
     - make sure you have access to hear-cli repository:
     https://github.com/DroneLeaf/HEAR_CLI
-    - navigate to Settings > Developer settings > Personal access tokens > fine-grained tokens
+    - navigate to Settings > Developer settings > Personal access tokens > Tokens(classic)
     - Generate new token:
         - Token name: DroneLeaf Token
         - Description: Token for DroneLeaf hear-cli repository access
@@ -283,20 +283,34 @@ Important summary:
     source devel/setup.bash
     ```
 
-    2. Navigate to `~/software-stack/HEAR_FC` and compile the FC with SITL target:
+### Compiling HEAR_FC
+**Note** Please make sure you understand the software development workflow for the `software-stack` outlined in `Guide/HEAR Software/Development Workflow/SoftwareContributionWorkflow.drawio`
 
-    ```bash
-    cd ~/software-stack/HEAR_FC
-    catkin_make -DCMAKE_BUILD_TYPE=Debug -DHEAR_TARGET=SITL
-    source devel/setup.bash
-    ```
+Navigate to `~/software-stack/HEAR_FC` and compile the FC with SITL target:
 
-    3. Launch the Flight Controller:
+```bash
+cd ~/software-stack/HEAR_FC
+catkin_make -DCMAKE_BUILD_TYPE=Debug -DHEAR_TARGET=SITL
+source devel/setup.bash
+```
 
-    ```bash
-    roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
-    ```
-20. Debugging HearFC:
+In case you needed to recompile clean:
+```bash
+cd ~/software-stack/HEAR_FC
+rm -rf devel/ build/
+```
+
+```bash
+source devel/setup.bash
+```
+
+Launch the Flight Controller:
+
+```bash
+roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
+```
+
+1.  Debugging HearFC:
     - Open a new window in VS Code.
     - Open directory: `~/software-stack/HEAR_FC/src/HEAR_FC`
     - Go to Run and Debug tab.
@@ -321,7 +335,7 @@ Important summary:
     }```
     - Click on the green play button to start debugging.
 
-21. DynamoDB debugging and correcting incorrect configurations:
+2.  DynamoDB debugging and correcting incorrect configurations:
     - Copy `robot_instance_id` , `robot_type_id` and `organization_id` from http://0.0.0.0:8080/table/config-robot_instances?tabActive=search
     - Copy `address` from http://0.0.0.0:8080/table/config-profile?tabActive=search of `"SITL"`
     - Edit: http://0.0.0.0:8080/table/config-robot_instance_profile_assignment?tabActive=search:
