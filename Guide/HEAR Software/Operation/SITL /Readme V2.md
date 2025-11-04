@@ -97,7 +97,6 @@ Important summary:
     git config --global user.name "Your Name"
     ```
     - run following command in terminal to cache your github token for authentication (replace with your actual token):
-    ```bash
     git config --global credential.helper 'cache --timeout=3600'
     git credential approve <<EOF
     protocol=https
@@ -108,64 +107,47 @@ Important summary:
     ```
     Obviously, replace `your_github_username` and `your_personal_access_token` with your actual GitHub username (found in your GitHub account settings) and the token you just generated.
 
-3. follow the instructions in the "HEAR_CLI Installation and Setup" document to install hear-cli tool and clone necessary repositories.
-    - run in yakuake terminal "env_setup" tab:
-    ```bash
-    git clone https://github.com/DroneLeaf/HEAR_CLI.git
-    ```
-    - when prompted for username and password, use your github username and the personal access token you generated earlier as password.
-    - follow the rest of the instructions in the document to complete hear-cli installation and setup:
-    ```bash
-    cd HEAR_CLI
-    pip install testresources
-    pip install --user "dist/hear_cli-1.3.1.0-py3-none-any.whl[yakuake]" --force
-    #Add the hear-cli bin to $PATH
-    echo 'export PATH="/home/$USER/.local/bin:$PATH"' >> ~/.bashrc
-    source ~/.bashrc
-    hear-cli --install-completion
-    ```
-    - you should see the installed hear-cli version printed in the terminal.
-    - Do not put any additional command to "env_setup" tab, as it may interfere with future documentation steps.
-4. Open a new yakuake tab, rename it to "hear_docker_clone": 
-    - run following command:
+3. Follow the instructions in the [Hear_CLI readme](https://github.com/DroneLeaf/HEAR_CLI) to install hear-cli tool and clone necessary repositories.(run in yakuake terminal "env_setup" tab)
+
+4. Install required docker containers and install the SITL full system:
+    - Open a new yakuake tab, rename it to "hear_docker_clone" run following command:
     ```bash
     hear-cli local_machine run_program --p hear_docker_clone    
     ```
     - input your github username and personal access token when prompted.
     
-    - run following command: 
+    - run following command(The output of the command is saved to docker_sitl_full_system.log): 
     ```bash
-        hear-cli local_machine run_program --p hear_docker_sitl_full_system_install
+        hear-cli local_machine run_program --p hear_docker_sitl_full_system_install | tee docker_sitl_full_system.log
     ```
-    - take a copy of terminal output and save it somewhere safe, as it contains important information about your docker installation and usage.
+  
 5. Reboot your system to ensure all changes take effect properly:
     ```bash
     sudo reboot
     ```
+
 6. Continue with the installation:
     - Open a new yakuake tab, rename it to "hear_docker_setup": 
-    - run following command:
+    - run following command, (the output of the command is saved to install_system_dependencies_sitl.log):
     ```bash
-    hear-cli local_machine run_program --p install_system_dependencies_sitl
+    hear-cli local_machine run_program --p install_system_dependencies_sitl | tee install_system_dependencies_sitl.log
     ```
-    - take a copy of terminal output and save it somewhere safe, as it contains important information about your docker installation and usage.
     - reboot your system again:
     ```bash
     sudo reboot
     ```
 7. After rebooting, open a new yakuake tab, rename it to "hear_docker_cleanup":
-    - run following command:
+    - run following command (the output is saved to the log files mentioned after the tee command respectively):
     ```bash
-    hear-cli local_machine run_program --p docker_install
-    hear-cli local_machine run_program --p node_install
-    hear-cli local_machine run_program --p configure_software_setup_autostart_sitl
-
+    hear-cli local_machine run_program --p docker_install | tee docker_install.log
+    hear-cli local_machine run_program --p node_install | tee node_install.log
+    hear-cli local_machine run_program --p configure_software_setup_autostart_sitl | tee configure_software_setup_autostart_sitl.log
     ```
-    - take a copy of terminal output and save it somewhere safe, as it contains important information about your docker installation and usage.
     - reboot your system again:
     ```bash
     sudo reboot
     ```
+
 8. To continue, request env certificate from DroneLeaf support team [Ahmed Hashem]. Download the file in home as "env.zip", then run following command in a new yakuake tab renamed to "hear_docker_env_setup":
     ```bash
     [ -f "./env.zip" ] && unzip -o "./env.zip" -d ./env || echo "env.zip not found";
@@ -173,7 +155,7 @@ Important summary:
     if [ -f ./env/init_ecr_pull_profile/env ]; then cp -v ./env/init_ecr_pull_profile/env "$HOME/HEAR_CLI/scripts/programs/init_ecr_pull_profile/env"; else echo "Warning: ./env/init_ecr_pull_profile/env not found"; fi;
     if [ -f ./env/init_sync_profile/env ]; then cp -v ./env/init_sync_profile/env "$HOME/HEAR_CLI/scripts/programs/init_sync_profile/env"; else echo "Warning: ./env/init_sync_profile/env not found"; fi;
     ```
-9. Initialize ECR pull profile:
+9.  Initialize ECR pull profile:
     ```bash
     hear-cli local_machine run_program --p init_ecr_pull_profile
     ```
