@@ -148,7 +148,7 @@ Important summary:
     sudo reboot
     ```
 
-8. To continue, request env certificate from DroneLeaf support team [Ahmed Hashem]. Download the file in home as "env.zip", then run following command in a new yakuake tab renamed to "hear_docker_env_setup":
+8. To continue, request env certificate from DroneLeaf support team [Ahmed Hashem](ahmed.hashim@droneleaf.io). Download the file in home as "env.zip", then run following command in a new yakuake tab renamed to "hear_docker_env_setup":
     ```bash
     [ -f "./env.zip" ] && unzip -o "./env.zip" -d ./env || echo "env.zip not found";
     mkdir -p "$HOME/HEAR_CLI/scripts/programs/init_ecr_pull_profile" "$HOME/HEAR_CLI/scripts/programs/init_sync_profile";
@@ -266,8 +266,6 @@ Important summary:
     ```
 
 ### Compiling HEAR_FC
-**Note** Please make sure you understand the software development workflow for the `software-stack` outlined in `Guide/HEAR Software/Development Workflow/SoftwareContributionWorkflow.drawio`
-
 Navigate to `~/software-stack/HEAR_FC` and compile the FC with SITL target:
 
 ```bash
@@ -292,11 +290,11 @@ Launch the Flight Controller:
 roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
 ```
 
-1.  Debugging HearFC:
-    - Open a new window in VS Code.
-    - Open directory: `~/software-stack/HEAR_FC/src/HEAR_FC`
-    - Go to Run and Debug tab.
-    - Select "ROS: Launch Dbg px4_flight_mavlink_opti_onboard_mission.launch"
+Debugging HearFC:
+ - Open a new window in VS Code.
+ - Open directory: `~/software-stack/HEAR_FC/src/HEAR_FC`
+ - Go to Run and Debug tab.
+ - Select "ROS: Launch Dbg px4_flight_mavlink_opti_onboard_mission.launch"
     ```json{
         "version": "0.2.0",
         "console": "integratedTerminal",
@@ -315,32 +313,32 @@ roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
             }
         ]
     }```
-    - Click on the green play button to start debugging.
+- Click on the green play button to start debugging.
 
-2.  DynamoDB debugging and correcting incorrect configurations:
-    - Copy `robot_instance_id` , `robot_type_id` and `organization_id` from http://0.0.0.0:8080/table/config-robot_instances?tabActive=search
-    - Copy `address` from http://0.0.0.0:8080/table/config-profile?tabActive=search of `"SITL"`
-    - Edit: http://0.0.0.0:8080/table/config-robot_instance_profile_assignment?tabActive=search:
-    - paste copied address as profile_id
-    - paste copied robot_instance_id as robot_instance_id
-    - Edit: http://0.0.0.0:8080/table/config-robot_type_allocation_assignment?tabActive=search
-    - paste copied `robot_type_id` as robot_type_id
-    - paste copied `organization_id` as organization_id
-    - make sure that you have correct array structure in: 'http://0.0.0.0:8080/table/config-control_saturation?tabActive=search'
-        - Check if the table exists, if not: fill:
-        ```json
-        {
-        "ori_x_bias": 0.013594605028629303,
-        "ori_z_bias": 0.13921412825584412,
-        "address": "",
-        "robot_type_id": "",
-        "organization_id": "",
-        "ori_y_bias": 0.022619375959038734,
-        "id": "bcda0a97-50d1-40e2-b94c-1d3b10aa68f8",
-        "robot_instance_id": `robot_instance_id`
-        }
-        ```
-    - save document after edits, and restart the HEAR_FC launch file.
+### DynamoDB debugging and correcting incorrect configurations
+  - Copy `robot_instance_id` , `robot_type_id` and `organization_id` from http://0.0.0.0:8080/table/config-robot_instances?tabActive=search
+  - Copy `address` from http://0.0.0.0:8080/table/config-profile?tabActive=search of `"SITL"`
+  - Edit: http://0.0.0.0:8080/table/config-robot_instance_profile_assignment?tabActive=search:
+  - paste copied address as profile_id
+  - paste copied robot_instance_id as robot_instance_id
+  - Edit: http://0.0.0.0:8080/table/config-robot_type_allocation_assignment?tabActive=search
+  - paste copied `robot_type_id` as robot_type_id
+  - paste copied `organization_id` as organization_id
+  - make sure that you have correct array structure in: 'http://0.0.0.0:8080/table/config-control_saturation?tabActive=search'
+      - Check if the table exists, if not: fill:
+      ```json
+      {
+      "ori_x_bias": 0.013594605028629303,
+      "ori_z_bias": 0.13921412825584412,
+      "address": "",
+      "robot_type_id": "",
+      "organization_id": "",
+      "ori_y_bias": 0.022619375959038734,
+      "id": "bcda0a97-50d1-40e2-b94c-1d3b10aa68f8",
+      "robot_instance_id": `robot_instance_id`
+      }
+      ```
+  - save document after edits, and restart the HEAR_FC launch file.
 
 Knowledge base:
 - expected file structure after software-stack clone:
