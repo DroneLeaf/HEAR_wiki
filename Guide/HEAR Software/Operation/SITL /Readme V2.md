@@ -80,7 +80,7 @@ Important summary:
     - Sign in to your github account
     - make sure you have access to hear-cli repository:
     https://github.com/DroneLeaf/HEAR_CLI
-    - navigate to Settings > Developer settings > Personal access tokens > fine-grained tokens
+    - navigate to Settings > Developer settings > Personal access tokens > Tokens(classic)
     - Generate new token:
         - Token name: DroneLeaf Token
         - Description: Token for DroneLeaf hear-cli repository access
@@ -97,7 +97,6 @@ Important summary:
     git config --global user.name "Your Name"
     ```
     - run following command in terminal to cache your github token for authentication (replace with your actual token):
-    ```bash
     git config --global credential.helper 'cache --timeout=3600'
     git credential approve <<EOF
     protocol=https
@@ -108,72 +107,55 @@ Important summary:
     ```
     Obviously, replace `your_github_username` and `your_personal_access_token` with your actual GitHub username (found in your GitHub account settings) and the token you just generated.
 
-3. follow the instructions in the "HEAR_CLI Installation and Setup" document to install hear-cli tool and clone necessary repositories.
-    - run in yakuake terminal "env_setup" tab:
-    ```bash
-    git clone https://github.com/DroneLeaf/HEAR_CLI.git
-    ```
-    - when prompted for username and password, use your github username and the personal access token you generated earlier as password.
-    - follow the rest of the instructions in the document to complete hear-cli installation and setup:
-    ```bash
-    cd HEAR_CLI
-    pip install testresources
-    pip install --user "dist/hear_cli-1.3.1.0-py3-none-any.whl[yakuake]" --force
-    #Add the hear-cli bin to $PATH
-    echo 'export PATH="/home/$USER/.local/bin:$PATH"' >> ~/.bashrc
-    source ~/.bashrc
-    hear-cli --install-completion
-    ```
-    - you should see the installed hear-cli version printed in the terminal.
-    - Do not put any additional command to "env_setup" tab, as it may interfere with future documentation steps.
-4. Open a new yakuake tab, rename it to "hear_docker_clone": 
-    - run following command:
+3. Follow the instructions in the [Hear_CLI readme](https://github.com/DroneLeaf/HEAR_CLI) to install hear-cli tool and clone necessary repositories.(run in yakuake terminal "env_setup" tab)
+
+4. Install required docker containers and install the SITL full system:
+    - Open a new yakuake tab, rename it to "hear_docker_clone" run following command:
     ```bash
     hear-cli local_machine run_program --p hear_docker_clone    
     ```
     - input your github username and personal access token when prompted.
     
-    - run following command: 
+    - run following command(The output of the command is saved to docker_sitl_full_system.log): 
     ```bash
-        hear-cli local_machine run_program --p hear_docker_sitl_full_system_install
+        hear-cli local_machine run_program --p hear_docker_sitl_full_system_install | tee docker_sitl_full_system.log
     ```
-    - take a copy of terminal output and save it somewhere safe, as it contains important information about your docker installation and usage.
+  
 5. Reboot your system to ensure all changes take effect properly:
     ```bash
     sudo reboot
     ```
+
 6. Continue with the installation:
     - Open a new yakuake tab, rename it to "hear_docker_setup": 
-    - run following command:
+    - run following command, (the output of the command is saved to install_system_dependencies_sitl.log):
     ```bash
-    hear-cli local_machine run_program --p install_system_dependencies_sitl
+    hear-cli local_machine run_program --p install_system_dependencies_sitl | tee install_system_dependencies_sitl.log
     ```
-    - take a copy of terminal output and save it somewhere safe, as it contains important information about your docker installation and usage.
     - reboot your system again:
     ```bash
     sudo reboot
     ```
 7. After rebooting, open a new yakuake tab, rename it to "hear_docker_cleanup":
-    - run following command:
+    - run following command (the output is saved to the log files mentioned after the tee command respectively):
     ```bash
-    hear-cli local_machine run_program --p docker_install
-    hear-cli local_machine run_program --p node_install
-    hear-cli local_machine run_program --p configure_software_setup_autostart_sitl
-
+    hear-cli local_machine run_program --p docker_install | tee docker_install.log
+    hear-cli local_machine run_program --p node_install | tee node_install.log
+    hear-cli local_machine run_program --p configure_software_setup_autostart_sitl | tee configure_software_setup_autostart_sitl.log
     ```
-    - take a copy of terminal output and save it somewhere safe, as it contains important information about your docker installation and usage.
     - reboot your system again:
     ```bash
     sudo reboot
     ```
-8. To continue, request env certificate from DroneLeaf support team [Ahmed Hashem]. Download the file in home as "env.zip", then run following command in a new yakuake tab renamed to "hear_docker_env_setup":
+
+8. To continue, request env certificate from DroneLeaf support team [Ahmed Hashem](ahmed.hashim@droneleaf.io). Download the file in home as "env.zip", then run following command in a new yakuake tab renamed to "hear_docker_env_setup":
     ```bash
     [ -f "./env.zip" ] && unzip -o "./env.zip" -d ./env || echo "env.zip not found";
     mkdir -p "$HOME/HEAR_CLI/scripts/programs/init_ecr_pull_profile" "$HOME/HEAR_CLI/scripts/programs/init_sync_profile";
     if [ -f ./env/init_ecr_pull_profile/env ]; then cp -v ./env/init_ecr_pull_profile/env "$HOME/HEAR_CLI/scripts/programs/init_ecr_pull_profile/env"; else echo "Warning: ./env/init_ecr_pull_profile/env not found"; fi;
     if [ -f ./env/init_sync_profile/env ]; then cp -v ./env/init_sync_profile/env "$HOME/HEAR_CLI/scripts/programs/init_sync_profile/env"; else echo "Warning: ./env/init_sync_profile/env not found"; fi;
     ```
-9. Initialize ECR pull profile:
+9.  Initialize ECR pull profile:
     ```bash
     hear-cli local_machine run_program --p init_ecr_pull_profile
     ```
@@ -234,13 +216,14 @@ Important summary:
             - make px4_sitl gazebo-classic_dfl # for DFL
             - HEADLESS=1 make px4_sitl gazebo-classic # for headless build [lower resource usage]
 
-18. Running LeafQGC [AKA: LeafMC]:
+18. Running LeafQGC [AKA: LeafMC, note: leafQGC is a fork of QGroundControl with]:
     - Open a new yakuake tab, rename it to "leafQGC":
     - run following commands:
     ```bash
     cd ~ # navigate to home directory
-    git clone -b dev-sitl https://github.com/DroneLeaf/LeafMC.git # clone LeafMC repo, use dev-sitl branch for latest development version
+    git clone --recurse-submodules -j8 -b dev-sitl git@github.com:DroneLeaf/LeafMC.git # clone LeafMC repo, use dev-sitl branch for latest development version
     cd LeafMC
+
     sudo ./tools/install-dependencies-debian.sh # install LeafMC build dependencies
     ```
     - Make sure Qt 5.15.2 is installed on your system. You can check the installed version by running:
@@ -255,20 +238,32 @@ Important summary:
     ```bash
     sudo apt-get install qtcreator
     ```
-    - Open Qt Creator, open LeafMC/QGroundControl.pro file.
-    - Configure the kits to use Qt 5.15.2. by going to "Projects" in the left pane, selecting Qt 5.15.2 with GCC 64.
+    - Open Qt Creator, open LeafMC/CMakeLists.txt file.
+    - In Qt Version tab, remove all other Qt versions except 5.15.2. 
+    - If 5.15.2 is not listed, add it using "Add" button and navigating to ~/Qt/5.15.2/gcc_64/bin/qmake.
+    - click on apply
+    - update qt in kits to use 5.15.2
+    - click on OK
+    - click on configure project
     - In environment, edit Build Environment so that under "PATH", it starts with:
     ```bash
-    /home/yo/Qt/5.15.2/gcc_64/bin:/usr/bin:/home/yo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+    PATH=$HOME/Qt/5.15.2/gcc_64/bin:/usr/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
     ```
     - You can now build and run LeafQGC from Qt Creator.
+    - if the error message is "License check failed, Giving up.", then:
+    - go to Tools > Options > License
+    - click on "Add" button
+    - select "I have a license key file"
+    - navigate to ~/Qt/Tools/QtCreator/licenses/qt-creator-license.xml
+    - click on OK
+    - restart Qt Creator
+    - now, you should be able to build the project without license errors.
 
-19. Syncing Database from cloud, and registering the current SITL as a drone: [Note: This tutorial is from HEAR_wiki/Guide/HEAR Software/Operation/SITL
-/Readme.md]
+19. Syncing Database from cloud, and registering the current SITL as a drone:
     - Make sure you are registered in `fly.droneleaf.io` and that your drone is bound to a license.
     
     **To do this:**
-    Follow the steps in the flowchart located in the HEAR Wiki:
+    Follow the steps in the flowchart located in the HEAR Wiki(need to be updated):
     `Guide > Hardware and Process > Commissioning > 2 Ready for FSAC > Ready for FSAC Updated.draw.io`
 
     The registration and licensing steps are located toward the **end** of the flowchart.
@@ -283,24 +278,36 @@ Important summary:
     source devel/setup.bash
     ```
 
-    2. Navigate to `~/software-stack/HEAR_FC` and compile the FC with SITL target:
+### Compiling HEAR_FC
+Navigate to `~/software-stack/HEAR_FC` and compile the FC with SITL target:
 
-    ```bash
-    cd ~/software-stack/HEAR_FC
-    catkin_make -DCMAKE_BUILD_TYPE=Debug -DHEAR_TARGET=SITL
-    source devel/setup.bash
-    ```
+```bash
+cd ~/software-stack/HEAR_FC
+catkin_make -DCMAKE_BUILD_TYPE=Debug -DHEAR_TARGET=SITL
+source devel/setup.bash
+```
 
-    3. Launch the Flight Controller:
+In case you needed to recompile clean:
+```bash
+cd ~/software-stack/HEAR_FC
+rm -rf devel/ build/
+```
 
-    ```bash
-    roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
-    ```
-20. Debugging HearFC:
-    - Open a new window in VS Code.
-    - Open directory: `~/software-stack/HEAR_FC/src/HEAR_FC`
-    - Go to Run and Debug tab.
-    - Select "ROS: Launch Dbg px4_flight_mavlink_opti_onboard_mission.launch"
+```bash
+source devel/setup.bash
+```
+
+Launch the Flight Controller:
+
+```bash
+roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
+```
+
+Debugging HearFC:
+ - Open a new window in VS Code.
+ - Open directory: `~/software-stack/HEAR_FC/src/HEAR_FC`
+ - Go to Run and Debug tab.
+ - Select "ROS: Launch Dbg px4_flight_mavlink_opti_onboard_mission.launch"
     ```json{
         "version": "0.2.0",
         "console": "integratedTerminal",
@@ -319,75 +326,4 @@ Important summary:
             }
         ]
     }```
-    - Click on the green play button to start debugging.
-
-21. DynamoDB debugging and correcting incorrect configurations:
-    - Copy `robot_instance_id` , `robot_type_id` and `organization_id` from http://0.0.0.0:8080/table/config-robot_instances?tabActive=search
-    - Copy `address` from http://0.0.0.0:8080/table/config-profile?tabActive=search of `"SITL"`
-    - Edit: http://0.0.0.0:8080/table/config-robot_instance_profile_assignment?tabActive=search:
-    - paste copied address as profile_id
-    - paste copied robot_instance_id as robot_instance_id
-    - Edit: http://0.0.0.0:8080/table/config-robot_type_allocation_assignment?tabActive=search
-    - paste copied `robot_type_id` as robot_type_id
-    - paste copied `organization_id` as organization_id
-    - make sure that you have correct array structure in: 'http://0.0.0.0:8080/table/config-control_saturation?tabActive=search'
-        - Check if the table exists, if not: fill:
-        ```json
-        {
-        "ori_x_bias": 0.013594605028629303,
-        "ori_z_bias": 0.13921412825584412,
-        "address": "",
-        "robot_type_id": "",
-        "organization_id": "",
-        "ori_y_bias": 0.022619375959038734,
-        "id": "bcda0a97-50d1-40e2-b94c-1d3b10aa68f8",
-        "robot_instance_id": `robot_instance_id`
-        }
-        ```
-    - save document after edits, and restart the HEAR_FC launch file.
-
-Knowledge base:
-- expected file structure after software-stack clone:
-    ```bash
-    ~/software-stack/
-    ├── PX4-Autopilot
-    ├── LeafMC
-    ├── MAVSDK
-    ├── ...
-    ```
-    - Note: Do not change contents of software-stack directory manually, as it may interfere with hear-cli management of the repositories. For development on any of the repositories, create a separate clone outside of software-stack directory. [home directory is recommended location for development clones
-    - Example:
-    ```bash
-    ~/PX4-Autopilot/
-    ~/LeafMC/
-    ```]
-
-
-# ## leafQGC Deployment steps:
-# note: leafQGC is a fork of QGroundControl with customizations for DroneLeaf's leafFC. It is based on QGroundControl version 4.4.2
-# - clone repo ['leafMC']
-# - install dependencies from /tools/*
-# - install Qt 5.15.2
-# - install Qt Creator 4.13.2
-# - open CMakelists.txt in Qt Creator
-# - customize the kits to use Qt 5.15.2
-#     yo@yo-IdeaPad-Slim-3-15IRH8:~$ qmake --version
-#     QMake version 3.1
-#     Using Qt version 5.15.2 in /home/yo/Qt/5.15.2/gcc_64/lib
-# - then, in Qt Version tab, remove all other Qt versions except 5.15.2. If 5.15.2 is not listed, add it using "Add" button and navigating to /home/yo/Qt/5.15.2/gcc_64/bin/qmake.
-# - click on apply
-# - update qt in kits to use 5.15.2
-# - click on OK
-# - click on configure project
-# - if the error message is "License check failed, Giving up.", then:
-#     - go to Tools > Options > License
-#     - click on "Add" button
-#     - select "I have a license key file"
-#     - navigate to /home/yo/Qt/Tools/QtCreator/licenses/qt-creator-license.xml
-#     - click on OK
-#     - restart Qt Creator
-#     - reopen QGroundControl.pro
-# - now, you should be able to build the project without license errors.
-
-
-# - build and run
+- Click on the green play button to start debugging.
