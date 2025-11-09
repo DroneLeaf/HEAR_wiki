@@ -37,22 +37,17 @@ Set up a clean Ubuntu 20.04 LTS install that meets the minimum requirements for 
     sudo apt update
     sudo apt upgrade -y
     ```
-13. Install Yakuake for consistent terminal workflow:
-    ```bash
-    sudo apt install -y yakuake
-    ```
-    Launch Yakuake from the applications menu [once after every reboot], press `F12` to toggle the terminal, open **Settings → Profile → Scrolling**, and enable *Unlimited scrollback*.
-14. Install proprietary drivers if required via **Software & Updates → Additional Drivers**.
-15. Reboot if driver installation prompts you to.
-16. Confirm Ubuntu 20.04 is running smoothly before continuing.
-17. Do **not** upgrade to 22.04 or later; the DroneLeaf stack currently supports 20.04 only.
-18. Align locale settings used in documentation:
+13. Install proprietary drivers if required via **Software & Updates → Additional Drivers**.
+14. Reboot if driver installation prompts you to.
+15. Confirm Ubuntu 20.04 is running smoothly before continuing.
+16. Do **not** upgrade to 22.04 or later; the DroneLeaf stack currently supports 20.04 only.
+17. Align locale settings used in documentation:
     - **Settings → Region & Language → Formats → United Kingdom**.
-19. Rename the host to `dl-dev-SITL-xx` for clarity in shared docs, replacing `xx` with your assigned ID:
+18. Rename the host to `dl-dev-SITL-xx` for clarity in shared docs, replacing `xx` with your assigned ID:
     ```bash
     sudo hostnamectl set-hostname dl-dev-SITL-xx
     ```
-20. Add a 16 GB swap file to stabilize large builds:
+19. Add a 16 GB swap file to stabilize large builds:
     ```bash
     free -h
     sudo fallocate -l 16G /swapfile
@@ -62,8 +57,11 @@ Set up a clean Ubuntu 20.04 LTS install that meets the minimum requirements for 
     sudo cp /etc/fstab /etc/fstab.backup
     echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
     ```
-
-## Important Summary
+20. Optional: use zram for additional memory compression:
+    ```bash
+    sudo apt install -y zram-tools
+    ```
+    follow configuration instructions at zram_installation_and_configuration.md
 
 - Ubuntu 20.04 LTS installed with all updates.
 - Internet access verified (Ethernet or Wi-Fi).
