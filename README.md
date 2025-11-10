@@ -114,7 +114,7 @@ Current developers:
 2. Muhammad Kamal: github id: Mu99-M
 
 ## Highlighted WiKi Guides:
-- [SITL Installation on Ubuntu 20.04](Guide/HEAR%20Software/Operation/SITL/readme.md)
+- [SITL Installation on Ubuntu 20.04](./Guide/HEAR%20Software/Operation/SITL/readme.md)
 - [Petal App Manager Documentation](https://droneleaf.github.io/petal-app-manager/).
 
 # Copyright
