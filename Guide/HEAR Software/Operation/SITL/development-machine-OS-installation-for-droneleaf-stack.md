@@ -19,9 +19,9 @@ Set up a clean Ubuntu 20.04 LTS install that meets the minimum requirements for 
    - It is recommended to disable Secure Boot.
    - Set the USB drive as the first boot device, save, and exit.
 4. Choose **Try Ubuntu** to enter the live environment before installing.
-5. Confirm you have a stable internet connection (Ethernet preferred). Notes:
-   - Broadcom Wi-Fi cards on newer Intel laptops may need drivers post-install. Use Ethernet or a supported USB Wi-Fi adapter to continue.
-   - Plan for a kernel update later to pick up the latest drivers.
+5. Notes:
+   - Broadcom Wi-Fi cards on newer Intel laptops may need drivers post-install. Use Ethernet or a supported USB Wi-Fi adapter to continue. Alternatively, replace the internal network card with a supported model [intel 8th gen or later]
+   - Plan for a kernel update later to pick up the latest drivers. 
 6. Double-click **Install Ubuntu** to begin.
 7. Follow the installer prompts:
    - Choose language and keyboard layout.
@@ -29,25 +29,22 @@ Set up a clean Ubuntu 20.04 LTS install that meets the minimum requirements for 
    - For dual-booting, shrink the existing partition first [if not done previously] (GParted or Windows Disk Management) and select **Install Ubuntu alongside...**.
    - To dedicate the entire disk, pick **Erase disk and install Ubuntu** (destroys existing data). [recommended for fresh installs.]
 8. Set time zone, create the `droneleaf` user, and record the password for documentation parity.
-9. Wait for installation to finish; duration depends on downloads and hardware speed.
-10. When prompted, remove the USB [installation media] and press **Enter** to reboot.
-11. Log in with the account created earlier.
-12. Update the base system:
+9. continue installation until complete.
+10. Log in with the account created earlier.
+11. Update the base system:
     ```bash
     sudo apt update
     sudo apt upgrade -y
     ```
-13. Install proprietary drivers if required via **Software & Updates → Additional Drivers**.
-14. Reboot if driver installation prompts you to.
-15. Confirm Ubuntu 20.04 is running smoothly before continuing.
-16. Do **not** upgrade to 22.04 or later; the DroneLeaf stack currently supports 20.04 only.
-17. Align locale settings used in documentation:
+12. Install proprietary drivers if required via **Software & Updates → Additional Drivers**.
+13. Do **not** upgrade to 22.04 or later; the DroneLeaf stack currently supports 20.04 only.
+14. Align locale settings used in documentation:
     - **Settings → Region & Language → Formats → United Kingdom**.
-18. Rename the host to `dl-dev-SITL-xx` for clarity in shared docs, replacing `xx` with your assigned ID:
+15. Rename the host to `dl-dev-SITL-xx` for clarity in shared docs, replacing `xx` with your assigned ID:
     ```bash
     sudo hostnamectl set-hostname dl-dev-SITL-xx
     ```
-19. Add a 16 GB swap file to stabilize large builds:
+16. Add a 16 GB swap file to stabilize large builds:
     ```bash
     free -h
     sudo fallocate -l 16G /swapfile
@@ -57,25 +54,21 @@ Set up a clean Ubuntu 20.04 LTS install that meets the minimum requirements for 
     sudo cp /etc/fstab /etc/fstab.backup
     echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
     ```
-20. Optional: use zram for additional memory compression:
+17. Optional: use zram for additional memory compression:
     ```bash
     sudo apt install -y zram-tools
     ```
     follow configuration instructions at zram_installation_and_configuration.md
 
-- Ubuntu 20.04 LTS installed with all updates.
-- Internet access verified (Ethernet or Wi-Fi).
-- At least 128 GB (256 GB recommended) free disk space remains.
+18. Are you using 2020+ laptop hardware (Intel 11th gen or newer)? If so, perform the kernel upgrade steps at [post_2020_laptop_driver_fix_by_kernel_upgrade.md](post_2020_laptop_driver_fix_by_kernel_upgrade.md) to ensure all device drivers function correctly.
+
+quick checklist
+--------------------
+- Ubuntu 20.04 LTS installed.
+- 256 GB recommended free disk space remains.
 - Yakuake configured and ready.
-- Username is `droneleaf` to match documentation references.
-
-## Personalize Your Installation
-
-- **Appearance:** Settings → Appearance for theme/accent updates.
-- **Wallpaper:** Right-click desktop → Change Background.
-- **Dock:** Settings → Dock to adjust size/position/behavior.
-- **Browsers:** Install Firefox (default) or any Chromium-based browser from Ubuntu Software.
-- **Online Accounts:** Settings → Online Accounts to link Google/Nextcloud/etc. for calendars and files.
-- **Updates:** Do not enable Livepatch or other kernel auto-update tools to avoid stack incompatibilities.
+- [optional] Username is `droneleaf` to match documentation references.
+- swap and zram configured.
+- apt packages updated and upgraded.
 
 ✓ Continue with [`recommended-tools-and-common-practices.md`](recommended-tools-and-common-practices.md) once the base OS is stable.

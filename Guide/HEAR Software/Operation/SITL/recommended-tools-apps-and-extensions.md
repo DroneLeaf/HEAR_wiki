@@ -32,6 +32,10 @@ Standardize day-to-day tooling so SITL instructions remain consistent across mac
    hear-cli local_machine run_program --p mavlink_update_wireshark_plugin 
    ```
    Note: if hear-cli is not yet installed, follow the instructions in the SITL installation guide to set it up first.
+6. if you face permission issues, you can run with sudo:
+   ```bash
+   sudo wireshark
+   ```
 
 ## Git and GitHub Access
 1. As a reader of this guide, we assume you have access to the DroneLeaf GitHub organization. If not, request access from your team lead or the DevOps team.

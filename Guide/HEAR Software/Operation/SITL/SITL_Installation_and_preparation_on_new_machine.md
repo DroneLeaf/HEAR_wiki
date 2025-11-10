@@ -1,3 +1,6 @@
+<!-- Note: you can skip this document and go ahead to ./Readme.md -->
+
+
 # SITL Installation and Preparation on a New Machine
 
 This index replaces the old monolithic guide. Follow the documents below in order when preparing a fresh SITL workstation.

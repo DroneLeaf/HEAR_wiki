@@ -6,13 +6,20 @@ Use this entry point to navigate the SITL documentation set and launch your firs
 
 Follow the runbooks in order:
 
-1. [`development-machine-OS-installation-for-droneleaf-stack.md`](development-machine-OS-installation-for-droneleaf-stack.md)
-2. [`recommended-tools-and-common-practices.md`](recommended-tools-and-common-practices.md)
-3. [`droneleaf-workspace-topology-and-repos-introduction.md`](droneleaf-workspace-topology-and-repos-introduction.md)
-4. [`sitl-installation-on-ubuntu20.04.md`](sitl-installation-on-ubuntu20.04.md)
-5. [`SITL-drone-provisioning.md`](SITL-drone-provisioning.md)
-6. [`DynamoDB-and-hearfc-debugging.md`](DynamoDB-and-hearfc-debugging.md)
-7. [`leafQGC-and-QT-tooling.md`](leafQGC-and-QT-tooling.md)
+1. [`development-machine-OS-installation-for-droneleaf-stack.md`](development-machine-OS-installation-for-droneleaf-stack.md)  
+   Provision Ubuntu 20.04 LTS, configure hostname, swap, region settings, and ensure hardware readiness.
+2. [`recommended-tools-and-common-practices.md`](recommended-tools-and-common-practices.md)  
+   Install the standard toolchain (Yakuake profiles, apt packages, Git/GitHub configuration, logging conventions).
+3. [`droneleaf-workspace-topology-and-repos-introduction.md`](droneleaf-workspace-topology-and-repos-introduction.md)  
+   Learn the canonical `~/software-stack` layout, clone hear-cli, and run the initial PX4 build checks.
+4. [`sitl-installation-on-ubuntu20.04.md`](sitl-installation-on-ubuntu20.04.md)  
+   Execute hear-cli automation (`hear_docker_clone`, `hear_docker_sitl_full_system_install`), run dependency installers, and verify Docker/systemd services.
+5. [`SITL-drone-provisioning.md`](SITL-drone-provisioning.md)  
+   Import environment certificates, initialize hear-cli profiles, prepare the controller dashboard, and confirm the node registers as a SITL drone.
+6. [`DynamoDB-and-hearfc-debugging.md`](DynamoDB-and-hearfc-debugging.md)  
+   Sync DynamoDB data, build `HEAR_Msgs`, compile `HEAR_FC`, and follow the VS Code debugging workflow.
+7. [`leafQGC-and-QT-tooling.md`](leafQGC-and-QT-tooling.md)  
+   Prepare the LeafMC repo, install Qt 5.15.2 + Qt Creator, and resolve common GUI tooling issues.
 
 Each guide is scoped to a single topic (OS install, tooling, workspace layout, hear-cli installers, provisioning, data/debug, UI tooling) so updates remain isolated.
 
@@ -28,15 +35,16 @@ After completing the provisioning documents:
    Both commands should show active DroneLeaf components.
 
    Example `docker ps` output:
-   ```
-CONTAINER ID   IMAGE                                                                       COMMAND                  CREATED       STATUS       PORTS                                                                              NAMES
-8659d0cd0b1f   296257236984.dkr.ecr.me-south-1.amazonaws.com/controller_dashboard:latest   "/docker-entrypoint.…"   5 days ago    Up 7 hours   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:4201->4201/tcp, [::]:4201->4201/tcp   controller_dashboard_app
-d428784d5ff9   296257236984.dkr.ecr.me-south-1.amazonaws.com/on_board_express_api:latest   "docker-entrypoint.s…"   3 weeks ago   Up 7 hours   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp, 8000/tcp                              express_local
-9f0dd9502d7c   296257236984.dkr.ecr.me-south-1.amazonaws.com/dynamodb_local:latest         "java -Djava.library…"   3 weeks ago   Up 7 hours   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp                                        dynamodb-local
-b75c89b947fe   296257236984.dkr.ecr.me-south-1.amazonaws.com/proxy_server:latest           "docker-entrypoint.s…"   3 weeks ago   Up 7 hours   0.0.0.0:4000->4000/tcp, [::]:4000->4000/tcp                                        proxy_server
-a8110e744da0   296257236984.dkr.ecr.me-south-1.amazonaws.com/dynamodb_manager:latest       "/docker-entrypoint.…"   3 weeks ago   Up 7 hours   8080/tcp, 0.0.0.0:8080->80/tcp, [::]:8080->80/tcp                                  dynamodb_manager
+   ```bash
+   CONTAINER ID   IMAGE                                                                       COMMAND                  CREATED       STATUS       PORTS                                                                              NAMES
+   8659d0cd0b1f   296257236984.dkr.ecr.me-south-1.amazonaws.com/controller_dashboard:latest   "/docker-entrypoint.…"   5 days ago    Up 7 hours   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:4201->4201/tcp, [::]:4201->4201/tcp   controller_dashboard_app
+   d428784d5ff9   296257236984.dkr.ecr.me-south-1.amazonaws.com/on_board_express_api:latest   "docker-entrypoint.s…"   3 weeks ago   Up 7 hours   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp, 8000/tcp                              express_local
+   9f0dd9502d7c   296257236984.dkr.ecr.me-south-1.amazonaws.com/dynamodb_local:latest         "java -Djava.library…"   3 weeks ago   Up 7 hours   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp                                        dynamodb-local
+   b75c89b947fe   296257236984.dkr.ecr.me-south-1.amazonaws.com/proxy_server:latest           "docker-entrypoint.s…"   3 weeks ago   Up 7 hours   0.0.0.0:4000->4000/tcp, [::]:4000->4000/tcp                                        proxy_server
+   a8110e744da0   296257236984.dkr.ecr.me-south-1.amazonaws.com/dynamodb_manager:latest       "/docker-entrypoint.…"   3 weeks ago   Up 7 hours   8080/tcp, 0.0.0.0:8080->80/tcp, [::]:8080->80/tcp                                  dynamodb_manager
    ```
 
+## Here is a reminder of how to launch the full SITL stack following successful installation and provisioning:
 2. **Build & launch PX4 (Gazebo Classic)**  
    ```bash
    cd ~/software-stack/PX4-Autopilot

@@ -2,7 +2,7 @@
 
 LeafQGC (a.k.a. LeafMC) is DroneLeaf’s fork of QGroundControl. Follow this guide to prepare Qt dependencies, clone the repo, and resolve common IDE issues.
 
-## Clone LeafMC
+## Clone LeafMC into ~/LeafMC
 
 ```bash
 cd ~
@@ -40,14 +40,3 @@ sudo ./tools/install-dependencies-debian.sh
    PATH=$HOME/Qt/5.15.2/gcc_64/bin:/usr/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
    ```
 5. Click **Configure Project** to generate build files.
-
-### License Check Failures
-
-If Qt Creator shows **License check failed, Giving up.**:
-
-1. Go to **Tools → Options → License**.
-2. Click **Add → I have a license key file**.
-3. Select `~/Qt/Tools/QtCreator/licenses/qt-creator-license.xml`.
-4. Restart Qt Creator and rebuild.
-
-You can now build and run LeafMC directly from Qt Creator or via command line using `cmake --build build-directory`.

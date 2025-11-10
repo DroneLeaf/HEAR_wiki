@@ -12,7 +12,7 @@ Current networks
 
 - SSID: `Rob-Lab-C00060`
 - Password: `kuri@1234!!`
-- Gateway: `10.0.0.1`
+- Gateway: `10.0.0.1`Inventory & hostname tracking (single source of truth)
 - Netmask: `255.255.255.0`
 - DHCP range: starts from `10.0.0.50` to `10.0.0.99`
 - Router MAC: 'b0:19:21:27:40:d9' 

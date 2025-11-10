@@ -4,10 +4,11 @@ Run the scripted installers that prepare Docker, system dependencies, and the Dr
 
 ## Prerequisites
 
-- Base OS completed per `development-machine-OS-installation-for-droneleaf-stack.md`
-- Toolchain prerequisites installed per `recommended-tools-and-common-practices.md`
-- Workspace prepared and `HEAR_CLI` cloned (see `droneleaf-workspace-topology-and-repos-introduction.md`)
+- Base OS completed per [development-machine-OS-installation-for-droneleaf-stack.md](development-machine-OS-installation-for-droneleaf-stack.md)
+- Toolchain prerequisites installed per [recommended-tools-and-common-practices.md](recommended-tools-and-common-practices.md)
+- Workspace prepared and `HEAR_CLI` cloned (see [droneleaf-workspace-topology-and-repos-introduction.md](droneleaf-workspace-topology-and-repos-introduction.md))
 - GitHub token cached (hear-cli commands prompt only once)
+- Get `env.zip` from DroneLeaf Support (Ahmed Hashem) but do not unzip it yet. A script in a later step will handle this.
 
 > Always execute commands from Yakuake. Capture output with `tee` whenever possible. [Refer to recommended-tools-and-common-practices.md for logging conventions.]
 
@@ -41,41 +42,32 @@ Run the scripted installers that prepare Docker, system dependencies, and the Dr
 
 ```bash
 hear-cli local_machine run_program --p hear_docker_clone | tee step1_docker_clone.log
+hear-cli local_machine run_program --p hear_docker_sitl_full_system_install | tee step2_docker_sitl_full_system.log
+sudo reboot
 ```
 - When prompted, enter your GitHub username and personal access token.
-
-## Step 2 – Install the SITL Full System
-
-```bash
-hear-cli local_machine run_program --p hear_docker_sitl_full_system_install | tee step2_docker_sitl_full_system.log
-```
 - check log and then reboot the machine
 
-## Step 3 – System Dependencies for SITL
+## Step 2 – System Dependencies for SITL, along with Docker and Node Tooling
 
 ```bash
 hear-cli local_machine run_program --p install_system_dependencies_sitl | tee step3_install_system_dependencies_sitl.log
+hear-cli local_machine run_program --p docker_install | tee docker_install.log
+hear-cli local_machine run_program --p node_install | tee node_install.log
+sudo reboot
 ```
 - check log and then reboot the machine
 
-## Step 4 – Docker & Node Tooling Cleanup
+## Step 3 – Configure Software Setup Autostart for SITL
 
 Tab name: `hear_docker_cleanup`
 
 ```bash
-hear-cli local_machine run_program --p docker_install | tee docker_install.log
-hear-cli local_machine run_program --p node_install | tee node_install.log
 hear-cli local_machine run_program --p configure_software_setup_autostart_sitl | tee configure_software_setup_autostart_sitl.log
 sudo reboot
 ```
 
-## Prerequisites
-
-- Completed `sitl-installation-on-ubuntu20.04.md`
-- `env.zip` certificate bundle supplied by DroneLeaf support
-- hear-cli authenticated with GitHub token
-
-## 1. Stage Environment Certificates
+## Step 4. Stage Environment Certificates
 
 Request the latest `env.zip` from DroneLeaf Support (Ahmed Hashem). Place it in your home directory and run the following in a Yakuake tab named `hear_docker_env_setup`:
 
@@ -95,7 +87,7 @@ else
 fi
 ```
 
-## 2. Initialize hear-cli Profiles
+## Step 5. Initialize hear-cli Profiles
 
 ```bash
 hear-cli local_machine run_program --p init_ecr_pull_profile
@@ -113,24 +105,36 @@ hear-cli local_machine run_program --p software_stack_clone
 hear-cli local_machine run_program --p set_fc_configs
 ```
 
+## Step 6. Optional: Prepare Petal App Manager for SITL
 Optional (but recommended for app testing):
 
 ```bash
 hear-cli local_machine run_program --p petal_app_manager_prepare_sitl
 ```
-
 Reboot once more to ensure services pick up new configs:
 
 ```bash
 sudo reboot
 ```
+> Read more about Petal App Manager in the [Petal App Manager Documentation](https://droneleaf.github.io/petal-app-manager/).
 
-## 3. Readiness Checklist
+## Step 7. Readiness Checklist
 
-- `docker ps` shows the DroneLeaf containers running.
-- `systemctl status mavlink-router.service` reports **active (running)**.
-- hear-cli profile directories (`~/HEAR_CLI/scripts/programs/*/env`) contain the staged certificates.
-- `~/software-stack` contains the cloned repositories from the chosen branch.
+After the final reboot:
+
+```bash
+docker ps
+systemctl status mavlink-router.service
+```
+
+You should see the DroneLeaf containers running and `mavlink-router.service` in the **active (running)** state.
+
+### Optional: Install Wireshark MAVLink Plugin for MAVLink Traffic Monitoring
+Prepare your wireshark to capture on the `mavlink-router` interface to monitor MAVLink traffic.
+```bash
+sudo apt install -y wireshark-qt
+hear-cli local_machine run_program --p mavlink_update_wireshark_plugin
+```
 
 
 ## PX4-Autopilot Quick Build
@@ -155,20 +159,6 @@ Once `~/software-stack/PX4-Autopilot` is cloned, complete the initial build to v
 
 If the PX4 shell does not show **Ready for takeoff!**, run `pxh> ekf2 start`. Capture terminal logs for troubleshooting.
 
-## Post-Install Quick Checks
-
-After the final reboot:
-
-```bash
-docker ps
-systemctl status mavlink-router.service
-```
-Prepare your wireshark to capture on the `mavlink-router` interface to monitor MAVLink traffic.
-```bash
-sudo apt install -y wireshark-qt
-hear-cli local_machine run_program --p mavlink_update_wireshark_plugin
-```
-
-You should see the DroneLeaf containers running and `mavlink-router.service` in the **active (running)** state.
+## Next Steps
 
 Continue with [`SITL-drone-provisioning.md`](SITL-drone-provisioning.md) to import environment certificates, initialize hear-cli profiles, and register the SITL node.
