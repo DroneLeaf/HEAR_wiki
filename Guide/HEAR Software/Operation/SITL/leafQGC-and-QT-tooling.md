@@ -40,3 +40,22 @@ sudo ./tools/install-dependencies-debian.sh
    PATH=$HOME/Qt/5.15.2/gcc_64/bin:/usr/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
    ```
 5. Click **Configure Project** to generate build files.
+
+## Common Qt Creator Issues
+- **Missing qmake or wrong version**: Ensure Qt 5.15.2 is installed and configured as above.
+- **Wrong starting file**: Set the main project file to `CMakeLists.txt` in the project tree.
+
+## LeafQGC common connection issues
+- There are two level of connection, both handeled by the mavlink-router service:
+      - Connection between QGC and PX4 SITL (MAVLink connection)
+      - Connection between QGC and HEAR_FC (MAVLink connection)
+- you might have the first connection working but not the second one [Identify by the red endicator on top left of LeafQGC screen]
+- Your mavlink-router service might not be properly forwarding the mavlink messages between PX4 and HEAR_FC. Note that there are two possible drone setup: bench [external] and SITL [usually internal]. Make sure you have the correct setup on your mavlink-router configuration file located at:  `/etc/mavlink-router/main.conf`
+- Make sure that both PX4 SITL and HEAR_FC are running.
+
+## Getting started with LeafQGC
+- With mavlink router and PX4 SITL running, launch LeafQGC from Qt Creator or use the AppImage from [software-stack repository](https://github.com/DroneLeaf/software-stack/releases).
+- Open `App Settings → Comm Links` and connect to `TCP://:5760` if not auto-connected. 
+> DroneLeaf is intending on staching the TCP 5760 connection and use UDP 15760 instead in future releases.
+- The vehicle should appear in the UI shortly after connection.
+- If LeafFC is running, status would be ready for takeoff. with green indicators.

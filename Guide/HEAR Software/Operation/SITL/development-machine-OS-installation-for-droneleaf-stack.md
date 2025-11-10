@@ -21,7 +21,7 @@ Set up a clean Ubuntu 20.04 LTS install that meets the minimum requirements for 
 4. Choose **Try Ubuntu** to enter the live environment before installing.
 5. Notes:
    - Broadcom Wi-Fi cards on newer Intel laptops may need drivers post-install. Use Ethernet or a supported USB Wi-Fi adapter to continue. Alternatively, replace the internal network card with a supported model [intel 8th gen or later]
-   - Plan for a kernel update later to pick up the latest drivers. 
+   - Plan for a kernel update later to pick up the latest drivers as explained at [post_2020_laptop_driver_fix_by_kernel_upgrade.md](post_2020_laptop_driver_fix_by_kernel_upgrade.md).
 6. Double-click **Install Ubuntu** to begin.
 7. Follow the installer prompts:
    - Choose language and keyboard layout.

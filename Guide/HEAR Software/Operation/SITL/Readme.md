@@ -55,8 +55,13 @@ After completing the provisioning documents:
    ```
    If the shell does not print “Ready for takeoff!”, use `pxh> ekf2 start`.
 
+   > For increased visibility in Gazebo, `View -> Wireframe`.' 
+
+
 3. **Launch LeafQGC (LeafMC)** – follow [`leafQGC-and-QT-tooling.md`](leafQGC-and-QT-tooling.md) to configure Qt Creator or run the AppImage. Connect to `TCP://:5760` via the Comm Links panel if QGC does not auto-connect.
 
-4. **Sync DynamoDB and start HEAR_FC** – see [`DynamoDB-and-hearfc-debugging.md`](DynamoDB-and-hearfc-debugging.md) for catkin build commands and VS Code debugging.
+> reffer to [`leafQGC-and-QT-tooling.md`](leafQGC-and-QT-tooling.md) for note regarding common connection issues.
 
+4. **Sync DynamoDB and start HEAR_FC** – see [`DynamoDB-and-hearfc-debugging.md`](DynamoDB-and-hearfc-debugging.md) for catkin build commands and VS Code debugging.
+ 
 You should see the **PX4 Ready To Fly** banner in QGC once all components are connected. Happy sim flying! 🚀
