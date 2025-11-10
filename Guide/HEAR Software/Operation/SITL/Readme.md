@@ -8,7 +8,7 @@ Follow the runbooks in order:
 
 1. [`development-machine-OS-installation-for-droneleaf-stack.md`](development-machine-OS-installation-for-droneleaf-stack.md)  
    Provision Ubuntu 20.04 LTS, configure hostname, swap, region settings, and ensure hardware readiness.
-2. [`recommended-tools-and-common-practices.md`](recommended-tools-and-common-practices.md)  
+2. [`recommended-tools-apps-and-extensions.md`](recommended-tools-apps-and-extensions.md)
    Install the standard toolchain (Yakuake profiles, apt packages, Git/GitHub configuration, logging conventions).
 3. [`droneleaf-workspace-topology-and-repos-introduction.md`](droneleaf-workspace-topology-and-repos-introduction.md)  
    Learn the canonical `~/software-stack` layout, clone hear-cli, and run the initial PX4 build checks.
@@ -60,8 +60,12 @@ After completing the provisioning documents:
 
 3. **Launch LeafQGC (LeafMC)** – follow [`leafQGC-and-QT-tooling.md`](leafQGC-and-QT-tooling.md) to configure Qt Creator or run the AppImage. Connect to `TCP://:5760` via the Comm Links panel if QGC does not auto-connect.
 
-> reffer to [`leafQGC-and-QT-tooling.md`](leafQGC-and-QT-tooling.md) for note regarding common connection issues.
+   > reffer to [`leafQGC-and-QT-tooling.md`](leafQGC-and-QT-tooling.md) for note regarding common connection issues.
 
 4. **Sync DynamoDB and start HEAR_FC** – see [`DynamoDB-and-hearfc-debugging.md`](DynamoDB-and-hearfc-debugging.md) for catkin build commands and VS Code debugging.
  
-You should see the **PX4 Ready To Fly** banner in QGC once all components are connected. Happy sim flying! 🚀
+   You should see the **PX4 Ready To Fly** banner in QGC once all components are connected. Happy sim flying! 
+
+
+## Common issues and troubleshooting 
+ This section is covered in the individual guides above. Refer back to this index to locate the appropriate runbook for a given task.

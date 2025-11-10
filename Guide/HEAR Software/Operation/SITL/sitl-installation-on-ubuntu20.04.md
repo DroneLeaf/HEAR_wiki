@@ -12,7 +12,7 @@ Run the scripted installers that prepare Docker, system dependencies, and the Dr
 
 > Always execute commands from Yakuake. Capture output with `tee` whenever possible. [Refer to recommended-tools-and-common-practices.md for logging conventions.]
 
-## Step 0 – Install hear-cli (if not done) and required dependencies
+## 0. Install hear-cli (if not done) and required dependencies
 - Check if `hear-cli` is already installed:
 
   ```bash
@@ -38,17 +38,17 @@ Run the scripted installers that prepare Docker, system dependencies, and the Dr
     pip3 install --user pyros-genmsg
     pip3 install --user jinja2
   ```
-## Step 1 – Clone Docker Assets and install
+## 1. Clone Docker Assets and install
 
 ```bash
-hear-cli local_machine run_program --p hear_docker_clone | tee step1_docker_clone.log
+hear-cli local_machine run_program --p hear_docker_clone | tee docker_clone.log
 hear-cli local_machine run_program --p hear_docker_sitl_full_system_install | tee step2_docker_sitl_full_system.log
 sudo reboot
 ```
 - When prompted, enter your GitHub username and personal access token.
 - check log and then reboot the machine
 
-## Step 2 – System Dependencies for SITL, along with Docker and Node Tooling
+## 2. System Dependencies for SITL, along with Docker and Node Tooling
 
 ```bash
 hear-cli local_machine run_program --p install_system_dependencies_sitl | tee step3_install_system_dependencies_sitl.log
@@ -58,7 +58,7 @@ sudo reboot
 ```
 - check log and then reboot the machine
 
-## Step 3 – Configure Software Setup Autostart for SITL
+## 3. Configure Software Setup Autostart for SITL
 
 Tab name: `hear_docker_cleanup`
 
@@ -67,7 +67,7 @@ hear-cli local_machine run_program --p configure_software_setup_autostart_sitl |
 sudo reboot
 ```
 
-## Step 4. Stage Environment Certificates
+## 4. Stage Environment Certificates
 
 Request the latest `env.zip` from DroneLeaf Support (Ahmed Hashem). Place it in your home directory and run the following in a Yakuake tab named `hear_docker_env_setup`:
 
@@ -87,7 +87,7 @@ else
 fi
 ```
 
-## Step 5. Initialize hear-cli Profiles
+## 5. Initialize hear-cli Profiles
 
 ```bash
 hear-cli local_machine run_program --p init_ecr_pull_profile
@@ -105,7 +105,7 @@ hear-cli local_machine run_program --p software_stack_clone
 hear-cli local_machine run_program --p set_fc_configs
 ```
 
-## Step 6. Optional: Prepare Petal App Manager for SITL
+## 6. Optional: Prepare Petal App Manager for SITL
 Optional (but recommended for app testing):
 
 ```bash
@@ -118,7 +118,7 @@ sudo reboot
 ```
 > Read more about Petal App Manager in the [Petal App Manager Documentation](https://droneleaf.github.io/petal-app-manager/).
 
-## Step 7. Readiness Checklist
+## 7. Readiness Checklist
 
 After the final reboot:
 

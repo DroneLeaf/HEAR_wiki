@@ -75,7 +75,7 @@ file(GLOB ${PROJECT_NAME}_SRCs
 
 Here's a guide on creating a block:
 
-#### Step 1: Define the Block Class
+#### 1. Define the Block Class
 
 Create a new C++ header file for your block (e.g., `MyBlock.hpp`) and define the block class. Main points to apply when writing a header file for a block:
 
@@ -132,7 +132,7 @@ public:
 } // namespace HEAR
 ```
 
-#### Step 2: Implement the Block Class
+#### 2. Implement the Block Class
 
 Next, implement the block class in a C++ source file (e.g., `MyBlock.cpp`). In the constructor, create the input and output ports for both sync and async data. Implement the process method to process sync data.
 
@@ -200,7 +200,7 @@ file(GLOB ${PROJECT_NAME}_SRCs
 
 Here's a template for creating a system and connecting multiple blocks through it.
 
-#### Step 1: Define the System Class
+#### 1. Define the System Class
 
 First, create a new C++ header file for your system (e.g., `MySystem.hpp`) and define the system class.
 
@@ -231,7 +231,7 @@ private:
 }
 ```
 
-#### Step 2: Implement the System Class
+#### 2. Implement the System Class
 
 Next, implement the system class in a C++ source file (e.g., `MySystem.cpp`). In the constructor, define the blocks and connect their ports. You can also implement any pre-process, post-process, and process methods as needed.
 
@@ -282,7 +282,7 @@ void MySystem::processAsync() {
 
 <!-- - COMMENT AA: I believe it's better to explain here how to connect blocks, since now we can highlight that they should be implemented in the initBlocksLayout method-->
 
-#### Step 3: Defining and Connecting Blocks In A System
+#### 3. Defining and Connecting Blocks In A System
 
 <!-- - COMMENT AA: Since this is actually something that is done in a System, shall we instead move this to the system section? Here it would suffice to briefly summarize that blocks are connected in a system-->
 
@@ -381,18 +381,17 @@ this->connect(subsystem1->getOutputPort<float>("output_port_name"), subsystem2->
 ### 1.5. Creating an Executable
 <!-- - Steps to create an executable and a launch file. -->
 
-#### Step 1: Create a sub-directory for the executable:
+#### 1.5.1 Create a sub-directory for the executable:
 
 Create a directory at `/HEAR_FC/src/HEAR_FC/Flight_controller/HEAR_executables/scratch` (e.g., directory name will be `example`).
 
-#### Step 2: Create a CPP File for the system:
-
+#### 1.5.2 Create a CPP File for the system:
 Inside the `example` directory, create a `custom_executable.cpp` file with the system code.
 
 <!-- - COMMENT AA: Explain here that this should be a ros node, and provide an example showing the main components of a ros node. Also show here that you actually use the systems -->
 
 
-#### Step 3: Add a CMake File:
+#### 1.5.3 Add a CMake File:
 
 Inside the `example` directory, create a `CMakeLists.txt` file to add your `custom_executable.cpp` to it. You can use the following template as a guide:
 
@@ -415,7 +414,7 @@ target_link_libraries(custom_executable
 endif()
 ```
 
-#### Step 4: Add your sub-directory to the HEAR_executables:
+#### 1.5.4 Add your sub-directory to the HEAR_executables:
 
 Open `/HEAR_executables/scratch/CMakeLists.txt`.
 Add the following line at the end of the file:
@@ -424,7 +423,7 @@ Add the following line at the end of the file:
 add_subdirectory(example)
 ```
 
-#### Step 5: Create a Launch File:
+#### 1.5.5 Create a Launch File:
 
 Create a launch file at `/HEAR_FC/src/HEAR_FC/Flight_controller/launch` (e.g., `custom_executable.launch`). Add the content to run your excutable, you can use the following template as a guide:
 
