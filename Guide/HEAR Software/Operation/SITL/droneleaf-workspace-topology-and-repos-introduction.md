@@ -2,6 +2,35 @@
 
 Purpose: explain the canonical directory structure for DroneLeaf SITL development, list key repositories with locations and purposes.
 
+## Preparing the Workspace and Installation of hear-cli
+1. Follow the hear-cli README to clone and install `HEAR_CLI` under your home directory:
+   a. install dependencies:
+   ```bash
+   sudo apt update; sudo apt upgrade -y;
+   sudo apt install build-essential libdbus-glib-1-dev libgirepository1.0-dev jq python3-pip -y;
+   cd && git clone https://github.com/DroneLeaf/HEAR_CLI.git && cd HEAR_CLI
+   pip install --user "dist/hear_cli-1.3.1.0-py3-none-any.whl[yakuake]" --force
+   echo 'export PATH="/home/$USER/.local/bin:$PATH"' >> ~/.bashrc
+   source ~/.bashrc
+   hear-cli  --install-completion
+   ```
+   b. verify installation:
+   ```bash
+   hear-cli --help
+   # Expected output: hear-cli, intro message      
+   ```
+
+2. Run the software stack clone program (executed later in the SITL installation guide) to populate `~/software-stack`:
+   ```bash
+   hear-cli local_machine run_program --p software_stack_clone
+   ```
+   - Choose `dev-sitl` for active development or `main` for the latest stable release.
+3. After cloning, verify the expected subdirectories:
+   ```bash
+   ls ~/software-stack
+   # Expected: PX4-Autopilot  HEAR_FC  HEAR_Msgs  ...
+   ```
+
 ## Workspace Layout
 
 | Path | Contents | How to get it |
@@ -26,19 +55,5 @@ content of software-stack:
 | `mavlink-router` | MAVLink routing/forwarding service |
 
 > `~` refers to the current user’s home directory (default `ubuntu`).
-
-## Preparing the Workspace and Installation of hear-cli
-
-1. Follow the hear-cli README to clone and install `HEAR_CLI` under your home directory.
-2. Run the software stack clone program (executed later in the SITL installation guide) to populate `~/software-stack`:
-   ```bash
-   hear-cli local_machine run_program --p software_stack_clone
-   ```
-   - Choose `dev-sitl` for active development or `main` for the latest stable release.
-3. After cloning, verify the expected subdirectories:
-   ```bash
-   ls ~/software-stack
-   # Expected: PX4-Autopilot  HEAR_FC  HEAR_Msgs  ...
-   ```
 
 Next, proceed to [`sitl-installation-on-ubuntu20.04.md`](sitl-installation-on-ubuntu20.04.md) to install the rest of the stack services.
