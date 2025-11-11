@@ -16,7 +16,7 @@ Run the scripted installers that prepare Docker, system dependencies, and the Dr
 - Check if `hear-cli` is already installed:
 
   ```bash
-  hear-cli --version
+  hear-cli
   ```
   If the command is not found, check out `droneleaf-workspace-topology-and-repos-introduction.md` to clone and install `HEAR_CLI`.
 

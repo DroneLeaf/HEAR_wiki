@@ -43,7 +43,7 @@ Notes
    - Robot-instance assignments: http://localhost:8080/table/config-robot_instance_profile_assignment?tabActive=search
 
 2. Steps:
-   - On the config-profile page, locate the row for "SITL" or "Bench-Testing" and copy the profile's id / IP field you need.
+   - On the config-profile page, locate the row for "SITL" or "Bench-Testing" and copy the profile's id / address field you need.
    - Open config-robot_instance_profile_assignment, find the record for your machine, and update the `profile_id` with the copied value. Save.
 
 3. For more background on DynamoDB sync and HEAR_FC setup, see:

@@ -2,33 +2,12 @@
 
 Purpose: explain the canonical directory structure for DroneLeaf SITL development, list key repositories with locations and purposes.
 
-## Preparing the Workspace and Installation of hear-cli
-1. Follow the hear-cli README to clone and install `HEAR_CLI` under your home directory:
-   a. install dependencies:
-   ```bash
-   sudo apt update; sudo apt upgrade -y;
-   sudo apt install build-essential libdbus-glib-1-dev libgirepository1.0-dev jq python3-pip -y;
-   cd && git clone https://github.com/DroneLeaf/HEAR_CLI.git && cd HEAR_CLI
-   pip install --user "dist/hear_cli-1.3.1.0-py3-none-any.whl[yakuake]" --force
-   echo 'export PATH="/home/$USER/.local/bin:$PATH"' >> ~/.bashrc
-   source ~/.bashrc
-   hear-cli  --install-completion
-   ```
-   b. verify installation:
-   ```bash
-   hear-cli --help
-   # Expected output: hear-cli, intro message      
-   ```
-
-2. Run the software stack clone program (executed later in the SITL installation guide) to populate `~/software-stack`:
+## Prerequisites
+1. HEAR_CLI installed. See [hear-cli installation guide](hear-cli-installation.md).
+2. software stack cloned into `~/software-stack`. 
    ```bash
    hear-cli local_machine run_program --p software_stack_clone
-   ```
-   - Choose `dev-sitl` for active development or `main` for the latest stable release.
-3. After cloning, verify the expected subdirectories:
-   ```bash
-   ls ~/software-stack
-   # Expected: PX4-Autopilot  HEAR_FC  HEAR_Msgs  ...
+   # Choose `dev-sitl` for active development or `main` for the latest stable release
    ```
 
 ## Workspace Layout
@@ -37,7 +16,7 @@ Purpose: explain the canonical directory structure for DroneLeaf SITL developmen
 | --- | --- | --- |
 | `~/HEAR_CLI` | hear-cli, a centralized management tool and set of codes for HEAR software | Cloned manually (see hear-cli README) |
 | `~/software-stack` | All runtime repos (PX4, HEAR_FC, HEAR_Msgs, etc.) | `hear-cli local_machine run_program --p software_stack_clone` |
-| `~/LeafMC` | Development source code of Leaf QGroundControl fork | Cloned manually (see leafQGC guide) |
+| `~/LeafMC` [development]| Development source code of Leaf QGroundControl fork | Cloned manually (see leafQGC guide) |
 | `~/petal-app-manager-dev` | central directory for petal app manager development. [out of this document scope] | Check petal app manager documentation |
 
 
@@ -51,19 +30,5 @@ content of software-stack:
 | `HEAR_MC` | Ignored [un maintained] Mission-control / use LeafMC |
 | `HEAR_Configurations` | Vehicle, sensor and launch configuration files |
 | `HEAR_Docker` | Docker images and build configs for HEAR services |
-| `LeafMC` | DroneLeaf’s QGroundControl fork source. It is advisable not to modify this directly |
+| `LeafMC` [runtime] | DroneLeaf’s QGroundControl fork source. It is advisable not to modify this directly |
 | `mavlink-router` | MAVLink routing/forwarding service |
-
-> `~` refers to the current user’s home directory (default `ubuntu`).
-
-
-## VS Code Workspace Setup notes:
-each cloned repository contains a `.vscode` directory with recommended settings and launch configurations for that specific repo:
-- 'launch.json' for debugging configurations
-- 'settings.json' for workspace-specific settings
-- etc.
-Do not edit and commit changes to these files unless you intend to share modifications with all users of that repository.
-<!-- Note -->
-> Note: tif configurations are not correct, please contact the repository maintainer for update.
-
-Next, proceed to [`sitl-installation-on-ubuntu20.04.md`](sitl-installation-on-ubuntu20.04.md) to install the rest of the stack services.
