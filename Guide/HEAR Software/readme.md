@@ -1,5 +1,22 @@
 # DroneLeaf Software Stack
 
+Welcome to DroneLeaf software stack!
+
+This documentation is targeted for developers who wanted to contribute to the DroneLeaf software stack.
+
+It serves as the master documentation and entry point for all things DroneLeaf.
+
+## Anatomy of the software stack
+
+<!-- https://chatgpt.com/share/69142062-1618-8002-8b69-7ab6486b046c -->
+
+Currently, there are two stages of operation: 
+1. **Commissioning**: mainly a process on the web, coordinated with the edge device.
+2. **Flight**: the process of flying the drone.
+
+The main 
+The entities of LeafFC, PX4, PetalAppManager, QGC MAVLinkRouter, DynamoDB are used in Flight Stage The entities of WebClient, ControllerDashboard, PetalAppManager, MAVLinkRouter are used in Commissioning Stage Enclose the entities with their respective stages
+
 A minimal list of the software components used in the SITL environment.
 
 Components (all are connected to each other):

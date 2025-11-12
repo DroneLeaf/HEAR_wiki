@@ -1,0 +1,73 @@
+graph TD
+
+    %% --- Style Definitions ---
+    classDef primary fill:#32a852,stroke:#1e7035,color:white,font-weight:bold;
+    classDef secondary fill:#e8f9ee,stroke:#32a852,color:#000;
+    classDef commLink stroke:#32a852,color:#32a852;
+    classDef restLink stroke:#32a852,color:#32a852,stroke-width:2px;
+    classDef mqttLink stroke:#f2b705,color:#f2b705,stroke-width:2px;
+    classDef redisLink stroke:#f25c05,color:#f25c05,stroke-width:2px;
+    classDef mavLink stroke:#057cf2,color:#057cf2,stroke-width:2px;
+
+    %% --- Commissioning Stage ---
+    subgraph Commissioning_Stage["🧩 Commissioning Stage"]
+        class Commissioning_Stage secondary
+        WebClient["💻 WebClient"]
+        ControllerDashboard["📊 ControllerDashboard"]
+        PetalAppManager_C["⚙️ PetalAppManager"]
+        MAVLinkRouter_C["🔀 MAVLinkRouter"]
+    end
+
+    %% --- Flight Stage ---
+    subgraph Flight_Stage["✈️ Flight Stage"]
+        class Flight_Stage secondary
+        LeafFC["🌿 LeafFC"]
+        PX4["🧠 PX4"]
+        PetalAppManager_F["⚙️ PetalAppManager"]
+        QGC["🕹️ QGC"]
+        MAVLinkRouter_F["🔀 MAVLinkRouter"]
+        DynamoDB["🗄️ DynamoDB"]
+    end
+
+    %% --- Commissioning Connections ---
+    WebClient <--> ControllerDashboard:::restLink
+    ControllerDashboard <--> PetalAppManager_C:::mqttLink
+    ControllerDashboard <--> LeafFC:::redisLink
+
+    %% --- Labels for Commissioning Connections ---
+    WebClient ---|"Authentication data, DynamoDB sync, Commissioning, edge apps status<br/>(REST, MQTT)"| ControllerDashboard
+    ControllerDashboard ---|"Licensing status, Commissioning, PetalAppManager status<br/>(REST, MQTT)"| PetalAppManager_C
+    ControllerDashboard ---|"Licensing status, LeafFC status<br/>(Redis)"| LeafFC
+
+    %% --- DynamoDB Connections ---
+    ControllerDashboard <--> DynamoDB:::restLink
+    PetalAppManager_F <--> DynamoDB:::restLink
+    LeafFC <--> DynamoDB:::restLink
+
+    %% --- Labels for DynamoDB Connections ---
+    ControllerDashboard ---|"Configurations<br/>(REST)"| DynamoDB
+    PetalAppManager_F ---|"Configurations, real-time posted settings, flight records<br/>(REST)"| DynamoDB
+    LeafFC ---|"Configurations, real-time posted settings, flight records<br/>(REST)"| DynamoDB
+
+    %% --- PetalAppManager and MAVLinkRouter ---
+    PetalAppManager_C <--> MAVLinkRouter_C:::mavLink
+    PetalAppManager_F <--> MAVLinkRouter_F:::mavLink
+    PetalAppManager_C ---|"PX4 Logs, PX4 parameters, Real-time PX4 & LeafFC measurements, SDK related<br/>(MAVLink)"| MAVLinkRouter_C
+    PetalAppManager_F ---|"PX4 Logs, PX4 parameters, Real-time PX4 & LeafFC measurements, SDK related<br/>(MAVLink)"| MAVLinkRouter_F
+
+    %% --- Flight Data Links (MAVLink) ---
+    PX4 <--> MAVLinkRouter_F:::mavLink
+    LeafFC <--> MAVLinkRouter_F:::mavLink
+    QGC <--> MAVLinkRouter_F:::mavLink
+    LeafFC <--> PX4:::mavLink
+    PetalAppManager_F <--> LeafFC:::redisLink
+
+    %% --- Labels for Flight Links ---
+    PX4 ---|"PX4 Logs, PX4 parameters, Real-time PX4 & LeafFC measurements, SDK related<br/>(MAVLink)"| MAVLinkRouter_F
+    LeafFC ---|"PX4 parameters, low frequency measurements, flight commands<br/>(MAVLink)"| MAVLinkRouter_F
+    QGC ---|"SDK related, flight commands, Real-time PX4 & LeafFC measurements<br/>(MAVLink)"| MAVLinkRouter_F
+    LeafFC ---|"Real-time high frequency measurements, actuator commands<br/>(MAVLink)"| PX4
+    PetalAppManager_F ---|"SDK related<br/>(Redis)"| LeafFC
+
+    %% --- Assign Classes ---
+    class WebClient,ControllerDashboard,PetalAppManager_C,MAVLinkRouter_C,LeafFC,PX4,PetalAppManager_F,QGC,MAVLinkRouter_F,DynamoDB primary;
