@@ -1,0 +1,78 @@
+%% ===========================================================
+%% Petal Flight System Architecture 🌿 (Horizontal + Expanded Spacing, Simulation Host Deployment)
+%% ===========================================================
+graph LR
+
+%% -------------------- STYLE DEFINITIONS --------------------
+classDef primary fill:#32a852,stroke:#1e7035,color:white,font-weight:bold;
+classDef cloud fill:#d9f5e2,stroke:#32a852,stroke-width:2px,color:#000;
+classDef simhost fill:#e3fcef,stroke:#32a852,stroke-width:2px,color:#000;
+classDef leftalign text-align:left;
+
+%% Add spacing between nodes
+linkStyle default stroke-width:2px,stroke:#32a852
+
+%% ===========================================================
+%% DEPLOYMENT DOMAINS (HORIZONTAL + LEFT-ALIGNED TITLES)
+%% ===========================================================
+
+%% --- Commissioning Stage ---
+subgraph Stage_Commissioning["🧩 Commissioning Stage"]
+direction TB
+class Stage_Commissioning leftalign
+    subgraph Cloud["🌐 Cloud (fly.droneleaf.io)"]
+    direction TB
+    class Cloud leftalign
+        WebClient["💻 WebClient"]
+        class WebClient cloud;
+    end
+end
+
+%% --- Simulation Host Domain ---
+subgraph Simulation_Host["🧠 Simulation Host (Developer Machine)"]
+direction TB
+class Simulation_Host leftalign
+
+    ControllerDashboard["📊 ControllerDashboard"]
+    PetalAppManager["⚙️ PetalAppManager"]
+    MAVLinkRouter["🔀 MAVLinkRouter"]
+    LeafFC["🌿 LeafFC"]
+    DynamoDB["🗄️ DynamoDB"]
+    PX4["🧠 PX4"]
+    QGC["🕹️ QGroundControl (QGC)"]
+
+    class ControllerDashboard,PetalAppManager,MAVLinkRouter,LeafFC,DynamoDB,PX4,QGC simhost;
+end
+
+%% ===========================================================
+%% SINGLE CONNECTIONS WITH INLINE LABELS (WIDER LAYOUT)
+%% ===========================================================
+
+WebClient -->|"Authentication data, DynamoDB sync, Commissioning, edge apps status<br/>**Transport:** REST, MQTT"| ControllerDashboard
+
+ControllerDashboard -->|"Licensing status, Commissioning, PetalAppManager status<br/>**Transport:** REST, MQTT"| PetalAppManager
+
+ControllerDashboard -->|"Licensing status, LeafFC status<br/>**Transport:** Redis"| LeafFC
+
+PetalAppManager -->|"PX4 Logs, PX4 parameters, Real-time PX4 & LeafFC measurements, SDK related<br/>**Transport:** MAVLink"| MAVLinkRouter
+
+PetalAppManager -->|"SDK related<br/>**Transport:** Redis"| LeafFC
+
+PX4 -->|"PX4 Logs, PX4 parameters, Real-time PX4 & LeafFC measurements, SDK related<br/>**Transport:** MAVLink"| MAVLinkRouter
+
+LeafFC -->|"PX4 parameters, low-frequency measurements, flight commands<br/>**Transport:** MAVLink"| MAVLinkRouter
+
+QGC -->|"SDK related, flight commands, Real-time PX4 & LeafFC measurements<br/>**Transport:** MAVLink"| MAVLinkRouter
+
+LeafFC -->|"Real-time high-frequency measurements, actuator commands<br/>**Transport:** MAVLink"| PX4
+
+LeafFC -->|"Configurations, real-time posted settings, flight records<br/>**Transport:** REST"| DynamoDB
+
+PetalAppManager -->|"Configurations, real-time posted settings, flight records<br/>**Transport:** REST"| DynamoDB
+
+ControllerDashboard -->|"Configurations<br/>**Transport:** REST"| DynamoDB
+
+%% ===========================================================
+%% STYLE APPLICATION
+%% ===========================================================
+class WebClient,ControllerDashboard,PetalAppManager,MAVLinkRouter,LeafFC,PX4,QGC,DynamoDB primary;

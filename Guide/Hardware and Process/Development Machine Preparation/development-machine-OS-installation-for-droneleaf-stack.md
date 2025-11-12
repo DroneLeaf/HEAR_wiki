@@ -1,4 +1,4 @@
-# Development Machine OS Installation for DroneLeaf Stack
+# Installation Steps for Ubuntu 20.04 LTS
 
 Set up a clean Ubuntu 20.04 LTS install that meets the minimum requirements for the DroneLeaf SITL stack. Perform these steps whenever you provision brand-new hardware or need to reimage an existing workstation.
 
@@ -10,7 +10,7 @@ Set up a clean Ubuntu 20.04 LTS install that meets the minimum requirements for 
 - Reliable internet connection for package downloads.
 - USB stick (≥8 GB) to host the Ubuntu installer. [In some cases, microSD cards may work. Follow the same process as USB drives.]
 
-## Installation Steps for Ubuntu 20.04 LTS
+## Steps
 
 1. Back up all important data. If you plan to dual-boot, ensure a partition with ≥200 GB free (512 GB recommended). Shrink partitions from Windows using Disk Management or follow <https://help.ubuntu.com/community/HowtoResizeWindowsPartitions>.
 2. Download the Ubuntu 20.04 ISO from the official site and create a bootable USB using Rufus or Etcher: <https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu#1-overview>.
@@ -58,15 +58,15 @@ Set up a clean Ubuntu 20.04 LTS install that meets the minimum requirements for 
     ```bash
     sudo apt install -y zram-tools
     ```
-    follow configuration instructions at zram_installation_and_configuration.md
+    follow configuration instructions at zram_installation_and_configuration.md //TODO
 
-18. Are you using 2020+ laptop hardware (Intel 11th gen or newer)? If so, perform the kernel upgrade steps at [post_2020_laptop_driver_fix_by_kernel_upgrade.md](post_2020_laptop_driver_fix_by_kernel_upgrade.md) to ensure all device drivers function correctly.
+18. Are you using 2020+ laptop hardware (Intel 11th gen or newer)? If so, perform the kernel upgrade steps at [post_2020_laptop_driver_fix_by_kernel_upgrade.md](post_2020_laptop_driver_fix_by_kernel_upgrade.md) to ensure all device drivers function correctly. //TODO
 
 quick checklist
 --------------------
 - Ubuntu 20.04 LTS installed.
 - 256 GB recommended free disk space remains.
-- Yakuake configured and ready.
+- Yakuake configured and ready. TODO: duplicate
 - [optional] Username is `droneleaf` to match documentation references.
 - swap and zram configured.
 - apt packages updated and upgraded.
