@@ -26,3 +26,13 @@ vite press
 start petal app manager only after provissioning is completed (otherwise, mqtt related error would appear
 
 make sure to uptade sub modules in petal-app-manager-dev are the latest)
+
+fix all the ToDos
+
+
+----------------------
+check possible issues:
+- leafFC is off [not started, or crashed]
+- ip assignment in mavlink-router
+- drone crash in gazebo
+

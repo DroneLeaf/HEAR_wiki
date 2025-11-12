@@ -97,8 +97,6 @@ sudo reboot
 
 ## 3. Readiness Checklist
 
-After the final reboot:
-
 ```bash
 docker ps
 # Expected output: multiple containers running
@@ -110,3 +108,6 @@ sudo systemctl status Controller_Dashboard_express_api_server_app.service --no-p
 # Expected output: active (running)
 ```
 
+Web access:
+- Open a browser and navigate to `http://localhost` to access the Controller Dashboard.
+- 
