@@ -17,7 +17,7 @@ The workflow of DroneLeaf clients is roughly a subset of the workflow for DroneL
 
 ### Development Environnment
 
-To get started witteh development and testing with HEAR software stack, you need to do the following steps:
+To get started with the development and testing with HEAR software stack, you need to do the following steps:
 
 #### 1 - Install HEAR_CLI
 HEAR_CLI provides all the necessary programs that automate most of the scripts needed to get your setup and ready, and more

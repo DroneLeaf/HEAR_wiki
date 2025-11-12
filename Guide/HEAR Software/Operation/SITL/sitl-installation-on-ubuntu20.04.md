@@ -84,6 +84,7 @@ sudo reboot
 ```bash
 hear-cli local_machine run_program --p controller_dashboard_prepare
 hear-cli local_machine run_program --p set_fc_configs
+sudo reboot
 ```
 
 ## 3. Readiness Checklist

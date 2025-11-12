@@ -12,7 +12,6 @@ Currently, there are two stages of operation:
 1. **Commissioning**: mainly a process on the web, coordinated with the edge device.
 2. **Flight**: the process of flying the drone.
 
-<!-- ToDo: in commissioning stage, does it involve PX4 and leafFC? is there a need for separation? -->
 And there are two types of environments:
 1. **Deployment**: This is where actual flight happens.
 2. **Development**: Happens in two possible ways.
@@ -29,6 +28,7 @@ The Development SITL setup anatomy is given by the following diagram:
 
 And finally, the Development Bench setup anatomy is given by the following diagram:
 <img src="./Media/anatomy_development_bench.svg" alt="DroneLeaf Software Stack Anatomy">
+<!-- ToDo: include PX4 and dynamodb in commissioning stage -->
 
 > Note: The terms QGroundControl (QGC) and LeafMC are used interchangeably in the documentation. LeafMC is DroneLeaf's customized fork of QGroundControl.
 
@@ -135,10 +135,14 @@ roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
 - Follow the instructions in [LeafMC Guide](./LeafMC/README.md) to set up LeafMC for development.
 
 ### Sourcing and environment setup
+ToDo: put here hear cli scripts for env setup
+ToDo: source the devel/setup.bash files
+
 
 ## Getting Started with Petals Stack Development 
 Check the repo wiki at [https://droneleaf.github.io/petal-app-manager/](https://droneleaf.github.io/petal-app-manager/)
 
+> for quick start, follow the instructions at [https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html](https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html)
 
 ## Getting Started with Controller Dashboard Development 
 Check the repo README at [DroneLeaf/Controller_Dashboard](https://github.com/DroneLeaf/Controller-Dashboard)
@@ -147,10 +151,14 @@ Check the repo README at [DroneLeaf/Controller_Dashboard](https://github.com/Dro
 ## Getting Started with Web Client Application Development 
 Check the repo README at [DroneLeaf/DroneLeaf_WebClient_With_Amplify](https://github.com/DroneLeaf/DroneLeaf_WebClient_With_Amplify)
 
+# First Run:
+To be able to run the full SITL environment for the first time, you need to follow the provisioning steps explained in [First Run guide](./Operation/SITL/First_Run_guide.md)
 
-# Running the SITL environment
+# Running the SITL/bench environment
+
 To run the full SITL environment after successful installation and provisioning, follow these steps:
 - Build & launch PX4 (Gazebo Classic)
+> only if you want to use SITL environment
     - ```bash
       cd ~/software-stack/PX4-Autopilot
       make px4_sitl gazebo-classic
@@ -170,63 +178,25 @@ To run the full SITL environment after successful installation and provisioning,
     1. From Qt Creator (recommended for development)
     2. Using the AppImage from [software-stack repository](https://github.com/DroneLeaf/software-stack/releases)
 
+- Petal App Manager
+    - If provisioning is not complete, complete it first as per [First Run guide](./Operation/SITL/First_Run_guide.md).
+    - Launch Petal App Manager as per [official docs](https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html).
 
 # Debugging Tools
 ## Debugging MAVLink with Wireshark
 
 # Hardware guides
 
-
-
-
 # Additional Functionalities
 ## VPN remote access
+Read more about setting up VPN remote access in the following guide: [Guide/Hardware and Process/Development Machine Preparation/vpn_remote_access_setup.md](./../Hardware%20and%20Process/Development%20Machine%20Preparation/vpn_remote_access_setup.md)
 
-
-
-# TODO REVIEW Getting Started
-
-### Installation
-- Software stack installation guide: [Guide/HEAR Software/Operation/SITL/sitl-installation-on-ubuntu20.04.md](./../HEAR%20Software/Operation/SITL/sitl-installation-on-ubuntu20.04.md)
-- petal app manager installation guide: [https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html](https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html)
-
-## Building Software from Source
-### PX4-Autopilot Quick Build
-
-<!-- create bashscript to verify that all  -->
-> ```bash
-> 
-
-`~/software-stack/PX4-Autopilot` 
-
-1. Install the Python helpers (Yakuake tab name `px4_build` recommended):
-   ```bash
-   pip3 install kconfiglib
-   pip3 install --user jsonschema
-   pip3 install --user pyros-genmsg
-   pip3 install --user jinja2
-   ```
-2. Build and launch the default Gazebo classic world:
-   ```bash
-   cd ~/software-stack/PX4-Autopilot
-   make px4_sitl gazebo-classic
-   ```
-3. Alternate build targets:
-   - `make px4_sitl gazebo-classic_dfl` for the DFL model.
-   - `HEADLESS=1 make px4_sitl gazebo-classic` to reduce GPU usage.
-
-If the PX4 shell does not show **Ready for takeoff!**, run `pxh> ekf2 start`. Capture terminal logs for troubleshooting.
-
-## Setting up and provisioning
-- SITL provisioning guide: [Guide/HEAR Software/Operation/SITL/SITL-drone-provisioning.md](./../HEAR%20Software/Operation/SITL/SITL-drone-provisioning.md)
-> for petal app manager to start successfully, make sure that the provisioning steps are completed, open localhost:80 and follow the instructions fully.
-## First Run
-- Readme guide: [Guide/HEAR Software/Operation/SITL/Readme.md](./../HEAR%20Software/Operation/SITL/Readme.md)
 
 ## Contribution and development
 - Hear-cli development guide: [Guide/HEAR Software/Development/hear-cli-development-guide.md](../../Development/hear-cli-development-guide.md)
-- LeafQGC and Qt tooling guide: [Guide/HEAR Software/Operation/SITL/leafQGC-and-QT-tooling.md](./../HEAR%20Software/Operation/SITL/leafQGC-and-QT-tooling.md)
+- LeafMC and Qt tooling guide: [Guide/HEAR Software/Operation/SITL/leafQGC-and-QT-tooling.md](./../HEAR%20Software/Operation/SITL/leafQGC-and-QT-tooling.md)
 - leafFC development guide: [Guide/HEAR Software/Operation/SITL/DynamoDB-and-hearfc-debugging.md](./../HEAR%20Software/Operation/SITL/DynamoDB-and-hearfc-debugging.md)
 - petal app manager development guide: [https://droneleaf.github.io/petal-app-manager/contributing/contribution_guide.html](https://droneleaf.github.io/petal-app-manager/contributing/contribution_guide.html)
 
 ## Wiki contribution guide
+ToDo
