@@ -1,15 +1,10 @@
-# LeafQGC and Qt Tooling
+# LeafMC and Qt Tooling
 
-LeafQGC (a.k.a. LeafMC) is DroneLeaf’s fork of QGroundControl. Follow this guide to prepare Qt dependencies, clone the repo, and resolve common IDE issues.
+LeafMC is DroneLeaf’s fork of QGroundControl. Follow this guide to prepare Qt dependencies, clone the repo, and resolve common IDE issues.
 
-## Clone LeafMC into ~/LeafMC
+## Clone LeafMC 
+cloning of LeafMC is covered in HEAR Software Getting Started guide. You can locate the cloned repo at `~/software-stack/LeafMC`.
 
-```bash
-cd ~
-git clone --recurse-submodules -j8 -b dev-sitl git@github.com:DroneLeaf/LeafMC.git
-cd LeafMC
-sudo ./tools/install-dependencies-debian.sh
-```
 
 > Use the `dev-sitl` branch for the latest SITL-focused development build unless instructed otherwise.
 
@@ -30,7 +25,7 @@ sudo ./tools/install-dependencies-debian.sh
 
 ## Configure Qt Creator
 
-1. Open Qt Creator and load `~/LeafMC/CMakeLists.txt`.
+1. Open Qt Creator and load `~/software-stack/LeafMC/CMakeLists.txt`.
 2. Navigate to **Tools → Options → Kits → Qt Versions**:
    - Remove all Qt versions except **5.15.2**.
    - If absent, click **Add** and point to `~/Qt/5.15.2/gcc_64/bin/qmake`.

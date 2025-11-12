@@ -30,6 +30,8 @@ The Development SITL setup anatomy is given by the following diagram:
 And finally, the Development Bench setup anatomy is given by the following diagram:
 <img src="./Media/anatomy_development_bench.svg" alt="DroneLeaf Software Stack Anatomy">
 
+> Note: The terms QGroundControl (QGC) and LeafMC are used interchangeably in the documentation. LeafMC is DroneLeaf's customized fork of QGroundControl.
+
 # Getting started with Deployment (Targeted for DroneLeaf clients)
 To get started with deployment, please refer to the following guide: [DroneLeaf KnowledgeBase](https://droneleaf.github.io/knowledgebase/)
 
@@ -92,7 +94,7 @@ Now that you have set up your development machine and installed the HEAR softwar
 
 ### Cloning
 ```bash
-hear-cli local_machine run_program --p software_stack_clone TODO
+hear-cli local_machine run_program --p software_stack_clone
 # Choose branch: dev-sitl for development, main for latest stable release.
 ```
 
@@ -123,28 +125,50 @@ roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
 #### PX4 Autopilot
 ```bash
    cd ~/software-stack/PX4-Autopilot
+   bash ./Tools/setup/ubuntu.sh
    make px4_sitl gazebo-classic
    # Alt: make px4_sitl gazebo-classic_dfl, or HEADLESS=1 ...
 ```
 > Note: Gazebo Classic window should open automatically.
 
 #### LeafMC
-
+- Follow the instructions in [LeafMC Guide](./LeafMC/README.md) to set up LeafMC for development.
 
 ### Sourcing and environment setup
 
 ## Getting Started with Petals Stack Development 
-TODO: link
+Check the repo wiki at [https://droneleaf.github.io/petal-app-manager/](https://droneleaf.github.io/petal-app-manager/)
 
 
 ## Getting Started with Controller Dashboard Development 
-TODO: link
+Check the repo README at [DroneLeaf/Controller_Dashboard](https://github.com/DroneLeaf/Controller-Dashboard)
+
 
 ## Getting Started with Web Client Application Development 
-TODO: link
+Check the repo README at [DroneLeaf/DroneLeaf_WebClient_With_Amplify](https://github.com/DroneLeaf/DroneLeaf_WebClient_With_Amplify)
 
 
 # Running the SITL environment
+To run the full SITL environment after successful installation and provisioning, follow these steps:
+- Build & launch PX4 (Gazebo Classic)
+    - ```bash
+      cd ~/software-stack/PX4-Autopilot
+      make px4_sitl gazebo-classic
+      ```
+- Launch mavlink-router service
+    - ```bash
+      sudo systemctl start mavlink-router.service
+      ```
+- Launch HEAR_FC
+    - ```bash
+      cd ~/software-stack/HEAR_FC
+      source devel/setup.bash
+      roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
+      ```
+- Launch LeafMC
+    You have two options to launch LeafMC:
+    1. From Qt Creator (recommended for development)
+    2. Using the AppImage from [software-stack repository](https://github.com/DroneLeaf/software-stack/releases)
 
 
 # Debugging Tools
