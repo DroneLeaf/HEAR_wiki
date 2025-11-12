@@ -10,23 +10,106 @@ It serves as the master documentation and entry point for all things DroneLeaf.
 
 <!-- https://chatgpt.com/share/69142062-1618-8002-8b69-7ab6486b046c -->
 <!-- embed ./Media/anatomy.mmd-->
-<img src="../Media/anatomy.svg" alt="DroneLeaf Software Stack Anatomy">
 
 Currently, there are two stages of operation: 
 1. **Commissioning**: mainly a process on the web, coordinated with the edge device.
 2. **Flight**: the process of flying the drone.
 
-The main 
-The entities of LeafFC, PX4, PetalAppManager, QGC MAVLinkRouter, DynamoDB are used in Flight Stage The entities of WebClient, ControllerDashboard, PetalAppManager, MAVLinkRouter are used in Commissioning Stage Enclose the entities with their respective stages
+And there are two types of environments:
+1. **Deployment**: This is where actual flight happens.
+2. **Development**: Happens in two possible ways.
+    - **Simulation in the loop (SITL)**: Simulates a real drone visually allowing for safe and convenient testing.
+    - **Bench**: Adds a physical pixhawk hardware.
 
-# Getting Started
-## Prerequisites
+The Deployment setup anatomy is given by the following diagram:
+<img src="../Media/anatomy_deployment.svg" alt="DroneLeaf Software Stack Anatomy">
+
+The Development SITL setup anatomy is given by the following diagram:
+<img src="../Media/anatomy_development_sitl.svg" alt="DroneLeaf Software Stack Anatomy">
+
+And finally, the Development Bench setup anatomy is given by the following diagram:
+<img src="../Media/anatomy_development_bench.svg" alt="DroneLeaf Software Stack Anatomy">
+
+# Getting started with Deployment (Targeted for DroneLeaf clients)
+TODO: refer to Knowledge Base
+
+# Getting Started with Development 
+Development in the SITL environment involves working with four stacks:
+
+- **Flight stack:** represented by the software-stack repo. TODO link
+- **Petals stack:** a python code base for added value functionality.
+- **Controller dashboard:** 
+- **Web client application (fly.droneleaf.io):**
+
+## Preparing the Developer Machine
+### Prerequisites
 - Ubuntu 20.04 LTS
 - Hardware: minimum 16GB RAM, 4-core CPU (x86_64/AMD64), 256GB free disk space
-- Fresh installation [recommended]
+
+### OS Installation
+- Fresh installation [recommended] TODO
 For full details, see the development-machine-OS-installation guide: [Guide/Hardware and Process/Development Machine Preparation/development-machine-OS-installation-for-droneleaf-stack.md](./../Hardware%20and%20Process/Development%20Machine%20Preparation/development-machine-OS-installation-for-droneleaf-stack.md)
-- HEAR_CLI installed. See [Guide/HEAR Software/HEAR_CLI/readme.md](./../HEAR%20Software/HEAR%20Software/HEAR_CLI/readme.md).
-## Installation
+
+
+### Tools and Packages Installation
+
+#### HEAR-CLI
+HEAR_CLI installed. See [Guide/HEAR Software/HEAR_CLI/readme.md](./../HEAR%20Software/HEAR%20Software/HEAR_CLI/readme.md).
+
+#### Packages
+
+#### Developer tools
+
+- vscode and extensions
+- Yakuake
+
+## Getting Started with Flight Stack Development
+
+
+
+### Cloning
+
+### Compilation
+#### LeafFC
+
+#### PX4 Autopilot
+
+#### LeafMC
+
+#### HEAR_Msgs
+
+### Sourcing and environment setup
+
+## Getting Started with Petals Stack Development 
+TODO: link
+
+
+## Getting Started with Controller Dashboard Development 
+TODO: link
+
+## Getting Started with Web Client Application Development 
+TODO: link
+
+
+# Running the SITL environment
+
+
+# Debugging Tools
+## Debugging MAVLink with Wireshark
+
+# Hardware guides
+
+
+
+
+# Additional Functionalities
+## VPN remote access
+
+
+
+# TODO REVIEW Getting Started
+
+### Installation
 - Software stack installation guide: [Guide/HEAR Software/Operation/SITL/sitl-installation-on-ubuntu20.04.md](./../HEAR%20Software/Operation/SITL/sitl-installation-on-ubuntu20.04.md)
 - petal app manager installation guide: [https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html](https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html)
 
@@ -68,3 +151,5 @@ If the PX4 shell does not show **Ready for takeoff!**, run `pxh> ekf2 start`. Ca
 - LeafQGC and Qt tooling guide: [Guide/HEAR Software/Operation/SITL/leafQGC-and-QT-tooling.md](./../HEAR%20Software/Operation/SITL/leafQGC-and-QT-tooling.md)
 - leafFC development guide: [Guide/HEAR Software/Operation/SITL/DynamoDB-and-hearfc-debugging.md](./../HEAR%20Software/Operation/SITL/DynamoDB-and-hearfc-debugging.md)
 - petal app manager development guide: [https://droneleaf.github.io/petal-app-manager/contributing/contribution_guide.html](https://droneleaf.github.io/petal-app-manager/contributing/contribution_guide.html)
+
+## Wiki contribution guide
