@@ -1,5 +1,8 @@
 # Overview
 
+> Disclaimer: This document is outdated and will be rewritten soon. Please refer to the new documentation at [DroneLeaf Developer Setup](../../HEAR%20Software/Operation/SITL/Readme.md).
+
+
 The context of installation of DroneLeaf software depends on the user. As of now, there are two users for the installation process:
 
 - DroneLeaf clients.

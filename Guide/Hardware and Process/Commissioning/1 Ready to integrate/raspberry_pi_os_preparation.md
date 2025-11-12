@@ -22,7 +22,7 @@ This guide covers preparing Raspberry Pi Model B and Compute Module 4 devices fo
 
 1. Download the `.cache` file from the DroneLeaf OneDrive link above.
 2. Copy the file into `~/.cache/Raspberry Pi/Imager/`. Keep the original filename so the Imager UI recognizes it in the “Operating System → Downloaded images” section.
-3. Start Raspberry Pi Imager and select **Custom images** from the OS list, then pick the file you just downloaded.
+3. Start Raspberry Pi Imager and select **Custom images** from the OS list, then pick the file you just downloaded [Make sure to select the option of show all files].
 4. Continue to storage selection but do **not** click “Write” yet—we must apply customizations first.
 
 > The benefit of the `.cache` file is that Raspberry Pi Imager treats it as an official download, unlocking the advanced customization dialog (hostname, SSH, Wi‑Fi, etc.).
@@ -31,13 +31,13 @@ This guide covers preparing Raspberry Pi Model B and Compute Module 4 devices fo
 
 1. Click the gear icon (Advanced Settings) before writing the image.
 2. Configure the following:
-   - Hostname: `DronLeaf_RaspberryPi`
+   - Hostname: `dl-<loc>-<role>-<nnn>` #Check DroneLeaf_Networking_Configuration.md 
    - Enable SSH (password authentication is fine).
    - Username: `pi`
    - Password: `raspberry`
    - Configure Wi‑Fi:
-     - SSID: `DroneLeaf_Deployment`
-     - Password: `kuri@1234!!`
+     - SSID: `DroneLeaf_Deployment` #Example. Replace with the desired network name
+     - Password: `kuri@1234!!` #Example. Replace with the desired network password
      - Wi‑Fi country: match the deployment locale.
    - Set local time zone and keyboard layout as needed.
 3. Save the settings and return to the main screen.

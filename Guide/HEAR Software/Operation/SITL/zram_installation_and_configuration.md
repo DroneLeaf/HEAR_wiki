@@ -36,13 +36,6 @@ PERCENTAGE=150   # ~1.5× RAM (e.g. ~24 GiB on 16 GiB systems)
 #ALLOCATION=
 ````
 
-- Alternative (fixed MiB):
-
-```text
-ALLOCATION=24576  # MiB = 24 GiB
-#PERCENTAGE=
-````
-
 Also set:
 
 ```text

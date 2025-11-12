@@ -2,7 +2,7 @@
 
 LeafQGC (a.k.a. LeafMC) is DroneLeaf’s fork of QGroundControl. Follow this guide to prepare Qt dependencies, clone the repo, and resolve common IDE issues.
 
-## Clone LeafMC
+## Clone LeafMC into ~/LeafMC
 
 ```bash
 cd ~
@@ -41,13 +41,21 @@ sudo ./tools/install-dependencies-debian.sh
    ```
 5. Click **Configure Project** to generate build files.
 
-### License Check Failures
+## Common Qt Creator Issues
+- **Missing qmake or wrong version**: Ensure Qt 5.15.2 is installed and configured as above.
+- **Wrong starting file**: Set the main project file to `CMakeLists.txt` in the project tree.
 
-If Qt Creator shows **License check failed, Giving up.**:
+## LeafQGC common connection issues
+- There are two level of connection, both handeled by the mavlink-router service:
+      - Connection between QGC and PX4 SITL (MAVLink connection)
+      - Connection between QGC and HEAR_FC (MAVLink connection)
+- you might have the first connection working but not the second one [Identify by the red endicator on top left of LeafQGC screen]
+- Your mavlink-router service might not be properly forwarding the mavlink messages between PX4 and HEAR_FC. Note that there are two possible drone setup: bench [external] and SITL [usually internal]. Make sure you have the correct setup on your mavlink-router configuration file located at:  `/etc/mavlink-router/main.conf`
+- Make sure that both PX4 SITL and HEAR_FC are running.
 
-1. Go to **Tools → Options → License**.
-2. Click **Add → I have a license key file**.
-3. Select `~/Qt/Tools/QtCreator/licenses/qt-creator-license.xml`.
-4. Restart Qt Creator and rebuild.
-
-You can now build and run LeafMC directly from Qt Creator or via command line using `cmake --build build-directory`.
+## Getting started with LeafQGC
+- With mavlink router and PX4 SITL running, launch LeafQGC from Qt Creator or use the AppImage from [software-stack repository](https://github.com/DroneLeaf/software-stack/releases).
+- Open `App Settings → Comm Links` and connect to `TCP://:5760` if not auto-connected. 
+> DroneLeaf is intending on staching the TCP 5760 connection and use UDP 15760 instead in future releases.
+- The vehicle should appear in the UI shortly after connection.
+- If LeafFC is running, status would be ready for takeoff. with green indicators.
