@@ -2,19 +2,9 @@
 
 Standardize day-to-day tooling so SITL instructions remain consistent across machines. Complete this checklist immediately after finishing the base OS installation.
 
-## Terminal [Yakuake]
-- Install Yakuake for consistent terminal workflow:
-    ```bash
-    sudo apt install -y yakuake
-    ```
-- Launch Yakuake from the applications menu [once after every reboot], press `F12` to toggle the terminal, open **Settings → Profile → Scrolling**, and enable *Unlimited scrollback*.
+## Terminal [Yakuake](../External%20Software/Yakuake/README.md)
 
-## Base Packages
-   ```bash
-   sudo apt install -y build-essential libdbus-glib-1-dev libgirepository1.0-dev \
-   git curl wget cmake unzip pkg-config libssl-dev libjpeg-dev libpng-dev \
-   libtiff-dev libusb-1.0-0-dev python3-pip jq wireshark-qt
-   ```
+
 
 ## WireShark [with MAVLink support]
 1. Install Wireshark:
@@ -63,17 +53,6 @@ Standardize day-to-day tooling so SITL instructions remain consistent across mac
    > Tip: Keep the GitHub page with the generated token open until you complete these steps; you cannot view it again afterward.
    > Note: when using git in VS Code or other IDEs, you may be prompted to re-enter your token. This is expected behavior.
 
-## VS Code and Recommended Extensions
-   ```bash
-   code --install-extension ms-vscode.cpptools --force     # C/C++
-   code --install-extension ms-vscode.cmake-tools --force   # CMake Tools 
-   code --install-extension ms-python.python --force        # Python
-   code --install-extension ms-python.vscode-pylance --force # Pylance
-   code --install-extension mhutchie.git-graph --force      # GitGraph
-   code --install-extension ms-azuretools.vscode-docker --force # Docker
-   code --install-extension ms-iot.vscode-ros --force       # ROS Support 
-   code --install-extension johnpapa.vscode-peacock --force # Peacock for color coding workspaces 
-   ```
 
 
 ## Logging Best Practices

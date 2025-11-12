@@ -83,17 +83,8 @@ sudo reboot
 
 ```bash
 hear-cli local_machine run_program --p controller_dashboard_prepare
-hear-cli local_machine run_program --p software_stack_clone TODO
-# Choose branch: dev-sitl for development, main for latest stable release.
 hear-cli local_machine run_program --p set_fc_configs
 ```
-
-```bash
-hear-cli local_machine run_program --p petal_app_manager_prepare_sitl TODO
-sudo reboot
-```
-
-> Read more about Petal App Manager in the [Petal App Manager Documentation](https://droneleaf.github.io/petal-app-manager/).
 
 ## 3. Readiness Checklist
 
@@ -110,4 +101,4 @@ sudo systemctl status Controller_Dashboard_express_api_server_app.service --no-p
 
 Web access:
 - Open a browser and navigate to `http://localhost` to access the Controller Dashboard.
-- 
+

@@ -12,7 +12,7 @@ This guide shows a way to enable **zram-first swapping** on Ubuntu 20.04, with y
 swapon --show
 zramctl || true
 dpkg -l zram-tools || echo "zram-tools not installed"
-````
+```
 
 If you only see `/swapfile`, proceed below — that's the default on 20.04.
 
@@ -21,7 +21,7 @@ If you only see `/swapfile`, proceed below — that's the default on 20.04.
 ```bash
 sudo apt update
 sudo apt install -y zram-tools
-````
+```
 
 This provides the `zramswap` systemd service and the config file `/etc/default/zramswap`.
 
@@ -34,7 +34,7 @@ Edit the file (`sudo nano /etc/default/zramswap`) and choose ONE sizing method:
 ```text
 PERCENTAGE=150   # ~1.5× RAM (e.g. ~24 GiB on 16 GiB systems)
 #ALLOCATION=
-````
+```
 
 Also set:
 
@@ -42,14 +42,14 @@ Also set:
 PRIORITY=100   # make zram preferred over the disk swapfile
 # optionally:
 ALGO=lz4       # low-latency compressor (if supported)
-````
+```
 
 ## 3. Activate zram and re-enable swap
 
 ```bash
 sudo systemctl restart zramswap
 sudo swapoff -a && sudo swapon -a
-````
+```
 
 Running `swapoff -a && swapon -a` forces the kernel to prefer zram immediately if swap was already in use.
 
@@ -59,14 +59,14 @@ Edit `/etc/fstab` and set the swapfile priority lower (e.g., 10):
 
 ```text
 /swapfile none swap sw,pri=10 0 0
-````
+```
 
 Then re-enable it:
 
 ```bash
 sudo swapoff /swapfile
 sudo swapon -a
-````
+```
 
 ## 5. Recommended kernel tunings (optional)
 
@@ -81,14 +81,14 @@ vm.page-cluster=0
 
 # Avoid sudden watermark boosts
 vm.watermark_boost_factor=0
-````
+```
 
 Apply and verify:
 
 ```bash
 sudo sysctl --system
 sysctl -n vm.swappiness vm.page-cluster vm.watermark_boost_factor
-````
+```
 
 If `vm.swappiness` still reports `30`, a later-loading file (e.g., `/etc/sysctl.conf`) may be overriding it — place your file with a higher number suffix (e.g., `100-...`) to ensure it wins.
 
@@ -97,7 +97,7 @@ If `vm.swappiness` still reports `30`, a later-loading file (e.g., `/etc/sysctl.
 ```bash
 zramctl                   # shows zram devices & compressor
 swapon --show --bytes     # shows active swap and priorities
-````
+```
 
 What to expect:
 - zram devices that add up to roughly your target (e.g., ~24 GiB on 16 GiB RAM)
@@ -114,7 +114,7 @@ NAME        ALGORITHM DISKSIZE  DATA  COMPR TOTAL STREAMS
 NAME        TYPE  SIZE   USED PRIO
 /dev/zram0  partition 1.4G  0   100
 /swapfile   file      31.7G 0    10
-````
+```
 
 ## 7. Troubleshooting (concise)
 
