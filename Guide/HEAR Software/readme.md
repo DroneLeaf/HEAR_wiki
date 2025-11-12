@@ -27,6 +27,7 @@ Components (all are connected to each other):
     - HEAR_FC
     - HEAR_Msgs
     - LeafMC (LeafQGC)
+- Data life cycle management:
     - controller dashboard
     - on-board express API
     - proxy server
