@@ -61,6 +61,3 @@ sudo update-grub
 ```
 
 If issue persists, use installation media to boot into a live environment, mount the root filesystem, chroot, and remove the problematic kernel package as above.
-
-
-This tutorial was given as part of [development-machine-OS-installation-for-droneleaf-stack.md](development-machine-OS-installation-for-droneleaf-stack.md).

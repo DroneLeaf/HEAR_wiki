@@ -12,9 +12,9 @@ The default configuration of mavlink router following SITL setup is to connect t
 2. Set a static IP on the workstation for the Pixhawk network:
    - Find your wired connection name:
      sudo nmcli connection show
-   - Replace <CONN> with the connection name and run:
-     sudo nmcli connection modify <CONN> ipv4.addresses 192.168.144.5/24 ipv4.method manual
-     sudo nmcli connection up <CONN>
+   - Replace `<CONN>` with the connection name and run:
+     sudo nmcli connection modify `<CONN>` ipv4.addresses 192.168.144.5/24 ipv4.method manual
+     sudo nmcli connection up `<CONN>`
 3. Verify connectivity (replace IP if different in your setup):
    ping -c 4 192.168.144.4
 
@@ -22,15 +22,15 @@ The default configuration of mavlink router following SITL setup is to connect t
     4.1 **Temporary change:**
     Make sure any systemd MAVLink router has been stopped first:
 
-      ```bash
-      sudo systemctl stop mavlink-router.service
-      ```
+    ```bash
+    sudo systemctl stop mavlink-router.service
+    ```
 
-      Then run 
+    Then run 
 
-      ```bash
-      mavlink-routerd 0.0.0.0:14540 0.0.0.0:14550
-      ```
+    ```bash
+    mavlink-routerd 0.0.0.0:14540 0.0.0.0:14550
+    ```
     To revert back, stop the above process (Ctrl+C) and restart the service:
 
       ```bash

@@ -67,7 +67,7 @@ Development in the SITL environment involves working with four stacks:
 
 #### OS Installation
 
-Follow the instructions to [set up a fresh Ubuntu 20.04 on your development machine](./Guide/HEAR%20Software/Hardware%20and%20Process/Development%20Machine%20Preparation/installation_steps_for_Ubuntu_20.04_LTS.md).
+Follow the instructions to [set up a fresh Ubuntu 20.04 on your development machine](./Guide/Hardware%20and%20Process/Development%20Machine%20Preparation/installation_steps_for_Ubuntu_20.04_LTS.md).
 
 
 #### Tools and Packages Installation
@@ -75,8 +75,8 @@ You will need to install the following tools and packages to get started with de
 
 ##### Developer tools
 
-- vscode and extensions installation guide: [Guide/External Software/VSCode/README.md](./Guide/HEAR%20Software/External%20Software/VSCode/README.md)
-- Yakuake installation and configuration guide: [Guide/External Software/Yakuake/README.md](./Guide/HEAR%20Software/External%20Software/Yakuake/README.md)
+- vscode and extensions installation guide: [Guide/External Software/VSCode/README.md](./Guide/External%20Software/VSCode/README.md)
+- Yakuake installation and configuration guide: [Guide/External Software/Yakuake/README.md](./Guide/External%20Software/Yakuake/README.md)
 
 
 ##### HEAR-CLI
@@ -153,7 +153,7 @@ make px4_sitl gazebo-classic
 > Note: Gazebo Classic window should open automatically.
 
 ##### LeafMC
-- Follow the instructions in [LeafMC Guide](./LeafMC/README.md) to set up LeafMC for development.
+- Follow the instructions in [LeafMC Guide](./Guide/HEAR%20Software/LeafMC/README.md) to set up LeafMC for development.
 
 ### Getting Started with Petals Stack Development 
 Check the repo wiki at [https://droneleaf.github.io/petal-app-manager/](https://droneleaf.github.io/petal-app-manager/)
@@ -181,7 +181,7 @@ Commissioning is divided into these sections:
 - tuning and calibration
 - cloud synchronization
 
-Follow the provisioning steps explained in [Quick Commissioning Guide](./Operation/SITL/quick_commissioning_guide.md)
+Follow the provisioning steps explained in [Quick Commissioning Guide](./Guide/HEAR%20Software/Operation/SITL/quick_commissioning_guide.md)
 
 ## Running the SITL/bench environment
 Follow these steps to run the full SITL environment after installation and commissioning:
@@ -227,14 +227,14 @@ roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
 ## Debugging Tools
 ### Debugging MAVLink with Wireshark
 <!-- /home/yo/HEAR_wiki/Guide/External Software/MAVLink/mavlink_debugging.md -->
-To debug MAVLink messages, reffer to the following guide: [Guide/External Software/MAVLink/mavlink_debugging.md](./Guide/HEAR%20Software/External%20Software/MAVLink/mavlink_debugging.md)
+To debug MAVLink messages, reffer to the following guide: [Guide/External Software/MAVLink/mavlink_debugging.md](./Guide/External%20Software/MAVLink/mavlink_debugging.md)
 
 <!-- ## Hardware guides
 ToDo: include hardware guides links here. -->
 
 ## Additional Functionalities
 ### VPN remote access
-Read more about setting up VPN remote access in the following guide: [Guide/Hardware and Process/Development Machine Preparation/vpn_remote_access_setup.md](./Guide/HEAR%20Software/Hardware%20and%20Process/Development%20Machine%20Preparation/vpn_remote_access_setup.md)
+Read more about setting up VPN remote access in the following guide: [Guide/Hardware and Process/Development Machine Preparation/vpn_remote_access_setup.md](./Guide/Hardware%20and%20Process/Development%20Machine%20Preparation/vpn_remote_access_setup.md)
 
 
 ## Contribution and development
