@@ -17,6 +17,27 @@ This page collects known issues encountered when running the HEAR SITL and bench
 - **Status:** planned
 - **Reported:** Nov 2025
 
+
+### Switching between SITL and Bench profiles [No option in the web UI]
+- **ID:** KI-002
+- **Title:** Switching between SITL and Bench profiles [No option in the web UI]
+- **Affected components:** DynamoDB, HEAR_FC
+- **Environment:** SITL | Bench | Both
+- **Symptoms:** No option in the web UI to switch between SITL and Bench profiles
+- **Workaround:** Manually update the machine profile in DynamoDB using the web UI:
+  1. Open the DynamoDB manager UI:
+     - Config profiles: http://localhost:8080/table/config-profile?tabActive=search
+     - Robot-instance assignments: http://localhost:8080/table/config-robot_instance_profile_assignment?tabActive=search
+
+  2. Steps:
+     - On the config-profile page, locate the row for "SITL" or "Bench-Testing" and copy the profile's id / address field you need.
+     - Open config-robot_instance_profile_assignment, find the record for your machine, and update the `profile_id` with the copied value. Save.
+
+  3. For more background on DynamoDB sync and HEAR_FC setup, see:
+     [Guide/HEAR Software/Operation/SITL/DynamoDB-and-hearfc-debugging.md](Guide/HEAR Software/Operation/SITL/DynamoDB-and-hearfc-debugging.md)
+- **Status:** Open
+- **Reported:** Nov 2025
+
 <!-- ## Issue template
 
 Use the template below for each reported issue:

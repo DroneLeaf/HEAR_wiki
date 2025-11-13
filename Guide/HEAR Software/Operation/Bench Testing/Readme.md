@@ -1,3 +1,6 @@
+
+> Please refer to the updated document [switching_profiles_SITL_Bench.md](./../SITL/switching_profiles_SITL_Bench.md) for the latest instructions on moving between SITL and Bench testing profiles.
+
 # Overview
 
 This document describes how to test the software stack in the actual hardware and run the PX4 in the drone.
@@ -6,6 +9,9 @@ This document describes how to test the software stack in the actual hardware an
 SITL testing has been followed
 
 Refer to `Guide/External Software/MAVLink/mavlink_arch.drawio.svg` for network setup
+![MAVLink Network Architecture](./../../../External%20Software/MAVLink/mavlink_arch.drawio.svg)
+> static IP of development machine ethernet interface
+![static_ip](./media/static_ip.png)
 
 ## Differentiators from SITL Testing
 
