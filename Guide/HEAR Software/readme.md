@@ -1,5 +1,4 @@
 # DroneLeaf Software Stack
-
 Welcome to the DroneLeaf software stack!
 
 This documentation is the **master entry point** for all things DroneLeaf.  
@@ -10,11 +9,12 @@ It is primarily targeted at **developers** who want to contribute to the DroneLe
 There are two primary stages of operation:
 1. **Commissioning** – a web-driven process, coordinated with the edge device.
 2. **Flight** – the actual process of flying the drone.
+> in the anatomy diagrams below, we highlight the components involved in each stage. Common components are shown under shared sections.
 
 And there are two types of environments:
-1. **Deployment**: where real flights happen.
-2. **Development**: which can run in two environments:
-    - **Simulation in the loop (SITL)**: Simulates a real drone visually allowing for safe and convenient testing.
+1. **Deployment**: where real flights happen. Edge devices run the full software stack on physical hardware.
+2. **Development**: where the stach runs on the developer machine. It can run in two ways:
+    - **Simulation in the loop (SITL)**: Simulates a real drone visually allowing for safe and convenient testing. It uses PX4 Autopilot and Gazebo simulator.
     - **Bench**: uses a physical pixhawk hardware.
 
 <!-- https://chatgpt.com/share/69142062-1618-8002-8b69-7ab6486b046c -->
@@ -29,12 +29,62 @@ And finally, the Development Bench setup anatomy is given by the following diagr
 <img src="./Media/anatomy_development_bench.svg" alt="DroneLeaf Software Stack Anatomy">
 <!-- ToDo: include PX4 and dynamodb in commissioning stage -->
 
-> Note: The terms QGroundControl (QGC) and LeafMC are used interchangeably in the documentation. LeafMC is DroneLeaf's customized fork of QGroundControl.
+### Definitions of used terms
+- **PX4 Autopilot**: A stripped down and customized version of the open-source PX4 flight control software.  
+- **QGroundControl (QGC)**: A DroneLeaf customized version of the known open-source QGroudnControll software for managing and monitoring drones. The terms LeafMC and QGC are used interchangeably in the documentation.
+- **LeafFC**: DroneLeaf's ROS-based flight controller software that interfaces with the PX4 Autopilot to manage drone operations and sensor data. It replaces the traditional PX4 flight controller functionalities with DroneLeaf-specific features and integrations.
+- **Petal App Manager**: A Python-based application that manages additional functionalities and applications (petals) on the DroneLeaf edge device, enhancing its capabilities during flight operations. Get more info at: https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html 
+- **leafSDK [SDK]**: With focus on drones mission, it refers to a set of software development tools and libraries that allow developers to create applications and functionalities that interact with the drone's flight controller and other components. 
+- **Mavlink-router**: A service that routes MAVLink messages between different endpoints, such as the flight controller, ground control station, and other components. It ensures efficient communication within the DroneLeaf software stack.
+- **Dynamodb**: A NoSQL database service provided by AWS, used by DroneLeaf for storing various data related to drone operations, configurations, and telemetry.
+- **Developer machine**: The PC or laptop used by developers to write, test, and debug code. It typically runs Ubuntu 20.04 LTS for DroneLeaf development.
+- **Bench**: A development mode where a physical Pixhawk hardware is used instead of SITL. It allows for testing with real hardware while still being in a controlled environment.
+- **SITL**: Software In The Loop. A simulation mode where the drone's flight controller software runs in a simulated environment, allowing for safe and convenient testing without physical hardware.
+- **Edge device**: The onboard computer installed on the drone that runs the full DroneLeaf software stack during actual flight operations. Usually a Jetson or Raspberry Pi.
+- **Commissioning**: The process of preparing a drone for operation, which includes provisioning the edge device, configuring settings, licensing, and connecting it to the DroneLeaf cloud services. 
+- **Licensing**: The process of obtaining and managing licenses for using DroneLeaf software and services. Reffer to the main website for more info: https://droneleaf.io/pricing
 
-# Getting started with Deployment (Targeted for DroneLeaf clients)
+
+### Software stack layout
+
+| Subdirectory | Purpose |
+| --- | --- |
+| `PX4-Autopilot` | PX4 firmware and Gazebo SITL simulation |
+| `HEAR_FC` | ROS-based flight controller software. |
+| `HEAR_Msgs` | ROS message definitions and catkin workspace |
+| `HEAR_MC` | Ignored [un maintained] Mission-control / use LeafMC |
+| `LeafMC` | DroneLeaf’s QGroundControl fork source.  |
+
+### Additional tools and directories
+
+- **HEAR_CLI**: A centralized management tool and set of codes for HEAR software. Read more at: [Guide/HEAR Software/HEAR_CLI/README.md](./HEAR_CLI/README.md)
+<!-- 
+| Path | Contents | How to get it |
+| --- | --- | --- |
+| `~/HEAR_CLI` | hear-cli, a centralized management tool and set of codes for HEAR software | Cloned manually (see hear-cli README) |
+| `~/software-stack` | All runtime repos (PX4, HEAR_FC, HEAR_Msgs, etc.) | `hear-cli local_machine run_program --p software_stack_clone` |
+| `~/LeafMC` [development]| Development source code of Leaf QGroundControl fork | Cloned manually (see leafQGC guide) |
+| `~/petal-app-manager-dev` | central directory for petal app manager development. [out of this document scope] | Check petal app manager documentation |
+
+
+content of software-stack:
+
+| Subdirectory | Purpose |
+| --- | --- |
+| `PX4-Autopilot` | PX4 firmware and Gazebo SITL simulation |
+| `HEAR_FC` | ROS-based flight controller software. Note that actual dev directory is ./HEAR_FC/src/HEAR_FC.|
+| `HEAR_Msgs` | ROS message definitions and catkin workspace |
+| `HEAR_MC` | Ignored [un maintained] Mission-control / use LeafMC |
+| `HEAR_Configurations` | Vehicle, sensor and launch configuration files |
+| `HEAR_Docker` | Docker images and build configs for HEAR services |
+| `LeafMC` [runtime] | DroneLeaf’s QGroundControl fork source. It is advisable not to modify this directly |
+| `mavlink-router` | MAVLink routing/forwarding service | -->
+
+
+## Getting started with Deployment (Targeted for DroneLeaf clients)
 To get started with deployment, please refer to the following guide: [DroneLeaf KnowledgeBase](https://droneleaf.github.io/knowledgebase/)
 
-# Getting Started with Development 
+## Getting Started with Development 
 Development in the SITL environment involves working with four stacks:
 
 - **Flight stack:** represented by the software-stack repo. [DroneLeaf/software-stack/tree/dev-sitl](https://github.com/DroneLeaf/software-stack/tree/dev-sitl)
@@ -42,30 +92,30 @@ Development in the SITL environment involves working with four stacks:
 - **Controller dashboard:** a gateway application serving as the critical bridge between our cloud services and drone operations [DroneLeaf/Controller_Dashboard](https://github.com/DroneLeaf/Controller-Dashboard)
 - **Web client application [fly.droneleaf.io](https://fly.droneleaf.io):** client interface for drone management and monitoring. [DroneLeaf/DroneLeaf_WebClient_With_Amplify](DroneLeaf/DroneLeaf_WebClient_With_Amplify)
 
-## Preparing the Developer Machine
-### Prerequisites
+### Preparing the Developer Machine
+#### Prerequisites
 
 - **OS:** Ubuntu 20.04 LTS
 - **Hardware:** at least 16 GB RAM, 4-core CPU (x86_64/AMD64), and 256 GB free disk space
 
-### OS Installation
+#### OS Installation
 
 > **Recommended:** Follow the instructions to [set up a fresh Ubuntu 20.04 on your development machine](./../Hardware%20and%20Process/Development%20Machine%20Preparation/installation_steps_for_Ubuntu_20.04_LTS.md).
 
 
-### Tools and Packages Installation
+#### Tools and Packages Installation
 You will need to install the following tools and packages to get started with development:
 
-#### Developer tools
+##### Developer tools
 
 - vscode and extensions installation guide: [Guide/External Software/VSCode/README.md](./../External%20Software/VSCode/README.md)
 - Yakuake installation and configuration guide: [Guide/External Software/Yakuake/README.md](./../External%20Software/Yakuake/README.md)
 
 
-#### HEAR-CLI
+##### HEAR-CLI
 - Install HEAR_CLI: [Guide/HEAR Software/HEAR_CLI/README.md](./../HEAR%20Software/HEAR_CLI/README.md).
 
-#### Dependency Packages
+##### Dependency Packages
 -   apt packages:
 
 ```bash
@@ -84,130 +134,145 @@ pip3 install --user pyros-genmsg
 pip3 install --user jinja2
 ```
 
-#### HEAR Software Stack Installation
+##### HEAR Software Stack Installation
 - Follow HEAR_CLI based installation scripts as per [SITL installation guide](./../HEAR%20Software/Operation/SITL/sitl-installation-on-ubuntu20.04.md)
 
 
-## Getting Started with Flight Stack Development
+### Getting Started with Flight Stack Development
 Now that you have set up your development machine and installed the HEAR software stack, you can start developing and contributing to the flight stack.
 
 
-### Cloning
+#### Cloning
 ```bash
 hear-cli local_machine run_program --p software_stack_clone
-# When prompted for a branch:
-# - Use `dev-sitl` for active development
-# - Use `main` for the latest stable release
+## When prompted for a branch:
+## - Use `dev-sitl` for active development
+## - Use `main` for the latest stable release
 ```
 
-### Compilation
+#### Compilation
 The following components can be built from source for development purposes:
 
-#### HEAR_Msgs
+##### HEAR_Msgs
 ```bash
 cd ~/software-stack/HEAR_Msgs
-# optional: clean build
-# rm -rf devel/ build/
+## optional: clean build
+## rm -rf devel/ build/
 catkin_make
-source devel/setup.bash   # sets up ROS environment and package paths
+source devel/setup.bash   ## sets up ROS environment and package paths
 ```
 
-#### LeafFC
+##### LeafFC
 > In clean build, redo the HEAR_Msgs build step first.
 ```bash
 cd ~/software-stack/HEAR_FC
-# optional: clean build
-# rm -rf devel/ build/
+## optional: clean build
+## rm -rf devel/ build/
 catkin_make -DCMAKE_BUILD_TYPE=Debug -DHEAR_TARGET=SITL
-source devel/setup.bash   # sets up ROS environment and package paths
-# Launching the flight controller 
+source devel/setup.bash   ## sets up ROS environment and package paths
+## Launching the flight controller 
 roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
 ```
 
-#### PX4 Autopilot
+##### PX4 Autopilot
 ```bash
 cd ~/software-stack/PX4-Autopilot
 bash ./Tools/setup/ubuntu.sh
 make px4_sitl gazebo-classic
-# Alt: make px4_sitl gazebo-classic_dfl, or HEADLESS=1 ...
+## Alt: make px4_sitl gazebo-classic_dfl, or HEADLESS=1 ...
 ```
 > Note: Gazebo Classic window should open automatically.
 
-#### LeafMC
+##### LeafMC
 - Follow the instructions in [LeafMC Guide](./LeafMC/README.md) to set up LeafMC for development.
 
-### Sourcing and environment setup
-ToDo: put here hear cli scripts for env setup
-ToDo: source the devel/setup.bash files
-
-
-## Getting Started with Petals Stack Development 
+### Getting Started with Petals Stack Development 
 Check the repo wiki at [https://droneleaf.github.io/petal-app-manager/](https://droneleaf.github.io/petal-app-manager/)
 
 > for quick start, follow the instructions at [https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html](https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html)
 
-## Getting Started with Controller Dashboard Development 
+### Getting Started with Controller Dashboard Development 
 Check the repo README at [DroneLeaf/Controller_Dashboard](https://github.com/DroneLeaf/Controller-Dashboard)
 
 
-## Getting Started with Web Client Application Development 
+### Getting Started with Web Client Application Development 
 Check the repo README at [DroneLeaf/DroneLeaf_WebClient_With_Amplify](https://github.com/DroneLeaf/DroneLeaf_WebClient_With_Amplify)
 
-# First Run:
-To be able to run the full SITL environment for the first time, you need to follow the provisioning steps explained in [First Run guide](./Operation/SITL/First_Run_guide.md)
+## Commissioning:
+The commissioning process is important in DroneLeaf's software stack as it:
+- Binds the drone hardware or SITL instance to a DroneLeaf account.
+- Configures initial settings and parameters for flight operations.
+- Allows tuning and calibration of sensors before flight.
+- Allows mission planning, uploading and monitoring.
 
-# Running the SITL/bench environment
+Commissioning is divided into these sections:
+- provisioning
+- configuration
+- licensing
+- tuning and calibration
+- cloud synchronization
 
-Follow these steps to run the full SITL environment after installation and provisioning:
+Follow the provisioning steps explained in [Quick Commissioning Guide](./Operation/SITL/quick_commissioning_guide.md)
 
-1. **Build and launch PX4 (Gazebo Classic):**
+## Running the SITL/bench environment
+Follow these steps to run the full SITL environment after installation and commissioning:
+> Steps differ slightly between SITL and Bench setups:
+    - **SITL (simulator):** start with step 1.
+    - **Bench (hardware):** start from step 2, as the physical pixhawk handles PX4 execution.
 
-    > **SITL only:** perform this step only when running the simulator (SITL).
+> Commissioning must be completed before running the SITL/bench environment.
 
-    ```bash
-    cd ~/software-stack/PX4-Autopilot
-    make px4_sitl gazebo-classic
-    ```
+### 1. Build and launch PX4 (Gazebo Classic):
 
-2. **Start the mavlink-router service:**
+> **SITL only:** perform this step only when running the simulator (SITL).
 
-    ```bash
-    sudo systemctl start mavlink-router.service
-    ```
+```bash
+cd ~/software-stack/PX4-Autopilot
+make px4_sitl gazebo-classic
+```
 
-3. **Launch HEAR_FC:**
+### 2. Start the mavlink-router service:
 
-    ```bash
-    cd ~/software-stack/HEAR_FC
-    source devel/setup.bash   # sets up ROS environment and package paths
-    roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
-    ```
+```bash
+sudo systemctl start mavlink-router.service
+```
 
-4. **Launch LeafMC:**
+### 3. Launch HEAR_FC:
 
-    - From Qt Creator (recommended for development).
-    - Or use the AppImage from the software-stack releases: https://github.com/DroneLeaf/software-stack/releases
+```bash
+cd ~/software-stack/HEAR_FC
+source devel/setup.bash   ## sets up ROS environment and package paths
+roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
+```
 
-5. **Petal App Manager:**
+### 4. Launch LeafMC:
 
-    - If provisioning is not complete, complete it first as per the [First Run guide](./Operation/SITL/First_Run_guide.md).
-    - Launch Petal App Manager as per the official quickstart: https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html
+- From Qt Creator (recommended for development).
+- Or use the AppImage from the software-stack releases: https://github.com/DroneLeaf/software-stack/releases
 
-# Debugging Tools
-## Debugging MAVLink with Wireshark
+### 5. Petal App Manager:
 
-# Hardware guides
+- If provisioning is not complete, complete it first as per the [First Run guide](./Operation/SITL/First_Run_guide.md).
+- Launch Petal App Manager as per the official quickstart: https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html
 
-# Additional Functionalities
-## VPN remote access
+## Debugging Tools
+### Debugging MAVLink with Wireshark
+<!-- /home/yo/HEAR_wiki/Guide/External Software/MAVLink/mavlink_debugging.md -->
+To debug MAVLink messages, reffer to the following guide: [Guide/External Software/MAVLink/mavlink_debugging.md](./../External%20Software/MAVLink/mavlink_debugging.md)
+
+<!-- ## Hardware guides
+ToDo: include hardware guides links here. -->
+
+## Additional Functionalities
+### VPN remote access
 Read more about setting up VPN remote access in the following guide: [Guide/Hardware and Process/Development Machine Preparation/vpn_remote_access_setup.md](./../Hardware%20and%20Process/Development%20Machine%20Preparation/vpn_remote_access_setup.md)
 
 
-## Contribution and development
+### Contribution and development
 - Hear-cli development guide: [Guide/HEAR Software/Development/hear-cli-development-guide.md](../../Development/hear-cli-development-guide.md)
 - LeafMC and Qt tooling guide: [Guide/HEAR Software/Operation/SITL/leafQGC-and-QT-tooling.md](./../HEAR%20Software/Operation/SITL/leafQGC-and-QT-tooling.md)
 - leafFC development guide: [Guide/HEAR Software/Operation/SITL/DynamoDB-and-hearfc-debugging.md](./../HEAR%20Software/Operation/SITL/DynamoDB-and-hearfc-debugging.md)
 - petal app manager development guide: [https://droneleaf.github.io/petal-app-manager/contributing/contribution_guide.html](https://droneleaf.github.io/petal-app-manager/contributing/contribution_guide.html)
 
-## Wiki contribution guide
-ToDo
+### Known Issues
+Check the [Known Issues](./Operation/SITL/known_issues.md) document for a list of current issues and workarounds.

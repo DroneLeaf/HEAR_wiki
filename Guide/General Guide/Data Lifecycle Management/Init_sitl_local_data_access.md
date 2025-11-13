@@ -1,5 +1,8 @@
 # Prepare Data Life Cycle Management for SITL environment
 
+<!-- load the svg image -->
+![Data Lifecycle Management](./Data_lifecycle_management.drawio.svg)
+
 ## Pre-requisites Installation
 
 **Pull the latest `HEAR_CLI`**

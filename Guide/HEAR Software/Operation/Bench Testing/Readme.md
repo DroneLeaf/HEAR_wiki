@@ -5,7 +5,7 @@ This document describes how to test the software stack in the actual hardware an
 # Pre-requisites
 SITL testing has been followed
 
-Refer to `Guide/External Software/MAVLink/mavlink_arch.drawio` for network setup
+Refer to `Guide/External Software/MAVLink/mavlink_arch.drawio.svg` for network setup
 
 ## Differentiators from SITL Testing
 

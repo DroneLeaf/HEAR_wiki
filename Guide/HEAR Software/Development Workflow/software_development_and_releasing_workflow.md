@@ -8,7 +8,7 @@ It assumes that the developer machine is setup with all needed packages.
 
 ## Development Workflow
 
-Check the `SoftwareContributionWorkflow.drawio`
+Check the: <./SoftwareContributionWorkflow.drawio.svg>
 
 ## Releasing Workflow
 

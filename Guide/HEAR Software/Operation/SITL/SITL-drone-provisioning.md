@@ -16,7 +16,7 @@ To finish provisioning, bind the SITL node to a drone license and sync DynamoDB 
 
 > you can switch between bench and SITL modes by following the instructions in [Moving_between_SITL_PX4_Autopilot_and_physical_pixhauk.md](../Hardware%20and%20Process/Commissioning/Moving_between_SITL_PX4_Autopilot_and_physical_pixhauk.md)
 
-1. Register on <https://fly.droneleaf.io> and bind the SITL hardware to the assigned license following the flowchart in [Guide/Hardware and Process/Commissioning/2 Ready for FSAC/Ready for FSAC Updated.draw.io](../../Hardware%20and%20Process/Commissioning/2%20Ready%20for%20FSAC/Ready%20for%20FSAC%20Updated.draw.io). Ensure the license status is active before pulling data.
+1. Register on <https://fly.droneleaf.io> and bind the SITL hardware to the assigned license following the flowchart in [Guide/Hardware and Process/Commissioning/2 Ready for FSAC/Ready for FSAC Updated.draw.io](./../../../Hardware%20and%20Process/Commissioning/2%20Ready%20for%20FSAC/Ready%20for%20FSAC_updated.drawio). Ensure the license status is active before pulling data.
 
 > Note: as of Nov 2025, the fly.droneleaf.io portal doesn't allow saved templates, and you have to create a new of every document type while you go through the commissioning flow.
 
