@@ -44,7 +44,7 @@ So we have in general three layers (+ the code itself):
  3. Comments on the code itself. We use doxygen to support IDE help and auto-generation. Only comment the following:
     1. how to use certain class. For example how to use System.hpp
     2. Reasons for writing certain system code or complex logic you borrowed from some other source. Simply add urls for all sources used. For example why certain network socket options were used: include url of relevant man-pages or PX4 documentation.
- 4. The code it self. It must be self-explanatory and it must adhere to the [coding guideline](coding_guideline.md).
+ 4. The code it self. It must be self-explanatory and it must adhere to the [coding guideline](./Guide/HEAR%20Software/Core%20Arch/coding_guideline.md).
 
 **Important**: Documentation is a liability that we want to minimize. Document using stage 4 above, if not possible, document using stage 3, then stage 2, and last stage 1.
 

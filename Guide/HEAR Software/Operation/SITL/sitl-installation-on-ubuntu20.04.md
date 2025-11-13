@@ -9,7 +9,7 @@ Run the scripted installers that prepare all requirements for SITL operation on 
 - Get `env.zip` from DroneLeaf Support (Ahmed Hashem) but do not unzip it yet. A script in a later step will handle this. Run terminal from the directory at which the file is located. [as of Nov 2025]
 
 ## Hints for getting installation support
-> Capture output with `tee` whenever possible. [Refer to [recommended-tools-apps-and-extensions.md](./recommended-tools-apps-and-extensions.md) for logging conventions.]
+> Capture output with `tee` whenever possible. [Refer to [recommended-tools-apps-and-extensions.md](./../../../Hardware%20and%20Process/Development%20Machine%20Preparation/recommended-tools-apps-and-extensions.md) for logging conventions.]
 
 ## 0. Dependencies Installation
 

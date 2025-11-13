@@ -10,6 +10,8 @@ It assumes that the developer machine is setup with all needed packages.
 
 Check the: <./SoftwareContributionWorkflow.drawio.svg>
 
+![Software Contribution Workflow](./SoftwareContributionWorkflow.drawio.svg)
+
 ## Releasing Workflow
 
 Releasing is automated in `dev` and `main` branches PRs. Additionally, it can be manually initiated in the `dev` branch in case hot-fixes were applied.

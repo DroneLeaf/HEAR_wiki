@@ -268,11 +268,12 @@ ToDo: include hardware guides links here. -->
 Read more about setting up VPN remote access in the following guide: [Guide/Hardware and Process/Development Machine Preparation/vpn_remote_access_setup.md](./../Hardware%20and%20Process/Development%20Machine%20Preparation/vpn_remote_access_setup.md)
 
 
-### Contribution and development
+## Contribution and development
 - Hear-cli development guide: [Guide/HEAR Software/Development/hear-cli-development-guide.md](../../Development/hear-cli-development-guide.md)
 - LeafMC and Qt tooling guide: [Guide/HEAR Software/Operation/SITL/leafQGC-and-QT-tooling.md](./../HEAR%20Software/Operation/SITL/leafQGC-and-QT-tooling.md)
 - leafFC development guide: [Guide/HEAR Software/Operation/SITL/DynamoDB-and-hearfc-debugging.md](./../HEAR%20Software/Operation/SITL/DynamoDB-and-hearfc-debugging.md)
+- software-stack development guide: [Guide/HEAR Software/Development Workflow/software_development_and_releasing_workflow.md](./Development%20Workflow/software_development_and_releasing_workflow.md)
 - petal app manager development guide: [https://droneleaf.github.io/petal-app-manager/contributing/contribution_guide.html](https://droneleaf.github.io/petal-app-manager/contributing/contribution_guide.html)
 
-### Known Issues
+## Known Issues
 Check the [Known Issues](./Operation/SITL/known_issues.md) document for a list of current issues and workarounds.
