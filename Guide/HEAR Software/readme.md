@@ -1,22 +1,21 @@
 # DroneLeaf Software Stack
 
-Welcome to DroneLeaf software stack!
+Welcome to the DroneLeaf software stack!
 
-This documentation is targeted for developers who wanted to contribute to the DroneLeaf software stack.
-
-It serves as the master documentation and entry point for all things DroneLeaf.
+This documentation is the **master entry point** for all things DroneLeaf.  
+It is primarily targeted at **developers** who want to contribute to the DroneLeaf software stack.
 
 ## Anatomy of the software stack
 
-Currently, there are two stages of operation: 
-1. **Commissioning**: mainly a process on the web, coordinated with the edge device.
-2. **Flight**: the process of flying the drone.
+There are two primary stages of operation:
+1. **Commissioning** – a web-driven process, coordinated with the edge device.
+2. **Flight** – the actual process of flying the drone.
 
 And there are two types of environments:
-1. **Deployment**: This is where actual flight happens.
-2. **Development**: Happens in two possible ways.
+1. **Deployment**: where real flights happen.
+2. **Development**: which can run in two environments:
     - **Simulation in the loop (SITL)**: Simulates a real drone visually allowing for safe and convenient testing.
-    - **Bench**: Adds a physical pixhawk hardware.
+    - **Bench**: uses a physical pixhawk hardware.
 
 <!-- https://chatgpt.com/share/69142062-1618-8002-8b69-7ab6486b046c -->
 
@@ -45,12 +44,13 @@ Development in the SITL environment involves working with four stacks:
 
 ## Preparing the Developer Machine
 ### Prerequisites
-- Ubuntu 20.04 LTS
-- Hardware: minimum 16GB RAM, 4-core CPU (x86_64/AMD64), 256GB free disk space
+
+- **OS:** Ubuntu 20.04 LTS
+- **Hardware:** at least 16 GB RAM, 4-core CPU (x86_64/AMD64), and 256 GB free disk space
 
 ### OS Installation
-[recommended] Follow the instructions to [set up a
-fresh UBUNTU 20.04 on your development machine](./../Hardware%20and%20Process/Development%20Machine%20Preparation/installation_steps_for_Ubuntu_20.04_LTS.md)
+
+> **Recommended:** Follow the instructions to [set up a fresh Ubuntu 20.04 on your development machine](./../Hardware%20and%20Process/Development%20Machine%20Preparation/installation_steps_for_Ubuntu_20.04_LTS.md).
 
 
 ### Tools and Packages Installation
@@ -68,21 +68,21 @@ You will need to install the following tools and packages to get started with de
 #### Dependency Packages
 -   apt packages:
 
-  ```bash
+```bash
 sudo apt install -y build-essential libdbus-glib-1-dev libgirepository1.0-dev \
-    git curl wget cmake unzip pkg-config libssl-dev libjpeg-dev libpng-dev \
-    libtiff-dev libusb-1.0-0-dev python3-pip jq
-  ```
+git curl wget cmake unzip pkg-config libssl-dev libjpeg-dev libpng-dev \
+libtiff-dev libusb-1.0-0-dev python3-pip jq
+```
 -   python3 packages:
 
-  ```bash
+```bash
 pip3 install --force-reinstall ninja
 pip3 install testresources
 pip3 install kconfiglib
 pip3 install --user jsonschema
 pip3 install --user pyros-genmsg
 pip3 install --user jinja2
-  ```
+```
 
 #### HEAR Software Stack Installation
 - Follow HEAR_CLI based installation scripts as per [SITL installation guide](./../HEAR%20Software/Operation/SITL/sitl-installation-on-ubuntu20.04.md)
@@ -95,7 +95,9 @@ Now that you have set up your development machine and installed the HEAR softwar
 ### Cloning
 ```bash
 hear-cli local_machine run_program --p software_stack_clone
-# Choose branch: dev-sitl for development, main for latest stable release.
+# When prompted for a branch:
+# - Use `dev-sitl` for active development
+# - Use `main` for the latest stable release
 ```
 
 ### Compilation
@@ -107,7 +109,7 @@ cd ~/software-stack/HEAR_Msgs
 # optional: clean build
 # rm -rf devel/ build/
 catkin_make
-source devel/setup.bash
+source devel/setup.bash   # sets up ROS environment and package paths
 ```
 
 #### LeafFC
@@ -117,17 +119,17 @@ cd ~/software-stack/HEAR_FC
 # optional: clean build
 # rm -rf devel/ build/
 catkin_make -DCMAKE_BUILD_TYPE=Debug -DHEAR_TARGET=SITL
-source devel/setup.bash
+source devel/setup.bash   # sets up ROS environment and package paths
 # Launching the flight controller 
 roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
 ```
 
 #### PX4 Autopilot
 ```bash
-   cd ~/software-stack/PX4-Autopilot
-   bash ./Tools/setup/ubuntu.sh
-   make px4_sitl gazebo-classic
-   # Alt: make px4_sitl gazebo-classic_dfl, or HEADLESS=1 ...
+cd ~/software-stack/PX4-Autopilot
+bash ./Tools/setup/ubuntu.sh
+make px4_sitl gazebo-classic
+# Alt: make px4_sitl gazebo-classic_dfl, or HEADLESS=1 ...
 ```
 > Note: Gazebo Classic window should open automatically.
 
@@ -156,31 +158,40 @@ To be able to run the full SITL environment for the first time, you need to foll
 
 # Running the SITL/bench environment
 
-To run the full SITL environment after successful installation and provisioning, follow these steps:
-- Build & launch PX4 (Gazebo Classic)
-> only if you want to use SITL environment
-    - ```bash
-      cd ~/software-stack/PX4-Autopilot
-      make px4_sitl gazebo-classic
-      ```
-- Launch mavlink-router service
-    - ```bash
-      sudo systemctl start mavlink-router.service
-      ```
-- Launch HEAR_FC
-    - ```bash
-      cd ~/software-stack/HEAR_FC
-      source devel/setup.bash
-      roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
-      ```
-- Launch LeafMC
-    You have two options to launch LeafMC:
-    1. From Qt Creator (recommended for development)
-    2. Using the AppImage from [software-stack repository](https://github.com/DroneLeaf/software-stack/releases)
+Follow these steps to run the full SITL environment after installation and provisioning:
 
-- Petal App Manager
-    - If provisioning is not complete, complete it first as per [First Run guide](./Operation/SITL/First_Run_guide.md).
-    - Launch Petal App Manager as per [official docs](https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html).
+1. **Build and launch PX4 (Gazebo Classic):**
+
+    > **SITL only:** perform this step only when running the simulator (SITL).
+
+    ```bash
+    cd ~/software-stack/PX4-Autopilot
+    make px4_sitl gazebo-classic
+    ```
+
+2. **Start the mavlink-router service:**
+
+    ```bash
+    sudo systemctl start mavlink-router.service
+    ```
+
+3. **Launch HEAR_FC:**
+
+    ```bash
+    cd ~/software-stack/HEAR_FC
+    source devel/setup.bash   # sets up ROS environment and package paths
+    roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
+    ```
+
+4. **Launch LeafMC:**
+
+    - From Qt Creator (recommended for development).
+    - Or use the AppImage from the software-stack releases: https://github.com/DroneLeaf/software-stack/releases
+
+5. **Petal App Manager:**
+
+    - If provisioning is not complete, complete it first as per the [First Run guide](./Operation/SITL/First_Run_guide.md).
+    - Launch Petal App Manager as per the official quickstart: https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html
 
 # Debugging Tools
 ## Debugging MAVLink with Wireshark
