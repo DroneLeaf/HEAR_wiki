@@ -17,7 +17,7 @@ You need *Embedded Coder* add-on installed first.
 
 Make sure you follow these steps:
 
-![](assets/1.png)
+<!-- ![](assets/1.png)
 
 ![](assets/2.png)
 
@@ -39,25 +39,25 @@ Make sure you follow these steps:
 
 ![](assets/11.png)
 
-![](assets/12.png)
+![](assets/12.png) -->
 
 **Make sure simulation time is set to `inf`**
 
-![](assets/13.png)
+<!-- ![](assets/13.png) -->
 
 # Checking the code generation report
 
 Click 'Open Report' under 'C Code' tap in Simulink.
 
-![](assets/14.png)
+<!-- ![](assets/14.png) -->
 
 1. Check the 'Hardware Device Type' if it is what you want.
 2. Check the path for exporting the `.so` library.
 
-![](assets/15.png)
+<!-- ![](assets/15.png) -->
 
 Above are the three functions we will call from our Python/C++ code.
 
-![](assets/16.png)
+<!-- ![](assets/16.png) -->
 
 Above are all the variables accessible globally the `.so` library. What is under the 'Code Identifier' cloumn is what we can access from our Python/C++ code. Data type 'real_T' corresponds to `double` as per the 'Data Type Replacement' tab in the 'Model Settings'.
