@@ -221,7 +221,7 @@ roslaunch flight_controller px4_flight_mavlink_opti_onboard_mission.launch
 
 ### 5. Petal App Manager:
 
-- If provisioning is not complete, complete it first as per the [First Run guide](./Operation/SITL/First_Run_guide.md).
+- If provisioning is not complete, complete it first as per the [Quick Commissioning Guide](./Guide/HEAR%20Software/Operation/SITL/quick_commissioning_guide.md).
 - Launch Petal App Manager as per the official quickstart: https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html
 
 ## Debugging Tools
@@ -245,4 +245,4 @@ Read more about setting up VPN remote access in the following guide: [Guide/Hard
 - petal app manager development guide: [https://droneleaf.github.io/petal-app-manager/contributing/contribution_guide.html](https://droneleaf.github.io/petal-app-manager/contributing/contribution_guide.html)
 
 ## Known Issues
-Check the [Known Issues](./Operation/SITL/known_issues.md) document for a list of current issues and workarounds.
+Check the [Known Issues](./Guide/HEAR%20Software/Operation/SITL/known_issues.md) document for a list of current issues and workarounds.

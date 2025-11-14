@@ -6,6 +6,9 @@ export default defineConfig({
   description: "This documentation is the master entry point for all things DroneLeaf.",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    search: {
+      provider: 'local'
+    },
     nav: [
       // { text: 'Home', link: '/' },
       { text: 'README', link: '/README.html' }
@@ -131,8 +134,8 @@ export default defineConfig({
             items: [
               { text: 'PX4 / SITL install', link: '/Guide/HEAR%20Software/Operation/SITL/sitl-installation-on-ubuntu20.04.html' },
               { text: 'Quick Commissioning Guide', link: '/Guide/HEAR%20Software/Operation/SITL/quick_commissioning_guide.html' },
-              { text: 'First Run guide', link: '/Operation/SITL/First_Run_guide.html' },
-              { text: 'Known Issues', link: '/Operation/SITL/known_issues.html' }
+              { text: 'Quick Commissioning Guide', link: '/Guide/HEAR%20Software/Operation/SITL/quick_commissioning_guide.html' },
+              { text: 'Known Issues', link: '/Guide/HEAR%20Software/Operation/SITL/known_issues.html' }
             ]
           }
         ]
