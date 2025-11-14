@@ -1,4 +1,11 @@
+<meta http-equiv="refresh" content="0; url=/README.html">
+<!-- for vitepress information, check:
+ ./.vitepress
+ ./wiki_meta/creation_of_vitepress.md 
+-->
+
 ---
+<!-- below is not shown as the document auto redirects to README -->
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 

@@ -1,37 +1,19 @@
-npm add -D vitepress@next
-npx vitepress init
+# Create VitePress — Very short
 
-follow steps:
-```bash
-┌  Welcome to VitePress!
-│
-◇  Where should VitePress initialize the config?
-│  ./docs
-│
-◇  Where should VitePress look for your markdown files?
-│  ./docs
-│
-◇  Site title:
-│  My Awesome Project
-│
-◇  Site description:
-│  A VitePress Site
-│
-◇  Theme:
-│  Default Theme
-│
-◇  Use TypeScript for config and theme files?
-│  Yes
-│
-◇  Add VitePress npm scripts to package.json?
-│  Yes
-│
-◇  Add a prefix for VitePress npm scripts?
-│  Yes
-│
-◇  Prefix for VitePress npm scripts:
-│  docs
-│
-└  Done! Now run pnpm run docs:dev and start writing.
-```
+## Install
+`npm add -D vitepress@next`
+
+## Init
+`npx vitepress init`  
+docs root: `.`  
+config: `.vitepress`  
+enable TypeScript, add npm scripts
+
+## Run
+- `npm run docs:dev` — dev
+- `npm run docs:build` — build
+- `npm run docs:preview` — preview
+
+## Deploy
+See: https://github.com/vuejs/vitepress/blob/main/docs/en/guide/deploy.md#setting-a-public-base-path
 
