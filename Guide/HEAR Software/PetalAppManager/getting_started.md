@@ -1,93 +1,24 @@
 # Getting Started with Petal App Manager
 
-This guide walks you through setting up the necessary repositories and development environment for working with the Petal App Manager.
+This guide explains at a high level what is the Petal App Manager (PAM) and where to find relevant information to get started with development and deployment.
 
-## How to Run
+## Overview
 
-### Development
-Launch from VS code debugger. Make sure you have had run `pdm install`.
+The Petal App Manager is a software component designed to manage and run various Petal applications on edge devices (drones). It provides a framework for integrating different functionalities in the form of "petals", which are modular applications that can be developed and deployed independently.
 
-### Deployment
-Automatically added to `systemd` by `hear-cli local_machine run_program --p petal_app_manager_prepare_arm`
+It also provides a structured way to handle communication with the flight controller using MAVLink protocol, the web client interface via MQTT and dynamoDB, and logging functionalities on DevHub.
 
-## Initial Setup
+The diagram below illustrates the position of the Petal App Manager within the overall droneleaf ecosystem:
 
-To set up the required repositories, run:
+![PAM Architecture](./multi_drone_system.svg)
 
-```bash
-hear-cli local_machine run_program --p petal_app_manager_prepare_sitl
-```
+## Detailed Documentation
 
-This command will set up the following repository structure:
+For more detailed information about the Petal App Manager, including its architecture, components, and how to develop and deploy petals, please refer to the following resources:
 
-```
-petal-app-dev/
-├── mavlink/
-│   └── pymavlink/
-├── petal-app-manager/
-├── petal-flight-log/
-└── petal-hello-world/
-```
-**Note** Currently there is an issue with pyaudio. To get around it execute:
-```bash
-sudo apt-get update
-sudo apt-get install -y portaudio19-dev libasound2-dev libportaudiocpp0
-sudo apt-get install -y ffmpeg        # installs ffmpeg, ffprobe, ffplay
-```
+- [Petal App Manager Sphinx Documentation](https://droneleaf.github.io/petal-app-manager/)
+- [Petal App Manager Package on PyPI](https://pypi.org/project/petal-app-manager/)
+- [Petal App Manager GitHub Repository](https://github.com/DroneLeaf/petal-app-manager)
 
-## Dependencies Management
-
-Each repository manages its dependencies through its own `pyproject.toml` file. When developing or extending functionality:
-
-- Make sure to check the respective repository's dependencies
-- Add any new dependencies to the appropriate `pyproject.toml` file
-
-> [!NOTE]
-> For details read [this readme file](https://github.com/DroneLeaf/petal-app-manager/blob/main/petals.md)
-
-## Plugin Development
-
-When developing plugins, you'll need to modify the corresponding plugin file:
-
-```
-src/petal-name/plugin.py
-```
-
-Adjust the implementation according to your application requirements.
-
-## Working with MAVLink Messages
-
-### Adding New MAVLink Messages
-
-1. Modify the message definitions in:
-    ```
-    mavlink/message_definitions/v1.0
-    ```
-
-2. Ensure correct XML formatting:
-    ```bash
-    ./scripts/format_xml.sh
-    ```
-
-3. Generate Python bindings:
-    ```bash
-    cd pymavlink
-    python setup.py build
-    ```
-
-This process will generate leaf message definitions for Python under `dialects/v10/*.xml`.
-
-## Releasing pymavlink to PyPI
-
-When you need to publish a new version of pymavlink:
-
-1. Modify the version number in `mavlink/pymavlink/__init__.py`
-    - Always increment the minor version
-
-2. Create and push a git tag:
-    ```bash
-    git tag vx.x.x
-    git push origin vx.x.x
-    ```
-
-This will trigger the release process for publishing to PyPI.
+## Getting Help
+If you have any questions or need assistance with the Petal App Manager, please raise an issue on the [GitHub repository](https://github.com/DroneLeaf/petal-app-manager/issues) or reach out to the DroneLeaf core team.

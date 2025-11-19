@@ -1,0 +1,107 @@
+digraph MultiDroneSystem {
+    rankdir=TB;
+    ranksep=1.5;
+    nodesep=0.8;
+    
+    // Graph styling
+    graph [fontname="Arial", fontsize=12, compound=true];
+    node [fontname="Arial", fontsize=11, shape=box, style=rounded];
+    edge [fontname="Arial", fontsize=10];
+    
+    // AWS Cloud cluster at the top
+    subgraph cluster_aws {
+        label="AWS Cloud";
+        style=filled;
+        color=lightblue;
+        fillcolor=lightyellow;
+        
+        // DevHub box
+        subgraph cluster_devhub {
+            label="DevHub (Lambda)";
+            style=filled;
+            color=darkgreen;
+            fillcolor=lightgreen;
+            
+            devhub [label="DevHub\nLambda", shape=box];
+            s3 [label="S3 Bucket", shape=cylinder];
+        }
+        
+        // Webclient box
+        subgraph cluster_webclient {
+            label="droneleaf.io";
+            style=filled;
+            color=darkblue;
+            fillcolor=lightcyan;
+            
+            webclient [label="Web Client", shape=box];
+            webclient_db [label="DynamoDB", shape=cylinder];
+        }
+    }
+    
+    // Drone 1
+    subgraph cluster_drone1 {
+        label="Drone 1";
+        style=filled;
+        color=darkred;
+        fillcolor=mistyrose;
+        
+        // Companion Computer
+        subgraph cluster_companion1 {
+            label="Companion Computer";
+            style=filled;
+            color=purple;
+            fillcolor=lavender;
+            
+            pam1 [label="PAM", shape=box, style="rounded,filled", fillcolor="#fac2f3"];
+            local_db1 [label="Local\nDynamoDB", shape=cylinder];
+        }
+        
+        // Pixhawk
+        pixhawk1 [label="Pixhawk\nPX4 Autopilot", shape=box, style="rounded,filled", fillcolor=lightsalmon];
+    }
+    
+    // Drone 2
+    subgraph cluster_drone2 {
+        label="Drone 2";
+        style=filled;
+        color=darkred;
+        fillcolor=mistyrose;
+        
+        // Companion Computer
+        subgraph cluster_companion2 {
+            label="Companion Computer";
+            style=filled;
+            color=purple;
+            fillcolor=lavender;
+            
+            pam2 [label="PAM", shape=box, style="rounded,filled", fillcolor="#fac2f3"];
+            local_db2 [label="Local\nDynamoDB", shape=cylinder];
+        }
+        
+        // Pixhawk
+        pixhawk2 [label="Pixhawk\nPX4 Autopilot", shape=box, style="rounded,filled", fillcolor=lightsalmon];
+    }
+    
+    // Connections within AWS
+    devhub -> webclient_db [label="HTTP", dir=both];
+    
+    // Drone 1 connections
+    // PAM to AWS services
+    pam1 -> webclient [label="MQTT", dir=both, color=blue, penwidth=1.5];
+    pam1 -> webclient_db [label="HTTP", dir=both, color=darkgreen];
+    pam1 -> s3 [label="IAM Role", color=orange, penwidth=1.5];
+    
+    // PAM to local services
+    pam1 -> local_db1 [label="HTTP", dir=both, color=darkgreen];
+    pam1 -> pixhawk1 [label="PyMAVLink\nMAVFTP", dir=both, color=red, penwidth=1.5];
+    
+    // Drone 2 connections
+    // PAM to AWS services
+    pam2 -> webclient [label="MQTT", dir=both, color=blue, penwidth=1.5];
+    pam2 -> webclient_db [label="HTTP", dir=both, color=darkgreen];
+    pam2 -> s3 [label="IAM Role", color=orange, penwidth=1.5];
+    
+    // PAM to local services
+    pam2 -> local_db2 [label="HTTP", dir=both, color=darkgreen];
+    pam2 -> pixhawk2 [label="PyMAVLink\nMAVFTP", dir=both, color=red, penwidth=1.5];
+}

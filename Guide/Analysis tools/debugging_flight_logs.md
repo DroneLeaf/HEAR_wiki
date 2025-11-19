@@ -1,5 +1,8 @@
 # Diagnositc workflow for an example Ulog output
 
+> [!NOTE]  
+> This workflow is currently under development and will be updated as we gather more examples and feedback from users. We will also be automating some of these steps in the [leaf_diag](https://github.com/DroneLeaf/leaf_diag) tool in the future.
+
 Here is a possible workflow for checking major issues and flags from problematic flights. We reference [this issue](https://github.com/DroneLeaf/leaf_diag/issues/1) here as an example for understanding the reason for an estimator drift in the velocity estimate and subsequent crash.
 
 * We first use the `estimator_selector_status/primary_instance` topic for identifying EKF2 instance number that was running at the time of analysis
