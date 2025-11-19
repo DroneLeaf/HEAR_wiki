@@ -14,6 +14,7 @@ digraph MultiDroneSystem {
         style=filled;
         color=lightblue;
         fillcolor=lightyellow;
+        rank = source;
         
         // DevHub box
         subgraph cluster_devhub {
@@ -21,7 +22,8 @@ digraph MultiDroneSystem {
             style=filled;
             color=darkgreen;
             fillcolor=lightgreen;
-            
+            rank = source;
+
             devhub [label="DevHub\nLambda", shape=box];
             s3 [label="S3 Bucket", shape=cylinder];
         }
@@ -32,7 +34,8 @@ digraph MultiDroneSystem {
             style=filled;
             color=darkblue;
             fillcolor=lightcyan;
-            
+            rank = source;
+
             webclient [label="Web Client", shape=box];
             webclient_db [label="DynamoDB", shape=cylinder];
         }
@@ -53,6 +56,7 @@ digraph MultiDroneSystem {
             fillcolor=lavender;
             
             pam1 [label="PAM", shape=box, style="rounded,filled", fillcolor="#fac2f3"];
+            leaffc1 [label="LeafFC", shape=box];
             local_db1 [label="Local\nDynamoDB", shape=cylinder];
         }
         
@@ -75,6 +79,7 @@ digraph MultiDroneSystem {
             fillcolor=lavender;
             
             pam2 [label="PAM", shape=box, style="rounded,filled", fillcolor="#fac2f3"];
+            leaffc2 [label="LeafFC", shape=box];
             local_db2 [label="Local\nDynamoDB", shape=cylinder];
         }
         
@@ -93,7 +98,9 @@ digraph MultiDroneSystem {
     
     // PAM to local services
     pam1 -> local_db1 [label="HTTP", dir=both, color=darkgreen];
+    pam1 -> leaffc1 [label="Redis", dir=both, color=purple, penwidth=1.5];
     pam1 -> pixhawk1 [label="PyMAVLink\nMAVFTP", dir=both, color=red, penwidth=1.5];
+    leaffc1 -> pixhawk1 [label="MAVLink", dir=both, color=red, penwidth=1.5];
     
     // Drone 2 connections
     // PAM to AWS services
@@ -103,5 +110,8 @@ digraph MultiDroneSystem {
     
     // PAM to local services
     pam2 -> local_db2 [label="HTTP", dir=both, color=darkgreen];
+    pam2 -> leaffc2 [label="Redis", dir=both, color=purple, penwidth=1.5];
     pam2 -> pixhawk2 [label="PyMAVLink\nMAVFTP", dir=both, color=red, penwidth=1.5];
+    leaffc2 -> pixhawk2 [label="MAVLink", dir=both, color=red, penwidth=1.5];
+
 }
