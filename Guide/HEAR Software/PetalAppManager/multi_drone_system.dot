@@ -88,6 +88,7 @@ digraph MultiDroneSystem {
     }
     
     // Connections within AWS
+    webclient -> devhub [label="HTTP"];
     devhub -> webclient_db [label="HTTP", dir=both];
     
     // Drone 1 connections

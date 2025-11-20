@@ -11,8 +11,8 @@
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-456 1622,-456 1622,4 -4,4"/>
 <g id="clust1" class="cluster">
 <title>cluster_aws</title>
-<polygon fill="lightyellow" stroke="lightblue" points="694,-8 694,-277 928,-277 928,-8 694,-8"/>
-<text text-anchor="middle" x="811" y="-263.4" font-family="Arial" font-size="12.00">AWS Cloud</text>
+<polygon fill="lightyellow" stroke="lightblue" points="701,-8 701,-277 935,-277 935,-8 701,-8"/>
+<text text-anchor="middle" x="818" y="-263.4" font-family="Arial" font-size="12.00">AWS Cloud</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_devhub</title>
@@ -21,8 +21,8 @@
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_webclient</title>
-<polygon fill="lightcyan" stroke="darkblue" points="702,-16 702,-89 920,-89 920,-16 702,-16"/>
-<text text-anchor="middle" x="811" y="-75.4" font-family="Arial" font-size="12.00">droneleaf.io</text>
+<polygon fill="lightcyan" stroke="darkblue" points="709,-16 709,-89 927,-89 927,-16 709,-16"/>
+<text text-anchor="middle" x="818" y="-75.4" font-family="Arial" font-size="12.00">droneleaf.io</text>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_drone1</title>
@@ -54,17 +54,17 @@
 <!-- webclient_db -->
 <g id="node4" class="node">
 <title>webclient_db</title>
-<path fill="none" stroke="black" d="M911.5,-56.73C911.5,-58.53 895.14,-60 875,-60 854.86,-60 838.5,-58.53 838.5,-56.73 838.5,-56.73 838.5,-27.27 838.5,-27.27 838.5,-25.47 854.86,-24 875,-24 895.14,-24 911.5,-25.47 911.5,-27.27 911.5,-27.27 911.5,-56.73 911.5,-56.73"/>
-<path fill="none" stroke="black" d="M911.5,-56.73C911.5,-54.92 895.14,-53.45 875,-53.45 854.86,-53.45 838.5,-54.92 838.5,-56.73"/>
-<text text-anchor="middle" x="875" y="-39.2" font-family="Arial" font-size="11.00">DynamoDB</text>
+<path fill="none" stroke="black" d="M918.5,-56.73C918.5,-58.53 902.14,-60 882,-60 861.86,-60 845.5,-58.53 845.5,-56.73 845.5,-56.73 845.5,-27.27 845.5,-27.27 845.5,-25.47 861.86,-24 882,-24 902.14,-24 918.5,-25.47 918.5,-27.27 918.5,-27.27 918.5,-56.73 918.5,-56.73"/>
+<path fill="none" stroke="black" d="M918.5,-56.73C918.5,-54.92 902.14,-53.45 882,-53.45 861.86,-53.45 845.5,-54.92 845.5,-56.73"/>
+<text text-anchor="middle" x="882" y="-39.2" font-family="Arial" font-size="11.00">DynamoDB</text>
 </g>
 <!-- devhub&#45;&gt;webclient_db -->
-<g id="edge1" class="edge">
+<g id="edge2" class="edge">
 <title>devhub&#45;&gt;webclient_db</title>
-<path fill="none" stroke="black" d="M875,-172.77C875,-144.02 875,-98.98 875,-70.23"/>
-<polygon fill="black" stroke="black" points="871.5,-172.9 875,-182.9 878.5,-172.9 871.5,-172.9"/>
-<polygon fill="black" stroke="black" points="878.5,-70.08 875,-60.08 871.5,-70.08 878.5,-70.08"/>
-<text text-anchor="middle" x="888.5" y="-117" font-family="Arial" font-size="10.00">HTTP</text>
+<path fill="none" stroke="black" d="M876.21,-172.77C877.5,-144.02 879.5,-98.98 880.79,-70.23"/>
+<polygon fill="black" stroke="black" points="872.71,-172.75 875.76,-182.9 879.7,-173.07 872.71,-172.75"/>
+<polygon fill="black" stroke="black" points="884.29,-70.23 881.24,-60.08 877.3,-69.91 884.29,-70.23"/>
+<text text-anchor="middle" x="891.5" y="-117" font-family="Arial" font-size="10.00">HTTP</text>
 </g>
 <!-- s3 -->
 <g id="node2" class="node">
@@ -76,8 +76,15 @@
 <!-- webclient -->
 <g id="node3" class="node">
 <title>webclient</title>
-<path fill="none" stroke="black" d="M768,-60C768,-60 722,-60 722,-60 716,-60 710,-54 710,-48 710,-48 710,-36 710,-36 710,-30 716,-24 722,-24 722,-24 768,-24 768,-24 774,-24 780,-30 780,-36 780,-36 780,-48 780,-48 780,-54 774,-60 768,-60"/>
-<text text-anchor="middle" x="745" y="-39.2" font-family="Arial" font-size="11.00">Web Client</text>
+<path fill="none" stroke="black" d="M775,-60C775,-60 729,-60 729,-60 723,-60 717,-54 717,-48 717,-48 717,-36 717,-36 717,-30 723,-24 729,-24 729,-24 775,-24 775,-24 781,-24 787,-30 787,-36 787,-36 787,-48 787,-48 787,-54 781,-60 775,-60"/>
+<text text-anchor="middle" x="752" y="-39.2" font-family="Arial" font-size="11.00">Web Client</text>
+</g>
+<!-- webclient&#45;&gt;devhub -->
+<g id="edge1" class="edge">
+<title>webclient&#45;&gt;devhub</title>
+<path fill="none" stroke="black" d="M765.38,-60.08C787.09,-87.79 830.09,-142.67 855.3,-174.85"/>
+<polygon fill="black" stroke="black" points="852.68,-177.19 861.6,-182.9 858.19,-172.87 852.68,-177.19"/>
+<text text-anchor="middle" x="826.5" y="-117" font-family="Arial" font-size="10.00">HTTP</text>
 </g>
 <!-- pam1 -->
 <g id="node5" class="node">
@@ -86,26 +93,26 @@
 <text text-anchor="middle" x="183" y="-365.2" font-family="Arial" font-size="11.00">PAM</text>
 </g>
 <!-- pam1&#45;&gt;s3 -->
-<g id="edge4" class="edge">
+<g id="edge5" class="edge">
 <title>pam1&#45;&gt;s3</title>
 <path fill="none" stroke="orange" stroke-width="1.5" d="M210.06,-365.78C301.86,-361.25 600.2,-343.12 682,-296 709.4,-280.22 730.38,-249.96 742.89,-228.03"/>
 <polygon fill="orange" stroke="orange" stroke-width="1.5" points="745.99,-229.65 747.73,-219.2 739.85,-226.29 745.99,-229.65"/>
 <text text-anchor="middle" x="716" y="-288" font-family="Arial" font-size="10.00">IAM Role</text>
 </g>
 <!-- pam1&#45;&gt;webclient -->
-<g id="edge2" class="edge">
+<g id="edge3" class="edge">
 <title>pam1&#45;&gt;webclient</title>
-<path fill="none" stroke="blue" stroke-width="1.5" d="M220.2,-360.01C265.14,-350.44 341.94,-330.4 400,-296 501.71,-235.74 496.19,-180.41 594,-114 627.45,-91.29 669.3,-72.24 700.46,-59.61"/>
+<path fill="none" stroke="blue" stroke-width="1.5" d="M220.2,-360.01C265.14,-350.44 341.94,-330.4 400,-296 501.71,-235.74 495.62,-179.57 594,-114 629.49,-90.34 674.15,-71.11 706.93,-58.65"/>
 <polygon fill="blue" stroke="blue" stroke-width="1.5" points="219.38,-356.61 210.3,-362.06 220.8,-363.46 219.38,-356.61"/>
-<polygon fill="blue" stroke="blue" stroke-width="1.5" points="701.77,-62.85 709.76,-55.9 699.18,-56.35 701.77,-62.85"/>
-<text text-anchor="middle" x="543" y="-198.5" font-family="Arial" font-size="10.00">MQTT</text>
+<polygon fill="blue" stroke="blue" stroke-width="1.5" points="708.55,-61.78 716.7,-55.01 706.1,-55.23 708.55,-61.78"/>
+<text text-anchor="middle" x="541" y="-198.5" font-family="Arial" font-size="10.00">MQTT</text>
 </g>
 <!-- pam1&#45;&gt;webclient_db -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>pam1&#45;&gt;webclient_db</title>
-<path fill="none" stroke="darkgreen" d="M220.27,-365.29C292.46,-360.53 454.48,-342.76 571,-277 628.21,-244.71 622.63,-211.94 674,-171 728.9,-127.25 750.17,-127.31 809,-89 820.36,-81.6 832.59,-73.2 843.4,-65.62"/>
-<polygon fill="darkgreen" stroke="darkgreen" points="220.05,-361.79 210.29,-365.9 220.48,-368.78 220.05,-361.79"/>
-<polygon fill="darkgreen" stroke="darkgreen" points="845.57,-68.38 851.72,-59.76 841.53,-62.66 845.57,-68.38"/>
+<path fill="none" stroke="darkgreen" d="M220.46,-365.11C292.4,-360.06 453.02,-341.82 569,-277 626.89,-244.65 621.49,-211.49 674,-171 731.71,-126.5 754.49,-128.09 816,-89 827.44,-81.73 839.69,-73.36 850.5,-65.77"/>
+<polygon fill="darkgreen" stroke="darkgreen" points="219.85,-361.64 210.1,-365.79 220.31,-368.63 219.85,-361.64"/>
+<polygon fill="darkgreen" stroke="darkgreen" points="852.67,-68.52 858.81,-59.89 848.62,-62.81 852.67,-68.52"/>
 <text text-anchor="middle" x="687.5" y="-198.5" font-family="Arial" font-size="10.00">HTTP</text>
 </g>
 <!-- leaffc1 -->
@@ -115,7 +122,7 @@
 <text text-anchor="middle" x="51" y="-198.2" font-family="Arial" font-size="11.00">LeafFC</text>
 </g>
 <!-- pam1&#45;&gt;leaffc1 -->
-<g id="edge6" class="edge">
+<g id="edge7" class="edge">
 <title>pam1&#45;&gt;leaffc1</title>
 <path fill="none" stroke="purple" stroke-width="1.5" d="M161.72,-341.84C150.24,-328.26 135.84,-311.22 123,-296 115.88,-287.56 113.86,-285.65 107,-277 94.08,-260.72 80.1,-241.98 69.33,-227.31"/>
 <polygon fill="purple" stroke="purple" stroke-width="1.5" points="159.31,-344.41 168.44,-349.79 164.66,-339.89 159.31,-344.41"/>
@@ -131,7 +138,7 @@
 <text text-anchor="middle" x="173" y="-192.2" font-family="Arial" font-size="11.00">DynamoDB</text>
 </g>
 <!-- pam1&#45;&gt;local_db1 -->
-<g id="edge5" class="edge">
+<g id="edge6" class="edge">
 <title>pam1&#45;&gt;local_db1</title>
 <path fill="none" stroke="darkgreen" d="M173.5,-339.99C169.39,-326.89 165.05,-310.81 163,-296 160.11,-275.11 162.64,-251.51 165.88,-233.18"/>
 <polygon fill="darkgreen" stroke="darkgreen" points="170.27,-341.36 176.71,-349.78 176.92,-339.18 170.27,-341.36"/>
@@ -146,7 +153,7 @@
 <text text-anchor="middle" x="251" y="-33.2" font-family="Arial" font-size="11.00">PX4 Autopilot</text>
 </g>
 <!-- pam1&#45;&gt;pixhawk1 -->
-<g id="edge7" class="edge">
+<g id="edge8" class="edge">
 <title>pam1&#45;&gt;pixhawk1</title>
 <path fill="none" stroke="red" stroke-width="1.5" d="M203.44,-341.33C215.85,-324.18 230.67,-300.52 238,-277 260.42,-205.05 257.2,-114.71 253.71,-70.27"/>
 <polygon fill="red" stroke="red" stroke-width="1.5" points="200.4,-339.57 197.23,-349.67 206.01,-343.75 200.4,-339.57"/>
@@ -155,7 +162,7 @@
 <text text-anchor="middle" x="282" y="-193" font-family="Arial" font-size="10.00">MAVFTP</text>
 </g>
 <!-- leaffc1&#45;&gt;pixhawk1 -->
-<g id="edge8" class="edge">
+<g id="edge9" class="edge">
 <title>leaffc1&#45;&gt;pixhawk1</title>
 <path fill="none" stroke="red" stroke-width="1.5" d="M80.71,-176.68C118.48,-147.03 183.31,-96.14 221.14,-66.44"/>
 <polygon fill="red" stroke="red" stroke-width="1.5" points="78.49,-173.97 72.78,-182.9 82.81,-179.48 78.49,-173.97"/>
@@ -169,26 +176,26 @@
 <text text-anchor="middle" x="1290" y="-365.2" font-family="Arial" font-size="11.00">PAM</text>
 </g>
 <!-- pam2&#45;&gt;s3 -->
-<g id="edge11" class="edge">
+<g id="edge12" class="edge">
 <title>pam2&#45;&gt;s3</title>
 <path fill="none" stroke="orange" stroke-width="1.5" d="M1262.88,-364.26C1174.34,-354.95 895,-322.55 818,-277 798.13,-265.24 781.8,-244.66 770.9,-228.03"/>
 <polygon fill="orange" stroke="orange" stroke-width="1.5" points="773.69,-225.89 765.41,-219.27 767.76,-229.61 773.69,-225.89"/>
 <text text-anchor="middle" x="883" y="-288" font-family="Arial" font-size="10.00">IAM Role</text>
 </g>
 <!-- pam2&#45;&gt;webclient -->
-<g id="edge9" class="edge">
+<g id="edge10" class="edge">
 <title>pam2&#45;&gt;webclient</title>
-<path fill="none" stroke="blue" stroke-width="1.5" d="M1253.18,-356.2C1209.11,-342.21 1134.22,-315.05 1078,-277 993.41,-219.75 1005.14,-163.87 916,-114 873.76,-90.37 854.12,-108.9 810,-89 796.95,-83.11 783.81,-74.46 772.8,-66.24"/>
-<polygon fill="blue" stroke="blue" stroke-width="1.5" points="1252.31,-359.59 1262.9,-359.22 1254.39,-352.91 1252.31,-359.59"/>
-<polygon fill="blue" stroke="blue" stroke-width="1.5" points="774.89,-63.43 764.83,-60.09 770.61,-68.97 774.89,-63.43"/>
+<path fill="none" stroke="blue" stroke-width="1.5" d="M1253.12,-356.29C1208.99,-342.39 1134.04,-315.31 1078,-277 994.45,-219.89 1006.87,-164.21 919,-114 878.47,-90.84 859.46,-108.38 817,-89 803.97,-83.05 790.84,-74.39 779.83,-66.18"/>
+<polygon fill="blue" stroke="blue" stroke-width="1.5" points="1252.26,-359.68 1262.85,-359.29 1254.33,-353 1252.26,-359.68"/>
+<polygon fill="blue" stroke="blue" stroke-width="1.5" points="781.91,-63.37 771.86,-60.04 777.64,-68.91 781.91,-63.37"/>
 <text text-anchor="middle" x="1092" y="-198.5" font-family="Arial" font-size="10.00">MQTT</text>
 </g>
 <!-- pam2&#45;&gt;webclient_db -->
-<g id="edge10" class="edge">
+<g id="edge11" class="edge">
 <title>pam2&#45;&gt;webclient_db</title>
-<path fill="none" stroke="darkgreen" d="M1261.97,-343.37C1241.75,-325.83 1214.21,-300.9 1192,-277 1129.11,-209.32 1137.59,-168.52 1063,-114 1020.16,-82.68 961.85,-63.52 921.59,-53.12"/>
+<path fill="none" stroke="darkgreen" d="M1261.97,-343.37C1241.75,-325.83 1214.21,-300.9 1192,-277 1129.11,-209.32 1137.24,-168.99 1063,-114 1022.42,-83.94 967.44,-64.76 928.76,-54.02"/>
 <polygon fill="darkgreen" stroke="darkgreen" points="1259.74,-346.07 1269.61,-349.95 1264.31,-340.77 1259.74,-346.07"/>
-<polygon fill="darkgreen" stroke="darkgreen" points="922.31,-49.69 911.76,-50.66 920.61,-56.48 922.31,-49.69"/>
+<polygon fill="darkgreen" stroke="darkgreen" points="929.37,-50.56 918.8,-51.34 927.55,-57.31 929.37,-50.56"/>
 <text text-anchor="middle" x="1205.5" y="-198.5" font-family="Arial" font-size="10.00">HTTP</text>
 </g>
 <!-- leaffc2 -->
@@ -198,7 +205,7 @@
 <text text-anchor="middle" x="1275" y="-198.2" font-family="Arial" font-size="11.00">LeafFC</text>
 </g>
 <!-- pam2&#45;&gt;leaffc2 -->
-<g id="edge13" class="edge">
+<g id="edge14" class="edge">
 <title>pam2&#45;&gt;leaffc2</title>
 <path fill="none" stroke="purple" stroke-width="1.5" d="M1287.52,-339.74C1284.74,-309.13 1280.25,-259.73 1277.47,-229.16"/>
 <polygon fill="purple" stroke="purple" stroke-width="1.5" points="1284.06,-340.32 1288.45,-349.96 1291.03,-339.69 1284.06,-340.32"/>
@@ -214,7 +221,7 @@
 <text text-anchor="middle" x="1397" y="-192.2" font-family="Arial" font-size="11.00">DynamoDB</text>
 </g>
 <!-- pam2&#45;&gt;local_db2 -->
-<g id="edge12" class="edge">
+<g id="edge13" class="edge">
 <title>pam2&#45;&gt;local_db2</title>
 <path fill="none" stroke="darkgreen" d="M1306.58,-341.44C1325.78,-311.82 1357.38,-263.1 1377.68,-231.8"/>
 <polygon fill="darkgreen" stroke="darkgreen" points="1303.55,-339.67 1301.05,-349.96 1309.43,-343.48 1303.55,-339.67"/>
@@ -229,7 +236,7 @@
 <text text-anchor="middle" x="1475" y="-33.2" font-family="Arial" font-size="11.00">PX4 Autopilot</text>
 </g>
 <!-- pam2&#45;&gt;pixhawk2 -->
-<g id="edge14" class="edge">
+<g id="edge15" class="edge">
 <title>pam2&#45;&gt;pixhawk2</title>
 <path fill="none" stroke="red" stroke-width="1.5" d="M1327.21,-359.15C1368.23,-348.33 1432.46,-324.52 1463,-277 1504.42,-212.55 1491.39,-116.29 1481.61,-69.9"/>
 <polygon fill="red" stroke="red" stroke-width="1.5" points="1326.17,-355.8 1317.32,-361.63 1327.87,-362.59 1326.17,-355.8"/>
@@ -238,7 +245,7 @@
 <text text-anchor="middle" x="1517" y="-193" font-family="Arial" font-size="10.00">MAVFTP</text>
 </g>
 <!-- leaffc2&#45;&gt;pixhawk2 -->
-<g id="edge15" class="edge">
+<g id="edge16" class="edge">
 <title>leaffc2&#45;&gt;pixhawk2</title>
 <path fill="none" stroke="red" stroke-width="1.5" d="M1304.71,-176.68C1342.48,-147.03 1407.31,-96.14 1445.14,-66.44"/>
 <polygon fill="red" stroke="red" stroke-width="1.5" points="1302.49,-173.97 1296.78,-182.9 1306.81,-179.48 1302.49,-173.97"/>
