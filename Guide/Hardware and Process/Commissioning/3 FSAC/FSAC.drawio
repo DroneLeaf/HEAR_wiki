@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
   <diagram name="Ready-to-Fly Process" id="RTF-Process">
-    <mxGraphModel dx="3001" dy="1131" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="2188" dy="732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,16 +13,10 @@
           <mxGeometry x="-1040" y="450" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="mLs2Mze-VJqQUgzR3Upy-1" value="Revision History" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="-823" y="45.14" width="193" height="120" as="geometry" />
+          <mxGeometry x="-823" y="45.14" width="193" height="60" as="geometry" />
         </mxCell>
         <mxCell id="mLs2Mze-VJqQUgzR3Upy-2" value="Document Creation - July 30 2025" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="mLs2Mze-VJqQUgzR3Upy-1" vertex="1">
           <mxGeometry y="30" width="193" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="mLs2Mze-VJqQUgzR3Upy-3" value="Item 2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="mLs2Mze-VJqQUgzR3Upy-1" vertex="1">
-          <mxGeometry y="60" width="193" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="mLs2Mze-VJqQUgzR3Upy-4" value="Item 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="mLs2Mze-VJqQUgzR3Upy-1" vertex="1">
-          <mxGeometry y="90" width="193" height="30" as="geometry" />
         </mxCell>
         <mxCell id="mLs2Mze-VJqQUgzR3Upy-5" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Scope&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 12px; font-weight: normal;&quot;&gt;This document details the FSAC process. There are three paths whithin the FSAC process depending on the paltform to be tuned.&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="-1040" y="40" width="180" height="230" as="geometry" />
