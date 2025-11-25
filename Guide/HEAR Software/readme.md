@@ -5,6 +5,23 @@ This documentation is the **master entry point** for all things DroneLeaf.
 It is primarily targeted at **developers** who want to contribute to the DroneLeaf software stack.
 
 ## Anatomy of the software stack
+Let us first introduce the major building blocks of the DroneLeaf software stack:
+
+- **LeafFC**: DroneLeaf's ROS-based flight controller software that interfaces with the PX4 Autopilot to manage drone operations and sensor data. It replaces the traditional PX4 flight controller functionalities with DroneLeaf-specific features and integrations.
+- **PX4 Autopilot**: A stripped down and customized version of the open-source PX4 flight control software.  
+- **QGroundControl (QGC)**: A DroneLeaf customized version of the known open-source QGroudnControll software for managing and monitoring drones. The terms LeafMC and QGC are used interchangeably in the documentation.
+
+- **Petal App Manager**: A Python-based application that manages additional functionalities and applications (petals) on the DroneLeaf edge device, enhancing its capabilities during flight operations. Get more info at: https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html 
+- **leafSDK [SDK]**: With focus on drones mission, it refers to a set of software development tools and libraries that allow developers to create applications and functionalities that interact with the drone's flight controller and other components. 
+- **Mavlink-router**: A service that routes MAVLink messages between different endpoints, such as the flight controller, ground control station, and other components. It ensures efficient communication within the DroneLeaf software stack.
+- **DynamoDB**: A NoSQL database service provided by AWS, used by DroneLeaf for storing various data related to drone operations, configurations, and telemetry.
+- **Developer machine**: The PC or laptop used by developers to write, test, and debug code. It typically runs Ubuntu 20.04 LTS for DroneLeaf development.
+- **Bench**: A development mode where a physical Pixhawk hardware is used instead of SITL. It allows for testing with real hardware while still being in a controlled environment.
+- **SITL**: Software In The Loop. A simulation mode where the drone's flight controller software runs in a simulated environment, allowing for safe and convenient testing without physical hardware.
+- **Edge device**: The onboard computer installed on the drone that runs the full DroneLeaf software stack during actual flight operations. Usually a Jetson or Raspberry Pi.
+- **Commissioning**: The process of preparing a drone for operation, which includes provisioning the edge device, configuring settings, licensing, and connecting it to the DroneLeaf cloud services. 
+- **Licensing**: The process of obtaining and managing licenses for using DroneLeaf software and services. Reffer to the main website for more info: https://droneleaf.io/pricing
+
 
 There are two primary stages of operation:
 1. **Commissioning** – a web-driven process, coordinated with the edge device.
@@ -28,21 +45,6 @@ The Development SITL setup anatomy is given by the following diagram:
 And finally, the Development Bench setup anatomy is given by the following diagram:
 <img src="./Media/anatomy_development_bench.svg" alt="DroneLeaf Software Stack Anatomy">
 <!-- ToDo: include PX4 and dynamodb in commissioning stage -->
-
-### Definitions of used terms
-- **PX4 Autopilot**: A stripped down and customized version of the open-source PX4 flight control software.  
-- **QGroundControl (QGC)**: A DroneLeaf customized version of the known open-source QGroudnControll software for managing and monitoring drones. The terms LeafMC and QGC are used interchangeably in the documentation.
-- **LeafFC**: DroneLeaf's ROS-based flight controller software that interfaces with the PX4 Autopilot to manage drone operations and sensor data. It replaces the traditional PX4 flight controller functionalities with DroneLeaf-specific features and integrations.
-- **Petal App Manager**: A Python-based application that manages additional functionalities and applications (petals) on the DroneLeaf edge device, enhancing its capabilities during flight operations. Get more info at: https://droneleaf.github.io/petal-app-manager/getting_started/quickstart.html 
-- **leafSDK [SDK]**: With focus on drones mission, it refers to a set of software development tools and libraries that allow developers to create applications and functionalities that interact with the drone's flight controller and other components. 
-- **Mavlink-router**: A service that routes MAVLink messages between different endpoints, such as the flight controller, ground control station, and other components. It ensures efficient communication within the DroneLeaf software stack.
-- **Dynamodb**: A NoSQL database service provided by AWS, used by DroneLeaf for storing various data related to drone operations, configurations, and telemetry.
-- **Developer machine**: The PC or laptop used by developers to write, test, and debug code. It typically runs Ubuntu 20.04 LTS for DroneLeaf development.
-- **Bench**: A development mode where a physical Pixhawk hardware is used instead of SITL. It allows for testing with real hardware while still being in a controlled environment.
-- **SITL**: Software In The Loop. A simulation mode where the drone's flight controller software runs in a simulated environment, allowing for safe and convenient testing without physical hardware.
-- **Edge device**: The onboard computer installed on the drone that runs the full DroneLeaf software stack during actual flight operations. Usually a Jetson or Raspberry Pi.
-- **Commissioning**: The process of preparing a drone for operation, which includes provisioning the edge device, configuring settings, licensing, and connecting it to the DroneLeaf cloud services. 
-- **Licensing**: The process of obtaining and managing licenses for using DroneLeaf software and services. Reffer to the main website for more info: https://droneleaf.io/pricing
 
 
 ### Software stack layout
