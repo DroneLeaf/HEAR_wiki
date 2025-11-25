@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
   <diagram name="Ready-to-Fly Process" id="RTF-Process">
-    <mxGraphModel dx="3001" dy="1131" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="3137" dy="1421" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -299,7 +299,7 @@
         <mxCell id="42Uh_s67vXzzx0qO9fMh-113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="42Uh_s67vXzzx0qO9fMh-114" target="42Uh_s67vXzzx0qO9fMh-119" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="42Uh_s67vXzzx0qO9fMh-114" value="Refine MRFT amplitude to minimize oscillations amplitude based on CTW" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="42Uh_s67vXzzx0qO9fMh-114" value="Refine MRFT amplitude to minimize oscillations amplitude" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-650" y="1720" width="180" height="70" as="geometry" />
         </mxCell>
         <mxCell id="42Uh_s67vXzzx0qO9fMh-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="42Uh_s67vXzzx0qO9fMh-119" target="42Uh_s67vXzzx0qO9fMh-75" edge="1">
@@ -326,7 +326,7 @@
         <mxCell id="42Uh_s67vXzzx0qO9fMh-125" value="Take-off&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-310" y="440" width="90" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="1Y_QxRR68OOjBjmYuC9b-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="42Uh_s67vXzzx0qO9fMh-126" target="42Uh_s67vXzzx0qO9fMh-128" edge="1">
+        <mxCell id="1Y_QxRR68OOjBjmYuC9b-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="42Uh_s67vXzzx0qO9fMh-126" target="42Uh_s67vXzzx0qO9fMh-128">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="42Uh_s67vXzzx0qO9fMh-126" value="&amp;nbsp;The drone will begin oscillating immediately to tune the Roll, Pitch, Z and then the X and Y.&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -341,13 +341,13 @@
         <mxCell id="42Uh_s67vXzzx0qO9fMh-129" value="Apply FSAC. Get Initial Tuning" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="-168.75" y="390" width="187.5" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1Y_QxRR68OOjBjmYuC9b-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Ub7T0pqwvzMlkmULe2ej-1" target="Ub7T0pqwvzMlkmULe2ej-11" edge="1">
+        <mxCell id="1Y_QxRR68OOjBjmYuC9b-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Ub7T0pqwvzMlkmULe2ej-1" target="Ub7T0pqwvzMlkmULe2ej-11">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Ub7T0pqwvzMlkmULe2ej-1" value="&lt;div&gt;Land&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="270" y="440" width="90" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Ub7T0pqwvzMlkmULe2ej-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
+        <mxCell id="Ub7T0pqwvzMlkmULe2ej-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Ub7T0pqwvzMlkmULe2ej-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="869.9999999999995" y="479.9999999999998" as="targetPoint" />
           </mxGeometry>
@@ -364,7 +364,7 @@
         <mxCell id="Ub7T0pqwvzMlkmULe2ej-17" value="&lt;b&gt;Important to Note:&lt;br&gt;&lt;/b&gt;&lt;div&gt;FSAC: full battery&lt;br&gt;Bias: no wind, oscillations&lt;br&gt;Tune with updated CTW from hover (BIAS Calibration)&lt;br&gt;Never tune with payload and fly with less payload&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-1040" y="560" width="250" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="1Y_QxRR68OOjBjmYuC9b-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="42Uh_s67vXzzx0qO9fMh-126" target="42Uh_s67vXzzx0qO9fMh-126" edge="1">
+        <mxCell id="1Y_QxRR68OOjBjmYuC9b-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="42Uh_s67vXzzx0qO9fMh-126" target="42Uh_s67vXzzx0qO9fMh-126">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
