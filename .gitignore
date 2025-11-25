@@ -1,1 +1,10 @@
 *.bkp
+.vitepress/dist/*
+.vitepress/cache/*
+.DS_Store
+node_modules/
+dist/
+build/  
+api-examples.md
+markdown-examples.md
+package-lock.json

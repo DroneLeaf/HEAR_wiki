@@ -1,6 +1,6 @@
 # Provisioning steps — First Run (Bench or SITL)
 
-> Note (Nov 2025): provisioning is currently supported only on the bench environment. After provisioning a bench device you can switch to SITL — see the switching guide below.[Moving_between_SITL_PX4_Autopilot_and_physical_pixhauk.md](./Moving_between_SITL_PX4_Autopilot_and_physical_pixhawk.md)
+> Note (Nov 2025): provisioning is currently supported only on the bench environment. After provisioning a bench device you can switch to SITL — see the switching guide below.[switching_profile_SITL_Bench.md](./switching_profiles_SITL_Bench.md)
 
 Follow these steps to provision a device locally and connect it with Fly (https://fly.droneleaf.io).
 
@@ -59,8 +59,6 @@ Follow these steps to provision a device locally and connect it with Fly (https:
 
 13. (Optional) Switch to SITL
 
-    If you provisioned a bench device and want to switch to SITL, follow the switching guide:
-
-    [./Moving_between_SITL_PX4_Autopilot_and_physical_pixhawk.md](./Moving_between_SITL_PX4_Autopilot_and_physical_pixhawk.md)
+    If you provisioned a bench device and want to switch to SITL, follow the switching guide:[switching_profile_SITL_Bench.md](./switching_profiles_SITL_Bench.md)
 
 If anything fails during provisioning, capture logs from the local UI and mavlink-router and consult the repository troubleshooting docs.
