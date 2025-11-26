@@ -1,0 +1,70 @@
+sequenceDiagram
+    autonumber
+
+    participant Dashboard as Controller Dashboard
+    participant QGC as QGroundControl
+    participant FC as Flight Controller
+
+    %% --- Pre-flight PX4 Firmware Validation ---
+    Dashboard->FC: Request PX4 firmware version
+    FC-->Dashboard: Current firmware version
+    Dashboard->Dashboard: Validate firmware compatibility
+    Dashboard-->Dashboard: If not compatible → instruct client to update firmware
+
+    %% --- Start Process ---
+    Dashboard->QGC: Send MRFT amplitude and initial tuning config (CTW-based)
+    QGC->FC: Upload initial MRFT parameters
+    FC-->QGC: Ack MRFT config loaded
+
+    %% --- Gyro & Yaw Rate Tuning ---
+    Dashboard->QGC: Request gyro & yaw-rate tuning sequence
+    QGC->FC: Command takeoff (manual or assisted)
+    FC-->QGC: Takeoff status & altitude feedback
+
+    Note right of FC: During initial takeoff<br/>• No wind<br/>• Smooth input<br/>• No payload changes<br/>• MRFT triggers stable oscillations<br/>• FC computes updated PID values
+
+    FC-->QGC: Publish gyro/yaw MRFT data
+    QGC-->Dashboard: Forward live tuning telemetry
+    Dashboard->Dashboard: Visualize tuning oscillations & stability
+
+    %% --- Switch to In-flight State ---
+    QGC->FC: Wait for stable altitude & attitude
+    FC-->QGC: State: In-flight steady hover
+
+    %% --- Begin X & Y Axis Tuning ---
+    Dashboard->QGC: Initiate X/Y axis tuning
+    QGC->FC: Command MRFT activation (X/Y)
+    FC-->QGC: MRFT active confirmation
+
+    FC-->QGC: MRFT oscillation data (X/Y)
+    QGC-->Dashboard: Live tuning data stream
+
+    Dashboard->Dashboard: Validate pitch/roll oscillation safety
+
+    %% --- Safety and Preflight Checks ---
+    Dashboard->FC: Request sensor status, CPU load, failsafe state
+    FC-->Dashboard: Health report OK
+    Dashboard->QGC: Authorize tuning continuation
+
+    %% --- Flight & Automatic Manoeuvres for Tuning ---
+    QGC->FC: Command pre-configured auto-maneuvers for MRFT
+    FC-->QGC: Execution feedback (attitude, velocity)
+    QGC-->Dashboard: Flight data stream
+    Dashboard->Dashboard: Monitor and analyze stability
+
+    %% --- Drone Has Been Tuned ---
+    FC-->QGC: MRFT tuning complete
+    QGC-->Dashboard: Notify tuning completion
+
+    %% --- Uploading New PID Parameters ---
+    Dashboard->QGC: Send final approved PID values
+    QGC->FC: Upload PID parameters
+    FC-->QGC: Ack parameters stored
+    QGC-->Dashboard: Confirm tuning saved
+
+    %% --- System Reset & Finalization ---
+    Dashboard->QGC: Request MRFT disable, return to normal mode
+    QGC->FC: Disable MRFT / set normal flight mode
+    FC-->QGC: Mode set confirmation
+
+    Dashboard->Dashboard: Mark drone as “tuned & ready”
