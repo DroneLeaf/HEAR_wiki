@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
   <diagram name="Page-1" id="LQy0KR4nQ94TkVr_qtjv">
-    <mxGraphModel dx="750" dy="1355" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="564" dy="1138" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -17,7 +17,7 @@
           <mxGeometry x="400" y="460" width="330" height="380" as="geometry" />
         </mxCell>
         <mxCell id="j1YeIe9HBLUR4maC8R7j-1" value="List of Flight Modes" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#60a917;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
-          <mxGeometry x="45" y="-500" width="310" height="690" as="geometry" />
+          <mxGeometry x="45" y="-500" width="310" height="766" as="geometry" />
         </mxCell>
         <mxCell id="j1YeIe9HBLUR4maC8R7j-2" value="&lt;b&gt;RC Stabilized:&lt;/b&gt;&amp;nbsp;The pilot commands roll, pitch, yaw rate. A sub-mode adds support to rate mode in altitude." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-1" vertex="1">
           <mxGeometry y="26" width="310" height="54" as="geometry" />
@@ -28,7 +28,7 @@
         <mxCell id="j1YeIe9HBLUR4maC8R7j-4" value="&lt;b&gt;Waypoint Mission:&lt;/b&gt; GPS waypoint mission based on QGC" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-1" vertex="1">
           <mxGeometry y="130" width="310" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="2NrssrZMMi5ZJEbW5OTB-6" value="&lt;b&gt;Learning&amp;nbsp;&lt;/b&gt;&lt;b&gt;Roll/Pitch&lt;/b&gt;&lt;b&gt;:&lt;/b&gt;&amp;nbsp;Tuning of roll, pitch. &lt;br&gt;RC throttle goes directly to motors. &lt;br&gt;RC roll and pitch adds to roll and pitch output during learning. &lt;br&gt;&lt;div&gt;Steady-state detector activated by RC Multifunctional Switch A.&lt;/div&gt;&lt;div&gt;Real-time tuning support.&lt;/div&gt;&lt;div&gt;Automatically switches to RC Stabilized once tuned.&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="j1YeIe9HBLUR4maC8R7j-1">
+        <mxCell id="2NrssrZMMi5ZJEbW5OTB-6" value="&lt;b&gt;Learning&amp;nbsp;&lt;/b&gt;&lt;b&gt;Roll/Pitch&lt;/b&gt;&lt;b&gt;:&lt;/b&gt;&amp;nbsp;Tuning of roll, pitch. &lt;br&gt;RC throttle goes directly to motors. &lt;br&gt;RC roll and pitch adds to roll and pitch output during learning. &lt;br&gt;&lt;div&gt;Steady-state detector activated by RC Multifunctional Switch A.&lt;/div&gt;&lt;div&gt;Real-time tuning support.&lt;/div&gt;&lt;div&gt;Automatically switches to RC Stabilized once tuned.&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-1" vertex="1">
           <mxGeometry y="180" width="310" height="130" as="geometry" />
         </mxCell>
         <mxCell id="j1YeIe9HBLUR4maC8R7j-5" value="&lt;b&gt;Learning Roll/Pitch/Altitude:&lt;/b&gt;&amp;nbsp;Tuning of roll, pitch, and altitude. &lt;br&gt;RC throttle decides CTW during learning. &lt;br&gt;RC roll and pitch adds to roll and pitch output during learning. &lt;br&gt;Automatically switches to RC Stabilize once done.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Steady-state detector activated after crossing predefined altitude&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-1" vertex="1">
@@ -37,11 +37,14 @@
         <mxCell id="j1YeIe9HBLUR4maC8R7j-6" value="&lt;b&gt;Learning X/Y:&lt;/b&gt; Tuning of lateral x and y loops.&lt;br&gt;Requires pre-tuned Roll/Pitch/Altitude.&lt;br&gt;Completely autonomous." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-1" vertex="1">
           <mxGeometry y="460" width="310" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="2NrssrZMMi5ZJEbW5OTB-8" value="&lt;b&gt;Learning Selective X/Y/Altitude:&lt;/b&gt; Tuning of lateral x and y, and altitude loops. &lt;br&gt;RC Stabilize operation equivalent&lt;div&gt;Multifunctional Switch A starts/stops MRFT&lt;/div&gt;&lt;div&gt;&lt;div&gt;Multifunctional Switch B selects X/Y/Altitude loop&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="j1YeIe9HBLUR4maC8R7j-1">
+        <mxCell id="2NrssrZMMi5ZJEbW5OTB-8" value="&lt;b&gt;Learning Selective X/Y/Altitude:&lt;/b&gt; Tuning of lateral x and y, and altitude loops. &lt;br&gt;RC Stabilize operation equivalent&lt;div&gt;Multifunctional Switch A starts/stops MRFT&lt;/div&gt;&lt;div&gt;&lt;div&gt;Multifunctional Switch B selects X/Y/Altitude loop&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-1" vertex="1">
           <mxGeometry y="520" width="310" height="94" as="geometry" />
         </mxCell>
-        <mxCell id="j1YeIe9HBLUR4maC8R7j-7" value="&lt;b&gt;Learning Full:&lt;/b&gt;&amp;nbsp;Tuning of roll, pitch, altitude, X, Y.&lt;br&gt;RC throttle decides CTW during learning.&lt;br&gt;Automatically switches to RC Position once done." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-1" vertex="1">
+        <mxCell id="j1YeIe9HBLUR4maC8R7j-7" value="&lt;b&gt;Learning Full Automated:&lt;/b&gt;&amp;nbsp;Tuning of roll, pitch, altitude, X, Y.&lt;br&gt;Completly autonomous&lt;div&gt;Automatically switches to RC Position once done.&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-1" vertex="1">
           <mxGeometry y="614" width="310" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="aixIg1c8l-x5lPbJkFXQ-1" value="&lt;b&gt;Learning Full:&lt;/b&gt;&amp;nbsp;Tuning of roll, pitch, altitude, X, Y.&lt;br&gt;RC throttle decides CTW during learning.&lt;br&gt;Automatically switches to RC Position once done." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="j1YeIe9HBLUR4maC8R7j-1">
+          <mxGeometry y="690" width="310" height="76" as="geometry" />
         </mxCell>
         <mxCell id="j1YeIe9HBLUR4maC8R7j-8" value="Pre-idling checks, RC Stabilized&amp;nbsp;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;" parent="1" vertex="1">
           <mxGeometry x="415" y="40" width="300" height="78" as="geometry" />
@@ -109,13 +112,13 @@
         <mxCell id="j1YeIe9HBLUR4maC8R7j-52" value="Position measurements are valid**" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-44" vertex="1">
           <mxGeometry y="50" width="270" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="2NrssrZMMi5ZJEbW5OTB-1" value="Connection to tuning server is available*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="j1YeIe9HBLUR4maC8R7j-44">
+        <mxCell id="2NrssrZMMi5ZJEbW5OTB-1" value="Connection to tuning server is available*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-44" vertex="1">
           <mxGeometry y="74" width="270" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="2NrssrZMMi5ZJEbW5OTB-2" value="RC Available" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="j1YeIe9HBLUR4maC8R7j-44">
+        <mxCell id="2NrssrZMMi5ZJEbW5OTB-2" value="RC Available" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-44" vertex="1">
           <mxGeometry y="98" width="270" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="2NrssrZMMi5ZJEbW5OTB-4" value="Throttle stick in the low position" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="j1YeIe9HBLUR4maC8R7j-44">
+        <mxCell id="2NrssrZMMi5ZJEbW5OTB-4" value="Throttle stick in the low position" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="j1YeIe9HBLUR4maC8R7j-44" vertex="1">
           <mxGeometry y="122" width="270" height="24" as="geometry" />
         </mxCell>
         <mxCell id="j1YeIe9HBLUR4maC8R7j-46" value="* Inner loops are critical. A fallback mechanism&amp;nbsp;&lt;div&gt;based on tuning rules must be in place.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">

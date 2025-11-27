@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="4074" dy="2500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1299" dy="603" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -34,10 +34,10 @@
         <mxCell id="Ckt3LfJepoApB-LYmUm_-40" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="Ckt3LfJepoApB-LYmUm_-39">
           <mxGeometry x="45" y="80" width="10" height="910" as="geometry" />
         </mxCell>
-        <mxCell id="Ckt3LfJepoApB-LYmUm_-41" value="Full Learning Mode (Pitch-X/ Roll-Y/ Z)" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=24;" vertex="1" parent="1">
-          <mxGeometry x="460" y="40" width="440" height="40" as="geometry" />
+        <mxCell id="Ckt3LfJepoApB-LYmUm_-41" value="Full Learning Mode" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="460" y="40" width="230" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Ckt3LfJepoApB-LYmUm_-42" value="Send &quot;X/Y Learning&quot; Mode" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1">
+        <mxCell id="Ckt3LfJepoApB-LYmUm_-42" value="Send &quot;FullLearning&quot; Mode" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="780" y="210" />
@@ -160,7 +160,7 @@
           <mxGeometry x="703" y="491" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Ckt3LfJepoApB-LYmUm_-63" value="Periodic Cloud Connection Check&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="413" y="200" width="265" height="500" as="geometry" />
+          <mxGeometry x="413" y="200" width="265" height="380" as="geometry" />
         </mxCell>
         <mxCell id="Ckt3LfJepoApB-LYmUm_-64" value="&lt;span style=&quot;color: rgb(255, 255, 255); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(27, 29, 30); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;Refer to &quot;Arming Sequence for RC modes&quot; in &quot;arming_logic_sequence&quot;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="700" y="310" width="410" height="40" as="geometry" />

@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="-47" dy="1837" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="-96" dy="1450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -184,7 +184,7 @@
           <mxGeometry x="1673" y="-599" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="sdNovJjGVOmB6SQocOOm-51" value="Periodic Cloud Connection Check&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1383" y="-890" width="265" height="500" as="geometry" />
+          <mxGeometry x="1383" y="-890" width="265" height="380" as="geometry" />
         </mxCell>
         <mxCell id="sdNovJjGVOmB6SQocOOm-54" value="&lt;span style=&quot;color: rgb(255, 255, 255); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(27, 29, 30); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;Refer to &quot;Arming Sequence for RC modes&quot; in &quot;arming_logic_sequence&quot;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1670" y="-780" width="410" height="40" as="geometry" />
@@ -203,6 +203,9 @@
         </mxCell>
         <mxCell id="kRMDl7XcFNFle20dEVk2-1" value="&lt;i&gt;X/Y cycles are sent independently&lt;/i&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="1435.5" y="-309.5" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kRMDl7XcFNFle20dEVk2-3" value="Startup Checks (Refer to &quot;List of Flight Modes&quot;)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1668" y="-870" width="280" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
