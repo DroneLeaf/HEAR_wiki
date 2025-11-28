@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="-96" dy="1450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="101" dy="1600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -201,11 +201,14 @@
         <mxCell id="sdNovJjGVOmB6SQocOOm-24" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
           <mxGeometry x="1658" y="-520" width="10" height="306" as="geometry" />
         </mxCell>
-        <mxCell id="kRMDl7XcFNFle20dEVk2-1" value="&lt;i&gt;X/Y cycles are sent independently&lt;/i&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+        <mxCell id="kRMDl7XcFNFle20dEVk2-1" value="&lt;i&gt;X/Y cycles are sent independently&lt;/i&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;" parent="1" vertex="1">
           <mxGeometry x="1435.5" y="-309.5" width="160" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="kRMDl7XcFNFle20dEVk2-3" value="Startup Checks (Refer to &quot;List of Flight Modes&quot;)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="kRMDl7XcFNFle20dEVk2-3" value="Startup Checks (Refer to &quot;List of Flight Modes&quot;)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="1668" y="-870" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SXr8XK13Xux79UzC7OpL-1" value="Fallback mechanism&amp;nbsp;&lt;div&gt;refer to Common&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1673" y="-279" width="140" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
