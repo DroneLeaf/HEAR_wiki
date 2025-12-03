@@ -1,20 +1,20 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="652" dy="417" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1056" dy="648" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Ckt3LfJepoApB-LYmUm_-35" value="LeafFC" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
-          <mxGeometry x="640" y="120" width="100" height="930" as="geometry" />
+          <mxGeometry x="640" y="120" width="100" height="1040" as="geometry" />
         </mxCell>
         <mxCell id="Ckt3LfJepoApB-LYmUm_-38" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="Ckt3LfJepoApB-LYmUm_-35" vertex="1">
           <mxGeometry x="49" y="930" width="10" height="50" as="geometry" />
         </mxCell>
         <mxCell id="Ckt3LfJepoApB-LYmUm_-39" value="QGC" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
-          <mxGeometry x="1190" y="120" width="100" height="930" as="geometry" />
+          <mxGeometry x="1190" y="120" width="100" height="1040" as="geometry" />
         </mxCell>
         <mxCell id="Ckt3LfJepoApB-LYmUm_-40" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="Ckt3LfJepoApB-LYmUm_-39" vertex="1">
-          <mxGeometry x="45" y="80" width="10" height="820" as="geometry" />
+          <mxGeometry x="45" y="80" width="10" height="900" as="geometry" />
         </mxCell>
         <mxCell id="Ckt3LfJepoApB-LYmUm_-41" value="Selective X-Y-Altitude Learning Mode" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=24;" parent="1" vertex="1">
           <mxGeometry x="640" y="40" width="420" height="40" as="geometry" />
@@ -46,7 +46,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Ckt3LfJepoApB-LYmUm_-46" value="Lambda" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
-          <mxGeometry x="350" y="120" width="100" height="930" as="geometry" />
+          <mxGeometry x="350" y="120" width="100" height="1040" as="geometry" />
         </mxCell>
         <mxCell id="Ckt3LfJepoApB-LYmUm_-47" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="Ckt3LfJepoApB-LYmUm_-46" vertex="1">
           <mxGeometry x="45" y="747" width="10" height="114" as="geometry" />
@@ -133,13 +133,13 @@
           <mxGeometry x="450.5" y="878.5" width="190" height="20" as="geometry" />
         </mxCell>
         <mxCell id="y1NoyGrrLdV7kcF8U9mv-1" value="&lt;div&gt;RC&lt;/div&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
-          <mxGeometry x="1410" y="120" width="100" height="930" as="geometry" />
+          <mxGeometry x="1410" y="121" width="100" height="1039" as="geometry" />
         </mxCell>
         <mxCell id="y1NoyGrrLdV7kcF8U9mv-2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="y1NoyGrrLdV7kcF8U9mv-1" vertex="1">
           <mxGeometry x="45" y="490" width="10" height="20" as="geometry" />
         </mxCell>
         <mxCell id="y1NoyGrrLdV7kcF8U9mv-15" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="y1NoyGrrLdV7kcF8U9mv-1" vertex="1">
-          <mxGeometry x="46" y="667" width="10" height="20" as="geometry" />
+          <mxGeometry x="46" y="685" width="10" height="20" as="geometry" />
         </mxCell>
         <mxCell id="y1NoyGrrLdV7kcF8U9mv-3" value="Notify &quot;Selective Learning MRFT&quot;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -202,16 +202,17 @@
             <mxPoint x="145" y="917.54" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="y1NoyGrrLdV7kcF8U9mv-12" value="Notify&amp;nbsp;&quot;Switched to RC Position&quot;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="y1NoyGrrLdV7kcF8U9mv-12" value="Notify&amp;nbsp;&quot;Switched to RC Stabilize&quot;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry x="0.0006" relative="1" as="geometry">
             <mxPoint x="1236" y="996" as="targetPoint" />
             <Array as="points">
               <mxPoint x="781" y="996" />
             </Array>
             <mxPoint x="697" y="996" as="sourcePoint" />
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ckt3LfJepoApB-LYmUm_-36" value="Land" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" edge="1">
+        <mxCell id="Ckt3LfJepoApB-LYmUm_-36" value="Disarm" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1235" y="1056" as="sourcePoint" />
             <Array as="points">
@@ -220,7 +221,7 @@
             <mxPoint x="700" y="1056" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ckt3LfJepoApB-LYmUm_-37" value="Notify &quot;Landing&quot;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" edge="1">
+        <mxCell id="Ckt3LfJepoApB-LYmUm_-37" value="Notify &quot;Disarmed&quot;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1234" y="1093.5" as="targetPoint" />
             <Array as="points">
@@ -229,26 +230,35 @@
             <mxPoint x="699" y="1093.5" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="y1NoyGrrLdV7kcF8U9mv-13" value="RC Start Steady State Detection" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" source="y1NoyGrrLdV7kcF8U9mv-15" edge="1">
+        <mxCell id="y1NoyGrrLdV7kcF8U9mv-13" value="Stop MRFT" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" source="y1NoyGrrLdV7kcF8U9mv-15" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1409" y="797.5" as="sourcePoint" />
+            <mxPoint x="1409" y="816.5" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="789" y="797.5" />
+              <mxPoint x="789" y="816.5" />
             </Array>
-            <mxPoint x="699" y="797.5" as="targetPoint" />
+            <mxPoint x="699" y="816.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="y1NoyGrrLdV7kcF8U9mv-14" value="Notify&amp;nbsp;&quot;Detecting Steady State&quot;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1234" y="837" as="targetPoint" />
+            <mxPoint x="1234" y="772" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="779" y="837" />
+              <mxPoint x="779" y="772" />
             </Array>
-            <mxPoint x="699" y="837" as="sourcePoint" />
+            <mxPoint x="699" y="772" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="KpDpnJ_BqJvT8BwEkpZU-1" value="Fallback mechanism&amp;nbsp;&lt;div&gt;refer to Common&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="KpDpnJ_BqJvT8BwEkpZU-1" value="Fallback mechanism&amp;nbsp;&lt;div&gt;refer to Common&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="710" y="870" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="twuRLmH-EiCDxzASiDa0-1" value="Notify&amp;nbsp;&quot;MRFT Stopped&quot;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1235" y="850" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="780" y="850" />
+            </Array>
+            <mxPoint x="700" y="850" as="sourcePoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
