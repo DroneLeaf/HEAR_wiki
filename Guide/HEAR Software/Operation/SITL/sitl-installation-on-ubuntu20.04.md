@@ -55,6 +55,8 @@ fi
 ## 2. Hear-Cli based installation scripts.
 
 > When prompted, enter your GitHub username and personal access token.
+> It is recommended to run each step in a fresh terminal session, to load the environment variables.
+> Observe hear_docker_sitl_full_system_install output for fails.
 
 ```bash
 hear-cli local_machine run_program --p hear_docker_clone | tee docker_clone.log
