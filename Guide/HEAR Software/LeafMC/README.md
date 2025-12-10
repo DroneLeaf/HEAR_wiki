@@ -39,6 +39,10 @@ cloning of LeafMC is covered in HEAR Software Getting Started guide. You can loc
 ## Common Qt Creator Issues
 - **Missing qmake or wrong version**: Ensure Qt 5.15.2 is installed and configured as above.
 - **Wrong starting file**: Set the main project file to `CMakeLists.txt` in the project tree.
+- **Missing SDL2**: Install SDL2 development package:
+   ```bash
+   sudo apt-get install libsdl2-dev
+   ```
 
 ## LeafQGC common connection issues
 - There are two level of connection, both handeled by the mavlink-router service:
