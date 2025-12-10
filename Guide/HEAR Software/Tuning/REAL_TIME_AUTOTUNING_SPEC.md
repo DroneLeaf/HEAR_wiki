@@ -35,29 +35,31 @@ This document outlines the data specifications, messaging format, and MQTT topic
 
 ```json
 {
+  "orgId": "936da01f-9abd-4d9d-80c7-02af85c822a8",
+  "deviceId": "312f3fe3-5fa4-4ab3-b1dd-1d9208697f36",
+  "fullTopic": "org/936da01f-9abd-4d9d-80c7-02af85c822a8/device/312f3fe3-5fa4-4ab3-b1dd-1d9208697f36/command/autotuning/tuning-request",
   "message": {
     "job_id": "job-12345",
+    "development_mode": false,
     "u": [0.0, 0.0, ..., 1.0],
     "pv": [0.00100, 0.00200, ..., -0.00100],
     "channel": "Roll",
     "dt": 0.00500
-  },
-  "orgId": "936da01f-9abd-4d9d-80c7-02af85c822a8",
-  "deviceId": "312f3fe3-5fa4-4ab3-b1dd-1d9208697f36",
-  "fullTopic": "org/936da01f-9abd-4d9d-80c7-02af85c822a8/device/312f3fe3-5fa4-4ab3-b1dd-1d9208697f36/command/autotuning/tuning-request"
+  }
 }
 ```
 
 **Fields:**
+*   `orgId`: String (Organization ID).
+*   `deviceId`: String (Device ID).
+*   `fullTopic`: String (The intended MQTT topic).
 *   `message`: Object containing tuning data.
     *   `job_id`: String (Unique identifier for the job).
+    *   `development_mode`: Boolean (Optional, default false. If true, results are not saved to cloud).
     *   `u`: Array of floats (Control Input, 5 sig figs).
     *   `pv`: Array of floats (Process Variable, 5 sig figs).
     *   `channel`: String (e.g., "Roll", "Pitch", "Z", "X", "Y").
     *   `dt`: Float (Time step, 5 sig figs).
-*   `orgId`: String (Organization ID).
-*   `deviceId`: String (Device ID).
-*   `fullTopic`: String (The intended MQTT topic).
 
 ### 2. Autotuning Response (Lambda -> CD -> FC)
 
