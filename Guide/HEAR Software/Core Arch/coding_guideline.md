@@ -51,3 +51,7 @@
 - For MEs set all async input ports as thread-safe.
 - Never leave CLI output code temporarily written at the development phase.
 - Use Logger class for logging.
+
+### Message types
+- Use human readable types for port messages (eg. Use enums instead of hardcoded strings or numbers)
+- Types used across HEAR structure, should be defined in this file `HEAR_FC/src/HEAR_FC/Flight_controller/HEAR_Util/include/Common/DataTypes.hpp`
