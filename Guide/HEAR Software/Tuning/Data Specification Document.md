@@ -37,6 +37,7 @@ This document outlines the data specifications, messaging format, and MQTT topic
 {
   "orgId": "936da01f-9abd-4d9d-80c7-02af85c822a8",
   "deviceId": "312f3fe3-5fa4-4ab3-b1dd-1d9208697f36",
+  "drone_type_id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
   "fullTopic": "org/936da01f-9abd-4d9d-80c7-02af85c822a8/device/312f3fe3-5fa4-4ab3-b1dd-1d9208697f36/command/autotuning/tuning-request",
   "message": {
     "job_id": "job-12345",
@@ -52,6 +53,7 @@ This document outlines the data specifications, messaging format, and MQTT topic
 **Fields:**
 *   `orgId`: String (Organization ID).
 *   `deviceId`: String (Device ID).
+*   `drone_type_id`: String (Device ID).
 *   `fullTopic`: String (The intended MQTT topic).
 *   `message`: Object containing tuning data.
     *   `job_id`: String (Unique identifier for the job).
