@@ -84,6 +84,13 @@ redis-cli PUBLISH controller-dashboard/autotuning/tuning-request '{"message": {"
             "kp": 9.39380
         }
     }
+        "metadata": {
+        "timestamp": "2025-12-09T06:04:15.36845"
+    },
+    "mqtt_published": true,
+    "original_topic": "org/936da01f-9abd-4d9d-80c7-02af85c822a8/device/312f3fe3-5fa4-4ab3-b1dd-1d9208697f36/command/autotuning/tuning-request",
+    "response_topic": "org/936da01f-9abd-4d9d-80c7-02af85c822a8/device/312f3fe3-5fa4-4ab3-b1dd-1d9208697f36/command/autotuning/response",
+    "success": true,
 }
 ```
 
