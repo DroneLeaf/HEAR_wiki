@@ -6,8 +6,9 @@ Bidirectional bounding-box telemetry between a ground station laptop (via TX16s)
 
 ## Table of Contents
 
-- [System Architecture](#system-architecture)
-- [Electrical Wiring](#electrical-wiring)
+- [Application Layer](#application-layer)
+- [Communication Layer](#communication-layer)
+- [Hardware / Electrical Layer](#hardware--electrical-layer)
 - [TX16s Configuration](#tx16s-configuration)
 - [Protocol Reference](#protocol-reference)
 - [LeafFC C++ Pseudocode](#leaffc-c-pseudocode-crsf-telemetry-transmit)
@@ -16,138 +17,190 @@ Bidirectional bounding-box telemetry between a ground station laptop (via TX16s)
 
 ---
 
-## System Architecture
+## Application Layer
+
+Software components and their data relationships.
 
 ```mermaid
 flowchart LR
     subgraph GS["Ground Station (Laptop)"]
-        direction TB
-        decode["decode_bbox.py\n(reads CRSF telem)"]
-        sbus["tx16s_sbus_ch78.py\n(writes SBUS trainer)"]
-        usb_uart["USB-UART Adapter\n(TTL 3.3V)"]
-        usb_c["USB Type-C Cable"]
+        decode["decode_bbox.py"]
+        sbus_script["tx16s_sbus_ch78.py"]
     end
 
-    subgraph TX["TX16s Radio"]
-        direction TB
-        aux1["AUX1 Serial\n(SBUSTrainer)"]
-        vcp["USB-VCP\n(Telem Mirror)"]
-        elrs_tx["Internal ELRS TX Module"]
+    subgraph TX["TX16s"]
+        trainer_mix["Trainer → CH Mix"]
+        telem_mirror["Telem Mirror"]
     end
 
-    subgraph AIR["Aircraft"]
-        direction TB
-        elrs_rx["ELRS Receiver"]
-        rpi["Raspberry Pi\n(/dev/ttyAMA1)"]
-        leaffc["LeafFC\n(Flight Controller)"]
-        tracker["leaf-tracker\n(Redis → bbox)"]
+    subgraph RPI_SW["Raspberry Pi (Software)"]
+        leaffc["LeafFC"]
+        tracker["leaf-tracker"]
+        redis["Redis"]
     end
 
-    sbus -- "SBUS (100k baud)\nCH9,CH7,CH8 trainer" --> usb_uart
-    usb_uart -- "UART TTL\n(TX→RX, GND)" --> aux1
-    usb_c -- "USB Serial Mode\nCRSF telem mirror" --> vcp
-    vcp -- "CRSF telem frames" --> usb_c
-    usb_c -- "CRSF telem" --> decode
+    subgraph FC["Betaflight FC"]
+        bf["Betaflight"]
+    end
 
-    aux1 -- "Trainer channels\ninjected into mix" --> elrs_tx
-    elrs_tx -- "915MHz ELRS\nCRSF protocol" --> elrs_rx
-    elrs_rx -- "CRSF RC channels\n(CH9,CH7,CH8)" --> rpi
+    sbus_script -- "Trainer CH6,CH7,CH8" --> trainer_mix
+    telem_mirror -- "Bbox telem" --> decode
 
-    rpi -- "CRSF telemetry frame\n(bbox x,y,w,h)" --> elrs_rx
-    elrs_rx -- "Uplink telem\nCRSF over ELRS" --> elrs_tx
-
-    tracker -- "Redis pub/sub\n(bbox coords)" --> leaffc
-    leaffc -- "CRSF frame\n(/dev/ttyAMA1)" --> rpi
+    trainer_mix -- "RC channels" --> leaffc
+    leaffc -- "RC channels forwarded" --> bf
+    tracker -- "Bbox coords" --> redis
+    redis -- "Bbox coords" --> leaffc
+    leaffc -- "Bbox CRSF telem" --> telem_mirror
 
     style GS fill:#1a1a2e,stroke:#e94560,color:#fff
     style TX fill:#16213e,stroke:#0f3460,color:#fff
-    style AIR fill:#1a1a2e,stroke:#e94560,color:#fff
+    style RPI_SW fill:#1a1a2e,stroke:#a371f7,color:#fff
+    style FC fill:#161b22,stroke:#3fb950,color:#fff
 ```
 
-### Data Flow Summary
-
-| Path | Direction | Protocol | Transport | Data |
-|------|-----------|----------|-----------|------|
-| Laptop → TX16s AUX1 | GS → Radio | SBUS | UART TTL 100 kbaud | Trainer CH9, CH7, CH8 |
-| TX16s → ELRS RX | Radio → Aircraft | CRSF | 915 MHz ELRS | RC channels (incl. trainer) |
-| ELRS RX → RPi | Aircraft internal | CRSF | UART 420 kbaud | RC channel data |
-| LeafFC → RPi UART | Aircraft internal | CRSF | UART 420 kbaud | Bbox telemetry frame |
-| RPi → ELRS RX → TX16s | Aircraft → GS | CRSF | UART → ELRS → USB | Bbox telemetry frame |
-| TX16s USB-VCP → Laptop | Radio → GS | CRSF | USB Serial (telem mirror) | Bbox telemetry frame |
+| Component | Runs On | Role |
+|-----------|---------|------|
+| `tx16s_sbus_ch78.py` | Laptop | Sends SBUS trainer frames (CH6/CH7/CH8) to TX16s |
+| `decode_bbox.py` | Laptop | Reads bbox telemetry from TX16s telem mirror |
+| TX16s Trainer Mix | TX16s | Injects trainer channels into ELRS RC channel mix |
+| TX16s Telem Mirror | TX16s | Outputs received CRSF telemetry to laptop via USB-VCP |
+| **LeafFC** | RPi | Receives CRSF RC from ELRS RX, forwards to Betaflight FC; reads bbox from Redis, sends CRSF telem back to ELRS RX |
+| **leaf-tracker** | RPi | Vision pipeline that publishes bbox coordinates to Redis |
+| **Betaflight** | Flight Controller | Receives forwarded RC channels from LeafFC |
 
 ---
 
-## Electrical Wiring
+## Communication Layer
+
+Protocols used on each link.
 
 ```mermaid
-graph TB
-    subgraph LAPTOP["Laptop (Ground Station)"]
-        laptop_usb_a["USB-A Port"]
-        laptop_usb_c["USB-C / USB-A Port"]
+flowchart LR
+    subgraph GS["Ground Station"]
+        laptop["Laptop"]
     end
 
-    subgraph USB_UART["USB-UART Adapter (3.3V TTL)"]
-        uart_tx["TX"]
-        uart_gnd["GND"]
+    subgraph RADIO["Radio Link"]
+        tx16s["TX16s"]
+        elrs_link["915 MHz ELRS"]
+        elrs_rx["ELRS Receiver"]
     end
 
-    subgraph TX16S["RadioMaster TX16s"]
-        aux1_rx["AUX1 RX"]
-        aux1_gnd["AUX1 GND"]
-        tx16s_usb["USB Type-C"]
+    subgraph AIRCRAFT["Aircraft"]
+        rpi["RPi / LeafFC"]
+        betaflight["Betaflight FC"]
     end
 
-    subgraph ELRS_RX["ELRS Receiver"]
-        erx_rx["RX"]
-        erx_tx["TX"]
-        erx_5v["5V"]
-        erx_gnd["GND"]
-    end
+    laptop -- "SBUS\n100k baud, 8E2" --> tx16s
+    laptop <-- "CRSF telem\nUSB-VCP" --- tx16s
+    tx16s <-- "CRSF\n915 MHz" --- elrs_rx
+    elrs_rx -- "CRSF RC\n420k baud\nttyAMA1 RX" --> rpi
+    rpi -- "CRSF Telem\n420k baud\nttyAMA2 TX" --> elrs_rx
+    rpi -- "CRSF RC forwarded\n420k baud\nttyAMA1 TX" --> betaflight
 
-    subgraph RPI["Raspberry Pi"]
-        rpi_tx["GPIO 0 (TX, ttyAMA1)"]
-        rpi_rx["GPIO 1 (RX, ttyAMA1)"]
-        rpi_5v["5V Pin"]
-        rpi_gnd["GND Pin"]
-    end
-
-    %% GS wiring
-    laptop_usb_a -- "USB cable" --> uart_tx
-    uart_tx -- "TX → RX (wire)" --> aux1_rx
-    uart_gnd -- "GND ↔ GND (wire)" --> aux1_gnd
-    laptop_usb_c -- "USB-C cable\n(USB Serial mode)" --> tx16s_usb
-
-    %% Aircraft wiring
-    erx_tx -- "TX → RX (wire)" --> rpi_rx
-    erx_rx -- "RX ← TX (wire)" --> rpi_tx
-    erx_5v -- "5V ↔ 5V (wire)" --> rpi_5v
-    erx_gnd -- "GND ↔ GND (wire)" --> rpi_gnd
-
-    style LAPTOP fill:#0d1117,stroke:#58a6ff,color:#c9d1d9
-    style USB_UART fill:#161b22,stroke:#8b949e,color:#c9d1d9
-    style TX16S fill:#161b22,stroke:#f78166,color:#c9d1d9
-    style ELRS_RX fill:#161b22,stroke:#3fb950,color:#c9d1d9
-    style RPI fill:#0d1117,stroke:#a371f7,color:#c9d1d9
+    style GS fill:#1a1a2e,stroke:#e94560,color:#fff
+    style RADIO fill:#16213e,stroke:#0f3460,color:#fff
+    style AIRCRAFT fill:#1a1a2e,stroke:#a371f7,color:#fff
 ```
 
+| Link | Protocol | Baud / Frequency | Direction | Data |
+|------|----------|------------------|-----------|------|
+| Laptop → TX16s AUX1 | SBUS | 100 kbaud (8E2) | GS → Radio | Trainer CH6, CH7, CH8 |
+| TX16s USB-VCP → Laptop | CRSF | USB | Radio → GS | Bbox telemetry |
+| TX16s ↔ ELRS RX | CRSF over ELRS | 915 MHz | Bidirectional | RC downlink + telem uplink |
+| ELRS RX TX → RPi RX (`ttyAMA1`) | CRSF | 420000 baud | RX → RPi | RC channel data |
+| RPi TX (`ttyAMA1`) → Betaflight RX | CRSF | 420000 baud | RPi → FC | RC channels (forwarded) |
+| RPi TX (`ttyAMA2`) → ELRS RX RX | CRSF | 420000 baud | RPi → RX | Bbox telemetry frame |
+| leaf-tracker → LeafFC | Redis pub/sub | localhost | Internal | Bbox coordinates |
+
+---
+
+## Hardware / Electrical Layer
+
+Physical wiring between components.
+
 ### Ground Station Wiring
+
+```mermaid
+graph LR
+    subgraph LAPTOP["Laptop"]
+        usb_a["USB-A"]
+        usb_c["USB-C"]
+    end
+
+    subgraph ADAPTER["USB-UART Adapter 3.3V TTL"]
+        a_tx["TX"]
+        a_gnd["GND"]
+    end
+
+    subgraph TX16S["TX16s"]
+        aux1_rx["AUX1 RX"]
+        aux1_gnd["AUX1 GND"]
+        tx_usb["USB-C"]
+    end
+
+    usb_a --- ADAPTER
+    a_tx -- "wire" --> aux1_rx
+    a_gnd -- "wire" --> aux1_gnd
+    usb_c -- "USB-C cable" --> tx_usb
+
+    style LAPTOP fill:#0d1117,stroke:#58a6ff,color:#c9d1d9
+    style ADAPTER fill:#161b22,stroke:#8b949e,color:#c9d1d9
+    style TX16S fill:#161b22,stroke:#f78166,color:#c9d1d9
+```
 
 | From | To | Wire |
 |------|----|------|
 | USB-UART Adapter **TX** | TX16s AUX1 **RX** | Signal wire |
 | USB-UART Adapter **GND** | TX16s AUX1 **GND** | Ground wire |
-| Laptop USB port | TX16s **USB Type-C** | USB cable (set USB mode to **USB Serial**) |
+| Laptop **USB-C** | TX16s **USB-C** | USB cable (TX16s USB mode → **CLI**) |
 
 ### Aircraft Wiring
 
-| From | To | Wire |
-|------|----|------|
-| ELRS RX **TX** | RPi **RX** (GPIO 1 / ttyAMA1) | Signal wire |
-| ELRS RX **RX** | RPi **TX** (GPIO 0 / ttyAMA1) | Signal wire |
-| ELRS RX **5V** | RPi **5V** pin | Power wire |
-| ELRS RX **GND** | RPi **GND** pin | Ground wire |
+The RPi uses **two** UARTs to the ELRS receiver and one to Betaflight:
 
-> **Note:** The ELRS receiver UART runs at **420000 baud** (CRSF standard). Ensure `/dev/ttyAMA1` is freed from the Linux console (disable `serial-getty` on that port).
+```mermaid
+graph LR
+    subgraph ELRS["ELRS Receiver"]
+        e_tx["TX"]
+        e_rx["RX"]
+        e_5v["5V"]
+        e_gnd["GND"]
+    end
+
+    subgraph RPI["Raspberry Pi"]
+        r_rx1["RX (ttyAMA1)"]
+        r_tx1["TX (ttyAMA1)"]
+        r_tx2["TX (ttyAMA2)"]
+        r_5v["5V"]
+        r_gnd["GND"]
+    end
+
+    subgraph BF["Betaflight FC"]
+        bf_rx["RX"]
+    end
+
+    e_tx -- "wire" --> r_rx1
+    r_tx2 -- "wire" --> e_rx
+    r_tx1 -- "wire" --> bf_rx
+
+    e_5v -- "wire" --> r_5v
+    e_gnd -- "wire" --> r_gnd
+
+    style ELRS fill:#161b22,stroke:#3fb950,color:#c9d1d9
+    style RPI fill:#0d1117,stroke:#a371f7,color:#c9d1d9
+    style BF fill:#161b22,stroke:#f78166,color:#c9d1d9
+```
+
+| From | To | Wire | Purpose |
+|------|----|------|---------|
+| ELRS RX **TX** | RPi **RX** (`ttyAMA1`) | Signal | RC channels → LeafFC |
+| RPi **TX** (`ttyAMA1`) | Betaflight **RX** | Signal | LeafFC forwards RC → FC |
+| RPi **TX** (`ttyAMA2`) | ELRS RX **RX** | Signal | LeafFC sends bbox telem → ELRS |
+| ELRS RX **5V** | RPi **5V** pin | Power | Powers ELRS receiver |
+| ELRS RX **GND** | RPi **GND** pin | Ground | Common ground |
+
+> **Note:** Both `/dev/ttyAMA1` and `/dev/ttyAMA2` run at **420000 baud**. Ensure both are freed from the Linux console (`disable serial-getty`).
 
 ---
 
@@ -178,12 +231,12 @@ Under `HARDWARE` → *Serial Port*:
 
 | Channel | Source | Weight |
 |---------|--------|--------|
-| CH9 | TR9 | 100% |
+| CH6 | TR6 | 100% |
 | CH7 | TR7 | 100% |
 | CH8 | TR8 | 100% |
 
 The TX16s will now:
-- **Receive** SBUS trainer data on AUX1 and inject CH9/CH7/CH8 into the ELRS channel mix.
+- **Receive** SBUS trainer data on AUX1 and inject CH6/CH7/CH8 into the ELRS channel mix.
 - **Mirror** incoming CRSF telemetry from ELRS to the USB-VCP port for the laptop to read.
 
 ---
@@ -215,6 +268,8 @@ CRC polynomial: **0xD5** (DVB-S2), computed over the type + payload bytes.
 
 ## LeafFC C++ Pseudocode (CRSF Telemetry Transmit)
 
+LeafFC runs on the Raspberry Pi. It reads RC channels from the ELRS receiver on `/dev/ttyAMA1` (RX), forwards them to Betaflight on `/dev/ttyAMA1` (TX), and sends bbox CRSF telemetry back to the ELRS receiver on `/dev/ttyAMA2` (TX).
+
 ```cpp
 #include <cstdint>
 #include <cstring>
@@ -240,7 +295,6 @@ uint8_t crc8_dvb_s2(const uint8_t* data, size_t len) {
 }
 
 // ── Build a 12-byte CRSF frame carrying a bounding box ─────────
-//    Returns the number of bytes written into `buf` (always 12).
 size_t build_crsf_bbox_frame(uint8_t* buf,
                              uint16_t x, uint16_t y,
                              uint16_t w, uint16_t h)
@@ -259,36 +313,43 @@ size_t build_crsf_bbox_frame(uint8_t* buf,
     return 12;
 }
 
-// ── Example: LeafFC main loop ───────────────────────────────────
+// ── LeafFC main loop (runs on Raspberry Pi) ─────────────────────
 //
-//    bbox coordinates arrive via Redis from the leaf-tracker service.
-//    LeafFC reads them and transmits a CRSF telemetry frame to the
-//    ELRS receiver over UART (/dev/ttyAMA1).
+//    /dev/ttyAMA1 RX  ← ELRS Receiver TX   (RC channels in)
+//    /dev/ttyAMA1 TX  → Betaflight FC RX    (RC channels forwarded)
+//    /dev/ttyAMA2 TX  → ELRS Receiver RX    (bbox telemetry out)
 
-void leaffc_telemetry_loop(HardwareSerial& uart,
-                           RedisClient&    redis)
+void leaffc_main(Serial& uart_rc,      // /dev/ttyAMA1
+                 Serial& uart_telem,    // /dev/ttyAMA2
+                 RedisClient& redis)
 {
-    uart.begin(CRSF_BAUDRATE);
+    uart_rc.open("/dev/ttyAMA1", CRSF_BAUDRATE);
+    uart_telem.open("/dev/ttyAMA2", CRSF_BAUDRATE);
 
     while (true) {
-        // 1. Read latest bbox from Redis pub/sub
+        // 1. Read CRSF RC frame from ELRS receiver (ttyAMA1 RX)
+        CrsfFrame rc_frame = uart_rc.read_crsf_frame();
+
+        // 2. Forward RC frame to Betaflight FC (ttyAMA1 TX)
+        uart_rc.write(rc_frame.raw, rc_frame.len);
+
+        // 3. Read latest bbox from Redis (published by leaf-tracker)
         BBox bbox = redis.get_latest("leaf-tracker/bbox");
-        //    bbox.x, bbox.y, bbox.w, bbox.h  (uint16 each)
 
-        // 2. Build the CRSF frame
-        uint8_t frame[12];
-        build_crsf_bbox_frame(frame, bbox.x, bbox.y, bbox.w, bbox.h);
+        // 4. Build CRSF telemetry frame
+        uint8_t telem[12];
+        build_crsf_bbox_frame(telem, bbox.x, bbox.y, bbox.w, bbox.h);
 
-        // 3. Transmit over UART to ELRS receiver
-        uart.write(frame, 12);
+        // 5. Send bbox telem to ELRS receiver (ttyAMA2 TX)
+        uart_telem.write(telem, 12);
 
-        // 4. Pace to match telemetry ratio (e.g. ~50 Hz)
+        // 6. Pace to match telemetry ratio (~50 Hz)
         delay_ms(20);
     }
 }
 ```
 
-> **Note:** This is pseudocode for illustration. In a real implementation `HardwareSerial` and `RedisClient` would be replaced with your platform's serial and Redis APIs. The CRSF wire format and CRC are exact.
+> **Note:** This is pseudocode for illustration. `Serial` and `RedisClient` would be replaced with your platform APIs (e.g. Linux `termios` for UART, `hiredis` for Redis). The CRSF wire format and CRC are exact.
 
 ---
 
