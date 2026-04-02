@@ -92,8 +92,8 @@ flowchart LR
     end
 
     laptop -- "SBUS\n100k baud, 8E2" --> tx16s
-    laptop <-- "CRSF telem\nUSB-VCP" --- tx16s
-    tx16s <-- "CRSF\n915 MHz" --- elrs_rx
+    laptop <-- "CRSF telem\nUSB-VCP" --> tx16s
+    tx16s <-- "CRSF\n915 MHz" --> elrs_rx
     elrs_rx -- "CRSF RC\n420k baud\nttyAMA1 RX" --> rpi
     rpi -- "CRSF Telem\n420k baud\nttyAMA2 TX" --> elrs_rx
     rpi -- "CRSF RC forwarded\n420k baud\nttyAMA1 TX" --> betaflight
