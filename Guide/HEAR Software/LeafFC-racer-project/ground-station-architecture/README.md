@@ -43,7 +43,7 @@ flowchart LR
         tracker["leaf-tracker\n(Redis → bbox)"]
     end
 
-    sbus -- "SBUS (100k baud)\nCH6,CH7,CH8 trainer" --> usb_uart
+    sbus -- "SBUS (100k baud)\nCH9,CH7,CH8 trainer" --> usb_uart
     usb_uart -- "UART TTL\n(TX→RX, GND)" --> aux1
     usb_c -- "USB Serial Mode\nCRSF telem mirror" --> vcp
     vcp -- "CRSF telem frames" --> usb_c
@@ -51,7 +51,7 @@ flowchart LR
 
     aux1 -- "Trainer channels\ninjected into mix" --> elrs_tx
     elrs_tx -- "915MHz ELRS\nCRSF protocol" --> elrs_rx
-    elrs_rx -- "CRSF RC channels\n(CH6,CH7,CH8)" --> rpi
+    elrs_rx -- "CRSF RC channels\n(CH9,CH7,CH8)" --> rpi
 
     rpi -- "CRSF telemetry frame\n(bbox x,y,w,h)" --> elrs_rx
     elrs_rx -- "Uplink telem\nCRSF over ELRS" --> elrs_tx
@@ -68,7 +68,7 @@ flowchart LR
 
 | Path | Direction | Protocol | Transport | Data |
 |------|-----------|----------|-----------|------|
-| Laptop → TX16s AUX1 | GS → Radio | SBUS | UART TTL 100 kbaud | Trainer CH6, CH7, CH8 |
+| Laptop → TX16s AUX1 | GS → Radio | SBUS | UART TTL 100 kbaud | Trainer CH9, CH7, CH8 |
 | TX16s → ELRS RX | Radio → Aircraft | CRSF | 915 MHz ELRS | RC channels (incl. trainer) |
 | ELRS RX → RPi | Aircraft internal | CRSF | UART 420 kbaud | RC channel data |
 | LeafFC → RPi UART | Aircraft internal | CRSF | UART 420 kbaud | Bbox telemetry frame |
@@ -178,12 +178,12 @@ Under `HARDWARE` → *Serial Port*:
 
 | Channel | Source | Weight |
 |---------|--------|--------|
-| CH6 | TR6 | 100% |
+| CH9 | TR9 | 100% |
 | CH7 | TR7 | 100% |
 | CH8 | TR8 | 100% |
 
 The TX16s will now:
-- **Receive** SBUS trainer data on AUX1 and inject CH6/CH7/CH8 into the ELRS channel mix.
+- **Receive** SBUS trainer data on AUX1 and inject CH9/CH7/CH8 into the ELRS channel mix.
 - **Mirror** incoming CRSF telemetry from ELRS to the USB-VCP port for the laptop to read.
 
 ---
