@@ -231,9 +231,9 @@ Under `HARDWARE` → *Serial Port*:
 
 | Channel | Source | Weight |
 |---------|--------|--------|
-| CH6 | TR6 | 100% |
 | CH7 | TR7 | 100% |
 | CH8 | TR8 | 100% |
+| CH9 | TR9 | 100% |
 
 The TX16s will now:
 - **Receive** SBUS trainer data on AUX1 and inject CH6/CH7/CH8 into the ELRS channel mix.
