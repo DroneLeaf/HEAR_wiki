@@ -1,4 +1,5 @@
 # Racer Project Operation Pre-flight Checks
+Version 1.0
 
 ## Labels
 - [ ] IP

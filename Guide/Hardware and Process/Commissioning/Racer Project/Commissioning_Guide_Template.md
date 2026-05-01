@@ -1,4 +1,5 @@
 # Racer Project Commissioning Checklist
+Version 1.0
 
 ## Form
 - [ ] Date and time recorded  _____________________
