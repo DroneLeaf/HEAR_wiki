@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kakute H7 config & tuning.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="kakute-h7--configuration--first-flight-checklist">Kakute H7 — Configuration &amp; First-Flight Checklist</h1>
+<blockquote>
+<p><strong>Board:</strong> HBRO/KAKUTEH7 (STM32H743)<br>
+<strong>Firmware Build:</strong> 2026-04-06 @15:04:14<br>
+<strong>Configurator:</strong> 2025.12.2 (a2d0f50) — <a href="https://app.betaflight.com/">app.betaflight.com</a></p>
+</blockquote>
+<hr>
+<h2 id="1-connect">1. Connect</h2>
+<ul>
+<li><input type="checkbox" id="checkbox0"><label for="checkbox0">Plug USB-C (data cable) into FC</label></li>
+<li><input type="checkbox" id="checkbox1"><label for="checkbox1">Open Betaflight Configurator</label></li>
+<li><input type="checkbox" id="checkbox2"><label for="checkbox2">Select COM port → </label><strong>Connect</strong></li>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3">Confirm Setup tab loads and 3D model renders</label></li>
+</ul>
+<hr>
+<h2 id="2-firmware-check">2. Firmware Check</h2>
+<ul>
+<li><input type="checkbox" id="checkbox4"><label for="checkbox4">Go to </label><strong>CLI</strong> tab → type <code>version</code> → Enter</li>
+<li><input type="checkbox" id="checkbox5"><label for="checkbox5">Board must read: </label><code>HBRO/KAKUTEH7 (STM32H743)</code></li>
+<li><input type="checkbox" id="checkbox6"><label for="checkbox6">Build date must match: </label><code>2026-04-06 @15:04:14</code></li>
+</ul>
+<blockquote>
+<p><strong>MISMATCH → STOP. Do not proceed. Flash correct firmware first.</strong></p>
+</blockquote>
+<hr>
+<h2 id="3-upload-config">3. Upload Config</h2>
+<ol>
+<li>Go to <strong>CLI</strong> tab</li>
+<li>Click <strong>Load from file</strong></li>
+<li>Select <code>kakute_h7_config.txt</code></li>
+<li>Press <strong>Enter</strong> to execute</li>
+<li>Wait for <code>save</code> → board reboots automatically</li>
+<li>Reconnect</li>
+</ol>
+<p>[INSERT SCREENSHOT: CLI — Load from file button]</p>
+<p><strong>Verify:</strong> Run <code>diff all</code> in CLI — no unexpected value differences.</p>
+<hr>
+<h2 id="4-verification">4. Verification</h2>
+<h3 id="receiver">Receiver</h3>
+<ul>
+<li><input type="checkbox" id="checkbox7"><label for="checkbox7"></label><strong>LiPo battery connected</strong> (USB alone won't power Rx)</li>
+<li><input type="checkbox" id="checkbox8"><label for="checkbox8">ELRS receiver bound (solid LED)</label></li>
+<li><input type="checkbox" id="checkbox9"><label for="checkbox9">Roll → Channel 1 responds</label></li>
+<li><input type="checkbox" id="checkbox10"><label for="checkbox10">Pitch → Channel 2 responds</label></li>
+<li><input type="checkbox" id="checkbox11"><label for="checkbox11">Throttle → Channel 3 responds</label></li>
+<li><input type="checkbox" id="checkbox12"><label for="checkbox12">Yaw → Channel 4 responds</label></li>
+<li><input type="checkbox" id="checkbox13"><label for="checkbox13">Centers ~1500, full range 1000–2000</label></li>
+<li><input type="checkbox" id="checkbox14"><label for="checkbox14">No jitter at rest</label></li>
+</ul>
+<p>[INSERT SCREENSHOT: Receiver tab — all channels responding]</p>
+<h3 id="accelerometer">Accelerometer</h3>
+<ul>
+<li><input type="checkbox" id="checkbox15"><label for="checkbox15">Drone on flat, level surface</label></li>
+<li><input type="checkbox" id="checkbox16"><label for="checkbox16">Click </label><strong>Calibrate Accelerometer</strong> (Setup tab)</li>
+<li><input type="checkbox" id="checkbox17"><label for="checkbox17">3D model shows level (0° roll, 0° pitch)</label></li>
+</ul>
+<h3 id="motors">Motors</h3>
+<blockquote>
+<p>⚠️ <strong>PROPS OFF.</strong></p>
+</blockquote>
+<ul>
+<li><input type="checkbox" id="checkbox18"><label for="checkbox18">Go to </label><strong>Motors</strong> tab → acknowledge safety checkbox</li>
+<li><input type="checkbox" id="checkbox19"><label for="checkbox19">LiPo connected</label></li>
+<li><input type="checkbox" id="checkbox20"><label for="checkbox20">Spin each motor individually (~1050 throttle):</label></li>
+</ul>
+<pre class="hljs"><code><div>      FRONT
+  M4 (CCW)  M2 (CW)
+       ╲      ╱
+        ╲    ╱
+         ╲  ╱
+         ╱  ╲
+        ╱    ╲
+       ╱      ╲
+  M3 (CW)   M1 (CCW)
+      REAR
+</div></code></pre>
+<ul>
+<li><input type="checkbox" id="checkbox21"><label for="checkbox21">M1 rear-right → CCW</label></li>
+<li><input type="checkbox" id="checkbox22"><label for="checkbox22">M2 front-right → CW</label></li>
+<li><input type="checkbox" id="checkbox23"><label for="checkbox23">M3 rear-left → CW</label></li>
+<li><input type="checkbox" id="checkbox24"><label for="checkbox24">M4 front-left → CCW</label></li>
+</ul>
+<p>Wrong direction → use motor direction toggle in Motors tab, or CLI: <code>dshotprog &lt;motor_number&gt; reverse</code> then <code>save</code>.</p>
+<p>[INSERT SCREENSHOT: Motors tab — motor sliders]</p>
+<h3 id="osd">OSD</h3>
+<ul>
+<li><input type="checkbox" id="checkbox25"><label for="checkbox25">Go to </label><strong>OSD</strong> tab</li>
+<li><input type="checkbox" id="checkbox26"><label for="checkbox26">Layout matches internal standard</label></li>
+</ul>
+<h3 id="blackbox">Blackbox</h3>
+<ul>
+<li><input type="checkbox" id="checkbox27"><label for="checkbox27">SD card inserted and detected</label></li>
+<li><input type="checkbox" id="checkbox28"><label for="checkbox28">SD card formatted / empty</label></li>
+<li><input type="checkbox" id="checkbox29"><label for="checkbox29">Blackbox logging </label><strong>enabled</strong></li>
+<li><input type="checkbox" id="checkbox30"><label for="checkbox30">Logging device set to </label><code>SDCARD</code></li>
+</ul>
+<h3 id="electrical--system">Electrical &amp; System</h3>
+<ul>
+<li><input type="checkbox" id="checkbox31"><label for="checkbox31">Wiring verified against wiring diagram</label></li>
+<li><input type="checkbox" id="checkbox32"><label for="checkbox32">RPi ↔ FC serial communication working</label></li>
+<li><input type="checkbox" id="checkbox33"><label for="checkbox33">Camera feed visible in analog goggles</label></li>
+<li><input type="checkbox" id="checkbox34"><label for="checkbox34">VTX not overheating (touch check after 30s power-on)</label></li>
+</ul>
+<h3 id="hardware-integrity--identification">Hardware Integrity &amp; Identification</h3>
+<ul>
+<li><input type="checkbox" id="checkbox35"><label for="checkbox35">All components secured (screws, mounts tight)</label></li>
+<li><input type="checkbox" id="checkbox36"><label for="checkbox36">No loose wires or connectors</label></li>
+<li><input type="checkbox" id="checkbox37"><label for="checkbox37">Frame intact — no cracks or looseness</label></li>
+<li><input type="checkbox" id="checkbox38"><label for="checkbox38">All components labeled (IP / asset ID)</label></li>
+<li><input type="checkbox" id="checkbox39"><label for="checkbox39">Labels match system records</label></li>
+</ul>
+<p><strong>Ping / Identification:</strong></p>
+<ul>
+<li><input type="checkbox" id="checkbox40"><label for="checkbox40">Power drone on</label></li>
+<li><input type="checkbox" id="checkbox41"><label for="checkbox41">Verify correct unit responds (LED / telemetry match expected ID)</label></li>
+<li><input type="checkbox" id="checkbox42"><label for="checkbox42">Confirm this is the intended drone before proceeding</label></li>
+</ul>
+<hr>
+<h2 id="%E2%9C%85-ready-for-first-flight">✅ READY FOR FIRST FLIGHT</h2>
+<ul>
+<li><input type="checkbox" id="checkbox43"><label for="checkbox43">Motors &amp; props correctly installed</label></li>
+<li><input type="checkbox" id="checkbox44"><label for="checkbox44">Electrical connections verified (against diagram)</label></li>
+<li><input type="checkbox" id="checkbox45"><label for="checkbox45">Receiver working (all channels correct)</label></li>
+<li><input type="checkbox" id="checkbox46"><label for="checkbox46">Accelerometer calibrated (level)</label></li>
+<li><input type="checkbox" id="checkbox47"><label for="checkbox47">Motor directions correct</label></li>
+<li><input type="checkbox" id="checkbox48"><label for="checkbox48">OSD verified</label></li>
+<li><input type="checkbox" id="checkbox49"><label for="checkbox49">RPi communication working</label></li>
+<li><input type="checkbox" id="checkbox50"><label for="checkbox50">Camera stream verified (goggles)</label></li>
+<li><input type="checkbox" id="checkbox51"><label for="checkbox51">VTX temperature normal (not overheating)</label></li>
+<li><input type="checkbox" id="checkbox52"><label for="checkbox52">Blackbox storage cleared and ready</label></li>
+</ul>
+<hr>
+<pre class="hljs"><code><div>Drone ID: _______________
+Date:     _______________
+Tech:     _______________  Signature: _______________
+</div></code></pre>
+
+</body>
+</html>
