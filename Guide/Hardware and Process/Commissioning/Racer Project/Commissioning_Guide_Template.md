@@ -2,18 +2,23 @@
 Version 1.0
 
 ## Form
-- [ ] Date and time recorded  _____________________
-- [ ] Drone ID recorded (size, IP, and other details) _____________________
-- [ ] Remarks and notes recorded  _____________________
+|  |  |
+| --- | --- |
+| Date and time recorded | _____________________ |
+| Drone ID recorded (size, IP, and other details) | _____________________ |
+| Remarks and notes recorded | _____________________ |
 
 ## Early Stage Checks — Physical
+### Electrical
 - [ ] Cables are connected
 - [ ] Short-circuit test passes (battery, 12V, 5V rails)
+- [ ] Fans are operative
+
+### Mechanical
 - [ ] No major physical damage
 - [ ] Backside labeled
 - [ ] Lock in correct position
 - [ ] Camera orientation is correct
-- [ ] Fans are operative
 
 ## Config
 ### FC (Flight Controller)
@@ -64,6 +69,8 @@ Version 1.0
 - [ ] Visualization is clean (unnecessary elements removed)
 
 ## Sign Off
-- [ ] Name / Operator initials: _____________________
-- [ ] Signature: _____________________
-- [ ] Date/time: _____________________
+|  |  |
+| --- | --- |
+| Name / Operator initials | _____________________ |
+| Signature | _____________________ |
+| Date/time | _____________________ |
