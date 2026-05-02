@@ -62,17 +62,17 @@ Version 1.0
 - [x] Ground control link remains stable
 
 ## Labels
-- [ ] IP
-- [ ] Camera type
+- [x] IP
+- [x] Camera type
 - [ ] VTX type and frequency (analog 5865hz)
-- [ ] ELRS number
-- [ ] GPS label
-- [ ] Software version label
-- [ ] Visualization is clean (unnecessary elements removed)
+- [x] ELRS number
+- [x] GPS label
+- [x] Software version label
+- [x] Visualization is clean (unnecessary elements removed)
 
 ## Sign Off
 |  |  |
 | --- | --- |
-| Name / Operator initials | _____________________ |
-| Signature | _____________________ |
-| Date/time | _____________________ |
+| Name / Operator initials | A.H.A |
+| Signature | ALMAKH |
+| Date/time | 02.05.2026 |
