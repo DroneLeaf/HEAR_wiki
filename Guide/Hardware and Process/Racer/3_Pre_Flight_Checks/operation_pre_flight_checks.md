@@ -20,6 +20,13 @@ Version 1.0
 - [ ] Check Video feed (Goggles)
 - [ ] Tracking feed is stable
 - [ ] GPS signal is received (for GPS logging)
+- [ ] Controller dashboard shows no missing database fields in `http://Drone IP Address/home/leaf-racer-configuration`
+  - [ ] Click "Get Configuration"
+  - [ ] Check Camera Twist (deg)
+  - [ ] Video Source Type (Analog or Digital)
+  - [ ] Horizontal FOV (degrees)
+  - [ ] Vertical FOV (degrees)
+
 
 ## Launch and connect to drone
 ### SSH to RPI
