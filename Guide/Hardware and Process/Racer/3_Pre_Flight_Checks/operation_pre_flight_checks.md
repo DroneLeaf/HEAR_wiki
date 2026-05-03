@@ -82,7 +82,7 @@ Version 1.0
     | Pitch | 1000   | 2000   | -70°    | 70°     |
     | Yaw   | 1000   | 2000   | -1      | 1       |
 
-    - ⚠️ **IMPORTANT:** Roll mapping Out Min/Max degrees **must match** the `angle_limit` setting in Betaflight Configurator (typically **70°** for 5" drones and **80°** for 7" drones).
+    - ⚠️ **IMPORTANT:** Roll and Pitch mapping Out Min/Max degrees **must match** the `angle_limit` setting in Betaflight Configurator (typically **70°** for 5" drones and **80°** for 7" drones).
 
    - Normalized Command Mapping
 
