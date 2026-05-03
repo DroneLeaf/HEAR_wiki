@@ -36,6 +36,8 @@
 **Never:**
 - use for/while/if statements without enclosing curly brackets
 - use `using std`
+- use uninitialized class variables.
+- introduce raw pointers.
   
 **Should:**
 - use `#pragma once` as include guard  
@@ -44,10 +46,12 @@
 
 **Variables**
 - Use suffix _ptr for pointer variables
+- Use for class enum IP and OP all capital letters, e.g. enum IP{RPY_EST}
+- For async input or output ports use `_ASYNC` suffix for enum member, e.g. enum IP{MAX_TILT_ANGLE_DEG_ASYNC}
 
 ## HEAR specific
 
 **Always:**
 - For MEs set all async input ports as thread-safe.
 - Never leave CLI output code temporarily written at the development phase.
-- Use Logger class for logging.
+- Use Logger class for logging. Never use std::cout.
