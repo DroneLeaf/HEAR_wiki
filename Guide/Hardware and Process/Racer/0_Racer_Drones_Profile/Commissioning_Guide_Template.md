@@ -1,5 +1,5 @@
 # Racer Project Commissioning Checklist
-Version 1.0
+Version 1.1
 
 ## Form
 |  |  |
@@ -24,7 +24,7 @@ Version 1.0
 ### FC (Flight Controller)
 - [ ] MSB ports are correct (port # and baud rate)
 - [ ] Orientation is correct
-- [ ] Logs are configured/enabled (define required log channels for commissioning)
+- [ ] Logs are cleared & SD is empty
 - [ ] Motor directions are correct
 - [ ] GPS configured and healthy (if used)
 
