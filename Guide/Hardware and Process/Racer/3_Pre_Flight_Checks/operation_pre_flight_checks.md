@@ -21,7 +21,7 @@ Version 1.0
 - [ ] Tracking feed is stable
 - [ ] GPS signal is received (for GPS logging)
 - [ ] Controller dashboard shows no missing database fields in `http://Drone IP Address/home/leaf-racer-configuration`
-  - [ ] Click "Get Configuration" and check for any missing fields
+  - [ ] Click "Get Configuration" and check for any missing fields. If there are missing fields, update the configuration files in `config-leaf_tracker` and `config-guidance_by_vision` according to the reference values in [config-guidance_by_vision](config-guidance_by_vision) and [config-leaf_tracker](config-leaf_tracker), then click "Upload Configuration" to update the drone's configuration.
   - [ ] Check Camera settings
 
     | Camera     | Twist | Video Source Type | Video Source Index / Link                 |

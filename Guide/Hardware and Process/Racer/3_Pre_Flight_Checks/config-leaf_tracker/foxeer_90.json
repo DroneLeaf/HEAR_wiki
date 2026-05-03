@@ -1,0 +1,101 @@
+{
+    "vfov_deg": 70,
+    "tilt_compensation_angle_deg": 0,
+    "source": {
+        "rtsp_url": "rtsp://root:12345@192.168.1.10/stream=1",
+        "shm_path": null,
+        "exclude_indices": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            10
+        ],
+        "preferred_index": 0
+    },
+    "camera_twist_deg": -90,
+    "tracking": {
+        "score_threshold": 0,
+        "init_padding": 0,
+        "max_frame_fill": 0.3,
+        "disable_robustness_measures": false,
+        "max_jump": 0.3,
+        "recheck_interval": 0,
+        "auto_recover": true,
+        "keep_seeded_on_loss": true,
+        "recovery_search_scale": 0.3,
+        "edge_margin": 0,
+        "recovery_history": 15,
+        "min_box_px": 2,
+        "recover_full_frame": false
+    },
+    "redis": {
+        "db": 0,
+        "unix_socket_path": "/var/run/redis/redis-server.sock"
+    },
+    "source_health": {
+        "dark_consecutive_frames": 10,
+        "dark_check_enabled": false,
+        "dark_mean_threshold": 8
+    },
+    "createdAt": "2026-04-12T11:33:05.835Z",
+    "estimator": {
+        "r_bearing": 0.005,
+        "initial_range_m": 50,
+        "target_max_dim_m": 1.9,
+        "q_pos": 0.5,
+        "r_size": 0.01,
+        "q_vel": 4,
+        "score_demote": 0.3,
+        "score_promote": 0.5
+    },
+    "tracker": "csrt_fast",
+    "state_publish_interval_s": 0.0333,
+    "updatedAt": "2026-05-03T17:18:47.804Z",
+    "click_box_size": 25,
+    "status_publish_interval_s": 0.1,
+    "contour_profile": "light_sky_dark_digital",
+    "hfov_deg": 90,
+    "use_contour": true,
+    "source_type": "ANALOGUE",
+    "params": {
+        "cuda": false
+    },
+    "contour": {
+        "percentile_p": 1,
+        "median_offset": 5,
+        "blackhat_thresh": 10,
+        "sigma_k": 5,
+        "use_init_mask": true,
+        "percentile_bias": 0,
+        "abs_thresh_ceiling": 180,
+        "blur_k": 5,
+        "proximity_weight": 0.3,
+        "skip_morph_open": true,
+        "darkness_weight": 0.7,
+        "min_area": 1,
+        "morph_fallback": true,
+        "blackhat_k": 9,
+        "pad_ratio": 0.5,
+        "thresh_mode": "blackhat"
+    },
+    "csrt_settings": {
+        "padding": 2,
+        "psr_threshold": 0.035,
+        "template_size": 100,
+        "use_color_names": true,
+        "num_hog_channels_used": 9,
+        "number_of_scales": 7,
+        "use_rgb": true,
+        "admm_iterations": 1,
+        "use_hog": true,
+        "use_segmentation": false,
+        "hog_orientations": 6
+    },
+    "use_estimator": false,
+    "organization_id": "PUBLIC",
+    "offset_calibration_angle_tilt_deg": 0,
+    "offset_calibration_angle_pan_deg": 0
+}
