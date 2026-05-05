@@ -87,46 +87,46 @@ Version 1.0
     | Foxeer 120 | Dark Sky / Light Object          |
     | Runcam     | Light Sky / Dark Object (Digital)|
 
- - [ ] Check "Interceptor Settings"
-    - "Use Gravity Compensation Guidance" is **selected** ✅
-    - "Manual - Ramp to Abs. Target" is **selected** ✅
-    - "Automatic Takeoff" is **selected** ✅
-    - "Activate Gravity Compensation" is **enabled** ✅
+  - [ ] Check "Interceptor Settings"
+      - "Use Gravity Compensation Guidance" is **selected** ✅
+      - "Manual - Ramp to Abs. Target" is **selected** ✅
+      - "Automatic Takeoff" is **selected** ✅
+      - "Activate Gravity Compensation" is **enabled** ✅
 
-    | Parameter                                | 5" Drone | 7" Drone |
-    |------------------------------------------|----------|----------|
-    | Activate Gravity Compensation            | ✅       | ✅       |
-    | Minimum Hover Throttle for Gravity Comp. | 0.15     | 0.1      |
-    | Direct Angle Tracking                    | ❌       | ❌       |
-    | Angle Error Correction Kp                | 1        | 1        |
-    | Max Angle Increment Roll (rad)           | 3        | 3        |
-    | Max Angle Increment Pitch (rad)          | 3        | 3        |
-    | Max Accumulated Angle Error Roll (rad)   | 0.262    | 0.262    |
-    | Max Accumulated Angle Error Pitch (rad)  | 0.262    | 0.262    |
-    | Minimum Target Interception Throttle     | 0.05     | 0.05     |
-    | Takeoff Ramp Time (s)                    | 0.2      | 0.2      |
-    | Takeoff Wait Time (s)                    | 0.4      | 0.5      |
-    | Hover Throttle for Takeoff Logic         | 0.3      | 0.45     |
+      | Parameter                                | 5" Drone | 7" Drone |
+      |------------------------------------------|----------|----------|
+      | Activate Gravity Compensation            | ✅       | ✅       |
+      | Minimum Hover Throttle for Gravity Comp. | 0.15     | 0.1      |
+      | Direct Angle Tracking                    | ❌       | ❌       |
+      | Angle Error Correction Kp                | 1        | 1        |
+      | Max Angle Increment Roll (rad)           | 3        | 3        |
+      | Max Angle Increment Pitch (rad)          | 3        | 3        |
+      | Max Accumulated Angle Error Roll (rad)   | 0.262    | 0.262    |
+      | Max Accumulated Angle Error Pitch (rad)  | 0.262    | 0.262    |
+      | Minimum Target Interception Throttle     | 0.05     | 0.05     |
+      | Takeoff Ramp Time (s)                    | 0.2      | 0.2      |
+      | Takeoff Wait Time (s)                    | 0.4      | 0.5      |
+      | Hover Throttle for Takeoff Logic         | 0.3      | 0.45     |
 
- - [ ] Check "RC Calibration Settings"
-   - Attitude Axis Mapping (RC → Angle)
+  - [ ] Check "RC Calibration Settings"
+    - Attitude Axis Mapping (RC → Angle)
 
-    | Axis  | RC Min | RC Max | Out Min | Out Max |
-    |-------|--------|--------|---------|---------|
-    | Roll  | 1000   | 2000   | -70°    | 70°     |
-    | Pitch | 1000   | 2000   | -70°    | 70°     |
-    | Yaw   | 1000   | 2000   | -1      | 1       |
+      | Axis  | RC Min | RC Max | Out Min | Out Max |
+      |-------|--------|--------|---------|---------|
+      | Roll  | 1000   | 2000   | -70°    | 70°     |
+      | Pitch | 1000   | 2000   | -70°    | 70°     |
+      | Yaw   | 1000   | 2000   | -1      | 1       |
 
-    - ⚠️ **IMPORTANT:** Roll and Pitch mapping Out Min/Max degrees **must match** the `angle_limit` setting in Betaflight Configurator (typically **70°** for 5" drones and **80°** for 7" drones).
+      - ⚠️ **IMPORTANT:** Roll and Pitch mapping Out Min/Max degrees **must match** the `angle_limit` setting in Betaflight Configurator (typically **70°** for 5" drones and **80°** for 7" drones).
 
-   - Normalized Command Mapping
+    - Normalized Command Mapping
 
-    | Axis     | RC Min | RC Max | Out Min | Out Max |
-    |----------|--------|--------|---------|---------|
-    | Aim X    | 988    | 2012   | 0       | 1       |
-    | Aim Y    | 988    | 2012   | 0       | 1       |
-    | Box Size | 988    | 2012   | 0       | 1       |
-    | Thrust   | 1000   | 2000   | 0       | 1       |
+      | Axis     | RC Min | RC Max | Out Min | Out Max |
+      |----------|--------|--------|---------|---------|
+      | Aim X    | 988    | 2012   | 0       | 1       |
+      | Aim Y    | 988    | 2012   | 0       | 1       |
+      | Box Size | 988    | 2012   | 0       | 1       |
+      | Thrust   | 1000   | 2000   | 0       | 1       |
 
 
 ## Launch and connect to drone
