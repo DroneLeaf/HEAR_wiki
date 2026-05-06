@@ -1,0 +1,15 @@
+{
+    "pi_ki_roll": 0.5,
+    "pi_integrator_output_limit_pitch": 1.3962634015954636,
+    "pi_integrator_error_limit_roll": 1.3962634015954636,
+    "pi_output_limit_pitch": 1.3962634015954636,
+    "pi_kp_pitch": 0.44,
+    "pi_output_limit_roll": 1.3962634015954636,
+    "pi_integrator_error_limit_pitch": 1.3962634015954636,
+    "pi_integrator_output_limit_roll": 1.3962634015954636,
+    "createdAt": "2026-04-14T04:53:49.972Z",
+    "pi_ki_pitch": 0.5,
+    "id": "36a3dfb3-d0ec-4915-8ed8-b4d9db2e2d31",
+    "pi_kp_roll": 0.44,
+    "updatedAt": "2026-04-30T11:09:47.558Z"
+}

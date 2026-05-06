@@ -22,7 +22,12 @@ Version 1.0
 - [ ] GPS signal is received (for GPS logging)
 - [ ] Check that the selected profile uuid in `config-robot_instance_profile_assignment` matches `Indoor-Testing` profile in `config-profile`
 - [ ] Controller dashboard shows no missing database fields in `http://Drone IP Address/home/leaf-racer-configuration`
-  - [ ] Click "Get Configuration" and check for any missing fields. If there are missing fields, update the configuration files in `config-leaf_tracker` and `config-guidance_by_vision` according to the reference values in [config-guidance_by_vision](config-guidance_by_vision) and [config-leaf_tracker](config-leaf_tracker), then click "Upload Configuration" to update the drone's configuration.
+  - [ ] Click "Get Configuration" and check for any missing fields. If there are missing fields, update the configuration files in the following tables (examples for 5" and 7" if applicable are provided in the URLs below).
+    -  [`config-leaf_tracker`](./config-leaf_tracker) - you must include your `robot_instance_id`
+    -  [`config-attitude_guidance_by_vision`](./config-attitude_guidance_by_vision) - you must include your `robot_instance_id`
+    -  [`config-attitude_guidance_by_vision_pi_cont`](./config-attitude_guidance_by_vision_pi_cont) - you must include your `robot_instance_id`
+    -  [`config-px4_rc_to_ori_thrust`](./config-px4_rc_to_ori_thrust) - you must include your `robot_instance_id`, `robot_type_id`, and `organization_id`
+    -  [`config-target`](./config-target) - you must edit the `/SITL_UBUNTU20` entry
   - [ ] Check "Hardware Setup"
     - Racer System Status Publish Rate: **5 Hz**
     - Betaflight Status Publish Rate 1 - 2 Hz

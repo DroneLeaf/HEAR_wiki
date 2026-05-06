@@ -1,0 +1,96 @@
+{
+    "CH_number_for_activate_vision_tracking": 11,
+    "CH_number_for_switch_C": 9,
+    "map_for_box_size": [
+        988,
+        2012,
+        0,
+        1
+    ],
+    "CH_number_for_switch_A": 6,
+    "CH_number_for_switch_B": 5,
+    "en_receive_raw_rc_over_ros": false,
+    "simulate_state_estimator": false,
+    "IMPORTANT note": "map_for_fwd must have limits of -1 to 1",
+    "CH_number_for_intercept": 12,
+    "CH_number_for_roll": 1,
+    "createdAt": "2026-04-24T19:56:33.219Z",
+    "map_for_fwd": [
+        988,
+        2012,
+        -1,
+        1
+    ],
+    "CH_number_for_forward_motion": 6,
+    "CH_number_for_aim_y": 8,
+    "CH_number_for_aim_x": 7,
+    "CH_number_for_box_size": 10,
+    "map_for_yaw": [
+        988,
+        2012,
+        -1,
+        1
+    ],
+    "map_for_aim_y": [
+        988,
+        2012,
+        0,
+        1
+    ],
+    "map_for_aim_x": [
+        988,
+        2012,
+        0,
+        1
+    ],
+    "updatedAt": "2026-05-05T13:13:42.294Z",
+    "map_for_thrust": [
+        1000,
+        2000,
+        0,
+        1
+    ],
+    "map_for_roll": [
+        988,
+        2012,
+        -1.3962634015954636,
+        1.3962634015954636
+    ],
+    "address": "/px4_rc_to_ori_thrust",
+    "CH_number_for_pitch": 2,
+    "map_for_pitch": [
+        988,
+        2012,
+        -1.3962634015954636,
+        1.3962634015954636
+    ],
+    "CH_number_for_switch_vtol_mode": 8,
+    "map_for_pitch_rate": [
+        1094,
+        1934,
+        0,
+        0
+    ],
+    "map_for_yaw_rate": [
+        1000,
+        2000,
+        -1.5,
+        1.5
+    ],
+    "CH_number_for_throttle": 3,
+    "map_for_vtol_mode": [
+        1600,
+        1800,
+        -1,
+        1
+    ],
+    "name": "",
+    "map_for_roll_rate": [
+        1094,
+        1934,
+        0,
+        0
+    ],
+    "tunning_id": 0,
+    "CH_number_for_yaw": 4
+}

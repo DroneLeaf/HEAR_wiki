@@ -1,0 +1,20 @@
+{
+    "health_monitoring_loop_dt_s": 0.1,
+    "betaflight_msp_baud": 230400,
+    "address": "/SITL_UBUNTU20",
+    "betaflight_elrs_secondary_tx_port": "",
+    "betaflight_status_publish_rate_hz": 1,
+    "main_loop_dt_s": 0.005,
+    "betaflight_elrs_secondary_tx_baud": 420000,
+    "betaflight_elrs_to_ground_baud": 420000,
+    "organization_id": "PUBLIC",
+    "name": "SITL_UBUNTU20",
+    "betaflight_elrs_port": "/dev/ttyAMA1",
+    "betaflight_elrs_to_ground_port": "/dev/ttyAMA2",
+    "id": "ac5c1e3e-5926-4cf7-ac29-6a94279264b2",
+    "betaflight_msp_port": "/dev/ttyAMA0",
+    "betaflight_elrs_baud": 420000,
+    "enable_gravity_compensation": true,
+    "racer_system_status_publish_rate_hz": 3,
+    "updatedAt": "2026-05-03T16:02:07.364Z"
+}
